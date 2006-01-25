@@ -19,6 +19,7 @@
 #ifdef USE_PCH
 	// put here all your rarely-changing header files
 	#include "wx/config.h"
+	#include "wx/confbase.h"
     #include "wx/wfstream.h"
     #include "wx/strconv.h"
     #include <wx/fileconf.h>
