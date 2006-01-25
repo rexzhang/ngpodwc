@@ -8,103 +8,18 @@
     #include <wx/wx.h>
 #endif
 
-//helper functions
-enum wxbuildinfoformat {
-    short_f, long_f };
-
-wxString wxbuildinfo(wxbuildinfoformat format)
+main()
 {
-    wxString wxbuild(wxVERSION_STRING);
+    wxFileInputStream ConfigInStream(wxT("ngpodwc.ini"));
+    //wxFileOutputStream ConfigOutStream(wxT("ngpodwc.ini"));
 
-    if (format == long_f )
-    {
-#if defined(__WXMSW__)
-        wxbuild << _T("-Windows");
-#elif defined(__UNIX__)
-        wxbuild << _T("-Linux");
-#endif
+    //wxConfig *config = new wxConfig(wxT("ngpodwc"), wxT("flord.net"));
+    wxFileConfig *fileConfig = new wxFileConfig(ConfigInStream, wxConvUTF8);
 
-#if wxUSE_UNICODE
-        wxbuild << _T("-unicode build");
-#else
-        wxbuild << _T("-ANSI build");
-#endif // wxUSE_UNICODE
-    }
+    fileConfig->Write(wxT("DatabasePath"),wxT("d:\\"));
 
-    return wxbuild;
+    wxFileOutputStream ConfigOutStream(wxT("ngpodwc-out.ini"));
+    fileConfig->Save(ConfigOutStream, wxConvUTF8);
+
+    return 0;
 }
-
-//wxWidgets Application
-class MyApp : public wxApp
-{
-public:
-    virtual bool OnInit();
-};
-IMPLEMENT_APP(MyApp);
-
-class MyFrame: public wxFrame
-{
-public:
-    MyFrame(wxFrame *frame, const wxString& title);
-    ~MyFrame();
-private:
-    void OnQuit(wxCommandEvent& event);
-    void OnAbout(wxCommandEvent& event);
-    DECLARE_EVENT_TABLE();
-};
-
-bool MyApp::OnInit()
-{
-    MyFrame* frame = new MyFrame(0L, _("wxWidgets Application Template"));
-    frame->Show();
-    return true;
-}
-
-int idMenuQuit = wxNewId();
-int idMenuAbout = wxNewId();
-
-BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-    EVT_MENU(idMenuQuit, MyFrame::OnQuit)
-    EVT_MENU(idMenuAbout, MyFrame::OnAbout)
-END_EVENT_TABLE()
-
-MyFrame::MyFrame(wxFrame *frame, const wxString& title)
-        : wxFrame(frame, -1, title)
-{
-#if wxUSE_MENUS
-    // create a menu bar
-    wxMenuBar* mbar = new wxMenuBar();
-    wxMenu* fileMenu = new wxMenu(_T(""));
-    fileMenu->Append(idMenuQuit, _("&Quit\tAlt-F4"), _("Quit the application"));
-    mbar->Append(fileMenu, _("&File"));
-
-    wxMenu* helpMenu = new wxMenu(_T(""));
-    helpMenu->Append(idMenuAbout, _("&About\tF1"), _("Show info about this application"));
-    mbar->Append(helpMenu, _("&Help"));
-
-    SetMenuBar(mbar);
-#endif // wxUSE_MENUS
-
-#if wxUSE_STATUSBAR
-    // create a status bar with some information about the used wxWidgets version
-    CreateStatusBar(2);
-    SetStatusText(_("Hello Code::Blocks user !"),0);
-    SetStatusText(wxbuildinfo(short_f),1);
-#endif // wxUSE_STATUSBAR
-}
-
-MyFrame::~MyFrame()
-{
-}
-
-void MyFrame::OnQuit(wxCommandEvent& event)
-{
-    Close();
-}
-
-void MyFrame::OnAbout(wxCommandEvent& event)
-{
-    wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
-}
-
