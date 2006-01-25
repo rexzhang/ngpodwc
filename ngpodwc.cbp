@@ -58,7 +58,7 @@
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
-		<Unit filename="main.cpp">
+		<Unit filename="ngpodwc.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="Debug" />
 			<Option target="Release" />
