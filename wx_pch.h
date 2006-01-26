@@ -18,11 +18,21 @@
 
 #ifdef USE_PCH
 	// put here all your rarely-changing header files
+	//配置
 	#include "wx/config.h"
 	#include "wx/confbase.h"
-    #include "wx/wfstream.h"
-    #include "wx/strconv.h"
+
+	//配置文件
     #include <wx/fileconf.h>
+    //文件处理
+    #include "wx/wfstream.h"
+
+    //Unicode
+    #include "wx/strconv.h"
+
+    //数据库支持
+    #include "wx/db.h"
+    #include "wx/dbtable.h"
 #endif // USE_PCH
 
 #endif // WX_PCH_H_INCLUDED
