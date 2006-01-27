@@ -22,6 +22,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="wxmsw26ud" />
+					<Add library="odbc32" />
 				</Linker>
 			</Target>
 			<Target title="Release">
