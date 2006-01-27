@@ -55,22 +55,38 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
     //DatabasePath = DatabasePath + DatabaseName;
     //wxSafeShowMessage(DatabasePath,DatabaseName);
 
-    wxDbConnectInf DbConnectInf;
+    wxDbConnectInf  *DbConnectInf    = NULL;    // DB connection information
+
+    wxDb            *PodDB              = NULL;    // Database connection
+
+    wxDbTable       *table           = NULL;    // Data table to access
+    const wxChar tableName[] = wxT("POD"); // Name of database table
+    const UWORD numTableColumns = 8;       // Number table columns
+
+
+    //wxDbConnectInf DbConnectInf;
+    //DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
+    DbConnectInf = new wxDbConnectInf;
+
     //正式的打开ODBC操作
-    wxDb DB(DbConnectInf.GetHenv());
+    //wxDb PodDB(DbConnectInf.GetHenv());
+    //PodDB = new wxDb;//!!必须的一步
+    PodDB = new wxDb(DbConnectInf->GetHenv());//!!必须的一步
+
 
     bool DBfailOnDataTypeUnsupported=TRUE;
 
     //透过Driver的方式打开ODBC
-    //if(DB.Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=pod.mdb;UID=admin;"),DBfailOnDataTypeUnsupported))
-    if(DB.Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + DatabasePath + DatabaseName + wxT(";UID=admin;"),
-               DBfailOnDataTypeUnsupported))
+    //if(DB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=D:\\pod.mdb;UID=admin;"),DBfailOnDataTypeUnsupported))
+    if(PodDB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + DatabasePath + DatabaseName + wxT(";UID=admin;"),
+                   DBfailOnDataTypeUnsupported))//!!!!Debug
     {
-        if (DB.IsOpen())
+        if (PodDB->IsOpen())
         {
             // Connection is open, but the initialization of
             // datatypes and parameter settings failed
-            wxSafeShowMessage(DatabasePath,DatabaseName);
+            wxSafeShowMessage(DatabasePath +DatabaseName,
+                              wxT("Connection is open, but the initialization of datatypes and parameter settings failed"));
             return;
         }
         else
@@ -82,12 +98,13 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
         }
     }
 
-    //wxString tableName = wxT("POD");
-    const wxChar tableName[] = wxT("POD"); // Name of database table
-    const UWORD numTableColumns = 8;       // Number table columns
-    wxDbTable       *table           = NULL;    // Data table to access
+    //!!!TEST END
+    wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
+    return;
 
-    table = new wxDbTable(&DB, tableName, numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
+    /*
+    table = new wxDbTable(PodDB, tableName, numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
+    //table = new wxDbTable(&PodDB, wxT("TTT"), numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
     //wxDbTable table;
     if (!table->Open())
     {
@@ -98,7 +115,7 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
     table->SetOrderByClause(wxT("PodDate"));
 
     table->GetFirst();
-
+*/
 
 
 
