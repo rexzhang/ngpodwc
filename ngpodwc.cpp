@@ -52,9 +52,6 @@ main()
 
 void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pPictureInfo)
 {
-    //DatabasePath = DatabasePath + DatabaseName;
-    //wxSafeShowMessage(DatabasePath,DatabaseName);
-
     wxDbConnectInf  *DbConnectInf    = NULL;    // DB connection information
 
     wxDb            *PodDB              = NULL;    // Database connection
@@ -63,23 +60,20 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
     const wxChar tableName[] = wxT("POD"); // Name of database table
     const UWORD numTableColumns = 8;       // Number table columns
 
-
     //wxDbConnectInf DbConnectInf;
-    //DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
-    DbConnectInf = new wxDbConnectInf;
+    DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
+    //DbConnectInf = new wxDbConnectInf;
 
     //正式的打开ODBC操作
-    //wxDb PodDB(DbConnectInf.GetHenv());
     //PodDB = new wxDb;//!!必须的一步
     PodDB = new wxDb(DbConnectInf->GetHenv());//!!必须的一步
 
-
-    bool DBfailOnDataTypeUnsupported=TRUE;
+    bool DBfailOnDataTypeUnsupported=!true;//!!目的？用处？
 
     //透过Driver的方式打开ODBC
     //if(DB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=D:\\pod.mdb;UID=admin;"),DBfailOnDataTypeUnsupported))
-    if(PodDB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + DatabasePath + DatabaseName + wxT(";UID=admin;"),
-                   DBfailOnDataTypeUnsupported))//!!!!Debug
+    if(!PodDB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + DatabasePath + DatabaseName + wxT(";UID=admin;"),
+                    DBfailOnDataTypeUnsupported))//!!!!Debug
     {
         if (PodDB->IsOpen())
         {
@@ -93,21 +87,19 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
         {
             // Error opening datasource
             //return HandleError(wxT("DB ENV ERROR: Cannot allocate ODBC env handle"));
-            wxSafeShowMessage(DatabasePath,DatabaseName);
+            wxSafeShowMessage(DatabasePath + DatabaseName,
+                              wxT("Error opening datasource"));
             return;
         }
     }
 
-    //!!!TEST END
-    wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
-    return;
-
-    /*
     table = new wxDbTable(PodDB, tableName, numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
     //table = new wxDbTable(&PodDB, wxT("TTT"), numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
     //wxDbTable table;
     if (!table->Open())
     {
+        wxSafeShowMessage(DatabasePath + DatabaseName,
+                          wxT("An error occurred opening (setting up) the table"));
         // An error occurred opening (setting up) the table
     }
 
@@ -115,10 +107,10 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
     table->SetOrderByClause(wxT("PodDate"));
 
     table->GetFirst();
-*/
 
-
-
+    //!!!TEST END
+    wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
+    return;
 
     return;
 }
