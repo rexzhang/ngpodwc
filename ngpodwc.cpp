@@ -40,8 +40,8 @@ main()
     //wxSafeShowMessage(config.DatabasePath,config.DatabaseName);
 
     //获取POD 图片描述信息以及图片文件名称
-    PodPictrueInfo pictureInfo;
-    getPodInfo(config.DatabasePath, config.DatabaseName, &pictureInfo);
+    PodPictrueInfo pPictureInfo;
+    getPodInfo(config.DatabasePath, config.DatabaseName, &pPictureInfo);
 
 
 
@@ -50,30 +50,34 @@ main()
     return 0;
 }
 
-void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pPictureInfo)
+bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPictrueInfo *pPictureInfo)
+//return 1 = true
 {
+    //wxSafeShowMessage(wxT("aaa"),DatabasePath + DatabaseName);
+
     wxDbConnectInf  *DbConnectInf    = NULL;    // DB connection information
 
     wxDb            *PodDB              = NULL;    // Database connection
 
     wxDbTable       *table           = NULL;    // Data table to access
-    const wxChar tableName[] = wxT("POD"); // Name of database table
+    //const wxChar tableName[] = wxT("POD"); // Name of database table
+    const wxString tableName = wxT("POD");
     const UWORD numTableColumns = 8;       // Number table columns
 
     //wxDbConnectInf DbConnectInf;
     DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
     //DbConnectInf = new wxDbConnectInf;
 
-    //正式的打开ODBC操作
+    //定义数据库连接
     //PodDB = new wxDb;//!!必须的一步
     PodDB = new wxDb(DbConnectInf->GetHenv());//!!必须的一步
 
     bool DBfailOnDataTypeUnsupported=!true;//!!目的？用处？
 
-    //透过Driver的方式打开ODBC
+    //透过Driver的方式打开ODBC(正式的打开ODBC操作)
     //if(DB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=D:\\pod.mdb;UID=admin;"),DBfailOnDataTypeUnsupported))
     if(!PodDB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + DatabasePath + DatabaseName + wxT(";UID=admin;"),
-                    DBfailOnDataTypeUnsupported))//!!!!Debug
+                    DBfailOnDataTypeUnsupported))
     {
         if (PodDB->IsOpen())
         {
@@ -81,7 +85,7 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
             // datatypes and parameter settings failed
             wxSafeShowMessage(DatabasePath +DatabaseName,
                               wxT("Connection is open, but the initialization of datatypes and parameter settings failed"));
-            return;
+            return 0;
         }
         else
         {
@@ -89,13 +93,27 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
             //return HandleError(wxT("DB ENV ERROR: Cannot allocate ODBC env handle"));
             wxSafeShowMessage(DatabasePath + DatabaseName,
                               wxT("Error opening datasource"));
-            return;
+            return 0;
         }
     }
 
+
+    //定义表部分
+    //!!!!Debug
     table = new wxDbTable(PodDB, tableName, numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
-    //table = new wxDbTable(&PodDB, wxT("TTT"), numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
-    //wxDbTable table;
+
+    PodPictrueInfo tempPictureInfo;
+
+    table->SetColDefs(0, wxT("Pod_Title"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.Title,
+                      SQL_C_WXCHAR, sizeof(tempPictureInfo.Title), true, false, true, false);
+    //table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, tempPictureInfo.PodDate,
+    //                SQL_C_DATE, sizeof(tempPictureInfo.PodDate), true, true);
+    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.PodDate,
+                      SQL_C_DATE, sizeof(tempPictureInfo.PodDate), true, true);
+    //    table->SetColDefs(2, wxT("Pod_Where"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.Where,
+    //                    SQL_C_WXCHAR, sizeof(pPictureInfo->Where), false, true, true, false);
+
+    //打开表
     if (!table->Open())
     {
         wxSafeShowMessage(DatabasePath + DatabaseName,
@@ -106,11 +124,38 @@ void getPodInfo(wxString DatabasePath, wxString DatabaseName, PodPictrueInfo *pP
     //按照PodDate字段排序
     table->SetOrderByClause(wxT("PodDate"));
 
+    int PodDBTotalNumber = table->Count();
+    /*
+    wxString msg;
+    msg.Printf(wxT(" table-Count() = %i"), PodDBTotalNumber);
+    wxSafeShowMessage(msg,msg);
+    */
+    if (!table->Query())
+    {
+        //wxSafeShowMessage(wxT("QUERY ERROR: "), table->GetDb())
+
+        return HandleError(wxT("QUERY ERROR: "), table->GetDb());
+        //return 0;
+    }
+
+    //table->GetNext();
     table->GetFirst();
+    wxSafeShowMessage(tempPictureInfo.Title,tempPictureInfo.PodDate);
+
+    //wxString         msg;                       // Used for display messages
+    while (table->GetNext())
+    {
+        //        msg.Printf(wxT("Row #%lu -- First Name : %s  Last Name is %s"),
+        //                 table->GetRowNum(), FirstName, LastName);
+        // Code to display 'msg' here
+        //wxLogMessage(wxT("\n%s\n"), msg.c_str());
+        wxSafeShowMessage(wxT("Pod_Title"),tempPictureInfo.Title);
+    }
+
 
     //!!!TEST END
     wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
-    return;
+    return 0;
 
-    return;
+    return 1;
 }
