@@ -1,3 +1,5 @@
+#include <wx/datetime.h>
+
 struct ngpodwcConfig
 {
     wxString DatabasePath;
@@ -7,14 +9,14 @@ struct ngpodwcConfig
 struct PodPictrueInfo
 {
     //wxString Title;
-    wxChar Title[80];
+    wxChar Title[100];// = wxEmptyString;
     wxChar PodDate[20];
-    wxString Where;
-    wxString When;
-    wxString Who;
-    wxString Disc;
-    wxString Related;
-    wxString PhotoName;
+    wxChar Where[80];
+    wxChar When[80];
+    wxChar Who[80];
+    wxChar Disc[254];
+    wxChar Related[254];
+    wxChar PhotoName[80];
 };
 
 

@@ -41,11 +41,17 @@ main()
 
     //获取POD 图片描述信息以及图片文件名称
     PodPictrueInfo pPictureInfo;
-    getPodInfo(config.DatabasePath, config.DatabaseName, &pPictureInfo);
+    if(!getPodInfo(config.DatabasePath, config.DatabaseName, &pPictureInfo))
+    {
+        wxSafeShowMessage(wxT("Error"),wxT("Error"));
+    }
 
 
 
 
+    //!!!TEST END
+    wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
+    return 0;
 
     return 0;
 }
@@ -61,8 +67,6 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
 
     wxDbTable       *table           = NULL;    // Data table to access
     //const wxChar tableName[] = wxT("POD"); // Name of database table
-    const wxString tableName = wxT("POD");
-    const UWORD numTableColumns = 8;       // Number table columns
 
     //wxDbConnectInf DbConnectInf;
     DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
@@ -98,64 +102,106 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
     }
 
 
+    //const wxString tableName = wxT("POD");
+    const UWORD numTableColumns = 8;       // Number table columns
     //定义表部分
-    //!!!!Debug
-    table = new wxDbTable(PodDB, tableName, numTableColumns, wxT(""), !wxDB_QUERY_ONLY, wxT(""));
+    table = new wxDbTable(PodDB, wxT("POD"), numTableColumns, wxT(""), wxDB_QUERY_ONLY, wxT(""));
 
-    PodPictrueInfo tempPictureInfo;
+    //清空数据
+    wxStrcpy(pPictureInfo->Title, wxT(""));
+    wxStrcpy(pPictureInfo->PodDate, wxT(""));
+    wxStrcpy(pPictureInfo->Where, wxT(""));
+    wxStrcpy(pPictureInfo->When, wxT(""));
+    wxStrcpy(pPictureInfo->Who, wxT(""));
+    wxStrcpy(pPictureInfo->Disc, wxT(""));
+    wxStrcpy(pPictureInfo->Related, wxT(""));
+    wxStrcpy(pPictureInfo->PhotoName, wxT(""));
 
-    table->SetColDefs(0, wxT("Pod_Title"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.Title,
-                      SQL_C_WXCHAR, sizeof(tempPictureInfo.Title), true, false, true, false);
-    //table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, tempPictureInfo.PodDate,
-    //                SQL_C_DATE, sizeof(tempPictureInfo.PodDate), true, true);
-    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.PodDate,
-                      SQL_C_DATE, sizeof(tempPictureInfo.PodDate), true, true);
-    //    table->SetColDefs(2, wxT("Pod_Where"), DB_DATA_TYPE_VARCHAR, tempPictureInfo.Where,
-    //                    SQL_C_WXCHAR, sizeof(pPictureInfo->Where), false, true, true, false);
+    table->SetColDefs(0, wxT("Pod_Title"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Title, SQL_C_WXCHAR, sizeof(pPictureInfo->Title), true, true);
+    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, pPictureInfo->PodDate, SQL_C_WXCHAR, sizeof(pPictureInfo->PodDate), true, true);
+    table->SetColDefs(2, wxT("Pod_Where"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Where, SQL_C_WXCHAR, sizeof(pPictureInfo->Where), true, true);
+    table->SetColDefs(3, wxT("Pod_When"), DB_DATA_TYPE_VARCHAR, pPictureInfo->When, SQL_C_WXCHAR, sizeof(pPictureInfo->When), true, true);
+    table->SetColDefs(4, wxT("Pod_Who"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Who, SQL_C_WXCHAR, sizeof(pPictureInfo->Who), true, true);
+    table->SetColDefs(5, wxT("Pod_Disc"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Disc, SQL_C_WXCHAR, sizeof(pPictureInfo->Disc), true, true);
+    table->SetColDefs(6, wxT("Pod_Related"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Related, SQL_C_WXCHAR, sizeof(pPictureInfo->Related), true, true);
+    table->SetColDefs(7, wxT("Pod_Photo"), DB_DATA_TYPE_VARCHAR, pPictureInfo->PhotoName, SQL_C_WXCHAR, sizeof(pPictureInfo->PhotoName), true, true);
 
     //打开表
     if (!table->Open())
     {
         wxSafeShowMessage(DatabasePath + DatabaseName,
                           wxT("An error occurred opening (setting up) the table"));
-        // An error occurred opening (setting up) the table
     }
 
-    //按照PodDate字段排序
-    table->SetOrderByClause(wxT("PodDate"));
+    //table->SetWhereClause(wxT("Pod_When = '1982'"));
 
-    int PodDBTotalNumber = table->Count();
+    wxDateTime PodDate;// = "2005-3-3";
+    PodDate.SetYear(2005);
+    PodDate.SetMonth(3);
+    PodDate.SetDay(3);
+
+
+    table->SetWhereClause(wxT("Pod_Date = 2005-3-3"));
+
+    //按照PodDate字段排序
+    table->SetOrderByClause(wxT("Pod_Title"));
+
     /*
+    int PodDBTotalNumber = table->Count();
     wxString msg;
     msg.Printf(wxT(" table-Count() = %i"), PodDBTotalNumber);
     wxSafeShowMessage(msg,msg);
     */
+
+    //根据上面的限定信息执行查询操作
     if (!table->Query())
     {
-        //wxSafeShowMessage(wxT("QUERY ERROR: "), table->GetDb())
-
         return HandleError(wxT("QUERY ERROR: "), table->GetDb());
         //return 0;
     }
 
+    //wxSafeShowMessage(wxT("Pod_Title"),pPictureInfo->Title);
     //table->GetNext();
-    table->GetFirst();
-    wxSafeShowMessage(tempPictureInfo.Title,tempPictureInfo.PodDate);
+    //table->GetFirst();
 
-    //wxString         msg;                       // Used for display messages
+
     while (table->GetNext())
     {
-        //        msg.Printf(wxT("Row #%lu -- First Name : %s  Last Name is %s"),
-        //                 table->GetRowNum(), FirstName, LastName);
+        wxString         msg;                       // Used for display messages
+        msg.Printf(wxT("Row #% lu --\nTitle : %s\nPodDate : %s\nWhere : %s\nWhen : %s\nWho : %s\nDisc : %s\nRelated : %s\nPhotoName :%s"),
+                   table->GetRowNum(),
+                   pPictureInfo->Title,
+                   pPictureInfo->PodDate,
+                   pPictureInfo->Where,
+                   pPictureInfo->When,
+                   pPictureInfo->Who,
+                   pPictureInfo->Disc,
+                   pPictureInfo->Related,
+                   pPictureInfo->PhotoName
+                  );
         // Code to display 'msg' here
-        //wxLogMessage(wxT("\n%s\n"), msg.c_str());
-        wxSafeShowMessage(wxT("Pod_Title"),tempPictureInfo.Title);
+        wxSafeShowMessage(wxT("Pod_wxDbTable Test"),msg);
     }
 
-
-    //!!!TEST END
-    wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
-    return 0;
-
+/*
+    if(!table->GetNext())
+    {
+        wxString         msg;                       // Used for display messages
+        msg.Printf(wxT("Row #% lu --\nTitle : %s\nPodDate : %s\nWhere : %s\nWhen : %s\nWho : %s\nDisc : %s\nRelated : %s\nPhotoName :%s"),
+                   table->GetRowNum(),
+                   pPictureInfo->Title,
+                   pPictureInfo->PodDate,
+                   pPictureInfo->Where,
+                   pPictureInfo->When,
+                   pPictureInfo->Who,
+                   pPictureInfo->Disc,
+                   pPictureInfo->Related,
+                   pPictureInfo->PhotoName
+                  );
+        // Code to display 'msg' here
+        wxSafeShowMessage(wxT("table->GetNext Error!"),msg);
+        return 0;
+    }
+*/
     return 1;
 }
