@@ -11,7 +11,13 @@
 #include <wx/msgdlg.h>
 #include <wx/log.h>
 
+#include <wx/datetime.h>
+
+//#include <ctime>
+#include <time.h>
+
 #include "ngpodwc.h"
+
 
 main()
 {
@@ -117,8 +123,11 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
     wxStrcpy(pPictureInfo->Related, wxT(""));
     wxStrcpy(pPictureInfo->PhotoName, wxT(""));
 
+    time_t PodTime_TT=0;
+
     table->SetColDefs(0, wxT("Pod_Title"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Title, SQL_C_WXCHAR, sizeof(pPictureInfo->Title), true, true);
-    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, pPictureInfo->PodDate, SQL_C_WXCHAR, sizeof(pPictureInfo->PodDate), true, true);
+//    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, pPictureInfo->PodDate, SQL_C_WXCHAR, sizeof(pPictureInfo->PodDate), true, true);
+    table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, &PodTime_TT, SQL_C_DATE, sizeof(PodTime_TT), true, true);
     table->SetColDefs(2, wxT("Pod_Where"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Where, SQL_C_WXCHAR, sizeof(pPictureInfo->Where), true, true);
     table->SetColDefs(3, wxT("Pod_When"), DB_DATA_TYPE_VARCHAR, pPictureInfo->When, SQL_C_WXCHAR, sizeof(pPictureInfo->When), true, true);
     table->SetColDefs(4, wxT("Pod_Who"), DB_DATA_TYPE_VARCHAR, pPictureInfo->Who, SQL_C_WXCHAR, sizeof(pPictureInfo->Who), true, true);
@@ -133,18 +142,57 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
                           wxT("An error occurred opening (setting up) the table"));
     }
 
-    //table->SetWhereClause(wxT("Pod_When = '1982'"));
+    //table->SetWhereClause(wxT("Pod_When = '1982'"));//!OK
 
-    wxDateTime PodDate;// = "2005-3-3";
-    PodDate.SetYear(2005);
-    PodDate.SetMonth(3);
-    PodDate.SetDay(3);
+    /*    wxDateTime PodDate;// = "2005-3-3";
+        PodDate.SetYear(2005);
+        PodDate.SetMonth(3);
+        PodDate.SetDay(3);
+    */
+    wxDateSpan PodDate;//=(2005,3,,3);
+    PodDate.SetYears(2005);
+    PodDate.SetMonths(3);
+    PodDate.SetDays(3);
 
+    wxDateTime PodDateTime = wxDateTime::Now();
 
-    table->SetWhereClause(wxT("Pod_Date = 2005-3-3"));
+    PodDateTime.ResetTime();
+    PodDateTime.SetYear(2005);
+    //PodDateTime.
+    //PodDateTime.
+
+    //Month PodMonth;
+    time_t PodTime_t;
+
+    PodTime_t = PodDateTime.GetTicks();
+
+    tm PodTm;// = (0,0,0,3,3,2005-1900);
+    PodTm.tm_sec = 0;
+    PodTm.tm_min = 0;
+    PodTm.tm_hour = 0;
+    PodTm.tm_mday = 3;
+    PodTm.tm_mon = 3;
+    PodTm.tm_year = 2004-1900;
+    PodTm.tm_wday = 0;
+    PodTm.tm_yday = 0;
+    PodTm.tm_isdst = 0;
+
+    PodDateTime = wxDateTime::wxDateTime(PodTm);
+
+    PodTime_t = PodDateTime.GetTicks();
+
+    //PodMonth =PodDate.GetMonth();
+    //PodDate.Set(3,wxDateSpan::Months(3),2005,0,0,0,0);
+    //PodDate.SetYear(2005);
+    //wxString msg;
+    //msg.Printf(wxT("&u"),PodDate.wxDateTime_t);
+    //wxSafeShowMessage(msg,msg);
+
+    table->SetWhereClause(wxT("Pod_Date <= 40000 AND Pod_Date >= 37999"));
+    //table->SetWhereClause(wxT("Pod_Date = 2001/03/13"));
 
     //°´ÕÕPodDate×Ö¶ÎÅÅÐò
-    table->SetOrderByClause(wxT("Pod_Title"));
+    table->SetOrderByClause(wxT("Pod_Date"));
 
     /*
     int PodDBTotalNumber = table->Count();
@@ -159,11 +207,6 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
         return HandleError(wxT("QUERY ERROR: "), table->GetDb());
         //return 0;
     }
-
-    //wxSafeShowMessage(wxT("Pod_Title"),pPictureInfo->Title);
-    //table->GetNext();
-    //table->GetFirst();
-
 
     while (table->GetNext())
     {
@@ -183,25 +226,25 @@ bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPic
         wxSafeShowMessage(wxT("Pod_wxDbTable Test"),msg);
     }
 
-/*
-    if(!table->GetNext())
-    {
-        wxString         msg;                       // Used for display messages
-        msg.Printf(wxT("Row #% lu --\nTitle : %s\nPodDate : %s\nWhere : %s\nWhen : %s\nWho : %s\nDisc : %s\nRelated : %s\nPhotoName :%s"),
-                   table->GetRowNum(),
-                   pPictureInfo->Title,
-                   pPictureInfo->PodDate,
-                   pPictureInfo->Where,
-                   pPictureInfo->When,
-                   pPictureInfo->Who,
-                   pPictureInfo->Disc,
-                   pPictureInfo->Related,
-                   pPictureInfo->PhotoName
-                  );
-        // Code to display 'msg' here
-        wxSafeShowMessage(wxT("table->GetNext Error!"),msg);
-        return 0;
-    }
-*/
+    /*
+        if(!table->GetNext())
+        {
+            wxString         msg;                       // Used for display messages
+            msg.Printf(wxT("Row #% lu --\nTitle : %s\nPodDate : %s\nWhere : %s\nWhen : %s\nWho : %s\nDisc : %s\nRelated : %s\nPhotoName :%s"),
+                       table->GetRowNum(),
+                       pPictureInfo->Title,
+                       pPictureInfo->PodDate,
+                       pPictureInfo->Where,
+                       pPictureInfo->When,
+                       pPictureInfo->Who,
+                       pPictureInfo->Disc,
+                       pPictureInfo->Related,
+                       pPictureInfo->PhotoName
+                      );
+            // Code to display 'msg' here
+            wxSafeShowMessage(wxT("table->GetNext Error!"),msg);
+            return 0;
+        }
+    */
     return 1;
 }
