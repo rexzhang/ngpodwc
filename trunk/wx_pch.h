@@ -33,6 +33,11 @@
     //数据库支持
     #include "wx/db.h"
     #include "wx/dbtable.h"
+
+    //图片处理支持
+    #include <wx/image.h>
+    //图片处理的 加速??
+    #include <wx/quantize.h>
 #endif // USE_PCH
 
 #endif // WX_PCH_H_INCLUDED

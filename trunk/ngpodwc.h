@@ -2,14 +2,28 @@
 
 struct ngpodwcConfig
 {
-    wxString DatabasePath;
-    wxString DatabaseName;
+    wxString PodBasePath;
+
+    wxString PodDatabaseName;
+
+    wxString PodPictureMode;
+    wxString PodPicturePath;
+
+    int PodYear;
+    int PodMonth;
+    int PodDays;
+
+    //////////
+    wxString ScreenPicturePath;
+    wxString ScreenPictureName;
+
+    int ScreenWidth;
+    int ScreenHeight;
 };
 
 struct PodPictrueInfo
 {
-    //wxString Title;
-    wxChar Title[100];// = wxEmptyString;
+    wxChar Title[100];
     wxChar PodDate[20];
     wxChar Where[80];
     wxChar When[80];
@@ -20,7 +34,9 @@ struct PodPictrueInfo
 };
 
 
-bool getPodInfo(const wxString DatabasePath, const wxString DatabaseName, PodPictrueInfo *pPictureInfo);
+bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
+bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
+
 
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR HANDLING/DISPLAYING ERRORS
