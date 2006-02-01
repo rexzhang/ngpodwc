@@ -22,7 +22,6 @@
 				</Compiler>
 				<Linker>
 					<Add library="wxmsw26ud" />
-					<Add library="libbgd" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -32,6 +31,12 @@
 				<Option compiler="0" />
 				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
 			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="" />
@@ -50,7 +55,6 @@
 			<Add directory="$(#WX.include)" />
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswu" />
 			<Add directory="$(#WX)\contrib\include" />
-			<Add directory="D:\Lib-CPP\gdwin32" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#WX)\include" />
@@ -59,7 +63,6 @@
 			<Add library="wxmsw26u" />
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
-			<Add directory="D:\Lib-CPP\gdwin32" />
 		</Linker>
 		<Unit filename="ngpodwc.cpp">
 			<Option compilerVar="CPP" />
