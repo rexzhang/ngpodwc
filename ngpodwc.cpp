@@ -20,8 +20,7 @@
 
 #include "ngpodwc.h"
 
-//GD2 Lib Support
-#include "gd.h"
+
 
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR MAIN <input point>
@@ -93,31 +92,29 @@ main()
     return 0;
 }
 
+
 // ----------------------------------------------------------------------------
-// FUNCTION USED FOR xxxxxxx
+// FUNCTION USED FOR xxxxxxx wxImage<wxWidgets>
 // ----------------------------------------------------------------------------
 // return 1 = true/Finish
 bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 {
+    wxImage PodImage;
+    //wxInitAllImageHandlers();
+    wxImage::AddHandler(new wxBMPHandler);
+    wxImage::AddHandler(new wxJPEGHandler);
+    wxImage::AddHandler(new wxPNGHandler);
 
-    wxImage *pPodImage;
-    //wxImage PodImage;
-    wxInitAllImageHandlers();
+    //wxImage PodImage(wxT("MM6664_421.png"), wxBITMAP_TYPE_PNG);
+    if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
+                           + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))
+    {
+        wxSafeShowMessage(wxT("Can't load JPG image"), pPodPictureInfo->PhotoName);
+        return 0;
+    }
 
-    //wxImage PodImage(wxT("MM6664_421.jpg"), wxBITMAP_TYPE_JPEG);
-    wxImage PodImage(wxT("MM6664_421.png"), wxBITMAP_TYPE_PNG);
+    //wxBitmap PictureBitmap;//(&PodImage);
 
-    /*    if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
-                               + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))
-            //    if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
-            //                         + wxT("\\") + wxT("MM6664_421.bmp"), wxBITMAP_TYPE_BMP))
-        {
-            wxSafeShowMessage(wxT("Can't load JPG image"),wxT("Can't load JPG image"));
-            return 0;
-        }
-        */
-
-    wxBitmap PictureBitmap;//(&PodImage);
     //wxImage ScreenImage = PictureBitmap.ConvertToImage();
 
     /*
@@ -128,29 +125,27 @@ bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo
             return 0;
         }
     */
+    /*
+        // Make a palette
+        unsigned char* red = new unsigned char[256];
+        unsigned char* green = new unsigned char[256];
+        unsigned char* blue = new unsigned char[256];
+        for (size_t i = 0; i < 256; i ++)
+        {
+            red[i] = green[i] = blue[i] = i;
+        }
+        wxPalette palette(256, red, green, blue);
+        // Set the palette and the BMP depth
+        PodImage.SetPalette(palette);
 
-    //16777216
-
-    // Make a palette
-    unsigned char* red = new unsigned char[256];
-    unsigned char* green = new unsigned char[256];
-    unsigned char* blue = new unsigned char[256];
-    for (size_t i = 0; i < 256; i ++)
-    {
-        red[i] = green[i] = blue[i] = i;
-    }
-    wxPalette palette(256, red, green, blue);
-    // Set the palette and the BMP depth
-    PodImage.SetPalette(palette);
-
-    PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT, wxBMP_8BPP_PALETTE);
-
-    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT, wxBMP_24BPP);
-
-    //    if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + wxT("screen.bmp"),
-    //                        wxBITMAP_TYPE_BMP))
-    if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + wxT("screen.png"),
-                          wxBITMAP_TYPE_PNG))
+        PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT, wxBMP_8BPP_PALETTE);
+    */
+    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
+    PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
+    //if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
+    //                      wxBITMAP_TYPE_BMP))
+    if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
+                          wxBITMAP_TYPE_BMP))
         //    if(!PodImage.SaveFile(config.ScreenPicturePath + wxT("\\") + wxT("screen.jpg"),
         //                        wxBITMAP_TYPE_JPEG))
     {
@@ -358,30 +353,3 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 }
 
 
-bool outputScreenPictureGD2(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
-//return 1 = true/Finish
-{
-    gdImagePtr im;
-
-    FILE *in;
-    in = fopen("MM6664_421.jpg", "rb");
-    im = gdImageCreateFromJpeg(in);
-    fclose(in);
-
-    int black, white;
-    FILE *out;
-    /* Allocate background */
-    white = gdImageColorAllocate(im, 255, 255, 255);
-    /* Allocate drawing color */
-    black = gdImageColorAllocate(im, 0, 0, 0);
-    /* Draw rectangle */
-    gdImageRectangle(im, 0, 0, 99, 99, black);
-    /* Open output file in binary mode */
-    out = fopen("screen.bmp", "wb");
-    /* Write WBMP, with black as foreground */
-    gdImageWBMP(im, black, out);
-    /* Close file */
-    fclose(out);
-    /* Destroy image */
-    gdImageDestroy(im);
-}

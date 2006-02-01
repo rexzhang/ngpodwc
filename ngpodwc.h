@@ -38,6 +38,7 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
 bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
 
 
+
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR HANDLING/DISPLAYING ERRORS
 // ----------------------------------------------------------------------------
