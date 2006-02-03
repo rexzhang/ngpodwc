@@ -38,6 +38,8 @@
     #include <wx/image.h>
     //图片处理的 加速??
     #include <wx/quantize.h>
+    //图片处理的wxSize等支持
+    #include <wx/gdicmn.h>
 #endif // USE_PCH
 
 #endif // WX_PCH_H_INCLUDED

@@ -13,6 +13,8 @@
 
 #include <wx/datetime.h>
 
+#include <wx/file.h>
+
 //#include <ctime>
 #include <time.h>
 
@@ -30,19 +32,18 @@ main()
 {
 
     //打开配置文件
-    wxFileInputStream ConfigInStream(wxT("ngpodwc.ini"));
-    if(!ConfigInStream.Ok())//检查配置文件是否存在
+    wxFileInputStream ConfigInputStream(wxT("ngpodwc.ini"));
+    if(!ConfigInputStream.Ok())//检查配置文件是否存在
     {
         wxString msgTitle("配置文件不存在！",*wxConvCurrent);
         wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
         wxSafeShowMessage(msgTitle, msgContext);
         //wxT("ngpodwc.ini can NOT found!,please RUN ngpodcc.exe"));
-
         return 1;
     }
 
     //建立到配置文件的连接
-    wxFileConfig *pFileConfig = new wxFileConfig(ConfigInStream, wxConvUTF8);
+    wxFileConfig *pFileConfig = new wxFileConfig(ConfigInputStream, wxConvUTF8);
 
     //读取配置文件->内存
     ngpodwcConfig config;
@@ -60,6 +61,9 @@ main()
     pFileConfig->Read(wxT("ScreenWidth"), &(config.ScreenWidth));
     pFileConfig->Read(wxT("ScreenHeight"), &(config.ScreenHeight));
 
+    //!ConfigInputStream.Close();
+    //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
+
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
     //获取POD 图片描述信息以及图片文件名称
@@ -72,10 +76,13 @@ main()
         return 1;
     }
 
+    /*
+    //Debug Info
     wxSafeShowMessage(config.PodBasePath + wxT("\\")
                       + config.PodPicturePath + wxT("\\")
                       + pictureInfo.PhotoName,
                       config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
+                      */
 
     if(!outputScreenPicture(&config, &pictureInfo))
     {
@@ -84,6 +91,29 @@ main()
         wxSafeShowMessage(msgTitle, msgContext);
         return 1;
     }
+
+    //日期信息++
+    seekDays(1, &(config.PodYear), &(config.PodMonth), &(config.PodDays));
+    //保存++后的日期信息至配置
+    pFileConfig->Write(wxT("PodYear"), config.PodYear);
+    pFileConfig->Write(wxT("PodMonth"), config.PodMonth);
+    pFileConfig->Write(wxT("PodDays"), config.PodDays);
+
+    //打开配置文件
+    wxFileOutputStream ConfigOutputStream(wxT("ngpodwc.ini"));
+    if(!ConfigOutputStream.Ok())//检查配置文件是否存在
+    {
+        wxString msgTitle("配置文件不存在！",*wxConvCurrent);
+        wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
+        wxSafeShowMessage(msgTitle, msgContext);
+        //wxT("ngpodwc.ini can NOT found!,please RUN ngpodcc.exe"));
+
+        return 1;
+    }
+    //保存到文件
+    pFileConfig->Save(ConfigOutputStream, wxConvUTF8);
+    ConfigOutputStream.Close();
+
 
     //!!!TEST END
     wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
@@ -99,13 +129,11 @@ main()
 // return 1 = true/Finish
 bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 {
-    wxImage PodImage;
-    //wxInitAllImageHandlers();
+    wxImage PodImage, ScreenImage;
     wxImage::AddHandler(new wxBMPHandler);
     wxImage::AddHandler(new wxJPEGHandler);
-    wxImage::AddHandler(new wxPNGHandler);
+    //wxImage::AddHandler(new wxPNGHandler);
 
-    //wxImage PodImage(wxT("MM6664_421.png"), wxBITMAP_TYPE_PNG);
     if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
                            + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))
     {
@@ -113,43 +141,35 @@ bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo
         return 0;
     }
 
-    //wxBitmap PictureBitmap;//(&PodImage);
-
-    //wxImage ScreenImage = PictureBitmap.ConvertToImage();
-
-    /*
-        if(!PictureBitmap.LoadFile(pConfig->ScreenPicturePath + wxT("\\")
-                                   + wxT("MM6664_421.bmp"), wxBITMAP_TYPE_BMP))
-        {
-            wxSafeShowMessage(wxT("Can't load BMP image"),wxT("Can't load BMP image"));
-            return 0;
-        }
-    */
-    /*
-        // Make a palette
-        unsigned char* red = new unsigned char[256];
-        unsigned char* green = new unsigned char[256];
-        unsigned char* blue = new unsigned char[256];
-        for (size_t i = 0; i < 256; i ++)
-        {
-            red[i] = green[i] = blue[i] = i;
-        }
-        wxPalette palette(256, red, green, blue);
-        // Set the palette and the BMP depth
-        PodImage.SetPalette(palette);
-
-        PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT, wxBMP_8BPP_PALETTE);
-    */
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
-    PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
-    //if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
-    //                      wxBITMAP_TYPE_BMP))
+    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
+
+
+    if( (PodImage.GetWidth() != pConfig->ScreenWidth)
+            && (PodImage.GetHeight() != pConfig->ScreenHeight) )
+        //如果原图片尺寸与屏幕尺寸不符〉〉调整大小
+    {
+        wxString msg;
+        /*
+        //Debug Info
+        msg.Printf(wxT("From : %i x %i\nTo   : %i x %i"),
+                   PodImage.GetWidth(), PodImage.GetHeight(), pConfig->ScreenWidth, pConfig->ScreenHeight);
+        wxSafeShowMessage(wxT("change size"), msg);
+        */
+        //wxSize ScreenSize(pConfig->ScreenWidth, pConfig->ScreenHeight);
+        //PodImage.Resize(ScreenSize, xxx,
+        PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
+    }
+    else
+    {
+        ScreenImage = PodImage;
+    }
+
     if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
                           wxBITMAP_TYPE_BMP))
-        //    if(!PodImage.SaveFile(config.ScreenPicturePath + wxT("\\") + wxT("screen.jpg"),
-        //                        wxBITMAP_TYPE_JPEG))
     {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"))
+        ;
         return 0;
     };
 
@@ -169,9 +189,7 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
     wxDbTable       *table           = NULL;    // Data table to access
     //const wxChar tableName[] = wxT("POD"); // Name of database table
 
-    //wxDbConnectInf DbConnectInf;
     DbConnectInf = new wxDbConnectInf(0, wxT(""), wxT(""), wxT(""));//这里定义的内容基本没用
-    //DbConnectInf = new wxDbConnectInf;
 
     //定义数据库连接
     //PodDB = new wxDb;//!!必须的一步
@@ -180,7 +198,6 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
     bool DBfailOnDataTypeUnsupported=!true;//!!目的？用处？
 
     //透过Driver的方式打开ODBC(正式的打开ODBC操作)
-    //if(DB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=D:\\pod.mdb;UID=admin;"),DBfailOnDataTypeUnsupported))
     if(!PodDB->Open(wxT("DRIVER=Microsoft Access Driver (*.mdb);DBQ=") + pConfig->PodBasePath + wxT("\\") + pConfig->PodDatabaseName + wxT(";UID=admin;"),
                     DBfailOnDataTypeUnsupported))
     {
@@ -218,7 +235,7 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
     wxStrcpy(pPodPictureInfo->Related, wxT(""));
     wxStrcpy(pPodPictureInfo->PhotoName, wxT(""));
 
-    time_t PodTime_TT=0;
+    //time_t PodTime_TT=0;
 
     table->SetColDefs(0, wxT("Pod_Title"), DB_DATA_TYPE_VARCHAR, pPodPictureInfo->Title, SQL_C_WXCHAR, sizeof(pPodPictureInfo->Title), true, true);
     table->SetColDefs(1, wxT("Pod_Date"), DB_DATA_TYPE_DATE, pPodPictureInfo->PodDate, SQL_C_WXCHAR, sizeof(pPodPictureInfo->PodDate), true, true);
