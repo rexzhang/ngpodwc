@@ -84,6 +84,7 @@ main()
                       config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
                       */
 
+    //处理图片并输出至指定目录
     if(!outputScreenPicture(&config, &pictureInfo))
     {
         wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
@@ -91,6 +92,10 @@ main()
         wxSafeShowMessage(msgTitle, msgContext);
         return 1;
     }
+
+    //设定图片至背景
+    setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
+
 
     //日期信息++
     seekDays(1, &(config.PodYear), &(config.PodMonth), &(config.PodDays));
@@ -168,8 +173,7 @@ bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo
     if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
                           wxBITMAP_TYPE_BMP))
     {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"))
-        ;
+        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
         return 0;
     };
 
