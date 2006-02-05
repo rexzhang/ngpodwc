@@ -160,6 +160,7 @@ bool setWallpaperRegInfo(wxString WallpaperPathAndName)
     }
 
     /*
+    //Debug Info
     wxString msg;
     pRegKey->QueryValue(wxT("Wallpaper"),msg);
     wxSafeShowMessage(msg,msg);
@@ -202,8 +203,8 @@ bool setWallpaperRegInfo(wxString WallpaperPathAndName)
     SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
     */
 
-    char path[254]="";
     //转换成当前编码ASCII格式
+    char path[254]="";
     strcpy(path,WallpaperPathAndName.mb_str(*wxConvCurrent));
     SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
 
