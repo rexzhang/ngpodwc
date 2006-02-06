@@ -192,7 +192,6 @@ bool setWallpaperRegInfo(wxString WallpaperPathAndName)
     pRegKey->Close();
 
     //提示系统刷新屏幕
-
     /*
     //函数使用范例
     //!http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sysinfo/base/systemparametersinfo.asp
