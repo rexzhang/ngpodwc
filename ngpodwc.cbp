@@ -93,24 +93,11 @@
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
-		<Unit filename="mainframe.cpp">
+		<Unit filename="image_convert_GraphicsMagick.cpp">
 			<Option compilerVar="CPP" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
 		</Unit>
-		<Unit filename="mainframe.h">
+		<Unit filename="image_convert_gd2.cpp">
 			<Option compilerVar="CPP" />
-			<Option compile="0" />
-			<Option link="0" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="mainframe.xrc">
-			<Option compilerVar="CPP" />
-			<Option compile="0" />
-			<Option link="0" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="ngpodwc.cpp">
 			<Option compilerVar="CPP" />
@@ -123,8 +110,6 @@
 			<Option link="0" />
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="ngpodwcc.cpp">
 			<Option compilerVar="CPP" />
@@ -132,6 +117,36 @@
 			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="ngpodwcc.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc.rc">
+			<Option compilerVar="WINDRES" />
+			<Option objectName="ngpodwcc.res" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_aboutdialog.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_aboutdialog.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_mainframe.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_mainframe.h">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />
 			<Option link="0" />
