@@ -45,16 +45,16 @@
 #define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
 #define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("Dialog")
 #define SYMBOL_NGPODWCC_MAINFRAME_IDNAME ID_FRAME_MAIN
-#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(550, 460)
+#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(600, 470)
 #define SYMBOL_NGPODWCC_MAINFRAME_POSITION wxDefaultPosition
 #define ID_PANEL 10001
 #define ID_NOTEBOOK 10002
 #define ID_PANEL1 10003
 #define ID_TEXTCTRL 10010
-#define ID_BUTTON4 10011
+#define ID_BUTTON_PodBasePath 10011
 #define ID_TEXTCTRL1 10012
 #define ID_BUTTON5 10013
-#define ID_TEXTCTRL2 10014
+#define ID_COMBOBOX1 10027
 #define ID_BUTTON6 10015
 #define ID_DATECTRL 10016
 #define ID_BUTTON9 10026
@@ -100,6 +100,9 @@ public:
     void CreateControls();
 
 ////@begin ngpodwcc_MainFrame event handler declarations
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
+    void OnButtonPodbasepathClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_ABOUT
     void OnButtonAboutClick( wxCommandEvent& event );
