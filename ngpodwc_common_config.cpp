@@ -34,7 +34,8 @@ void ngpodwcConfig::Init()
     PodDays = 14;
 
     ScreenPicturePath=wxEmptyString;
-    ScreenPictureName=wxEmptyString;
+    //ScreenPictureName = wxEmptyString;
+    ScreenPictureName = wxT("POD_Wallpaper.bmp");
 
     ScreenWidth = 1024;
     ScreenHeight = 768;
