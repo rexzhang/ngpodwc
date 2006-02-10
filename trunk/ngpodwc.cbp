@@ -111,6 +111,12 @@
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
+		<Unit filename="ngpodwc.rc">
+			<Option compilerVar="WINDRES" />
+			<Option objectName="ngpodwc.res" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
 		<Unit filename="ngpodwc_common_config.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwc_Debug" />
