@@ -31,43 +31,9 @@
 main()
 {
 
-    /*
-    //打开配置文件
-    wxFileInputStream ConfigInputStream(wxT("ngpodwc.ini"));
-    if(!ConfigInputStream.Ok())//检查配置文件是否存在
-    {
-        wxString msgTitle("配置文件不存在！",*wxConvCurrent);
-        wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        //wxT("ngpodwc.ini can NOT found!,please RUN ngpodcc.exe"));
-        return 1;
-    }
-
-    //建立到配置文件的连接
-    wxFileConfig *pFileConfig = new wxFileConfig(ConfigInputStream, wxConvUTF8);
-
-    //读取配置文件->内存
+    //读取配置文件
     ngpodwcConfig config;
-    config.PodBasePath = pFileConfig->Read(wxT("PodBasePath"));
-
-    config.PodDatabaseName = pFileConfig->Read(wxT("PodDatabaseName"));
-    config.PodPicturePath = pFileConfig->Read(wxT("PodPicturePath"));
-
-    pFileConfig->Read(wxT("PodYear"), &(config.PodYear));
-    pFileConfig->Read(wxT("PodMonth"), &(config.PodMonth));
-    pFileConfig->Read(wxT("PodDays"), &(config.PodDays));
-
-    config.ScreenPicturePath = pFileConfig->Read(wxT("ScreenPicturePath"));
-    config.ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
-    pFileConfig->Read(wxT("ScreenWidth"), &(config.ScreenWidth));
-    pFileConfig->Read(wxT("ScreenHeight"), &(config.ScreenHeight));
-    */
-    ngpodwcConfig config;
-    //ngpodwcReadConfig(&config);
     config.ReadConfig();
-
-    //!ConfigInputStream.Close();
-    //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
 
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
@@ -104,29 +70,8 @@ main()
 
     //日期信息++
     seekDays(1, &(config.PodYear), &(config.PodMonth), &(config.PodDays));
-    //保存++后的日期信息至配置
+    //保存++后的日期信息至配置文件
     config.WriteConfig();
-    /*
-    pFileConfig->Write(wxT("PodYear"), config.PodYear);
-    pFileConfig->Write(wxT("PodMonth"), config.PodMonth);
-    pFileConfig->Write(wxT("PodDays"), config.PodDays);
-
-    //打开配置文件
-    wxFileOutputStream ConfigOutputStream(wxT("ngpodwc.ini"));
-    if(!ConfigOutputStream.Ok())//检查配置文件是否存在
-    {
-        wxString msgTitle("配置文件不存在！",*wxConvCurrent);
-        wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        //wxT("ngpodwc.ini can NOT found!,please RUN ngpodcc.exe"));
-
-        return 1;
-    }
-    //保存到文件
-    pFileConfig->Save(ConfigOutputStream, wxConvUTF8);
-    ConfigOutputStream.Close();
-    */
-
 
     /*
     //!!!TEST END

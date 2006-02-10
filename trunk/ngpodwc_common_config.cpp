@@ -1,16 +1,26 @@
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////
+// Name:        ngpodwcc_common_config.cpp
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     09/02/2006
+// RCS-ID:
+// Copyright:   cooooooooooooopy
+// Licence:
+/////////////////////////////////////////////////////////////////////////////
 #include "ngpodwc_common_config.h"
 
-
+//---------------------------------------------------------------------------
+//!
+//---------------------------------------------------------------------------
 ngpodwcConfig::ngpodwcConfig()
 {
     Init();
 }
 
-
+//---------------------------------------------------------------------------
+//!
+//---------------------------------------------------------------------------
 void ngpodwcConfig::Init()
 {
     PodBasePath=wxEmptyString;
@@ -19,16 +29,20 @@ void ngpodwcConfig::Init()
     PodPictureMode=wxEmptyString;
     PodPicturePath=wxEmptyString;
 
+    PodYear = 2003;//?????
+    PodMonth = 1;
+    PodDays = 14;
+
     ScreenPicturePath=wxEmptyString;
     ScreenPictureName=wxEmptyString;
 
-    //建立到配置文件的连接
-    //*pFileConfig = new wxFileConfig(ConfigInputStream, wxConvUTF8);
-
+    ScreenWidth = 1024;
+    ScreenHeight = 768;
 }
 
-
-
+//---------------------------------------------------------------------------
+//!
+//---------------------------------------------------------------------------
 bool ngpodwcConfig::ReadConfig()
 {
     //打开配置文件
@@ -46,7 +60,6 @@ bool ngpodwcConfig::ReadConfig()
     wxFileConfig *pFileConfig = new wxFileConfig(ConfigInputStream, wxConvUTF8);
 
     //读取配置文件->内存
-    //ngpodwcConfig config;
     PodBasePath = pFileConfig->Read(wxT("PodBasePath"));
 
     PodDatabaseName = pFileConfig->Read(wxT("PodDatabaseName"));
@@ -67,6 +80,9 @@ bool ngpodwcConfig::ReadConfig()
     return 1;
 }
 
+//---------------------------------------------------------------------------
+//!
+//---------------------------------------------------------------------------
 bool ngpodwcConfig::WriteConfig()
 {
 
@@ -102,8 +118,6 @@ bool ngpodwcConfig::WriteConfig()
     //保存到文件
     pFileConfig->Save(ConfigOutputStream, wxConvUTF8);
     ConfigOutputStream.Close();
-
-
 
     return 1;
 }

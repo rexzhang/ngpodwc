@@ -1,11 +1,32 @@
-//
-//
-//
+/////////////////////////////////////////////////////////////////////////////
+// Name:        ngpodwcc_common_config.h
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     09/02/2006
+// RCS-ID:
+// Copyright:   cooooooooooooopy
+// Licence:
+/////////////////////////////////////////////////////////////////////////////
 #include <wx/string.h>
 
+
+//---------------------------------------------------------------------------
+//!
+//---------------------------------------------------------------------------
 class ngpodwcConfig
 {
 public:
+    //类构造函数
+    ngpodwcConfig();
+    //类初始化函数
+    void Init();
+
+    //类成员函数
+    bool ReadConfig();
+    bool WriteConfig();
+
+    //类成员
     wxString PodBasePath;
     wxString PodDatabaseName;
 
@@ -22,32 +43,5 @@ public:
 
     int ScreenWidth;
     int ScreenHeight;
-
-    //////////
-    //wxFileConfig *pFileConfig;
-
-    ngpodwcConfig();
-    void Init();
-
-    bool ReadConfig();
-    bool WriteConfig();
-
-    /*    wxChar PodBasePath[254];//=wxT("");
-        wxChar PodDatabaseName[254];//=wxT("");
-        wxChar PodPictureMode[254];//=wxT("");
-        wxChar PodPicturePath[254];//=wxT("");
-        wxChar ScreenPicturePath[254];//=wxT("");
-        wxChar ScreenPictureName[254];//=wxT("");
-    */
-    /*    wxChar* PodBasePath;//[254];//=wxT("");
-        wxChar* PodDatabaseName;//[254];//=wxT("");
-        wxChar* PodPictureMode;//[254];//=wxT("");
-        wxChar* PodPicturePath;//[254];//=wxT("");
-        wxChar* ScreenPicturePath;//[254];//=wxT("");
-        wxChar* ScreenPictureName;//[254];//=wxT("");
-    */
-
     //    wxSize ScreenSize;
 };
-
-//ngpodwcReadConfig(ngpodwcConfig *config);
