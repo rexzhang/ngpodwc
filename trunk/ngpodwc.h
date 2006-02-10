@@ -1,26 +1,9 @@
 #include <wx/datetime.h>
 
-struct ngpodwcConfig
-{
-    wxString PodBasePath;
+#include "ngpodwc_common_config.h"
 
-    wxString PodDatabaseName;
 
-    wxString PodPictureMode;
-    wxString PodPicturePath;
 
-    int PodYear;
-    int PodMonth;
-    int PodDays;
-
-    //////////
-    wxString ScreenPicturePath;
-    wxString ScreenPictureName;
-
-    int ScreenWidth;
-    int ScreenHeight;
-    wxSize ScreenSize;
-};
 
 struct PodPictrueInfo
 {

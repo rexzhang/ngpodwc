@@ -31,6 +31,7 @@
 main()
 {
 
+    /*
     //打开配置文件
     wxFileInputStream ConfigInputStream(wxT("ngpodwc.ini"));
     if(!ConfigInputStream.Ok())//检查配置文件是否存在
@@ -60,6 +61,10 @@ main()
     config.ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
     pFileConfig->Read(wxT("ScreenWidth"), &(config.ScreenWidth));
     pFileConfig->Read(wxT("ScreenHeight"), &(config.ScreenHeight));
+    */
+    ngpodwcConfig config;
+    //ngpodwcReadConfig(&config);
+    config.ReadConfig();
 
     //!ConfigInputStream.Close();
     //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
@@ -100,6 +105,8 @@ main()
     //日期信息++
     seekDays(1, &(config.PodYear), &(config.PodMonth), &(config.PodDays));
     //保存++后的日期信息至配置
+    config.WriteConfig();
+    /*
     pFileConfig->Write(wxT("PodYear"), config.PodYear);
     pFileConfig->Write(wxT("PodMonth"), config.PodMonth);
     pFileConfig->Write(wxT("PodDays"), config.PodDays);
@@ -118,6 +125,7 @@ main()
     //保存到文件
     pFileConfig->Save(ConfigOutputStream, wxConvUTF8);
     ConfigOutputStream.Close();
+    */
 
 
     /*
