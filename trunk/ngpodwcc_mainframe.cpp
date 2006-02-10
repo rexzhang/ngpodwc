@@ -50,11 +50,17 @@ IMPLEMENT_CLASS( ngpodwcc_MainFrame, wxFrame )
 BEGIN_EVENT_TABLE( ngpodwcc_MainFrame, wxFrame )
 
 ////@begin ngpodwcc_MainFrame event table entries
-EVT_BUTTON( ID_BUTTON_PodBasePath, ngpodwcc_MainFrame::OnButtonPodbasepathClick )
+    EVT_UPDATE_UI( ID_TEXTCTRL, ngpodwcc_MainFrame::OnTextctrlUpdate )
 
-EVT_BUTTON( ID_BUTTON_ABOUT, ngpodwcc_MainFrame::OnButtonAboutClick )
+    EVT_BUTTON( ID_BUTTON_PodBasePath, ngpodwcc_MainFrame::OnButtonPodbasepathClick )
 
-EVT_BUTTON( ID_BUTTON_QUIT, ngpodwcc_MainFrame::OnButtonQuitClick )
+    EVT_BUTTON( ID_BUTTON_RELOAD_CONFIG, ngpodwcc_MainFrame::OnButtonReloadConfigClick )
+
+    EVT_BUTTON( ID_BUTTON_SAVE_CONFIG, ngpodwcc_MainFrame::OnButtonSaveConfigClick )
+
+    EVT_BUTTON( ID_BUTTON_ABOUT, ngpodwcc_MainFrame::OnButtonAboutClick )
+
+    EVT_BUTTON( ID_BUTTON_QUIT, ngpodwcc_MainFrame::OnButtonQuitClick )
 
 ////@end ngpodwcc_MainFrame event table entries
 
@@ -79,7 +85,10 @@ ngpodwcc_MainFrame::ngpodwcc_MainFrame( wxWindow* parent, wxWindowID id, const w
 bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
     ////@begin ngpodwcc_MainFrame member initialisation
+    PodBasePath = NULL;
     ////@end ngpodwcc_MainFrame member initialisation
+
+    config.ReadConfig();
 
     ////@begin ngpodwcc_MainFrame creation
     wxFrame::Create( parent, id, caption, pos, size, style );
@@ -88,6 +97,7 @@ bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString
     SetIcon(GetIconResource(wxT("art/logo32x32.xpm")));
     Centre();
     ////@end ngpodwcc_MainFrame creation
+
     return true;
 }
 
@@ -131,8 +141,8 @@ void ngpodwcc_MainFrame::CreateControls()
     wxStaticText* itemStaticText13 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodBasePath"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemStaticText13, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
 
-    wxTextCtrl* itemTextCtrl14 = new wxTextCtrl( itemPanel8, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(300, -1), 0 );
-    itemFlexGridSizer9->Add(itemTextCtrl14, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    PodBasePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(300, -1), 0 );
+    itemFlexGridSizer9->Add(PodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxButton* itemButton15 = new wxButton( itemPanel8, ID_BUTTON_PodBasePath, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemButton15, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
@@ -149,13 +159,13 @@ void ngpodwcc_MainFrame::CreateControls()
     wxStaticText* itemStaticText19 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemStaticText19, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
 
-    wxString itemComboBox20Strings[] = {
-                                           _("POD\\pictures\\lg_wallpaper"),
-                                           _("POD\\pictures\normal")
-                                       };
-    wxComboBox* itemComboBox20 = new wxComboBox( itemPanel8, ID_COMBOBOX1, _("POD\\pictures\\lg_wallpaper"), wxDefaultPosition, wxDefaultSize, 2, itemComboBox20Strings, wxCB_READONLY );
-    itemComboBox20->SetStringSelection(_("POD\\pictures\\lg_wallpaper"));
-    itemFlexGridSizer9->Add(itemComboBox20, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxString itemChoice20Strings[] = {
+        _("POD\\pictures\\lg_wallpaper"),
+        _("POD\\pictures\\/n\normal\n")
+    };
+    wxChoice* itemChoice20 = new wxChoice( itemPanel8, ID_CHOICE, wxDefaultPosition, wxDefaultSize, 2, itemChoice20Strings, 0 );
+    itemChoice20->SetStringSelection(_("POD\\pictures\\lg_wallpaper"));
+    itemFlexGridSizer9->Add(itemChoice20, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxButton* itemButton21 = new wxButton( itemPanel8, ID_BUTTON6, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemButton21, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
@@ -195,11 +205,11 @@ void ngpodwcc_MainFrame::CreateControls()
     itemFlexGridSizer30->Add(itemStaticText33, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
 
     wxString itemComboBox34Strings[] = {
-                                           _("640x480"),
-                                           _("800x600"),
-                                           _("1024x768"),
-                                           _("couuuuuuuu")
-                                       };
+        _("640x480"),
+        _("800x600"),
+        _("1024x768"),
+        _("couuuuuuuu")
+    };
     wxComboBox* itemComboBox34 = new wxComboBox( itemPanel29, ID_COMBOBOX, _("800x600"), wxDefaultPosition, wxDefaultSize, 4, itemComboBox34Strings, wxCB_READONLY );
     itemComboBox34->SetStringSelection(_("800x600"));
     itemFlexGridSizer30->Add(itemComboBox34, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
@@ -354,6 +364,47 @@ void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
         wxMessageBox(path);
     }
     ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
+ */
+
+void ngpodwcc_MainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
+{
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG
+ */
+
+void ngpodwcc_MainFrame::OnButtonSaveConfigClick( wxCommandEvent& event )
+{
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_UPDATE_UI event handler for ID_TEXTCTRL
+ */
+
+void ngpodwcc_MainFrame::OnTextctrlUpdate( wxUpdateUIEvent& event )
+{
+    PodBasePath->SetValue(config.PodBasePath);
+////@begin wxEVT_UPDATE_UI event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_UPDATE_UI event handler for ID_TEXTCTRL in ngpodwcc_MainFrame. 
+    
 }
 
 

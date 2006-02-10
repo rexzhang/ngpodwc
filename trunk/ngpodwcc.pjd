@@ -15,7 +15,7 @@
     <bool name="translate_strings">1</bool>
     <bool name="extract_strings">0</bool>
     <string name="user_name">"Rex Zhang"</string>
-    <string name="copyright_string">"cooooooooooooopy"</string>
+    <string name="copyright_string">"(c) 2006, Rex Zhang"</string>
     <string name="resource_prefix">""</string>
     <bool name="use_two_step_construction">0</bool>
     <string name="current_platform">"&lt;All platforms&gt;"</string>
@@ -193,7 +193,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/9/2006"</string>
+          <string name="created">"7/5/2006"</string>
           <string name="proxy-type">"wbAppProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -215,12 +215,13 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/9/2006"</string>
+          <string name="created">"7/5/2006"</string>
           <string name="proxy-type">"wbFrameProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
           <string name="id-prefix">""</string>
           <long name="use-xrc">0</long>
+          <string name="variable-0">"config|ngpodwcConfig|Config|"</string>
           <string name="proxy-Id name">"ID_FRAME_MAIN"</string>
           <long name="proxy-Id value">10000</long>
           <string name="proxy-Class">"ngpodwcc_MainFrame"</string>
@@ -282,7 +283,7 @@
             <long name="owns-file">1</long>
             <long name="title-mode">0</long>
             <long name="locked">0</long>
-            <string name="created">"7/9/2006"</string>
+            <string name="created">"7/5/2006"</string>
             <string name="proxy-type">"wbPanelProxy"</string>
             <string name="proxy-Id name">"ID_PANEL"</string>
             <long name="proxy-Id value">10001</long>
@@ -340,7 +341,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/9/2006"</string>
+              <string name="created">"7/5/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Vertical"</string>
               <string name="proxy-Member variable name">""</string>
@@ -365,7 +366,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"9/4/2006"</string>
+                <string name="created">"9/11/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -390,7 +391,7 @@
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"9/4/2006"</string>
+                  <string name="created">"9/11/2006"</string>
                   <string name="proxy-type">"wbStaticBitmapProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -440,7 +441,7 @@
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"9/4/2006"</string>
+                  <string name="created">"9/11/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -498,7 +499,7 @@ Wallpaper Conterl Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/8/2006"</string>
+                <string name="created">"7/4/2006"</string>
                 <string name="proxy-type">"wbNotebookProxy"</string>
                 <string name="proxy-Id name">"ID_NOTEBOOK"</string>
                 <long name="proxy-Id value">10002</long>
@@ -559,7 +560,7 @@ Wallpaper Conterl Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL1"</string>
                   <long name="proxy-Id value">10003</long>
@@ -619,7 +620,7 @@ Wallpaper Conterl Center"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/8/2006"</string>
+                    <string name="created">"7/4/2006"</string>
                     <string name="proxy-type">"wbFlexGridSizerProxy"</string>
                     <string name="proxy-GrowableColumns">""</string>
                     <string name="proxy-GrowableRows">""</string>
@@ -649,7 +650,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -675,7 +676,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -701,7 +702,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -727,7 +728,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -783,12 +784,13 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
+                      <string name="event-handler-0">"wxEVT_UPDATE_UI|OnTextctrlUpdate"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL"</string>
                       <long name="proxy-Id value">10010</long>
                       <string name="proxy-Class">"wxTextCtrl"</string>
-                      <string name="proxy-Member variable name">""</string>
+                      <string name="proxy-Member variable name">"PodBasePath"</string>
                       <string name="proxy-Initial value">""</string>
                       <long name="proxy-Max length">0</long>
                       <string name="proxy-Help text">""</string>
@@ -851,7 +853,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonPodbasepathClick|SHOWWINDOW|"</string>
                       <string name="proxy-Id name">"ID_BUTTON_PodBasePath"</string>
@@ -903,7 +905,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -959,7 +961,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL1"</string>
                       <long name="proxy-Id value">10012</long>
@@ -1027,7 +1029,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="proxy-Id name">"ID_BUTTON5"</string>
                       <long name="proxy-Id value">10013</long>
@@ -1078,7 +1080,7 @@ Wallpaper Conterl Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1126,22 +1128,23 @@ Wallpaper Conterl Center"</string>
                       <string name="proxy-Custom ctor arguments">""</string>
                     </document>
                     <document>
-                      <string name="title">"wxComboBox: ID_COMBOBOX1"</string>
+                      <string name="title">"wxChoice: ID_CHOICE"</string>
                       <string name="type">"dialog-control-document"</string>
                       <string name="filename">""</string>
-                      <string name="icon-name">"combobox"</string>
+                      <string name="icon-name">"choice"</string>
                       <long name="is-transient">0</long>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"9/5/2006"</string>
-                      <string name="proxy-type">"wbComboBoxProxy"</string>
-                      <string name="proxy-Id name">"ID_COMBOBOX1"</string>
-                      <long name="proxy-Id value">10027</long>
-                      <string name="proxy-Class">"wxComboBox"</string>
+                      <string name="created">"10/8/2006"</string>
+                      <string name="proxy-type">"wbChoiceProxy"</string>
+                      <string name="proxy-Id name">"ID_CHOICE"</string>
+                      <long name="proxy-Id value">10014</long>
+                      <string name="proxy-Class">"wxChoice"</string>
                       <string name="proxy-Member variable name">""</string>
-                      <string name="proxy-Strings">"POD\pictures\lg_wallpaper|POD\pictures
-ormal"</string>
+                      <string name="proxy-Strings">"POD\pictures\lg_wallpaper|POD\pictures\/n
+ormal
+"</string>
                       <string name="proxy-Initial value">"POD\pictures\lg_wallpaper"</string>
                       <string name="proxy-Help text">""</string>
                       <string name="proxy-Tooltip text">""</string>
@@ -1153,10 +1156,6 @@ ormal"</string>
                       <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
                       <string name="proxy-Data variable">""</string>
                       <string name="proxy-Data validator">""</string>
-                      <bool name="proxy-wxCB_SIMPLE">0</bool>
-                      <bool name="proxy-wxCB_DROPDOWN">0</bool>
-                      <bool name="proxy-wxCB_READONLY">1</bool>
-                      <bool name="proxy-wxCB_SORT">0</bool>
                       <bool name="proxy-wxWANTS_CHARS">0</bool>
                       <string name="proxy-Custom styles">""</string>
                       <long name="proxy-X">-1</long>
@@ -1186,7 +1185,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="proxy-Id name">"ID_BUTTON6"</string>
                       <long name="proxy-Id value">10015</long>
@@ -1237,7 +1236,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1293,7 +1292,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbDatePickerCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_DATECTRL"</string>
                       <long name="proxy-Id value">10016</long>
@@ -1353,7 +1352,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="proxy-Id name">"ID_BUTTON9"</string>
                       <long name="proxy-Id value">10026</long>
@@ -1404,7 +1403,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1430,7 +1429,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1458,7 +1457,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL2"</string>
                   <long name="proxy-Id value">10004</long>
@@ -1518,7 +1517,7 @@ ormal"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/8/2006"</string>
+                    <string name="created">"7/4/2006"</string>
                     <string name="proxy-type">"wbStaticTextProxy"</string>
                     <string name="proxy-Id name">"wxID_STATIC"</string>
                     <long name="proxy-Id value">5105</long>
@@ -1575,7 +1574,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL3"</string>
                   <long name="proxy-Id value">10005</long>
@@ -1635,7 +1634,7 @@ ormal"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/8/2006"</string>
+                    <string name="created">"7/4/2006"</string>
                     <string name="proxy-type">"wbFlexGridSizerProxy"</string>
                     <string name="proxy-GrowableColumns">""</string>
                     <string name="proxy-GrowableRows">""</string>
@@ -1665,7 +1664,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1691,7 +1690,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1717,7 +1716,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1773,7 +1772,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbComboBoxProxy"</string>
                       <string name="proxy-Id name">"ID_COMBOBOX"</string>
                       <long name="proxy-Id value">10021</long>
@@ -1824,7 +1823,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1880,7 +1879,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL4"</string>
                       <long name="proxy-Id value">10018</long>
@@ -1948,7 +1947,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2004,7 +2003,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL5"</string>
                       <long name="proxy-Id value">10019</long>
@@ -2072,7 +2071,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2128,7 +2127,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL6"</string>
                       <long name="proxy-Id value">10020</long>
@@ -2196,7 +2195,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2252,7 +2251,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL3"</string>
                       <long name="proxy-Id value">10022</long>
@@ -2320,7 +2319,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2346,7 +2345,7 @@ ormal"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/8/2006"</string>
+                      <string name="created">"7/4/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2375,7 +2374,7 @@ ormal"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/8/2006"</string>
+                <string name="created">"7/4/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -2400,8 +2399,9 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
+                  <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonReloadConfigClick"</string>
                   <string name="proxy-Id name">"ID_BUTTON_RELOAD_CONFIG"</string>
                   <long name="proxy-Id value">10006</long>
                   <string name="proxy-Class">"wxButton"</string>
@@ -2451,7 +2451,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="proxy-Id name">"ID_BUTTON_RESTORE_DEFAULT"</string>
                   <long name="proxy-Id value">10007</long>
@@ -2502,8 +2502,9 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
+                  <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonSaveConfigClick|SHOWWINDOW|"</string>
                   <string name="proxy-Id name">"ID_BUTTON_SAVE_CONFIG"</string>
                   <long name="proxy-Id value">10017</long>
                   <string name="proxy-Class">"wxButton"</string>
@@ -2554,7 +2555,7 @@ ormal"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/8/2006"</string>
+                <string name="created">"7/4/2006"</string>
                 <string name="proxy-type">"wbStaticLineProxy"</string>
                 <string name="proxy-Id name">"wxID_STATIC"</string>
                 <long name="proxy-Id value">5105</long>
@@ -2603,7 +2604,7 @@ ormal"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/9/2006"</string>
+                <string name="created">"7/5/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -2628,7 +2629,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/9/2006"</string>
+                  <string name="created">"7/5/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonAboutClick|SHOWWINDOW|ID_DIALOG_ABOUT"</string>
                   <string name="proxy-Id name">"ID_BUTTON_ABOUT"</string>
@@ -2680,7 +2681,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/9/2006"</string>
+                  <string name="created">"7/5/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonQuitClick|DESTROYWINDOW|ID_FRAME_MAIN"</string>
                   <string name="proxy-Id name">"ID_BUTTON_QUIT"</string>
@@ -2736,7 +2737,7 @@ ormal"</string>
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/8/2006"</string>
+          <string name="created">"7/4/2006"</string>
           <string name="proxy-type">"wbDialogProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -2826,7 +2827,7 @@ ormal"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/8/2006"</string>
+              <string name="created">"7/4/2006"</string>
               <string name="proxy-type">"wbPanelProxy"</string>
               <string name="proxy-Id name">"ID_PANEL4"</string>
               <long name="proxy-Id value">10024</long>
@@ -2884,7 +2885,7 @@ ormal"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/8/2006"</string>
+                <string name="created">"7/4/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Vertical"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -2909,7 +2910,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -2935,7 +2936,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -2991,7 +2992,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3047,7 +3048,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3103,7 +3104,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbStaticLineProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3150,7 +3151,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3176,7 +3177,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3232,7 +3233,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3288,7 +3289,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3314,7 +3315,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"10/8/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3370,7 +3371,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/4/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3426,7 +3427,7 @@ ormal"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/6/2006"</string>
+                  <string name="created">"7/2/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3454,7 +3455,7 @@ ormal"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/8/2006"</string>
+              <string name="created">"7/4/2006"</string>
               <string name="proxy-type">"wbButtonProxy"</string>
               <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButton8Click|DESTROYWINDOW|ID_DIALOG_ABOUT"</string>
               <string name="proxy-Id name">"ID_BUTTON8"</string>
@@ -3518,7 +3519,7 @@ ormal"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">1</long>
           <long name="locked">0</long>
-          <string name="created">"7/9/2006"</string>
+          <string name="created">"7/5/2006"</string>
           <string name="language">""</string>
         </document>
       </document>
@@ -3540,7 +3541,7 @@ ormal"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/4/2006"</string>
+          <string name="created">"9/11/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3552,7 +3553,7 @@ ormal"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/4/2006"</string>
+          <string name="created">"9/11/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3564,7 +3565,7 @@ ormal"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/4/2006"</string>
+          <string name="created">"9/11/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3576,7 +3577,7 @@ ormal"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/4/2006"</string>
+          <string name="created">"9/11/2006"</string>
           <long name="zoom-level">100</long>
         </document>
       </document>
