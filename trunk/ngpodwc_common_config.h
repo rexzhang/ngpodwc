@@ -37,11 +37,11 @@ public:
     int PodMonth;
     int PodDays;
 
-    //////////
-    wxString ScreenPicturePath;
-    wxString ScreenPictureName;
-
     int ScreenWidth;
     int ScreenHeight;
     //    wxSize ScreenSize;
+
+    //////////
+    wxString ScreenPicturePath;
+    wxString ScreenPictureName;
 };
