@@ -50,9 +50,13 @@ IMPLEMENT_CLASS( ngpodwcc_MainFrame, wxFrame )
 BEGIN_EVENT_TABLE( ngpodwcc_MainFrame, wxFrame )
 
 ////@begin ngpodwcc_MainFrame event table entries
-    EVT_UPDATE_UI( ID_TEXTCTRL, ngpodwcc_MainFrame::OnTextctrlUpdate )
-
     EVT_BUTTON( ID_BUTTON_PodBasePath, ngpodwcc_MainFrame::OnButtonPodbasepathClick )
+
+    EVT_CHOICE( ID_CHOICE1, ngpodwcc_MainFrame::OnChoice1Selected )
+
+    EVT_BUTTON( ID_BUTTON1, ngpodwcc_MainFrame::OnButton1Click )
+
+    EVT_BUTTON( ID_BUTTON, ngpodwcc_MainFrame::OnButtonClick )
 
     EVT_BUTTON( ID_BUTTON_RELOAD_CONFIG, ngpodwcc_MainFrame::OnButtonReloadConfigClick )
 
@@ -76,6 +80,11 @@ ngpodwcc_MainFrame::ngpodwcc_MainFrame( )
 ngpodwcc_MainFrame::ngpodwcc_MainFrame( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
     Create( parent, id, caption, pos, size, style );
+
+    /////////add by rex humen
+    PodBasePath->SetValue(config.PodBasePath);
+    ScreenPicturePath->SetValue(config.ScreenPicturePath);
+    PodDatabaseName->SetValue(config.PodDatabaseName);
 }
 
 /*!
@@ -86,6 +95,13 @@ bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString
 {
     ////@begin ngpodwcc_MainFrame member initialisation
     PodBasePath = NULL;
+    PodDatabaseName = NULL;
+    PodPicturePath = NULL;
+    ScreenWidthHeight = NULL;
+    ScreenWidth = NULL;
+    ScreenHeight = NULL;
+    ScreenPicturePath = NULL;
+    ScreenPictureName = NULL;
     ////@end ngpodwcc_MainFrame member initialisation
 
     config.ReadConfig();
@@ -122,9 +138,9 @@ void ngpodwcc_MainFrame::CreateControls()
     wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemPanel2, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(60, 80), 0 );
     itemBoxSizer4->Add(itemStaticBitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText6 = new wxStaticText( itemPanel2, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Conterl Center"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText6 = new wxStaticText( itemPanel2, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Control Center"), wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText6->SetFont(wxFont(11, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_BOTTOM|wxALL|wxADJUST_MINSIZE, 5);
+    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_BOTTOM|wxALL, 5);
 
     wxNotebook* itemNotebook7 = new wxNotebook( itemPanel2, ID_NOTEBOOK, wxDefaultPosition, wxDefaultSize, wxNB_TOP );
 
@@ -139,7 +155,7 @@ void ngpodwcc_MainFrame::CreateControls()
     itemFlexGridSizer9->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText13 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodBasePath"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer9->Add(itemStaticText13, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer9->Add(itemStaticText13, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     PodBasePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(300, -1), 0 );
     itemFlexGridSizer9->Add(PodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
@@ -148,32 +164,34 @@ void ngpodwcc_MainFrame::CreateControls()
     itemFlexGridSizer9->Add(itemButton15, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText16 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodDatabaseName"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer9->Add(itemStaticText16, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer9->Add(itemStaticText16, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxTextCtrl* itemTextCtrl17 = new wxTextCtrl( itemPanel8, ID_TEXTCTRL1, _("pod.mdb"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer9->Add(itemTextCtrl17, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    PodDatabaseName = new wxTextCtrl( itemPanel8, ID_TEXTCTRL1, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
+    PodDatabaseName->Enable(false);
+    itemFlexGridSizer9->Add(PodDatabaseName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxButton* itemButton18 = new wxButton( itemPanel8, ID_BUTTON5, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemButton18, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText19 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer9->Add(itemStaticText19, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer9->Add(itemStaticText19, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxString itemChoice20Strings[] = {
+    wxString PodPicturePathStrings[] = {
         _("POD\\pictures\\lg_wallpaper"),
         _("POD\\pictures\\/n\normal\n")
     };
-    wxChoice* itemChoice20 = new wxChoice( itemPanel8, ID_CHOICE, wxDefaultPosition, wxDefaultSize, 2, itemChoice20Strings, 0 );
-    itemChoice20->SetStringSelection(_("POD\\pictures\\lg_wallpaper"));
-    itemFlexGridSizer9->Add(itemChoice20, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    PodPicturePath = new wxChoice( itemPanel8, ID_CHOICE, wxDefaultPosition, wxDefaultSize, 2, PodPicturePathStrings, 0 );
+    PodPicturePath->SetStringSelection(_("POD\\pictures\\lg_wallpaper"));
+    PodPicturePath->Enable(false);
+    itemFlexGridSizer9->Add(PodPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxButton* itemButton21 = new wxButton( itemPanel8, ID_BUTTON6, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemButton21, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText22 = new wxStaticText( itemPanel8, wxID_STATIC, _("Next POD Day"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer9->Add(itemStaticText22, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer9->Add(itemStaticText22, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxDatePickerCtrl* itemDatePickerCtrl23 = new wxDatePickerCtrl( itemPanel8, ID_DATECTRL, wxDateTime(), wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT );
+    wxDatePickerCtrl* itemDatePickerCtrl23 = new wxDatePickerCtrl( itemPanel8, ID_DATECTRL, wxDateTime(), wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT|wxDP_SHOWCENTURY );
     wxDateTime minDateitemDatePickerCtrl23(1, (wxDateTime::Month) 2, 2001);
     wxDateTime maxDateitemDatePickerCtrl23;
     itemDatePickerCtrl23->SetRange(minDateitemDatePickerCtrl23, maxDateitemDatePickerCtrl23);
@@ -194,51 +212,66 @@ void ngpodwcc_MainFrame::CreateControls()
     itemNotebook7->AddPage(itemPanel27, _("Image Convert Setting"));
 
     wxPanel* itemPanel29 = new wxPanel( itemNotebook7, ID_PANEL3, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
-    wxFlexGridSizer* itemFlexGridSizer30 = new wxFlexGridSizer(2, 2, 0, 0);
+    wxFlexGridSizer* itemFlexGridSizer30 = new wxFlexGridSizer(2, 3, 0, 0);
     itemPanel29->SetSizer(itemFlexGridSizer30);
 
     itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText33 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Width x Height"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer30->Add(itemStaticText33, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxString itemComboBox34Strings[] = {
+    wxStaticText* itemStaticText34 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Width x Height"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemStaticText34, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxString ScreenWidthHeightStrings[] = {
         _("640x480"),
         _("800x600"),
         _("1024x768"),
-        _("couuuuuuuu")
+        _("Custom")
     };
-    wxComboBox* itemComboBox34 = new wxComboBox( itemPanel29, ID_COMBOBOX, _("800x600"), wxDefaultPosition, wxDefaultSize, 4, itemComboBox34Strings, wxCB_READONLY );
-    itemComboBox34->SetStringSelection(_("800x600"));
-    itemFlexGridSizer30->Add(itemComboBox34, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    ScreenWidthHeight = new wxChoice( itemPanel29, ID_CHOICE1, wxDefaultPosition, wxDefaultSize, 4, ScreenWidthHeightStrings, 0 );
+    ScreenWidthHeight->SetStringSelection(_("800x600"));
+    itemFlexGridSizer30->Add(ScreenWidthHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText35 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Width"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer30->Add(itemStaticText35, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    wxButton* itemButton36 = new wxButton( itemPanel29, ID_BUTTON1, _("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemButton36, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxTextCtrl* itemTextCtrl36 = new wxTextCtrl( itemPanel29, ID_TEXTCTRL4, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
-    itemTextCtrl36->Enable(false);
-    itemFlexGridSizer30->Add(itemTextCtrl36, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxStaticText* itemStaticText37 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Width"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemStaticText37, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText37 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Height"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer30->Add(itemStaticText37, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    ScreenWidth = new wxTextCtrl( itemPanel29, ID_TEXTCTRL4, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
+    ScreenWidth->Enable(false);
+    itemFlexGridSizer30->Add(ScreenWidth, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxTextCtrl* itemTextCtrl38 = new wxTextCtrl( itemPanel29, ID_TEXTCTRL5, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
-    itemTextCtrl38->Enable(false);
-    itemFlexGridSizer30->Add(itemTextCtrl38, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText39 = new wxStaticText( itemPanel29, wxID_STATIC, _("ScreenPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer30->Add(itemStaticText39, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    wxStaticText* itemStaticText40 = new wxStaticText( itemPanel29, wxID_STATIC, _("Screen Height"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemStaticText40, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxTextCtrl* itemTextCtrl40 = new wxTextCtrl( itemPanel29, ID_TEXTCTRL6, _("C:\\WINNT"), wxDefaultPosition, wxSize(200, -1), wxTE_READONLY );
-    itemFlexGridSizer30->Add(itemTextCtrl40, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    ScreenHeight = new wxTextCtrl( itemPanel29, ID_TEXTCTRL5, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
+    ScreenHeight->Enable(false);
+    itemFlexGridSizer30->Add(ScreenHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText41 = new wxStaticText( itemPanel29, wxID_STATIC, _("ScreenPictureName"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemFlexGridSizer30->Add(itemStaticText41, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxTextCtrl* itemTextCtrl42 = new wxTextCtrl( itemPanel29, ID_TEXTCTRL3, _("POD_Wallpaper.bmp"), wxDefaultPosition, wxSize(200, -1), wxTE_READONLY );
-    itemFlexGridSizer30->Add(itemTextCtrl42, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxStaticText* itemStaticText43 = new wxStaticText( itemPanel29, wxID_STATIC, _("ScreenPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemStaticText43, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    ScreenPicturePath = new wxTextCtrl( itemPanel29, ID_TEXTCTRL6, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
+    itemFlexGridSizer30->Add(ScreenPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxButton* itemButton45 = new wxButton( itemPanel29, ID_BUTTON, _("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemButton45, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxStaticText* itemStaticText46 = new wxStaticText( itemPanel29, wxID_STATIC, _("ScreenPictureName"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer30->Add(itemStaticText46, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    ScreenPictureName = new wxTextCtrl( itemPanel29, ID_TEXTCTRL3, _("POD_Wallpaper.bmp"), wxDefaultPosition, wxSize(200, -1), 0 );
+    ScreenPictureName->Enable(false);
+    itemFlexGridSizer30->Add(ScreenPictureName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemFlexGridSizer30->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -248,30 +281,30 @@ void ngpodwcc_MainFrame::CreateControls()
 
     itemBoxSizer3->Add(itemNotebook7, 0, wxGROW|wxALL, 5);
 
-    wxBoxSizer* itemBoxSizer45 = new wxBoxSizer(wxHORIZONTAL);
-    itemBoxSizer3->Add(itemBoxSizer45, 0, wxALIGN_LEFT|wxALL, 5);
+    wxBoxSizer* itemBoxSizer51 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer3->Add(itemBoxSizer51, 0, wxALIGN_LEFT|wxALL, 5);
 
-    wxButton* itemButton46 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer45->Add(itemButton46, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton52 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer51->Add(itemButton52, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton47 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemButton47->Enable(false);
-    itemBoxSizer45->Add(itemButton47, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton53 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton53->Enable(false);
+    itemBoxSizer51->Add(itemButton53, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton48 = new wxButton( itemPanel2, ID_BUTTON_SAVE_CONFIG, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer45->Add(itemButton48, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton54 = new wxButton( itemPanel2, ID_BUTTON_SAVE_CONFIG, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer51->Add(itemButton54, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticLine* itemStaticLine49 = new wxStaticLine( itemPanel2, wxID_STATIC, wxDefaultPosition, wxDefaultSize, wxLI_VERTICAL );
-    itemBoxSizer3->Add(itemStaticLine49, 0, wxGROW|wxALL, 5);
+    wxStaticLine* itemStaticLine55 = new wxStaticLine( itemPanel2, wxID_STATIC, wxDefaultPosition, wxDefaultSize, wxLI_VERTICAL );
+    itemBoxSizer3->Add(itemStaticLine55, 0, wxGROW|wxALL, 5);
 
-    wxBoxSizer* itemBoxSizer50 = new wxBoxSizer(wxHORIZONTAL);
-    itemBoxSizer3->Add(itemBoxSizer50, 0, wxALIGN_RIGHT|wxALL, 5);
+    wxBoxSizer* itemBoxSizer56 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer3->Add(itemBoxSizer56, 0, wxALIGN_RIGHT|wxALL, 5);
 
-    wxButton* itemButton51 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer50->Add(itemButton51, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton57 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer56->Add(itemButton57, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton52 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer50->Add(itemButton52, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton58 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer56->Add(itemButton58, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ////@end ngpodwcc_MainFrame content construction
 }
@@ -356,12 +389,14 @@ void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     //event.Skip();
-    wxString defaultPath = wxT("");
-    wxDirDialog dialog(NULL,wxT("Testing directory picker"),defaultPath, wxDD_NEW_DIR_BUTTON);
+    //wxString defaultPath = config.PodBasePath;
+    wxDirDialog dialog(NULL,wxT("Please choice NGPOD\'s path"),config.PodBasePath);
     if (dialog.ShowModal() == wxID_OK)
     {
-        wxString path = dialog.GetPath();
-        wxMessageBox(path);
+        config.PodBasePath = dialog.GetPath();
+        PodBasePath->SetValue(config.PodBasePath);
+
+        wxMessageBox(config.PodBasePath);
     }
     ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
 }
@@ -373,10 +408,12 @@ void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
 {
-////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
+    config.ReadConfig();
+
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG in ngpodwcc_MainFrame.
 }
 
 
@@ -386,25 +423,98 @@ void ngpodwcc_MainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnButtonSaveConfigClick( wxCommandEvent& event )
 {
-////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
+    config.WriteConfig();
+
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
 }
 
 
 /*!
- * wxEVT_UPDATE_UI event handler for ID_TEXTCTRL
+ * wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1
  */
 
-void ngpodwcc_MainFrame::OnTextctrlUpdate( wxUpdateUIEvent& event )
+void ngpodwcc_MainFrame::OnChoice1Selected( wxCommandEvent& event )
 {
-    PodBasePath->SetValue(config.PodBasePath);
-////@begin wxEVT_UPDATE_UI event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
+    ScreenWidthHeight->GetCurrentSelection();
+    switch (ScreenWidthHeight->GetCurrentSelection())
+    {
+        case 0:
+        config.ScreenWidth = 640;
+        config.ScreenHeight = 480;
+        ScreenWidth->SetValue(wxT("640"));
+        ScreenHeight->SetValue(wxT("480"));
+        break;
+        case 1:
+        config.ScreenWidth = 800;
+        config.ScreenHeight = 600;
+        ScreenWidth->SetValue(wxT("800"));
+        ScreenHeight->SetValue(wxT("600"));
+        break;
+        case 2:
+        config.ScreenWidth = 1024;
+        config.ScreenHeight = 768;
+        ScreenWidth->SetValue(wxT("1024"));
+        ScreenHeight->SetValue(wxT("768"));
+        break;
+        case 3:
+        config.ScreenWidth = 1024;
+        config.ScreenHeight = 768;
+        ScreenWidth->SetValue(wxT("1024"));
+        ScreenHeight->SetValue(wxT("768"));
+    }
+
+    ////@begin wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_UPDATE_UI event handler for ID_TEXTCTRL in ngpodwcc_MainFrame. 
-    
+    ////@end wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1 in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
+ */
+
+void ngpodwcc_MainFrame::OnButtonClick( wxCommandEvent& event )
+{
+    wxString path;
+    wxGetEnv(wxT("windir"), &path);
+
+    ScreenPicturePath->SetValue(path);
+    config.ScreenPicturePath = path;
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1
+ */
+
+void ngpodwcc_MainFrame::OnButton1Click( wxCommandEvent& event )
+{
+    wxString screenWH;
+
+    //get system X,Y
+    config.ScreenWidth = wxSystemSettings::GetMetric(wxSYS_SCREEN_X);
+    config.ScreenHeight = wxSystemSettings::GetMetric(wxSYS_SCREEN_Y);
+
+    //update display info
+    screenWH.Printf(wxT("%u"), config.ScreenWidth);
+    ScreenWidth->SetValue(screenWH);
+
+    screenWH.Printf(wxT("%u"), config.ScreenHeight);
+    ScreenHeight->SetValue(screenWH);
+
+    ScreenWidthHeight->SetSelection(3);
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1 in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1 in ngpodwcc_MainFrame.
 }
 
 
