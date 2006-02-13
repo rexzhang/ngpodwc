@@ -19,27 +19,40 @@ ngpodwcConfig::ngpodwcConfig()
 }
 
 //---------------------------------------------------------------------------
-//!
+//!config类初始化
 //---------------------------------------------------------------------------
 void ngpodwcConfig::Init()
 {
-    PodBasePath=wxEmptyString;
-    PodDatabaseName=wxEmptyString;
+    //先重置config为默认值
+    SetDefault();
 
-    PodPictureMode=wxEmptyString;
-    PodPicturePath=wxEmptyString;
+    //再读取配置文件至config，作为补充（兼容升级后配置信息增加的情况）
+    ReadConfig()；
+}
 
-    PodYear = 2003;//?????
-    PodMonth = 1;
-    PodDays = 14;
+//---------------------------------------------------------------------------
+//!重置config为默认值
+//---------------------------------------------------------------------------
+void ngpodwcConfig::SetDefault()
+{
+    PodBasePath = wxEmptyString;
+    PodDatabaseName = wxT("pod.mdb");//wxEmptyString;
 
-    ScreenPicturePath=wxEmptyString;
-    //ScreenPictureName = wxEmptyString;
-    ScreenPictureName = wxT("POD_Wallpaper.bmp");
+    PodPictureMode = wxEmptyString;
+    PodPicturePath = wxT("POD\\pictures\\lg_wallpaper");
+
+    //2001-1-14后有断档，所以直接从2001-4-21开始
+    PodYear = 2001;
+    PodMonth = 4;
+    PodDays = 21;
 
     ScreenWidth = 1024;
     ScreenHeight = 768;
+
+    ScreenPicturePath = wxEmptyString;
+    ScreenPictureName = wxT("POD_Wallpaper.bmp");
 }
+
 
 //---------------------------------------------------------------------------
 //!
@@ -50,6 +63,7 @@ bool ngpodwcConfig::ReadConfig()
     wxFileInputStream ConfigInputStream(wxT("ngpodwc.ini"));
     if(!ConfigInputStream.Ok())//检查配置文件是否存在
     {
+        //告警
         wxString msgTitle("配置文件不存在！",*wxConvCurrent);
         wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
         wxSafeShowMessage(msgTitle, msgContext);
@@ -122,3 +136,5 @@ bool ngpodwcConfig::WriteConfig()
 
     return 1;
 }
+
+

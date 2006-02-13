@@ -31,6 +31,8 @@
 
 #include "ngpodwc_common_config.h"
 
+#include "wx/dateevt.h"
+
 /*!
  * Forward declarations
  */
@@ -157,6 +159,10 @@ public:
     wxTextCtrl* ScreenPictureName;
     ngpodwcConfig config;
 ////@end ngpodwcc_MainFrame member variables
+
+    void InitConfig(void);
+    void ReadConfig(void);
+    void WriteConfig(void);
 };
 
 #endif

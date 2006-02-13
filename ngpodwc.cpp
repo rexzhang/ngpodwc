@@ -217,30 +217,10 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
     //table->SetWhereClause(wxT("Pod_When = '1982'"));//!OK
 
     //生成ODBC-Access的Date数字格式
-    //用tm格式生成wxDateTime格式，然后使用GetTicks转换成time_t格式
-    //再除以(24*60*60) 加上25539值
-    tm PodTm;
-    wxDateTime PodDateTime;
-    time_t PodTime_t;
-    PodTm.tm_sec = 0;
-    PodTm.tm_min = 0;
-    PodTm.tm_hour = 0;
-    PodTm.tm_mday = pConfig->PodDays;
-    PodTm.tm_mon = pConfig->PodMonth;
-    //PodTm.tm_year = 2004-1900;
-    PodTm.tm_year = pConfig->PodYear - 1900;
-    PodTm.tm_wday = 0;
-    PodTm.tm_yday = 0;
-    PodTm.tm_isdst = 0;
-    PodDateTime = wxDateTime::wxDateTime(PodTm);
-    PodTime_t = PodDateTime.GetTicks();
-    PodTime_t = PodTime_t/(24*60*60) + 25539;
-
-    //table->SetWhereClause(wxT("Pod_Date <= 40000 AND Pod_Date >= 37999"));
     wxString msg;
-    msg.Printf(wxT("Pod_Date = %u"),PodTime_t);
+    msg.Printf(wxT("Pod_Date = %u"),wxDateTicks(pConfig->PodYear, pConfig->PodMonth, pConfig->PodDays));
     table->SetWhereClause(msg);
-    //table->SetWhereClause(wxT("Pod_Date = 2001/03/13"));
+    //table->SetWhereClause(wxT("Pod_Date = '2005-08-23 00:00:00'"));
 
     //按照PodDate字段排序
     table->SetOrderByClause(wxT("Pod_Date"));
