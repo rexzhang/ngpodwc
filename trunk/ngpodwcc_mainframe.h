@@ -38,6 +38,7 @@
  */
 
 ////@begin forward declarations
+class wxDatePickerCtrl;
 ////@end forward declarations
 
 /*!
@@ -57,9 +58,7 @@
 #define ID_TEXTCTRL 10010
 #define ID_BUTTON_PodBasePath 10011
 #define ID_TEXTCTRL1 10012
-#define ID_BUTTON5 10013
-#define ID_CHOICE 10014
-#define ID_BUTTON6 10015
+#define ID_TEXTCTRL2 10029
 #define ID_DATECTRL 10016
 #define ID_BUTTON9 10026
 #define ID_PANEL2 10004
@@ -107,6 +106,9 @@ public:
 
 ////@begin ngpodwcc_MainFrame event handler declarations
 
+    /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL
+    void OnTextctrlUpdated( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
     void OnButtonPodbasepathClick( wxCommandEvent& event );
 
@@ -116,11 +118,17 @@ public:
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1
     void OnButton1Click( wxCommandEvent& event );
 
+    /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6
+    void OnTextctrl6Updated( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
     void OnButtonClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
     void OnButtonReloadConfigClick( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT
+    void OnButtonRestoreDefaultClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG
     void OnButtonSaveConfigClick( wxCommandEvent& event );
@@ -151,18 +159,23 @@ public:
 ////@begin ngpodwcc_MainFrame member variables
     wxTextCtrl* PodBasePath;
     wxTextCtrl* PodDatabaseName;
-    wxChoice* PodPicturePath;
+    wxTextCtrl* PodPicturePath;
+    wxDatePickerCtrl* NextPODDay;
     wxChoice* ScreenWidthHeight;
     wxTextCtrl* ScreenWidth;
     wxTextCtrl* ScreenHeight;
     wxTextCtrl* ScreenPicturePath;
     wxTextCtrl* ScreenPictureName;
+    wxButton* ButtonSaveConfig;
     ngpodwcConfig config;
 ////@end ngpodwcc_MainFrame member variables
 
     void InitConfig(void);
     void ReadConfig(void);
     void WriteConfig(void);
+    void SetDefault(void);
+    void AutoDetectScreenWH(void);
+    wxString AutoDetectSystemPath(void);
 };
 
 #endif
