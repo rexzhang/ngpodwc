@@ -187,6 +187,11 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
+		<Unit filename="ngpodwcc_mainframe_ext.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
 		<Unit filename="todos.txt">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />

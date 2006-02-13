@@ -25,8 +25,9 @@ public:
     //类成员函数
     bool ReadConfig();
     bool WriteConfig();
+    void SetDefault();
 
-    //类成员
+    //类成员变量
     wxString PodBasePath;
     wxString PodDatabaseName;
 
