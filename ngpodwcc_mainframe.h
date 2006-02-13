@@ -62,10 +62,12 @@
 #define ID_BUTTON9 10026
 #define ID_PANEL2 10004
 #define ID_PANEL3 10005
-#define ID_COMBOBOX 10021
+#define ID_CHOICE1 10027
+#define ID_BUTTON1 10028
 #define ID_TEXTCTRL4 10018
 #define ID_TEXTCTRL5 10019
 #define ID_TEXTCTRL6 10020
+#define ID_BUTTON 10021
 #define ID_TEXTCTRL3 10022
 #define ID_BUTTON_RELOAD_CONFIG 10006
 #define ID_BUTTON_RESTORE_DEFAULT 10007
@@ -103,11 +105,17 @@ public:
 
 ////@begin ngpodwcc_MainFrame event handler declarations
 
-    /// wxEVT_UPDATE_UI event handler for ID_TEXTCTRL
-    void OnTextctrlUpdate( wxUpdateUIEvent& event );
-
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
     void OnButtonPodbasepathClick( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1
+    void OnChoice1Selected( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1
+    void OnButton1Click( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON
+    void OnButtonClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
     void OnButtonReloadConfigClick( wxCommandEvent& event );
@@ -140,6 +148,13 @@ public:
 
 ////@begin ngpodwcc_MainFrame member variables
     wxTextCtrl* PodBasePath;
+    wxTextCtrl* PodDatabaseName;
+    wxChoice* PodPicturePath;
+    wxChoice* ScreenWidthHeight;
+    wxTextCtrl* ScreenWidth;
+    wxTextCtrl* ScreenHeight;
+    wxTextCtrl* ScreenPicturePath;
+    wxTextCtrl* ScreenPictureName;
     ngpodwcConfig config;
 ////@end ngpodwcc_MainFrame member variables
 };
