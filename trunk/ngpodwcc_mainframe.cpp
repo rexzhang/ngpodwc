@@ -31,6 +31,7 @@
 ////@end includes
 
 #include "ngpodwcc_mainframe.h"
+#include "ngpodwc_common_screen.h"
 
 ////@begin XPM images
 #include "art/logo32x32.xpm"
@@ -163,7 +164,7 @@ void ngpodwcc_MainFrame::CreateControls()
     wxStaticText* itemStaticText13 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodBasePath"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemStaticText13, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    PodBasePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(300, -1), 0 );
+    PodBasePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
     itemFlexGridSizer9->Add(PodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxButton* itemButton15 = new wxButton( itemPanel8, ID_BUTTON_PodBasePath, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
@@ -181,7 +182,7 @@ void ngpodwcc_MainFrame::CreateControls()
     wxStaticText* itemStaticText19 = new wxStaticText( itemPanel8, wxID_STATIC, _("PodPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer9->Add(itemStaticText19, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    PodPicturePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL2, _T(""), wxDefaultPosition, wxDefaultSize, 0 );
+    PodPicturePath = new wxTextCtrl( itemPanel8, ID_TEXTCTRL2, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
     PodPicturePath->Enable(false);
     itemFlexGridSizer9->Add(PodPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -357,10 +358,11 @@ wxIcon ngpodwcc_MainFrame::GetIconResource( const wxString& name )
 
 void ngpodwcc_MainFrame::OnButtonAboutClick( wxCommandEvent& event )
 {
-    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON2 in ngpodwcc_MainFrame.
-    // Before editing this code, remove the block markers.
     ngpodwcc_aboutdialog* window = new ngpodwcc_aboutdialog(NULL, ID_DIALOG_ABOUT, _("Dialog"));
     window->Show(true);
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON2 in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
     ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON2 in ngpodwcc_MainFrame.
 }
 
@@ -371,9 +373,10 @@ void ngpodwcc_MainFrame::OnButtonAboutClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnButtonQuitClick( wxCommandEvent& event )
 {
+    Destroy();
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON3 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
-    Destroy();
+    event.Skip();
     ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON3 in ngpodwcc_MainFrame.
 }
 
@@ -384,10 +387,6 @@ void ngpodwcc_MainFrame::OnButtonQuitClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
 {
-    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
-    // Before editing this code, remove the block markers.
-    //event.Skip();
-    //wxString defaultPath = config.PodBasePath;
     wxDirDialog dialog(NULL,wxT("Please choice NGPOD\'s path"),config.PodBasePath);
     if (dialog.ShowModal() == wxID_OK)
     {
@@ -396,6 +395,10 @@ void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
 
         wxMessageBox(config.PodBasePath);
     }
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+    //wxString defaultPath = config.PodBasePath;
     ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
 }
 
@@ -422,7 +425,7 @@ void ngpodwcc_MainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
 void ngpodwcc_MainFrame::OnButtonSaveConfigClick( wxCommandEvent& event )
 {
     WriteConfig();
-    
+
     ButtonSaveConfig->Disable();
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
@@ -437,22 +440,22 @@ void ngpodwcc_MainFrame::OnButtonSaveConfigClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnChoice1Selected( wxCommandEvent& event )
 {
-    ScreenWidthHeight->GetCurrentSelection();
+    //ScreenWidthHeight->GetCurrentSelection();
     switch (ScreenWidthHeight->GetCurrentSelection())
     {
-        case 0:
+        case SCREENWH640x480:
         config.ScreenWidth = 640;
         config.ScreenHeight = 480;
         ScreenWidth->SetValue(wxT("640"));
         ScreenHeight->SetValue(wxT("480"));
         break;
-        case 1:
+        case SCREENWH800x600:
         config.ScreenWidth = 800;
         config.ScreenHeight = 600;
         ScreenWidth->SetValue(wxT("800"));
         ScreenHeight->SetValue(wxT("600"));
         break;
-        case 2:
+        case SCREENWH1024x768:
         config.ScreenWidth = 1024;
         config.ScreenHeight = 768;
         ScreenWidth->SetValue(wxT("1024"));
@@ -460,10 +463,11 @@ void ngpodwcc_MainFrame::OnChoice1Selected( wxCommandEvent& event )
         break;
         //case 3:
         default:
+        //SCREENWHAutoDetect
         AutoDetectScreenWH();
     }
 
-    ButtonSaveConfig->Enable();   
+    ButtonSaveConfig->Enable();
     ////@begin wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
@@ -491,7 +495,7 @@ void ngpodwcc_MainFrame::OnButtonClick( wxCommandEvent& event )
 void ngpodwcc_MainFrame::OnButton1Click( wxCommandEvent& event )
 {
     AutoDetectScreenWH();
-    ButtonSaveConfig->Enable();   
+    ButtonSaveConfig->Enable();
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON1 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
@@ -509,7 +513,7 @@ void ngpodwcc_MainFrame::OnButtonRestoreDefaultClick( wxCommandEvent& event )
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
 }
 
 /*!
@@ -523,7 +527,7 @@ void ngpodwcc_MainFrame::OnTextctrlUpdated( wxCommandEvent& event )
 ////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
 }
 
 /*!
@@ -537,5 +541,5 @@ void ngpodwcc_MainFrame::OnTextctrl6Updated( wxCommandEvent& event )
 ////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
 }

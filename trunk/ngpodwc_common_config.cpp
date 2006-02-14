@@ -9,6 +9,7 @@
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
 #include "ngpodwc_common_config.h"
+#include "ngpodwc_common_datetime.h"
 
 //---------------------------------------------------------------------------
 //!
@@ -41,10 +42,15 @@ void ngpodwcConfig::SetDefault()
     PodPictureMode = wxEmptyString;
     PodPicturePath = wxT("POD\\pictures\\lg_wallpaper");
 
+
     //2001-1-14后有断档，所以直接从2001-4-21开始
+    toWxDateTime(2001, 4, 21, &PodDate);
+
+    /*
     PodYear = 2001;
     PodMonth = 4;
     PodDays = 21;
+    */
 
     ScreenWidth = 1024;
     ScreenHeight = 768;
@@ -80,9 +86,17 @@ bool ngpodwcConfig::ReadConfig()
     PodDatabaseName = pFileConfig->Read(wxT("PodDatabaseName"));
     PodPicturePath = pFileConfig->Read(wxT("PodPicturePath"));
 
+    int year,month,mday;
+    pFileConfig->Read(wxT("PodYear"), &(year));
+    pFileConfig->Read(wxT("PodMonth"), &(month));
+    pFileConfig->Read(wxT("PodDays"), &(mday));
+    toWxDateTime(year, month, mday, &PodDate);
+
+    /*
     pFileConfig->Read(wxT("PodYear"), &(PodYear));
     pFileConfig->Read(wxT("PodMonth"), &(PodMonth));
     pFileConfig->Read(wxT("PodDays"), &(PodDays));
+    */
 
     ScreenPicturePath = pFileConfig->Read(wxT("ScreenPicturePath"));
     ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
@@ -121,9 +135,17 @@ bool ngpodwcConfig::WriteConfig()
     pFileConfig->Write(wxT("PodDatabaseName"), PodDatabaseName);
     pFileConfig->Write(wxT("PodPicturePath"), PodPicturePath);
 
+    int year,month,mday;
+    toDate(PodDate, &year, &month, &mday);
+    pFileConfig->Write(wxT("PodYear"), year);
+    pFileConfig->Write(wxT("PodMonth"), month);
+    pFileConfig->Write(wxT("PodDays"), mday);
+
+    /*
     pFileConfig->Write(wxT("PodYear"), PodYear);
     pFileConfig->Write(wxT("PodMonth"), PodMonth);
     pFileConfig->Write(wxT("PodDays"), PodDays);
+    */
 
     pFileConfig->Write(wxT("ScreenPicturePath"), ScreenPicturePath);
     pFileConfig->Write(wxT("ScreenPictureName"), ScreenPictureName);

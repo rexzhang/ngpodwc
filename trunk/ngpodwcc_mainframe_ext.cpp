@@ -1,4 +1,6 @@
 #include "ngpodwcc_mainframe.h"
+#include "ngpodwc_common_screen.h"
+
 
 void ngpodwcc_MainFrame::InitConfig(void)
 //将config中的参数写到界面控件
@@ -7,33 +9,59 @@ void ngpodwcc_MainFrame::InitConfig(void)
     PodDatabaseName->SetValue(config.PodDatabaseName);
     PodPicturePath->SetValue(config.PodPicturePath);
 
-	//Next POD Day
+    //Next POD Day
 
-	//ScreenWidthHeight
-	//ScreenWidth
-	//ScreenHeight
+    if((config.ScreenWidth == 640) && (config.ScreenHeight == 480))
+    {
+        ScreenWidthHeight->SetSelection(SCREENWH640x480);
+        ScreenWidth->SetValue(wxT("640"));
+        ScreenHeight->SetValue(wxT("480"));
+    }
+    else
+    {
+        if((config.ScreenWidth == 800) && (config.ScreenHeight == 600))
+        {
+            ScreenWidthHeight->SetSelection(SCREENWH800x600);
+            ScreenWidth->SetValue(wxT("800"));
+            ScreenHeight->SetValue(wxT("600"));
+        }
+        else
+        {
+            if((config.ScreenWidth == 1024) && (config.ScreenHeight == 768))
+            {
+                ScreenWidthHeight->SetSelection(SCREENWH1024x768);
+                ScreenWidth->SetValue(wxT("1024"));
+                ScreenHeight->SetValue(wxT("768"));
+            }
+            else
+            {
+                //SCREENWHAutoDetect
+                ScreenWidthHeight->SetSelection(SCREENWHAutoDetect);
+            }
+        }
+    }
 
-	ScreenPicturePath->SetValue(config.ScreenPicturePath);
-	ScreenPictureName->SetValue(config.ScreenPictureName);
+    ScreenPicturePath->SetValue(config.ScreenPicturePath);
+    ScreenPictureName->SetValue(config.ScreenPictureName);
 }
 
 void ngpodwcc_MainFrame::ReadConfig(void)
 //读取配置文件到界面控件
 {
-	config.ReadConfig();
-	InitConfig();
+    config.ReadConfig();
+    InitConfig();
 }
 
 void ngpodwcc_MainFrame::WriteConfig(void)
 //保存界面控件的值到配置文件
 {
-	config.WriteConfig();
+    config.WriteConfig();
 }
 
 void ngpodwcc_MainFrame::SetDefault(void)
 {
-	config.SetDefault();
-	InitConfig();
+    config.SetDefault();
+    InitConfig();
 }
 
 void ngpodwcc_MainFrame::AutoDetectScreenWH(void)
@@ -62,3 +90,4 @@ wxString ngpodwcc_MainFrame::AutoDetectSystemPath(void)
     ScreenPicturePath->SetValue(path);
     return path;
 }
+

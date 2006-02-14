@@ -193,7 +193,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/11/2006"</string>
+          <string name="created">"7/12/2006"</string>
           <string name="proxy-type">"wbAppProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -215,7 +215,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/11/2006"</string>
+          <string name="created">"7/12/2006"</string>
           <string name="proxy-type">"wbFrameProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -283,7 +283,7 @@
             <long name="owns-file">1</long>
             <long name="title-mode">0</long>
             <long name="locked">0</long>
-            <string name="created">"7/11/2006"</string>
+            <string name="created">"7/12/2006"</string>
             <string name="proxy-type">"wbPanelProxy"</string>
             <string name="proxy-Id name">"ID_PANEL"</string>
             <long name="proxy-Id value">10001</long>
@@ -341,7 +341,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/11/2006"</string>
+              <string name="created">"7/12/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Vertical"</string>
               <string name="proxy-Member variable name">""</string>
@@ -366,7 +366,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"9/6/2006"</string>
+                <string name="created">"9/7/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -391,7 +391,7 @@
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"9/6/2006"</string>
+                  <string name="created">"9/7/2006"</string>
                   <string name="proxy-type">"wbStaticBitmapProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -441,7 +441,7 @@
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"9/6/2006"</string>
+                  <string name="created">"9/7/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -499,7 +499,7 @@ Wallpaper Control Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/10/2006"</string>
+                <string name="created">"7/11/2006"</string>
                 <string name="proxy-type">"wbNotebookProxy"</string>
                 <string name="proxy-Id name">"ID_NOTEBOOK"</string>
                 <long name="proxy-Id value">10002</long>
@@ -560,7 +560,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL1"</string>
                   <long name="proxy-Id value">10003</long>
@@ -620,7 +620,7 @@ Wallpaper Control Center"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/10/2006"</string>
+                    <string name="created">"7/11/2006"</string>
                     <string name="proxy-type">"wbFlexGridSizerProxy"</string>
                     <string name="proxy-GrowableColumns">""</string>
                     <string name="proxy-GrowableRows">""</string>
@@ -650,7 +650,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -676,7 +676,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -702,7 +702,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -728,7 +728,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -784,7 +784,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_TEXT_UPDATED|OnTextctrlUpdated"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL"</string>
@@ -828,7 +828,7 @@ Wallpaper Control Center"</string>
                       <string name="proxy-Custom styles">""</string>
                       <long name="proxy-X">-1</long>
                       <long name="proxy-Y">-1</long>
-                      <long name="proxy-Width">300</long>
+                      <long name="proxy-Width">200</long>
                       <long name="proxy-Height">-1</long>
                       <string name="proxy-AlignH">"Left"</string>
                       <string name="proxy-AlignV">"Centre"</string>
@@ -853,7 +853,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonPodbasepathClick|SHOWWINDOW|"</string>
                       <string name="proxy-Id name">"ID_BUTTON_PodBasePath"</string>
@@ -905,7 +905,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -961,7 +961,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL1"</string>
                       <long name="proxy-Id value">10012</long>
@@ -1029,7 +1029,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"13/2/2006"</string>
+                      <string name="created">"13/3/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1055,7 +1055,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1111,7 +1111,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"13/2/2006"</string>
+                      <string name="created">"13/3/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL2"</string>
                       <long name="proxy-Id value">10029</long>
@@ -1154,7 +1154,7 @@ Wallpaper Control Center"</string>
                       <string name="proxy-Custom styles">""</string>
                       <long name="proxy-X">-1</long>
                       <long name="proxy-Y">-1</long>
-                      <long name="proxy-Width">-1</long>
+                      <long name="proxy-Width">200</long>
                       <long name="proxy-Height">-1</long>
                       <string name="proxy-AlignH">"Left"</string>
                       <string name="proxy-AlignV">"Centre"</string>
@@ -1179,7 +1179,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"13/2/2006"</string>
+                      <string name="created">"13/3/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1205,7 +1205,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1261,7 +1261,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbDatePickerCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_DATECTRL"</string>
                       <long name="proxy-Id value">10016</long>
@@ -1321,7 +1321,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="proxy-Id name">"ID_BUTTON9"</string>
                       <long name="proxy-Id value">10026</long>
@@ -1372,7 +1372,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1398,7 +1398,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1426,7 +1426,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL2"</string>
                   <long name="proxy-Id value">10004</long>
@@ -1486,7 +1486,7 @@ Wallpaper Control Center"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/10/2006"</string>
+                    <string name="created">"7/11/2006"</string>
                     <string name="proxy-type">"wbStaticTextProxy"</string>
                     <string name="proxy-Id name">"wxID_STATIC"</string>
                     <long name="proxy-Id value">5105</long>
@@ -1543,7 +1543,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbPanelProxy"</string>
                   <string name="proxy-Id name">"ID_PANEL3"</string>
                   <long name="proxy-Id value">10005</long>
@@ -1603,7 +1603,7 @@ Wallpaper Control Center"</string>
                     <long name="owns-file">1</long>
                     <long name="title-mode">0</long>
                     <long name="locked">0</long>
-                    <string name="created">"7/10/2006"</string>
+                    <string name="created">"7/11/2006"</string>
                     <string name="proxy-type">"wbFlexGridSizerProxy"</string>
                     <string name="proxy-GrowableColumns">""</string>
                     <string name="proxy-GrowableRows">""</string>
@@ -1633,7 +1633,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1659,7 +1659,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1685,7 +1685,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/5/2006"</string>
+                      <string name="created">"11/6/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -1711,7 +1711,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1767,7 +1767,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/6/2006"</string>
+                      <string name="created">"11/7/2006"</string>
                       <string name="proxy-type">"wbChoiceProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_CHOICE_SELECTED|OnChoice1Selected"</string>
                       <string name="proxy-Id name">"ID_CHOICE1"</string>
@@ -1815,7 +1815,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"12/4/2006"</string>
+                      <string name="created">"12/5/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButton1Click"</string>
                       <string name="proxy-Id name">"ID_BUTTON1"</string>
@@ -1867,7 +1867,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -1923,7 +1923,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL4"</string>
                       <long name="proxy-Id value">10018</long>
@@ -1991,7 +1991,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/5/2006"</string>
+                      <string name="created">"11/6/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2017,7 +2017,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2073,7 +2073,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL5"</string>
                       <long name="proxy-Id value">10019</long>
@@ -2141,7 +2141,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/5/2006"</string>
+                      <string name="created">"11/6/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2167,7 +2167,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2223,7 +2223,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_TEXT_UPDATED|OnTextctrl6Updated"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL6"</string>
@@ -2292,7 +2292,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/5/2006"</string>
+                      <string name="created">"11/6/2006"</string>
                       <string name="proxy-type">"wbButtonProxy"</string>
                       <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonClick"</string>
                       <string name="proxy-Id name">"ID_BUTTON"</string>
@@ -2344,7 +2344,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbStaticTextProxy"</string>
                       <string name="proxy-Id name">"wxID_STATIC"</string>
                       <long name="proxy-Id value">5105</long>
@@ -2400,7 +2400,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbTextCtrlProxy"</string>
                       <string name="proxy-Id name">"ID_TEXTCTRL3"</string>
                       <long name="proxy-Id value">10022</long>
@@ -2468,7 +2468,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"11/5/2006"</string>
+                      <string name="created">"11/6/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2494,7 +2494,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2520,7 +2520,7 @@ Wallpaper Control Center"</string>
                       <long name="owns-file">1</long>
                       <long name="title-mode">0</long>
                       <long name="locked">0</long>
-                      <string name="created">"7/10/2006"</string>
+                      <string name="created">"7/11/2006"</string>
                       <string name="proxy-type">"wbSpacerProxy"</string>
                       <long name="proxy-Width">5</long>
                       <long name="proxy-Height">5</long>
@@ -2549,7 +2549,7 @@ Wallpaper Control Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/10/2006"</string>
+                <string name="created">"7/11/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -2574,7 +2574,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonReloadConfigClick"</string>
                   <string name="proxy-Id name">"ID_BUTTON_RELOAD_CONFIG"</string>
@@ -2626,7 +2626,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonRestoreDefaultClick"</string>
                   <string name="proxy-Id name">"ID_BUTTON_RESTORE_DEFAULT"</string>
@@ -2678,7 +2678,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonSaveConfigClick|SHOWWINDOW|"</string>
                   <string name="proxy-Id name">"ID_BUTTON_SAVE_CONFIG"</string>
@@ -2731,7 +2731,7 @@ Wallpaper Control Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/10/2006"</string>
+                <string name="created">"7/11/2006"</string>
                 <string name="proxy-type">"wbStaticLineProxy"</string>
                 <string name="proxy-Id name">"wxID_STATIC"</string>
                 <long name="proxy-Id value">5105</long>
@@ -2780,7 +2780,7 @@ Wallpaper Control Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/11/2006"</string>
+                <string name="created">"7/12/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Horizontal"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -2805,7 +2805,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/11/2006"</string>
+                  <string name="created">"7/12/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonAboutClick|SHOWWINDOW|ID_DIALOG_ABOUT"</string>
                   <string name="proxy-Id name">"ID_BUTTON_ABOUT"</string>
@@ -2857,7 +2857,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/11/2006"</string>
+                  <string name="created">"7/12/2006"</string>
                   <string name="proxy-type">"wbButtonProxy"</string>
                   <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonQuitClick|DESTROYWINDOW|ID_FRAME_MAIN"</string>
                   <string name="proxy-Id name">"ID_BUTTON_QUIT"</string>
@@ -2913,7 +2913,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"7/10/2006"</string>
+          <string name="created">"7/11/2006"</string>
           <string name="proxy-type">"wbDialogProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -3003,7 +3003,7 @@ Wallpaper Control Center"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/10/2006"</string>
+              <string name="created">"7/11/2006"</string>
               <string name="proxy-type">"wbPanelProxy"</string>
               <string name="proxy-Id name">"ID_PANEL4"</string>
               <long name="proxy-Id value">10024</long>
@@ -3061,7 +3061,7 @@ Wallpaper Control Center"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"7/10/2006"</string>
+                <string name="created">"7/11/2006"</string>
                 <string name="proxy-type">"wbBoxSizerProxy"</string>
                 <string name="proxy-Orientation">"Vertical"</string>
                 <string name="proxy-Member variable name">""</string>
@@ -3086,7 +3086,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3112,7 +3112,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3168,7 +3168,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3224,7 +3224,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3280,7 +3280,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbStaticLineProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3327,7 +3327,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3353,7 +3353,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3409,7 +3409,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3465,7 +3465,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3491,7 +3491,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"10/3/2006"</string>
+                  <string name="created">"10/4/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3547,7 +3547,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/10/2006"</string>
+                  <string name="created">"7/11/2006"</string>
                   <string name="proxy-type">"wbStaticTextProxy"</string>
                   <string name="proxy-Id name">"wxID_STATIC"</string>
                   <long name="proxy-Id value">5105</long>
@@ -3603,7 +3603,7 @@ Wallpaper Control Center"</string>
                   <long name="owns-file">1</long>
                   <long name="title-mode">0</long>
                   <long name="locked">0</long>
-                  <string name="created">"7/8/2006"</string>
+                  <string name="created">"7/9/2006"</string>
                   <string name="proxy-type">"wbSpacerProxy"</string>
                   <long name="proxy-Width">5</long>
                   <long name="proxy-Height">5</long>
@@ -3631,7 +3631,7 @@ Wallpaper Control Center"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"7/10/2006"</string>
+              <string name="created">"7/11/2006"</string>
               <string name="proxy-type">"wbButtonProxy"</string>
               <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButton8Click|DESTROYWINDOW|ID_DIALOG_ABOUT"</string>
               <string name="proxy-Id name">"ID_BUTTON8"</string>
@@ -3695,7 +3695,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">1</long>
           <long name="locked">0</long>
-          <string name="created">"7/11/2006"</string>
+          <string name="created">"7/12/2006"</string>
           <string name="language">""</string>
         </document>
       </document>
@@ -3717,7 +3717,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/6/2006"</string>
+          <string name="created">"9/7/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3729,7 +3729,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/6/2006"</string>
+          <string name="created">"9/7/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3741,7 +3741,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/6/2006"</string>
+          <string name="created">"9/7/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -3753,7 +3753,7 @@ Wallpaper Control Center"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"9/6/2006"</string>
+          <string name="created">"9/7/2006"</string>
           <long name="zoom-level">100</long>
         </document>
       </document>

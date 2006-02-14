@@ -69,7 +69,7 @@ main()
 
 
     //日期信息++
-    seekDays(1, &(config.PodYear), &(config.PodMonth), &(config.PodDays));
+    seekDays(1, &(config.PodDate));
     //保存++后的日期信息至配置文件
     config.WriteConfig();
 
@@ -218,7 +218,8 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 
     //生成ODBC-Access的Date数字格式
     wxString msg;
-    msg.Printf(wxT("Pod_Date = %u"),wxDateTicks(pConfig->PodYear, pConfig->PodMonth, pConfig->PodDays));
+    //msg.Printf(wxT("Pod_Date = %u"),wxDateTicks(pConfig->PodYear, pConfig->PodMonth, pConfig->PodDays));
+    msg.Printf(wxT("Pod_Date = %u"),wxDateTicks(pConfig->PodDate));
     table->SetWhereClause(msg);
     //table->SetWhereClause(wxT("Pod_Date = '2005-08-23 00:00:00'"));
 

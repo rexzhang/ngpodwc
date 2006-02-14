@@ -83,6 +83,23 @@ bool seekDays(int seek, int *year, int *month, int *day)
 }
 
 // ----------------------------------------------------------------------------
+//!在给定的日期wxDateTime基础上移动一个指定的日期
+// ----------------------------------------------------------------------------
+//
+bool seekDays(int seek, wxDateTime *inDate)
+{
+    int year, month, mday;
+
+    toDate(*inDate, &year, &month, &mday);
+
+    seekDays(seek, &year, &month, &mday);
+
+    toWxDateTime(year, month, mday, inDate);
+
+    return 1;
+}
+
+// ----------------------------------------------------------------------------
 //!将给定的日期转换成wxWidget ODBC-Access的Date数字格式
 // ----------------------------------------------------------------------------
 //
@@ -122,4 +139,72 @@ time_t wxDateTicks(int year, int month, int mday)
     */
     return mktime(&TmTemp)/(24*60*60) + 25539;
 }
+// ----------------------------------------------------------------------------
+//!将给定的wxDateTime转换成wxWidget ODBC-Access的Date数字格式
+// ----------------------------------------------------------------------------
+//
+time_t wxDateTicks(wxDateTime InDate)
+{
+    //生成ODBC-Access的Date数字格式
+    //用tm格式生成wxDateTime格式，然后使用GetTicks转换成time_t格式
+    //再除以(24*60*60) 加上25539值,25539=(1970-1900)*date ticks
+    //time_t use 1900 base year
+    //wxWidget use 1970 base year
 
+
+    //wxDateTime PodDateTime;
+    time_t time_tTemp;
+
+    time_tTemp = InDate.GetTicks();
+
+    time_tTemp = time_tTemp/(24*60*60) + 25539;
+
+    //table->SetWhereClause(wxT("Pod_Date <= 40000 AND Pod_Date >= 37999"));
+
+
+    return time_tTemp;
+}
+// ----------------------------------------------------------------------------
+//!将给定的日期转换成wxWidget wxDateTime格式
+// ----------------------------------------------------------------------------
+void toWxDateTime(int year, int month, int mday, wxDateTime *date)
+{
+    tm TmTemp;
+    //wxDateTime PodDateTime;
+    //time_t time_tTemp;
+
+    TmTemp.tm_sec = 0;
+    TmTemp.tm_min = 0;
+    TmTemp.tm_hour = 0;
+    TmTemp.tm_mday = mday;
+    TmTemp.tm_mon = month;
+    //TmTemp.tm_year = 2004-1900;
+    TmTemp.tm_year = year - 1900;
+    TmTemp.tm_wday = 0;
+    TmTemp.tm_yday = 0;
+    TmTemp.tm_isdst = 0;
+
+    //wxDateTime& wxDateTime(const struct tm& tm)
+
+    date->Set(TmTemp);
+
+    return;
+}
+
+// ----------------------------------------------------------------------------
+//!将wxWidget wxDateTime日期格式 转换成格年月日
+// ----------------------------------------------------------------------------
+void toDate(wxDateTime inDate, int *year, int *month, int *mday)
+{
+    tm *pTmTemp;
+    time_t time_tTemp;
+
+    time_tTemp = inDate.GetTicks();//GetTicks Returns the number of seconds since Jan 1, 1970.
+    pTmTemp = localtime(&time_tTemp);
+
+    *year = pTmTemp->tm_year + 1900;
+    *month = pTmTemp->tm_mon;
+    *mday = pTmTemp->tm_mday;
+
+    return;
+}
