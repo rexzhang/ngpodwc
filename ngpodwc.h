@@ -2,7 +2,7 @@
 
 #include "ngpodwc_common_config.h"
 #include "ngpodwc_common_datetime.h"
-
+#include "ngpodwc_common_screen.h"
 
 
 struct PodPictrueInfo
@@ -15,11 +15,6 @@ struct PodPictrueInfo
     wxChar Disc[254];
     wxChar Related[254];
     wxChar PhotoName[80];
-};
-
-enum WallpaperStyle
-{
-    Tiled=1, Centered=2, Stretched=3
 };
 
 

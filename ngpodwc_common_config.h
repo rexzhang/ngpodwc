@@ -34,6 +34,7 @@ public:
     wxString PodPictureMode;
     wxString PodPicturePath;
 
+    wxDateTime PodDate;
     int PodYear;
     int PodMonth;
     int PodDays;
