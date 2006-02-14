@@ -10,6 +10,7 @@ void ngpodwcc_MainFrame::InitConfig(void)
     PodPicturePath->SetValue(config.PodPicturePath);
 
     //Next POD Day
+	NextPODDay->SetValue(config.PodDate);
 
     if((config.ScreenWidth == 640) && (config.ScreenHeight == 480))
     {
