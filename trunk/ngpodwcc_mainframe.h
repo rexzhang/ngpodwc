@@ -50,7 +50,7 @@ class wxDatePickerCtrl;
 #define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
 #define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("Dialog")
 #define SYMBOL_NGPODWCC_MAINFRAME_IDNAME ID_FRAME_MAIN
-#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(600, 470)
+#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(600, 480)
 #define SYMBOL_NGPODWCC_MAINFRAME_POSITION wxDefaultPosition
 #define ID_PANEL 10001
 #define ID_NOTEBOOK 10002
@@ -60,7 +60,6 @@ class wxDatePickerCtrl;
 #define ID_TEXTCTRL1 10012
 #define ID_TEXTCTRL2 10029
 #define ID_DATECTRL 10016
-#define ID_BUTTON9 10026
 #define ID_PANEL2 10004
 #define ID_PANEL3 10005
 #define ID_CHOICE1 10027
@@ -111,6 +110,9 @@ public:
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
     void OnButtonPodbasepathClick( wxCommandEvent& event );
+
+    /// wxEVT_DATE_CHANGED event handler for ID_DATECTRL
+    void OnDatectrlDateChanged( wxDateEvent& event );
 
     /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1
     void OnChoice1Selected( wxCommandEvent& event );
