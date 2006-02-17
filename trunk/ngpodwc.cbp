@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="2" />
+	<FileVersion major="1" minor="3" />
 	<Project>
 		<Option title="ngpodwc" />
-		<Option compiler="0" />
+		<Option compiler="gcc" />
 		<Build>
 			<Target title="ngpodwc_Debug">
 				<Option output="ngpodwc_ud.exe" />
 				<Option object_output=".objs\ngpodwc\debug" />
 				<Option type="0" />
-				<Option compiler="0" />
+				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -26,7 +26,7 @@
 				<Option output="ngpodwc_u.exe" />
 				<Option object_output=".objs\ngpodwc\release" />
 				<Option type="0" />
-				<Option compiler="0" />
+				<Option compiler="gcc" />
 				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -40,7 +40,7 @@
 				<Option output="ngpodwcc_ud.exe" />
 				<Option object_output=".objs\ngpodwcc\debug" />
 				<Option type="0" />
-				<Option compiler="0" />
+				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -57,7 +57,7 @@
 				<Option output="ngpodwcc_u.exe" />
 				<Option object_output=".objs\ngpodwcc\release" />
 				<Option type="0" />
-				<Option compiler="0" />
+				<Option compiler="gcc" />
 				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
