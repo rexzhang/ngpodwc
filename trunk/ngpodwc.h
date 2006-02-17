@@ -1,3 +1,21 @@
+#include <wx/datetime.h>
+
+#include "ngpodwc_common_config.h"
+#include "ngpodwc_common_datetime.h"
+#include "ngpodwc_common_screen.h"
+
+struct PodPictrueInfo
+{
+    wxChar Title[100];
+    wxChar PodDate[20];
+    wxChar Where[80];
+    wxChar When[80];
+    wxChar Who[80];
+    wxChar Disc[254];
+    wxChar Related[254];
+    wxChar PhotoName[80];
+};
+
 #ifndef _NGPODWC_H_
 #define _NGPODWC_H_
 
@@ -46,9 +64,14 @@ public:
 ////@begin NgpodwccApp member function declarations
 
 ////@end NgpodwccApp member function declarations
+bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
+bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
+
 
 ////@begin NgpodwccApp member variables
 ////@end NgpodwccApp member variables
+
+    ngpodwcConfig config;
 };
 
 /*!
@@ -60,32 +83,6 @@ DECLARE_APP(NgpodwcApp)
 
 #endif
     // _NGPODWC_H_
-
-
-
-#include <wx/datetime.h>
-
-#include "ngpodwc_common_config.h"
-#include "ngpodwc_common_datetime.h"
-#include "ngpodwc_common_screen.h"
-
-struct PodPictrueInfo
-{
-    wxChar Title[100];
-    wxChar PodDate[20];
-    wxChar Where[80];
-    wxChar When[80];
-    wxChar Who[80];
-    wxChar Disc[254];
-    wxChar Related[254];
-    wxChar PhotoName[80];
-};
-
-
-bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
-bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
-
-
 
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR HANDLING/DISPLAYING ERRORS

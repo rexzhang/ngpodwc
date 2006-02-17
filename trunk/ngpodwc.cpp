@@ -87,8 +87,6 @@ bool NgpodwcApp::OnInit()
 
     //wxApp::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "program");
 
-    //wxBitmap bitmap(wxBITMAP(logo));
-
     wxBitmap bitmap;
     wxSplashScreen *splash = NULL;
     if (bitmap.LoadFile(wxT("art/splash.png"), wxBITMAP_TYPE_PNG))
@@ -97,13 +95,13 @@ bool NgpodwcApp::OnInit()
         splash= new wxSplashScreen(bitmap,
                                    wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
                                    6000, NULL, -1, wxDefaultPosition, wxDefaultSize,
-                                   wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR|wxSTAY_ON_TOP);
+                                   wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR);//|wxSTAY_ON_TOP);
     }
     //wxApp::
     wxYield();
 
     //读取配置文件
-    ngpodwcConfig config;
+
     config.ReadConfig();
 
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
@@ -181,7 +179,7 @@ main()
 // FUNCTION USED FOR xxxxxxx wxImage<wxWidgets>
 // ----------------------------------------------------------------------------
 // return 1 = true/Finish
-bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
+bool NgpodwcApp::outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 {
     wxImage PodImage, ScreenImage;
 
@@ -230,7 +228,7 @@ bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo
 // FUNCTION USED FOR xxxxxxx
 // ----------------------------------------------------------------------------
 // return 1 = true/Finish
-bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
+bool NgpodwcApp::getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 {
     wxDbConnectInf  *DbConnectInf    = NULL;    // DB connection information
 
@@ -345,7 +343,7 @@ bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
                    pPodPictureInfo->PhotoName
                   );
         //检查表操作/现实获取的POD信息
-        //wxSafeShowMessage(wxT("Pod_wxDbTable Test"),msg);
+        wxSafeShowMessage(wxT("Pod_wxDbTable Test"),msg);
     }
 
     /*
