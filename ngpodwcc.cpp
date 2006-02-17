@@ -29,6 +29,8 @@
 
 #include "ngpodwcc.h"
 
+#include <wx/filename.h>
+
 ////@begin XPM images
 ////@end XPM images
 
@@ -93,13 +95,12 @@ bool NgpodwccApp::OnInit()
     mainWindow->Show(true);
 ////@end NgpodwccApp initialisation
 
+    //解决不在安装目录运行控制台找不到配置文件的问题
     wxFileName *filename;
-    //wxChar **argv;
-    //argv = NgpodwccApp.argv;
     wxString path = argv[0];
     filename = new wxFileName(path, wxPATH_WIN);
-
-    (mainWindow->config).SetConfigFilePath(path);//GetUserConfigDir
+    path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
+    (mainWindow->config).SetConfigFilePath(path);
 
     return true;
 }
