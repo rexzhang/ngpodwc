@@ -1,9 +1,73 @@
+#ifndef _NGPODWC_H_
+#define _NGPODWC_H_
+
+#if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
+#pragma interface "ngpodwc.h"
+#endif
+
+/*!
+ * Includes
+ */
+
+
+/*!
+ * Forward declarations
+ */
+
+
+/*!
+ * Control identifiers
+ */
+
+
+/*!
+ * NgpodwcApp class declaration
+ */
+
+class NgpodwcApp: public wxApp
+{
+    DECLARE_CLASS( NgpodwcApp )
+    DECLARE_EVENT_TABLE()
+
+public:
+    /// Constructor
+    NgpodwcApp();
+
+    /// Initialises the application
+    virtual bool OnInit();
+
+    /// Called on exit
+    virtual int OnExit();
+
+////@begin NgpodwccApp event handler declarations
+
+////@end NgpodwccApp event handler declarations
+
+////@begin NgpodwccApp member function declarations
+
+////@end NgpodwccApp member function declarations
+
+////@begin NgpodwccApp member variables
+////@end NgpodwccApp member variables
+};
+
+/*!
+ * Application instance declaration
+ */
+
+
+DECLARE_APP(NgpodwcApp)
+
+#endif
+    // _NGPODWC_H_
+
+
+
 #include <wx/datetime.h>
 
 #include "ngpodwc_common_config.h"
 #include "ngpodwc_common_datetime.h"
 #include "ngpodwc_common_screen.h"
-
 
 struct PodPictrueInfo
 {

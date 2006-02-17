@@ -173,9 +173,12 @@ public:
 ////@end ngpodwcc_MainFrame member variables
 
     void InitConfig(void);
+    void SetDefault(void);
+    void ShowConfig(void);
+
     void ReadConfig(void);
     void WriteConfig(void);
-    void SetDefault(void);
+
     void AutoDetectScreenWH(void);
     wxString AutoDetectSystemPath(void);
 };

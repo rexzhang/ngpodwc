@@ -23,9 +23,11 @@ public:
     void Init();
 
     //类成员函数
+    void SetConfigFilePath(wxString configFullPath);
+    void SetDefault();
+
     bool ReadConfig();
     bool WriteConfig();
-    void SetDefault();
 
     //类成员变量
     wxString PodBasePath;
@@ -35,9 +37,11 @@ public:
     wxString PodPicturePath;
 
     wxDateTime PodDate;
+    /*
     int PodYear;
     int PodMonth;
     int PodDays;
+    */
 
     int ScreenWidth;
     int ScreenHeight;
@@ -46,4 +50,9 @@ public:
     //////////
     wxString ScreenPicturePath;
     wxString ScreenPictureName;
+
+    ///////////
+private:
+    wxString ConfigFile;//Full Path + FileName
+    wxString ConfigFileName;
 };

@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        ngpodwcc.cpp
-// Purpose:     
+// Purpose:
 // Author:      Rex Zhang
-// Modified by: 
+// Modified by:
 // Created:     07/02/2006 16:58:25
-// RCS-ID:      
+// RCS-ID:
 // Copyright:   cooooooooooooopy
-// Licence:     
+// Licence:
 /////////////////////////////////////////////////////////////////////////////
 
 #if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
@@ -72,7 +72,7 @@ NgpodwccApp::NgpodwccApp()
  */
 
 bool NgpodwccApp::OnInit()
-{    
+{
 ////@begin NgpodwccApp initialisation
     // Remove the comment markers above and below this block
     // to make permanent changes to the code.
@@ -93,6 +93,14 @@ bool NgpodwccApp::OnInit()
     mainWindow->Show(true);
 ////@end NgpodwccApp initialisation
 
+    wxFileName *filename;
+    //wxChar **argv;
+    //argv = NgpodwccApp.argv;
+    wxString path = argv[0];
+    filename = new wxFileName(path, wxPATH_WIN);
+
+    (mainWindow->config).SetConfigFilePath(path);//GetUserConfigDir
+
     return true;
 }
 
@@ -100,7 +108,7 @@ bool NgpodwccApp::OnInit()
  * Cleanup for NgpodwccApp
  */
 int NgpodwccApp::OnExit()
-{    
+{
 ////@begin NgpodwccApp cleanup
     return wxApp::OnExit();
 ////@end NgpodwccApp cleanup

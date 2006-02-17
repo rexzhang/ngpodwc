@@ -24,11 +24,28 @@ ngpodwcConfig::ngpodwcConfig()
 //---------------------------------------------------------------------------
 void ngpodwcConfig::Init()
 {
-    //先重置config为默认值
+    ConfigFileName = wxT("ngpodwc.ini");
+    SetConfigFilePath(wxEmptyString);//ConfigFile = wxEmptyString + ConfigFileName;
+
+
+    //先重置config为默认值,作为补充（兼容升级后配置信息增加的情况）
     SetDefault();
 
-    //再读取配置文件至config，作为补充（兼容升级后配置信息增加的情况）
-    ReadConfig();
+    //再读取配置文件至config，
+    //////////
+    //ReadConfig();//config。ini只初始化为默认参数，不读入文件
+
+}
+
+//---------------------------------------------------------------------------
+//!config类配置文件存储路径设置
+//---------------------------------------------------------------------------
+void ngpodwcConfig::SetConfigFilePath(wxString configFullPath)
+{
+    if (configFullPath == wxEmptyString)
+        ConfigFile = ConfigFileName;
+    else
+        ConfigFile = configFullPath + wxT("\\") +ConfigFileName;
 }
 
 //---------------------------------------------------------------------------
@@ -66,7 +83,7 @@ void ngpodwcConfig::SetDefault()
 bool ngpodwcConfig::ReadConfig()
 {
     //打开配置文件
-    wxFileInputStream ConfigInputStream(wxT("ngpodwc.ini"));
+    wxFileInputStream ConfigInputStream(ConfigFile);
     if(!ConfigInputStream.Ok())//检查配置文件是否存在
     {
         //告警
@@ -92,12 +109,6 @@ bool ngpodwcConfig::ReadConfig()
     pFileConfig->Read(wxT("PodDays"), &(mday));
     toWxDateTime(year, month, mday, &PodDate);
 
-    /*
-    pFileConfig->Read(wxT("PodYear"), &(PodYear));
-    pFileConfig->Read(wxT("PodMonth"), &(PodMonth));
-    pFileConfig->Read(wxT("PodDays"), &(PodDays));
-    */
-
     ScreenPicturePath = pFileConfig->Read(wxT("ScreenPicturePath"));
     ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
     pFileConfig->Read(wxT("ScreenWidth"), &(ScreenWidth));
@@ -117,7 +128,7 @@ bool ngpodwcConfig::WriteConfig()
 
 
     //打开配置文件
-    wxFileOutputStream ConfigOutputStream(wxT("ngpodwc.ini"));
+    wxFileOutputStream ConfigOutputStream(ConfigFile);
     if(!ConfigOutputStream.Ok())//检查配置文件是否存在
     {
         wxString msgTitle("配置文件不存在！",*wxConvCurrent);
