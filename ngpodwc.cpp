@@ -1,13 +1,4 @@
-#include <wx/wxprec.h>
-
-#ifdef __BORLANDC__
-    #pragma hdrstop
-#endif
-
-#ifndef WX_PRECOMP
-    #include <wx/wx.h>
-#endif
-
+/*
 #include <wx/msgdlg.h>
 #include <wx/log.h>
 
@@ -18,18 +9,97 @@
 //#include <ctime>
 #include <time.h>
 
-//#include <wx/rawbmp.h>
+//#include "ngpodwc.h"
+*/
+#include <wx/splash.h>
+//-------------------------------
+
+#if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
+#pragma implementation "ngpodwc.h"
+#endif
+
+// For compilers that support precompilation, includes "wx/wx.h".
+#include "wx/wxprec.h"
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+////@begin includes
+////@end includes
 
 #include "ngpodwc.h"
 
+////@begin XPM images
+////@end XPM images
 
+/*!
+ * Application instance implementation
+ */
 
-// ----------------------------------------------------------------------------
-// FUNCTION USED FOR MAIN <input point>
-// ----------------------------------------------------------------------------
-// return ?? = true/Finish
-main()
+////@begin implement app
+IMPLEMENT_APP( NgpodwcApp )
+////@end implement app
+
+/*!
+ * NgpodwcApp type definition
+ */
+
+IMPLEMENT_CLASS( NgpodwcApp, wxApp )
+
+/*!
+ * NgpodwcApp event table definition
+ */
+
+BEGIN_EVENT_TABLE( NgpodwcApp, wxApp )
+
+////@begin NgpodwccApp event table entries
+////@end NgpodwccApp event table entries
+
+END_EVENT_TABLE()
+
+/*!
+ * Constructor for NgpodwcApp
+ */
+
+NgpodwcApp::NgpodwcApp()
+{}
+
+/*!
+ * Initialisation for NgpodwccApp
+ */
+
+bool NgpodwcApp::OnInit()
 {
+
+    wxImage::AddHandler(new wxBMPHandler);
+    wxImage::AddHandler(new wxJPEGHandler);
+    wxImage::AddHandler(new wxPNGHandler);
+    //wxImage::AddHandler(new wxXPMHandler);
+
+    //ngpodwcc_MainFrame* mainWindow = new ngpodwcc_MainFrame( NULL, ID_FRAME_MAIN );
+    //mainWindow->Show(true);
+
+    //wxApp::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "program");
+
+    //wxBitmap bitmap(wxBITMAP(logo));
+
+    wxBitmap bitmap;
+    wxSplashScreen *splash = NULL;
+    if (bitmap.LoadFile(wxT("art/splash.png"), wxBITMAP_TYPE_PNG))
+    {
+        //显示Splash图片
+        splash= new wxSplashScreen(bitmap,
+                                   wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
+                                   6000, NULL, -1, wxDefaultPosition, wxDefaultSize,
+                                   wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR|wxSTAY_ON_TOP);
+    }
+    //wxApp::
+    wxYield();
 
     //读取配置文件
     ngpodwcConfig config;
@@ -78,10 +148,32 @@ main()
     wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
     return 0;
     */
+
     wxBell();
 
-    return 0;
+    return true;
 }
+
+/*!
+ * Cleanup for NgpodwcApp
+ */
+int NgpodwcApp::OnExit()
+{
+    ////@begin NgpodwccApp cleanup
+    return wxApp::OnExit();
+    ////@end NgpodwccApp cleanup
+}
+
+// ----------------------------------------------------------------------------
+// FUNCTION USED FOR MAIN <input point>
+// ----------------------------------------------------------------------------
+// return ?? = true/Finish
+/*
+main()
+{
+
+}
+*/
 
 
 // ----------------------------------------------------------------------------
@@ -91,9 +183,6 @@ main()
 bool outputScreenPicture(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 {
     wxImage PodImage, ScreenImage;
-    wxImage::AddHandler(new wxBMPHandler);
-    wxImage::AddHandler(new wxJPEGHandler);
-    //wxImage::AddHandler(new wxPNGHandler);
 
     if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
                            + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))

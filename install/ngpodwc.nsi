@@ -11,6 +11,7 @@
 
 ;---------------------------------------------
 !define WXWIDGETS_DIR "D:\wxWidgets-2.6.2"
+!define MINGW_DIR "D:\MinGW"
 !define NGPOD_DIR "ngpod.exe"
 
 ; --------------------------------------------
@@ -20,8 +21,8 @@
 ;SetCompressor lzma
 SetCompressor zlib
 
-;SetCompress off
-SetCompress auto
+SetCompress off
+;SetCompress auto
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
@@ -85,6 +86,7 @@ InstType "minimal"
 
 Section "Core" SEC01
   SectionIn 1 2
+  
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
   CreateDirectory "$SMPROGRAMS\NGPODWC"
@@ -101,14 +103,26 @@ Section "Core" SEC01
 
   File "..\docs\readme.txt"
   File "..\docs\licence.txt"
+
+  SetOutPath "$INSTDIR\art"
+  SetOverwrite ifnewer
+  File "..\art\splash.png"
+
 SectionEnd
 
 Section "wxWidgets Lib" SEC02
   SectionIn 1 2
+  SetOutPath "$INSTDIR"
   File "${WXWIDGETS_DIR}\lib\gcc_dll\wxmsw26u_gcc_cb.dll"
 SectionEnd
 
-Section "NGPOD" SEC03
+Section "MinGWM Lib" SEC03
+  SectionIn 1 2
+  SetOutPath "$INSTDIR"
+  File "${MINGW_DIR}\mingwm10.dll"
+SectionEnd
+
+Section "NGPOD" SEC04
   SectionIn 1
   SetOutPath "$INSTDIR\language"
   SetOverwrite try
@@ -134,6 +148,12 @@ Section "NGPOD" SEC03
   SetOutPath "$INSTDIR"
   File "${NGPOD_DIR}\pod.htt"
   File "${NGPOD_DIR}\pod.mdb"
+  SetOutPath "$INSTDIR\POD\pictures\lg_wallpaper"
+  SetOutPath "$INSTDIR\POD\pictures\normal"
+
+  //return program root path
+  SetOutPath "$INSTDIR"
+
 SectionEnd
 
 Section -AdditionalIcons
@@ -175,6 +195,18 @@ FunctionEnd
 Section Uninstall
   Delete "$INSTDIR\${PRODUCT_NAME}.url"
   Delete "$INSTDIR\uninst.exe"
+
+  Delete "$INSTDIR\licence.txt"
+  Delete "$INSTDIR\readme.txt"
+  Delete "$INSTDIR\ngpodwcc_u.exe"
+  Delete "$INSTDIR\ngpodwc_u.exe"
+
+  Delete "$INSTDIR\art\splash.png"
+  Delete "$INSTDIR\art"
+
+  Delete "$INSTDIR\wxmsw26u_gcc_cb.dll"
+  Delete "$INSTDIR\mingwm10.dll"
+
   Delete "$INSTDIR\pod.mdb"
   Delete "$INSTDIR\pod.htt"
   Delete "$INSTDIR\POD\icons\text_where.gif"
@@ -192,11 +224,6 @@ Section Uninstall
   Delete "$INSTDIR\language\enu.ini"
   Delete "$INSTDIR\language\cht.ini"
   Delete "$INSTDIR\language\chs.ini"
-  Delete "$INSTDIR\wxmsw26u_gcc_cb.dll"
-  Delete "$INSTDIR\licence.txt"
-  Delete "$INSTDIR\readme.txt"
-  Delete "$INSTDIR\ngpodwcc_u.exe"
-  Delete "$INSTDIR\ngpodwc_u.exe"
 
   Delete "$SMPROGRAMS\NGPODWC\Uninstall.lnk"
   Delete "$SMPROGRAMS\NGPODWC\·ÃÎÊ NGPODWC Ö÷Ò³.lnk"
@@ -206,9 +233,14 @@ Section Uninstall
   Delete "$SMPROGRAMS\NGPODWC\NG×À²¼ÇÐ»».lnk"
 
   RMDir "$SMPROGRAMS\NGPODWC"
+  RMDir "$INSTDIR\POD\pictures\lg_wallpaper"
+  RMDir "$INSTDIR\POD\pictures\normal"
+  RMDir "$INSTDIR\POD\pictures"
   RMDir "$INSTDIR\POD\icons"
+  RMDir "$INSTDIR\POD"
   RMDir "$INSTDIR\language"
   RMDir "$INSTDIR"
+
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
   DeleteRegKey HKLM "${PRODUCT_DIR_REGKEY}"
