@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        %HEADER-FILENAME%
+// Name:        ngpodwc_common_datetime.h
 // Purpose:
 // Author:      %AUTHOR%
 // Modified by:
