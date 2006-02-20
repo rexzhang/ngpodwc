@@ -113,7 +113,6 @@ bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString
     ButtonSaveConfig = NULL;
     ////@end ngpodwcc_MainFrame member initialisation
 
-    config.ReadConfig();
 
     ////@begin ngpodwcc_MainFrame creation
     wxFrame::Create( parent, id, caption, pos, size, style );

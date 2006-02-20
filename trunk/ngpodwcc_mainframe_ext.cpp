@@ -1,6 +1,6 @@
 #include "ngpodwcc_mainframe.h"
 #include "ngpodwc_common_screen.h"
-//#include "ngpodwcc.h"
+#include "ngpodwcc.h"
 
 #include <wx/stdpaths.h>
 #include <wx/filename.h>
@@ -8,21 +8,16 @@
 void ngpodwcc_MainFrame::InitConfig(void)
 //初始化配置相关
 {
-/*
-    //解决不在安装目录运行控制台找不到配置文件的问题
-    //wxString path;
-    wxFileName *filename;
-    wxChar **argv;
-    argv = NgpodwccApp.argv;
-    wxString path = argv[0];
+    /*wxFileName *filename;
+    wxString path = NgpodwccApp::argv[0];
     filename = new wxFileName(path, wxPATH_WIN);
-    //config.SetConfigFilePath(path);//GetUserConfigDir
+    path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
+    //(mainWindow->config).SetConfigFilePath(path);
+    config.SetConfigFilePath(path);
     */
 
-
-
     //Check config file
-    if (!config.ReadConfig())
+    if wxFileExists(config.GetConfigFile()
     {
         //没有配置文件
         wxSafeShowMessage(wxT("can not found .ini"),

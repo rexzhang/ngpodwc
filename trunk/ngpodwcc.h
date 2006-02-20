@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        ngpodwcc.h
-// Purpose:     
+// Purpose:
 // Author:      Rex Zhang
-// Modified by: 
+// Modified by:
 // Created:     07/02/2006 16:58:25
-// RCS-ID:      
+// RCS-ID:
 // Copyright:   cooooooooooooopy
-// Licence:     
+// Licence:
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef _NGPODWCC_H_
@@ -24,6 +24,8 @@
 #include "wx/image.h"
 #include "ngpodwcc_mainframe.h"
 ////@end includes
+
+#include "ngpodwc_common_config.h"
 
 /*!
  * Forward declarations
@@ -44,7 +46,7 @@
  */
 
 class NgpodwccApp: public wxApp
-{    
+{
     DECLARE_CLASS( NgpodwccApp )
     DECLARE_EVENT_TABLE()
 
@@ -71,7 +73,7 @@ public:
 };
 
 /*!
- * Application instance declaration 
+ * Application instance declaration
  */
 
 ////@begin declare app

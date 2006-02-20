@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="3" />
+	<FileVersion major="1" minor="2" />
 	<Project>
 		<Option title="ngpodwc" />
-		<Option compiler="gcc" />
+		<Option compiler="0" />
 		<Build>
 			<Target title="ngpodwc_Debug">
 				<Option output="ngpodwc_ud.exe" />
-				<Option object_output=".objs\ngpodwc\debug" />
+				<Option object_output=".objs\debug" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -24,9 +24,9 @@
 			</Target>
 			<Target title="ngpodwc_Release">
 				<Option output="ngpodwc_u.exe" />
-				<Option object_output=".objs\ngpodwc\release" />
+				<Option object_output=".objs\release" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="0" />
 				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -38,9 +38,9 @@
 			</Target>
 			<Target title="ngpodwcc_Debug">
 				<Option output="ngpodwcc_ud.exe" />
-				<Option object_output=".objs\ngpodwcc\debug" />
+				<Option object_output=".objs\debug" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="0" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -55,9 +55,9 @@
 			</Target>
 			<Target title="ngpodwcc_Release">
 				<Option output="ngpodwcc_u.exe" />
-				<Option object_output=".objs\ngpodwcc\release" />
+				<Option object_output=".objs\release" />
 				<Option type="0" />
-				<Option compiler="gcc" />
+				<Option compiler="0" />
 				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
@@ -211,6 +211,11 @@
 			<Option link="0" />
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="ngpodwcc.h">
 			<Option compilerVar="CPP" />
