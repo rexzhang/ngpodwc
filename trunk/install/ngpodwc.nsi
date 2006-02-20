@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.2"
+!define PRODUCT_VERSION "0.2.0.1"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://www.flord.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -21,8 +21,8 @@
 ;SetCompressor lzma
 SetCompressor zlib
 
-SetCompress off
-;SetCompress auto
+;SetCompress off
+SetCompress auto
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
@@ -151,7 +151,7 @@ Section "NGPOD" SEC04
   SetOutPath "$INSTDIR\POD\pictures\lg_wallpaper"
   SetOutPath "$INSTDIR\POD\pictures\normal"
 
-  //return program root path
+  ;//return program root path
   SetOutPath "$INSTDIR"
 
 SectionEnd

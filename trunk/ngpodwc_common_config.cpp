@@ -74,6 +74,8 @@ void ngpodwcConfig::SetDefault()
 
     ScreenPicturePath = wxEmptyString;
     ScreenPictureName = wxT("POD_Wallpaper.bmp");
+
+    Locked = false;
 }
 
 
@@ -113,6 +115,8 @@ bool ngpodwcConfig::ReadConfig()
     ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
     pFileConfig->Read(wxT("ScreenWidth"), &(ScreenWidth));
     pFileConfig->Read(wxT("ScreenHeight"), &(ScreenHeight));
+
+    pFileConfig->Read(wxT("Locked"), &(Locked));
 
     //!ConfigInputStream.Close();
     //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
@@ -162,6 +166,8 @@ bool ngpodwcConfig::WriteConfig()
     pFileConfig->Write(wxT("ScreenPictureName"), ScreenPictureName);
     pFileConfig->Write(wxT("ScreenWidth"), ScreenWidth);
     pFileConfig->Write(wxT("ScreenHeight"), ScreenHeight);
+
+    pFileConfig->Write(wxT("Locked"), Locked);
 
     //保存到文件
     pFileConfig->Save(ConfigOutputStream, wxConvUTF8);

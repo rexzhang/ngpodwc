@@ -55,8 +55,9 @@ public:
 
 ////@end NgpodwccApp member function declarations
 //bool getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo);
-bool outputScreenPicture(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
-
+//bool outputScreenPicture(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
+    bool outputScreenPicture();
+    bool updateWallpaper();
 
 ////@begin NgpodwccApp member variables
 ////@end NgpodwccApp member variables
