@@ -1,17 +1,4 @@
 
-/*
-#include <wx/msgdlg.h>
-#include <wx/log.h>
-
-#include <wx/datetime.h>
-
-#include <wx/file.h>
-
-//#include <ctime>
-#include <time.h>
-
-//#include "ngpodwc.h"
-*/
 #include <wx/splash.h>
 //-------------------------------
 
@@ -34,7 +21,7 @@
 ////@end includes
 
 #include "ngpodwc.h"
-
+#include "ngpodwc_mini_panel.h"
 ////@begin XPM images
 ////@end XPM images
 
@@ -80,10 +67,7 @@ bool NgpodwcApp::OnInit()
     wxImage::AddHandler(new wxBMPHandler);
     wxImage::AddHandler(new wxJPEGHandler);
     wxImage::AddHandler(new wxPNGHandler);
-    //wxImage::AddHandler(new wxXPMHandler);
-
-    //ngpodwcc_MainFrame* mainWindow = new ngpodwcc_MainFrame( NULL, ID_FRAME_MAIN );
-    //mainWindow->Show(true);
+    wxImage::AddHandler(new wxXPMHandler);
 
     //wxApp::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "program");
 
@@ -101,54 +85,29 @@ bool NgpodwcApp::OnInit()
     wxYield();
 
     //读取配置文件
-
     config.ReadConfig();
-
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
-    //获取POD 图片描述信息以及图片文件名称
-    //PodPictrueInfo pictureInfo;
-    //if(!getPodInfo(&config, &pictureInfo))
-    if(!pictureInfo.GetInfo(config.PodBasePath + wxT("\\") + config.PodDatabaseName, config.PodDate))
+    if (argv[1] == wxT(""))
     {
-        wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
-        wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
+    wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
+        //无参数，直接切换到下个日期
+        //日期信息++
+        seekDays(1, &(config.PodDate));
+        updateWallpaper();
+        wxBell();
+        return true;
     }
 
-    /*
-    //Debug Info
-    wxSafeShowMessage(config.PodBasePath + wxT("\\")
-                      + config.PodPicturePath + wxT("\\")
-                      + pictureInfo.PhotoName,
-                      config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
-    */
-
-    //处理图片并输出至指定目录
-    if(!outputScreenPicture(&config, &pictureInfo))
-    {
-        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
-        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
-    }
-
-    //设定图片至背景
-    setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
-
-    //日期信息++
-    seekDays(1, &(config.PodDate));
-    //保存++后的日期信息至配置文件
-    config.WriteConfig();
+    //有参数，表示需要显示小面板
+    ngpodwc_mini_panel* miniPanel = new ngpodwc_mini_panel( NULL, ID_DIALOG );
+    miniPanel->Show(true);
 
     /*
     //!!!TEST END
     wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
     return 0;
     */
-
-    wxBell();
 
     return true;
 }
@@ -174,46 +133,83 @@ main()
 }
 */
 
+bool NgpodwcApp::updateWallpaper()
+{
+    //获取POD 图片描述信息以及图片文件名称
+    //PodPictrueInfo pictureInfo;
+    if(!pictureInfo.GetInfo(config.PodBasePath + wxT("\\") + config.PodDatabaseName, config.PodDate))
+    {
+        wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
+        wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
+        wxSafeShowMessage(msgTitle, msgContext);
+        return 1;
+    }
+
+    //Debug Info
+    wxSafeShowMessage(config.PodBasePath + wxT("\\")
+                      + config.PodPicturePath + wxT("\\")
+                      + pictureInfo.PhotoName,
+                      config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
+
+    //处理图片并输出至指定目录
+    //if(!outputScreenPicture(&config, &pictureInfo))
+    if(!outputScreenPicture())
+    {
+        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
+        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
+        wxSafeShowMessage(msgTitle, msgContext);
+        return 1;
+    }
+
+    //设定图片至背景
+    setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
+
+    //保存变化后（当前背景图片）的日期信息至配置文件
+    config.WriteConfig();
+
+    return true;
+}
+
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR xxxxxxx wxImage<wxWidgets>
 // ----------------------------------------------------------------------------
 // return 1 = true/Finish
-bool NgpodwcApp::outputScreenPicture(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
+//bool NgpodwcApp::outputScreenPicture(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
+bool NgpodwcApp::outputScreenPicture()
 {
     wxImage PodImage, ScreenImage;
 
-    if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
-                           + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))
+    if (!PodImage.LoadFile(config.PodBasePath + wxT("\\") + config.PodPicturePath
+                           + wxT("\\") + pictureInfo.PhotoName, wxBITMAP_TYPE_JPEG))
     {
-        wxSafeShowMessage(wxT("Can't load JPG image"), pPodPictureInfo->PhotoName);
+        wxSafeShowMessage(wxT("Can't load JPG image"), pictureInfo.PhotoName);
         return 0;
     }
 
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
 
-
-    if( (PodImage.GetWidth() != pConfig->ScreenWidth)
-            && (PodImage.GetHeight() != pConfig->ScreenHeight) )
+    if( (PodImage.GetWidth() != config.ScreenWidth)
+            && (PodImage.GetHeight() != config.ScreenHeight) )
         //如果原图片尺寸与屏幕尺寸不符〉〉调整大小
     {
         wxString msg;
         /*
         //Debug Info
         msg.Printf(wxT("From : %i x %i\nTo   : %i x %i"),
-                   PodImage.GetWidth(), PodImage.GetHeight(), pConfig->ScreenWidth, pConfig->ScreenHeight);
+                   PodImage.GetWidth(), PodImage.GetHeight(), config.ScreenWidth, config.ScreenHeight);
         wxSafeShowMessage(wxT("change size"), msg);
         */
-        //wxSize ScreenSize(pConfig->ScreenWidth, pConfig->ScreenHeight);
+        //wxSize ScreenSize(config.ScreenWidth, config.ScreenHeight);
         //PodImage.Resize(ScreenSize, xxx,
-        PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
+        PodImage.Rescale(config.ScreenWidth, config.ScreenHeight);
     }
     else
     {
         ScreenImage = PodImage;
     }
 
-    if(!PodImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
+    if(!PodImage.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
                           wxBITMAP_TYPE_BMP))
     {
         wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));

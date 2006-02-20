@@ -51,6 +51,7 @@ public:
     wxString ScreenPicturePath;
     wxString ScreenPictureName;
 
+    bool Locked;
     ///////////
 private:
     wxString ConfigFile;//Full Path + FileName
