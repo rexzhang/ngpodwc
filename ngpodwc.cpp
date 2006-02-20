@@ -88,7 +88,7 @@ bool NgpodwcApp::OnInit()
     config.ReadConfig();
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
-    if (argv[1] == wxT(""))
+    if (argc == 1)
     {
     wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
         //无参数，直接切换到下个日期

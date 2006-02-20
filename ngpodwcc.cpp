@@ -31,6 +31,7 @@
 
 #include <wx/filename.h>
 
+
 ////@begin XPM images
 ////@end XPM images
 
@@ -101,6 +102,8 @@ bool NgpodwccApp::OnInit()
     filename = new wxFileName(path, wxPATH_WIN);
     path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
     (mainWindow->config).SetConfigFilePath(path);
+    //config.SetConfigFilePath(path);
+    //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
 
     return true;
 }

@@ -26,6 +26,8 @@ public:
     void SetConfigFilePath(wxString configFullPath);
     void SetDefault();
 
+    wxString GetConfigFile();
+
     bool ReadConfig();
     bool WriteConfig();
 

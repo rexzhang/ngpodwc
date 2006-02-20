@@ -76,7 +76,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
         else
         {
             // Error opening datasource
-            HandleError(wxT("DB ENV ERROR: Cannot allocate ODBC env handle"));
+            HandleError(wxT("DB ENV ERROR: Cannot allocate ODBC env handle"), NULL);
             wxSafeShowMessage(PodDBName,
                               wxT("Error opening datasource"));
             return 0;
@@ -187,15 +187,14 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
     // -----------------------------------------------------------------------
     // If the wxDbTable instance was successfully created
     // then delete it as we are done with it now.
-    wxDELETE(table);
+    //wxDELETE(table);
 
     // Free the cached connection
     // (meaning release it back in to the cache of datasource
     // connections) for the next time a call to wxDbGetConnection()
     // is made.
-    wxDbFreeConnection(PodDB);
-    PodDB = NULL;
-
+    //wxDbFreeConnection(PodDB);
+    //PodDB = NULL;
 
     // -----------------------------------------------------------------------
     // CLEANUP BEFORE EXITING APP
@@ -203,13 +202,11 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
     // The program is now ending, so we need to close
     // any cached connections that are still being
     // maintained.
-    wxDbCloseConnections();
+    //wxDbCloseConnections();
 
     // Release the environment handle that was created
     // for use with the ODBC datasource connections
-    wxDELETE(DbConnectInf);
-
-
+    //wxDELETE(DbConnectInf);
 
     return 1;//获取成功
 }

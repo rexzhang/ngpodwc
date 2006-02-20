@@ -49,6 +49,14 @@ void ngpodwcConfig::SetConfigFilePath(wxString configFullPath)
 }
 
 //---------------------------------------------------------------------------
+//!config类配置文件存储文件名（全路径）获取
+//---------------------------------------------------------------------------
+wxString ngpodwcConfig::GetConfigFile()
+{
+    return ConfigFile;
+}
+
+//---------------------------------------------------------------------------
 //!重置config为默认值
 //---------------------------------------------------------------------------
 void ngpodwcConfig::SetDefault()
@@ -89,8 +97,12 @@ bool ngpodwcConfig::ReadConfig()
     if(!ConfigInputStream.Ok())//检查配置文件是否存在
     {
         //告警
-        wxString msgTitle("配置文件不存在！",*wxConvCurrent);
-        wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
+        //wxString msgTitle("配置文件不存在！",*wxConvCurrent);
+        wxString msgTitle(wxT("lost .INI file"));
+        wxString msgContext = wxT("can't found %s") + ConfigFile;
+        //wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
+        //wxString msgContext;
+        //msgContext.Printf(wxT("找不到检查配置文件:\n%s\n请运行 ngpodcc.exe 进行初始化操作！"),ConfigFile);
         wxSafeShowMessage(msgTitle, msgContext);
         //wxT("ngpodwc.ini can NOT found!,please RUN ngpodcc.exe"));
         return 0;

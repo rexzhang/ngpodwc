@@ -107,6 +107,11 @@ Section "Core" SEC01
   SetOutPath "$INSTDIR\art"
   SetOverwrite ifnewer
   File "..\art\splash.png"
+  File "..\art\next_pictrue.xpm"
+  File "..\art\previous_pictrue.xpm"
+  File "..\art\lock_picture.xpm"
+  File "..\art\unlock_picture.xpm"
+  ;File "..\art\splash.png"
 
 SectionEnd
 
@@ -116,7 +121,7 @@ Section "wxWidgets Lib" SEC02
   File "${WXWIDGETS_DIR}\lib\gcc_dll\wxmsw26u_gcc_cb.dll"
 SectionEnd
 
-Section "MinGWM Lib" SEC03
+Section "MinGW Lib" SEC03
   SectionIn 1 2
   SetOutPath "$INSTDIR"
   File "${MINGW_DIR}\mingwm10.dll"
@@ -152,7 +157,7 @@ Section "NGPOD" SEC04
   SetOutPath "$INSTDIR\POD\pictures\normal"
 
   ;//return program root path
-  SetOutPath "$INSTDIR"
+  ;SetOutPath "$INSTDIR"
 
 SectionEnd
 
@@ -202,7 +207,11 @@ Section Uninstall
   Delete "$INSTDIR\ngpodwc_u.exe"
 
   Delete "$INSTDIR\art\splash.png"
-  Delete "$INSTDIR\art"
+  Delete "$INSTDIR\art\next_pictrue.xpm"
+  Delete "$INSTDIR\art\previous_pictrue.xpm"
+  Delete "$INSTDIR\art\lock_picture.xpm"
+  Delete "$INSTDIR\art\unlock_picture.xpm"
+  RMDir "$INSTDIR\art"
 
   Delete "$INSTDIR\wxmsw26u_gcc_cb.dll"
   Delete "$INSTDIR\mingwm10.dll"
@@ -224,6 +233,12 @@ Section Uninstall
   Delete "$INSTDIR\language\enu.ini"
   Delete "$INSTDIR\language\cht.ini"
   Delete "$INSTDIR\language\chs.ini"
+  RMDir "$INSTDIR\POD\pictures\lg_wallpaper"
+  RMDir "$INSTDIR\POD\pictures\normal"
+  RMDir "$INSTDIR\POD\pictures"
+  RMDir "$INSTDIR\POD\icons"
+  RMDir "$INSTDIR\POD"
+  RMDir "$INSTDIR\language"
 
   Delete "$SMPROGRAMS\NGPODWC\Uninstall.lnk"
   Delete "$SMPROGRAMS\NGPODWC\·ÃÎÊ NGPODWC Ö÷Ò³.lnk"
@@ -233,12 +248,6 @@ Section Uninstall
   Delete "$SMPROGRAMS\NGPODWC\NG×À²¼ÇÐ»».lnk"
 
   RMDir "$SMPROGRAMS\NGPODWC"
-  RMDir "$INSTDIR\POD\pictures\lg_wallpaper"
-  RMDir "$INSTDIR\POD\pictures\normal"
-  RMDir "$INSTDIR\POD\pictures"
-  RMDir "$INSTDIR\POD\icons"
-  RMDir "$INSTDIR\POD"
-  RMDir "$INSTDIR\language"
   RMDir "$INSTDIR"
 
 

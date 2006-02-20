@@ -33,6 +33,8 @@
 
 #include "wx/dateevt.h"
 
+#include "ngpodwcc.h"
+
 /*!
  * Forward declarations
  */
@@ -145,8 +147,8 @@ public:
 
 ////@begin ngpodwcc_MainFrame member function declarations
 
-    ngpodwcConfig GetConfig() const { return config ; }
-    void SetConfig(ngpodwcConfig value) { config = value ; }
+    //ngpodwcConfig GetConfig() const { return config ; }
+    //void SetConfig(ngpodwcConfig value) { config = value ; }
 
     /// Retrieves bitmap resources
     wxBitmap GetBitmapResource( const wxString& name );
@@ -169,7 +171,7 @@ public:
     wxTextCtrl* ScreenPicturePath;
     wxTextCtrl* ScreenPictureName;
     wxButton* ButtonSaveConfig;
-    ngpodwcConfig config;
+    //ngpodwcConfig config;
 ////@end ngpodwcc_MainFrame member variables
 
     void InitConfig(void);
