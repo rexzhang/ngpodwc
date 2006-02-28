@@ -599,10 +599,11 @@ void ngpodwcc_MainFrame::OnDatectrlDateChanged( wxDateEvent& event )
 void ngpodwcc_MainFrame::OnCheckboxClick( wxCommandEvent& event )
 {
     config.PauseChangeWallpaper = PauseChangeWallpaper->GetValue();
+    ButtonSaveConfig->Enable();
 ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
 }
 
 
@@ -613,10 +614,11 @@ void ngpodwcc_MainFrame::OnCheckboxClick( wxCommandEvent& event )
 void ngpodwcc_MainFrame::OnCheckbox1Click( wxCommandEvent& event )
 {
     config.ShowSplash = ShowSplash->GetValue();
+    ButtonSaveConfig->Enable();
 ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
 }
 
 
@@ -627,10 +629,11 @@ void ngpodwcc_MainFrame::OnCheckbox1Click( wxCommandEvent& event )
 void ngpodwcc_MainFrame::OnCheckbox2Click( wxCommandEvent& event )
 {
     config.ShowDisc = ShowDisc->GetValue();
+    ButtonSaveConfig->Enable();
 ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
 }
 
 
