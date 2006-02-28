@@ -117,9 +117,29 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     podInfoDisc.Replace(wxT(".\n"), wxT("."), true);
     podInfoDisc.Replace(wxT(". "), wxT(". \n "), true);
 
+    /*
+    podInfoDisc.Replace(wxT("\n"), wxT(" \n "), true);
+    podInfoDisc.Replace(wxT(".\n"), wxT(". \n "), true);
+    //podInfoDisc.Replace(wxT("."), wxT(".\n"), true);
+    */
+
+    //if(podInfoDisc.Find(wxT("#")))
+    {
+        podInfoDisc.Replace(wxT("#034"), wxT("\""), true);
+
+        podInfoDisc.Replace(wxT("#145"), wxT("\'"), true);//¡®
+        podInfoDisc.Replace(wxT("#146"), wxT("\'"), true);//¡¯
+
+        podInfoDisc.Replace(wxT("#147"), wxT("\""), true);//¡°
+        podInfoDisc.Replace(wxT("#148"), wxT("\""), true);//¡±
+
+        podInfoDisc.Replace(wxT("#151"), wxT("\'"), true);//£§
+    }
+
+
     //
     wxString podInfoString;//
-    podInfoString.Printf(wxT(" Title : %s \n Date: %s \n When : %s \n Who : %s \n\n Disc : "),
+    podInfoString.Printf(wxT(" Title : %s \n Date: %s \n When : %s \n Who : %s \n\n "),
                          pPodPictureInfo->Title,
                          pPodPictureInfo->PodDate,
                          pPodPictureInfo->When,

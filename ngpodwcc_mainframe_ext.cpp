@@ -88,6 +88,8 @@ void ngpodwcc_MainFrame::ShowConfig(void)
     ScreenPicturePath->SetValue(config.ScreenPicturePath);
     ScreenPictureName->SetValue(config.ScreenPictureName);
 
+	ShowDisc->SetValue(config.ShowDisc);
+
 	PauseChangeWallpaper->SetValue(config.PauseChangeWallpaper);
 	ShowSplash->SetValue(config.ShowSplash);
 
