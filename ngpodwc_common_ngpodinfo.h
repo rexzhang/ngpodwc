@@ -24,6 +24,7 @@ class ngpodinfo
     protected:
     private:
     //int HandleError(wxString errmsg, wxDb *pDb=NULL);
+    int HandleError(wxString errmsg);
     int HandleError(wxString errmsg, wxDb *pDb);
 };
 
