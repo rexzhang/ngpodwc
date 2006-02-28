@@ -19,6 +19,11 @@ ngpodwcConfig::ngpodwcConfig()
     Init();
 }
 
+ngpodwcConfig::~ngpodwcConfig()
+{
+    //dtor
+}
+
 //---------------------------------------------------------------------------
 //!config类初始化
 //---------------------------------------------------------------------------
@@ -27,14 +32,10 @@ void ngpodwcConfig::Init()
     ConfigFileName = wxT("ngpodwc.ini");
     SetConfigFilePath(wxEmptyString);//ConfigFile = wxEmptyString + ConfigFileName;
 
-
     //先重置config为默认值,作为补充（兼容升级后配置信息增加的情况）
     SetDefault();
 
-    //再读取配置文件至config，
-    //////////
-    //ReadConfig();//config。ini只初始化为默认参数，不读入文件
-
+    //config。ini只初始化为默认参数，不读入文件
 }
 
 //---------------------------------------------------------------------------
@@ -67,15 +68,8 @@ void ngpodwcConfig::SetDefault()
     PodPictureMode = wxEmptyString;
     PodPicturePath = wxT("POD\\pictures\\lg_wallpaper");
 
-
     //2001-1-14后有断档，所以直接从2001-4-21开始
     toWxDateTime(2001, 4, 21, &PodDate);
-
-    /*
-    PodYear = 2001;
-    PodMonth = 4;
-    PodDays = 21;
-    */
 
     ScreenWidth = 1024;
     ScreenHeight = 768;
@@ -83,12 +77,18 @@ void ngpodwcConfig::SetDefault()
     ScreenPicturePath = wxEmptyString;
     ScreenPictureName = wxT("POD_Wallpaper.bmp");
 
-    Locked = false;
+    //Locked = false;
+    PauseChangeWallpaper = false;//old-----bool Locked;
+    ShowSplash = true;
+
+    ShowDisc = true;
+
+    return;
 }
 
 
 //---------------------------------------------------------------------------
-//!
+//!读取配置信息到内存
 //---------------------------------------------------------------------------
 bool ngpodwcConfig::ReadConfig()
 {
@@ -99,7 +99,7 @@ bool ngpodwcConfig::ReadConfig()
         //告警
         //wxString msgTitle("配置文件不存在！",*wxConvCurrent);
         wxString msgTitle(wxT("lost .INI file"));
-        wxString msgContext = wxT("can't found %s") + ConfigFile;
+        wxString msgContext = wxT("can't found : ") + ConfigFile;
         //wxString msgContext("找不到检查配置文件 ngpodwc.ini！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
         //wxString msgContext;
         //msgContext.Printf(wxT("找不到检查配置文件:\n%s\n请运行 ngpodcc.exe 进行初始化操作！"),ConfigFile);
@@ -128,7 +128,10 @@ bool ngpodwcConfig::ReadConfig()
     pFileConfig->Read(wxT("ScreenWidth"), &(ScreenWidth));
     pFileConfig->Read(wxT("ScreenHeight"), &(ScreenHeight));
 
-    pFileConfig->Read(wxT("Locked"), &(Locked));
+    pFileConfig->Read(wxT("ShowDisc"), &(ShowDisc));
+
+    pFileConfig->Read(wxT("PauseChangeWallpaper"), &(PauseChangeWallpaper));
+    pFileConfig->Read(wxT("ShowSplash"), &(ShowSplash));
 
     //!ConfigInputStream.Close();
     //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
@@ -137,7 +140,7 @@ bool ngpodwcConfig::ReadConfig()
 }
 
 //---------------------------------------------------------------------------
-//!
+//!将内存中的配置信息写回配置文件
 //---------------------------------------------------------------------------
 bool ngpodwcConfig::WriteConfig()
 {
@@ -168,18 +171,15 @@ bool ngpodwcConfig::WriteConfig()
     pFileConfig->Write(wxT("PodMonth"), month);
     pFileConfig->Write(wxT("PodDays"), mday);
 
-    /*
-    pFileConfig->Write(wxT("PodYear"), PodYear);
-    pFileConfig->Write(wxT("PodMonth"), PodMonth);
-    pFileConfig->Write(wxT("PodDays"), PodDays);
-    */
-
     pFileConfig->Write(wxT("ScreenPicturePath"), ScreenPicturePath);
     pFileConfig->Write(wxT("ScreenPictureName"), ScreenPictureName);
     pFileConfig->Write(wxT("ScreenWidth"), ScreenWidth);
     pFileConfig->Write(wxT("ScreenHeight"), ScreenHeight);
 
-    pFileConfig->Write(wxT("Locked"), Locked);
+    pFileConfig->Write(wxT("ShowDisc"), ShowDisc);
+
+    pFileConfig->Write(wxT("PauseChangeWallpaper"), PauseChangeWallpaper);
+    pFileConfig->Write(wxT("ShowSplash"), ShowSplash);
 
     //保存到文件
     pFileConfig->Save(ConfigOutputStream, wxConvUTF8);

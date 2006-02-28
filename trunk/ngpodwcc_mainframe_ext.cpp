@@ -8,20 +8,12 @@
 void ngpodwcc_MainFrame::InitConfig(void)
 //初始化配置相关
 {
-    /*wxFileName *filename;
-    wxString path = NgpodwccApp::argv[0];
-    filename = new wxFileName(path, wxPATH_WIN);
-    path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
-    //(mainWindow->config).SetConfigFilePath(path);
-    config.SetConfigFilePath(path);
-    */
-
     //Check config file
-    if wxFileExists(config.GetConfigFile()
+    if ( !wxFileExists(config.GetConfigFile()) )
     {
         //没有配置文件
         wxSafeShowMessage(wxT("can not found .ini"),
-        wxT("systen will restore config to defaule\nplease click SAVE_CONFIG save config"));
+                          wxT("systen will restore config to defaule\nplease click SAVE_CONFIG save config"));
         ButtonSaveConfig->Enable();
     }
     else
@@ -95,6 +87,11 @@ void ngpodwcc_MainFrame::ShowConfig(void)
 
     ScreenPicturePath->SetValue(config.ScreenPicturePath);
     ScreenPictureName->SetValue(config.ScreenPictureName);
+
+	PauseChangeWallpaper->SetValue(config.PauseChangeWallpaper);
+	ShowSplash->SetValue(config.ShowSplash);
+
+	return;
 }
 
 void ngpodwcc_MainFrame::AutoDetectScreenWH(void)

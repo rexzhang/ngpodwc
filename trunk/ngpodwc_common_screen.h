@@ -9,6 +9,8 @@
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
 
+#ifndef _NGPODWC_COMMON_SCREEN_H_
+#define _NGPODWC_COMMON_SCREEN_H_
 
 enum WallpaperStyle
 {
@@ -21,3 +23,7 @@ enum WallpaperStyle
 #define SCREENWH800x600 1
 #define SCREENWH1024x768 2
 #define SCREENWHAutoDetect 3
+
+#endif
+    // _NGPODWC_COMMON_SCREEN_H_
+

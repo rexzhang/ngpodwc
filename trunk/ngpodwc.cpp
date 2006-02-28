@@ -1,6 +1,13 @@
-
-#include <wx/splash.h>
-//-------------------------------
+/////////////////////////////////////////////////////////////////////////////
+// Name:        ngpodwc.cpp
+// Purpose:
+// Author:      rex zhang
+// Modified by:
+// Created:     23/02/2006 12:18:54
+// RCS-ID:
+// Copyright:   coooooooooopy
+// Licence:
+/////////////////////////////////////////////////////////////////////////////
 
 #if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
 #pragma implementation "ngpodwc.h"
@@ -21,7 +28,7 @@
 ////@end includes
 
 #include "ngpodwc.h"
-#include "ngpodwc_mini_panel.h"
+
 ////@begin XPM images
 ////@end XPM images
 
@@ -45,8 +52,8 @@ IMPLEMENT_CLASS( NgpodwcApp, wxApp )
 
 BEGIN_EVENT_TABLE( NgpodwcApp, wxApp )
 
-////@begin NgpodwccApp event table entries
-////@end NgpodwccApp event table entries
+////@begin NgpodwcApp event table entries
+////@end NgpodwcApp event table entries
 
 END_EVENT_TABLE()
 
@@ -55,53 +62,107 @@ END_EVENT_TABLE()
  */
 
 NgpodwcApp::NgpodwcApp()
-{}
+{
+    ////@begin NgpodwcApp member initialisation
+    ////@end NgpodwcApp member initialisation
+}
 
 /*!
- * Initialisation for NgpodwccApp
+ * Initialisation for NgpodwcApp
  */
 
 bool NgpodwcApp::OnInit()
 {
 
     wxImage::AddHandler(new wxBMPHandler);
-    wxImage::AddHandler(new wxJPEGHandler);
-    wxImage::AddHandler(new wxPNGHandler);
+
+    ////@begin NgpodwcApp initialisation
+    // Remove the comment markers above and below this block
+    // to make permanent changes to the code.
+
+#if wxUSE_XPM
+
     wxImage::AddHandler(new wxXPMHandler);
+#endif
+#if wxUSE_LIBPNG
+
+    wxImage::AddHandler(new wxPNGHandler);
+#endif
+#if wxUSE_LIBJPEG
+
+    wxImage::AddHandler(new wxJPEGHandler);
+#endif
+#if wxUSE_GIF
+
+    wxImage::AddHandler(new wxGIFHandler);
+#endif
+    ////@end NgpodwcApp initialisation
 
     //wxApp::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "program");
-
-    wxBitmap bitmap;
+    wxBitmap splashBitmap;
     wxSplashScreen *splash = NULL;
-    if (bitmap.LoadFile(wxT("art/splash.png"), wxBITMAP_TYPE_PNG))
-    {
-        //显示Splash图片
-        splash= new wxSplashScreen(bitmap,
-                                   wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
-                                   6000, NULL, -1, wxDefaultPosition, wxDefaultSize,
-                                   wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR);//|wxSTAY_ON_TOP);
-    }
-    //wxApp::
-    wxYield();
+    bool splashEnable = true;//will read from config
+
+    ngpodwc_mini_panel *mainWindow = NULL;
 
     //读取配置文件
     config.ReadConfig();
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
-    if (argc == 1)
+    //确定是否显示Splash
+    if(config.ShowSplash)
     {
-    wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
-        //无参数，直接切换到下个日期
-        //日期信息++
-        seekDays(1, &(config.PodDate));
-        updateWallpaper();
-        wxBell();
-        return true;
+        if(splashBitmap.LoadFile(wxT("art/splash.png"), wxBITMAP_TYPE_PNG))
+        {
+            splashEnable = true;
+        }
+        else
+        {
+            splashEnable = false;
+        }
     }
 
-    //有参数，表示需要显示小面板
-    ngpodwc_mini_panel* miniPanel = new ngpodwc_mini_panel( NULL, ID_DIALOG );
-    miniPanel->Show(true);
+    if (argc >= 2)
+    {
+        //判断是否需要忽略墙纸切换动作
+        if(config.PauseChangeWallpaper)
+        {
+            wxBell();
+            wxBell();
+            return true;
+        }//!程序结束
+
+        //有参数，
+        if(splashEnable)
+        {
+            //显示Splash图片
+            splash= new wxSplashScreen(splashBitmap,
+                                       wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
+                                       6000, NULL, wxID_ANY, wxDefaultPosition, wxDefaultSize,
+                                       wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR);//|wxSTAY_ON_TOP);
+            wxYield();
+        }
+        //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
+        //有参数，直接切换到下个日期
+        //日期信息++
+        seekDays(1, &(config.PodDate));
+        updateWallpaper(&config, &pictureInfo);
+        wxBell();
+        return true;
+    }//!程序结束
+
+    //无参数，表示需要显示小面板
+    mainWindow = new ngpodwc_mini_panel(NULL, ID_DIALOG, _("Dialog"));
+    if(splashEnable)
+    {
+        //显示Splash图片
+        splash= new wxSplashScreen(splashBitmap,
+                                   wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
+                                   6000, mainWindow, wxID_ANY, wxDefaultPosition, wxDefaultSize,
+                                   wxSIMPLE_BORDER|wxFRAME_NO_TASKBAR);//|wxSTAY_ON_TOP);
+        wxYield();
+    }
+    mainWindow->Show(true);
 
     /*
     //!!!TEST END
@@ -117,108 +178,8 @@ bool NgpodwcApp::OnInit()
  */
 int NgpodwcApp::OnExit()
 {
-    ////@begin NgpodwccApp cleanup
+    ////@begin NgpodwcApp cleanup
     return wxApp::OnExit();
-    ////@end NgpodwccApp cleanup
+    ////@end NgpodwcApp cleanup
 }
-
-// ----------------------------------------------------------------------------
-// FUNCTION USED FOR MAIN <input point>
-// ----------------------------------------------------------------------------
-// return ?? = true/Finish
-/*
-main()
-{
-
-}
-*/
-
-bool NgpodwcApp::updateWallpaper()
-{
-    //获取POD 图片描述信息以及图片文件名称
-    //PodPictrueInfo pictureInfo;
-    if(!pictureInfo.GetInfo(config.PodBasePath + wxT("\\") + config.PodDatabaseName, config.PodDate))
-    {
-        wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
-        wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
-    }
-
-    //Debug Info
-    wxSafeShowMessage(config.PodBasePath + wxT("\\")
-                      + config.PodPicturePath + wxT("\\")
-                      + pictureInfo.PhotoName,
-                      config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
-
-    //处理图片并输出至指定目录
-    //if(!outputScreenPicture(&config, &pictureInfo))
-    if(!outputScreenPicture())
-    {
-        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
-        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
-    }
-
-    //设定图片至背景
-    setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
-
-    //保存变化后（当前背景图片）的日期信息至配置文件
-    config.WriteConfig();
-
-    return true;
-}
-
-// ----------------------------------------------------------------------------
-// FUNCTION USED FOR xxxxxxx wxImage<wxWidgets>
-// ----------------------------------------------------------------------------
-// return 1 = true/Finish
-//bool NgpodwcApp::outputScreenPicture(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
-bool NgpodwcApp::outputScreenPicture()
-{
-    wxImage PodImage, ScreenImage;
-
-    if (!PodImage.LoadFile(config.PodBasePath + wxT("\\") + config.PodPicturePath
-                           + wxT("\\") + pictureInfo.PhotoName, wxBITMAP_TYPE_JPEG))
-    {
-        wxSafeShowMessage(wxT("Can't load JPG image"), pictureInfo.PhotoName);
-        return 0;
-    }
-
-    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
-    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
-
-    if( (PodImage.GetWidth() != config.ScreenWidth)
-            && (PodImage.GetHeight() != config.ScreenHeight) )
-        //如果原图片尺寸与屏幕尺寸不符〉〉调整大小
-    {
-        wxString msg;
-        /*
-        //Debug Info
-        msg.Printf(wxT("From : %i x %i\nTo   : %i x %i"),
-                   PodImage.GetWidth(), PodImage.GetHeight(), config.ScreenWidth, config.ScreenHeight);
-        wxSafeShowMessage(wxT("change size"), msg);
-        */
-        //wxSize ScreenSize(config.ScreenWidth, config.ScreenHeight);
-        //PodImage.Resize(ScreenSize, xxx,
-        PodImage.Rescale(config.ScreenWidth, config.ScreenHeight);
-    }
-    else
-    {
-        ScreenImage = PodImage;
-    }
-
-    if(!PodImage.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
-                          wxBITMAP_TYPE_BMP))
-    {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
-        return 0;
-    };
-
-    return 1;
-}
-
-
-
 

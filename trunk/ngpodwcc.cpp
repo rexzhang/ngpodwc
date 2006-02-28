@@ -93,17 +93,19 @@ bool NgpodwccApp::OnInit()
     wxImage::AddHandler(new wxGIFHandler);
 #endif
     ngpodwcc_MainFrame* mainWindow = new ngpodwcc_MainFrame( NULL, ID_FRAME_MAIN );
-    mainWindow->Show(true);
+    //mainWindow->Show(true);
 ////@end NgpodwccApp initialisation
 
-    //解决不在安装目录运行控制台找不到配置文件的问题
     wxFileName *filename;
     wxString path = argv[0];
     filename = new wxFileName(path, wxPATH_WIN);
     path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
-    (mainWindow->config).SetConfigFilePath(path);
     //config.SetConfigFilePath(path);
+    (mainWindow->config).SetConfigFilePath(path);
     //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
+    (mainWindow->config).ReadConfig();
+    mainWindow->Show(true);
+
 
     return true;
 }

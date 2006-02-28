@@ -2,9 +2,9 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.2.0.1"
+!define PRODUCT_VERSION "0.2.2.0"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
-!define PRODUCT_WEB_SITE "http://www.flord.net"
+!define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -86,23 +86,30 @@ InstType "minimal"
 
 Section "Core" SEC01
   SectionIn 1 2
-  
+
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
   CreateDirectory "$SMPROGRAMS\NGPODWC"
 
   File "..\ngpodwc_u.exe"
-;  CreateShortCut "$SMPROGRAMS\NGPODWC\NGPODWC.lnk" "$INSTDIR\ngpodwc_u.exe"
   CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe"
-;  CreateShortCut "$DESKTOP\NGPODWC.lnk" "$INSTDIR\ngpodwc_u.exe"
   CreateShortCut "$DESKTOP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe"
+  CreateShortCut "$SMSTARTUP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe" -silent
 
   File "..\ngpodwcc_u.exe"
-;  CreateShortCut "$SMPROGRAMS\NGPODWC\NGPODWCC.lnk" "$INSTDIR\ngpodwcc_u.exe"
   CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk" "$INSTDIR\ngpodwcc_u.exe"
 
+  SetOutPath "$INSTDIR\docs"
+  CreateDirectory "$SMPROGRAMS\NGPODWC\docs"
+
   File "..\docs\readme.txt"
+  CreateShortCut "$SMPROGRAMS\NGPODWC\docs\readme.lnk" "$INSTDIR\docs\readme.txt"
   File "..\docs\licence.txt"
+  CreateShortCut "$SMPROGRAMS\NGPODWC\docs\licence.lnk" "$INSTDIR\docs\licence.txt"
+  File "..\docs\history.txt"
+  CreateShortCut "$SMPROGRAMS\NGPODWC\docs\history.lnk" "$INSTDIR\docs\history.txt"
+  File "..\docs\todos.txt"
+  CreateShortCut "$SMPROGRAMS\NGPODWC\docs\todos.lnk" "$INSTDIR\docs\todos.txt"
 
   SetOutPath "$INSTDIR\art"
   SetOverwrite ifnewer
@@ -111,7 +118,7 @@ Section "Core" SEC01
   File "..\art\previous_pictrue.xpm"
   File "..\art\lock_picture.xpm"
   File "..\art\unlock_picture.xpm"
-  ;File "..\art\splash.png"
+
 
 SectionEnd
 
@@ -136,7 +143,6 @@ Section "NGPOD" SEC04
   File "${NGPOD_DIR}\language\enu.ini"
   SetOutPath "$INSTDIR"
   File "${NGPOD_DIR}\ngpod.exe"
-;  CreateShortCut "$SMPROGRAMS\NGPODWC\NGPOD.lnk" "$INSTDIR\ngpod.exe"
   CreateShortCut "$SMPROGRAMS\NGPODWC\美国国家地理图片下载(NGPOD).lnk" "$INSTDIR\ngpod.exe"
   SetOutPath "$INSTDIR\POD\icons"
   File "${NGPOD_DIR}\POD\icons\logo.gif"
@@ -157,7 +163,7 @@ Section "NGPOD" SEC04
   SetOutPath "$INSTDIR\POD\pictures\normal"
 
   ;//return program root path
-  ;SetOutPath "$INSTDIR"
+  SetOutPath "$INSTDIR"
 
 SectionEnd
 
@@ -201,10 +207,13 @@ Section Uninstall
   Delete "$INSTDIR\${PRODUCT_NAME}.url"
   Delete "$INSTDIR\uninst.exe"
 
-  Delete "$INSTDIR\licence.txt"
-  Delete "$INSTDIR\readme.txt"
   Delete "$INSTDIR\ngpodwcc_u.exe"
   Delete "$INSTDIR\ngpodwc_u.exe"
+
+  Delete "$INSTDIR\docs\licence.txt"
+  Delete "$INSTDIR\docs\readme.txt"
+  Delete "$INSTDIR\docs\todos.txt"
+  Delete "$INSTDIR\docs\history.txt"
 
   Delete "$INSTDIR\art\splash.png"
   Delete "$INSTDIR\art\next_pictrue.xpm"
@@ -240,13 +249,23 @@ Section Uninstall
   RMDir "$INSTDIR\POD"
   RMDir "$INSTDIR\language"
 
-  Delete "$SMPROGRAMS\NGPODWC\Uninstall.lnk"
-  Delete "$SMPROGRAMS\NGPODWC\访问 NGPODWC 主页.lnk"
-  Delete "$SMPROGRAMS\NGPODWC\美国国家地理图片下载(NGPOD).lnk"
-  Delete "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk"
   Delete "$DESKTOP\NG桌布切换.lnk"
   Delete "$SMPROGRAMS\NGPODWC\NG桌布切换.lnk"
+  Delete "$SMSTARTUP\NG桌布切换.lnk"
 
+  Delete "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk"
+
+  Delete "$SMPROGRAMS\NGPODWC\美国国家地理图片下载(NGPOD).lnk"
+
+  Delete "$SMPROGRAMS\NGPODWC\访问 NGPODWC 主页.lnk"
+  Delete "$SMPROGRAMS\NGPODWC\Uninstall.lnk"
+
+  Delete "$SMPROGRAMS\NGPODWC\docs\readme.lnk"
+  Delete "$SMPROGRAMS\NGPODWC\docs\licence.lnk"
+  Delete "$SMPROGRAMS\NGPODWC\docs\history.lnk"
+  Delete "$SMPROGRAMS\NGPODWC\docs\todos.lnk"
+
+  RMDir "$SMPROGRAMS\NGPODWC\docs"
   RMDir "$SMPROGRAMS\NGPODWC"
   RMDir "$INSTDIR"
 

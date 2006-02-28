@@ -8,6 +8,11 @@
 // Copyright:   cooooooooooooopy
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
+
+#ifndef COMMON_CONFIG_H
+#define COMMON_CONFIG_H
+
+
 #include <wx/string.h>
 
 
@@ -19,6 +24,7 @@ class ngpodwcConfig
 public:
     //类构造函数
     ngpodwcConfig();
+    virtual ~ngpodwcConfig();
     //类初始化函数
     void Init();
 
@@ -31,7 +37,8 @@ public:
     bool ReadConfig();
     bool WriteConfig();
 
-    //类成员变量
+    //类成员变量--------------
+    //NGPOD相关
     wxString PodBasePath;
     wxString PodDatabaseName;
 
@@ -44,18 +51,26 @@ public:
     int PodMonth;
     int PodDays;
     */
-
+    //本地显示器/桌面相关
     int ScreenWidth;
     int ScreenHeight;
     //    wxSize ScreenSize;
-
-    //////////
     wxString ScreenPicturePath;
     wxString ScreenPictureName;
 
-    bool Locked;
-    ///////////
+    //图片处理相关
+    bool ShowDisc;
+
+    //程序控制相关
+    bool PauseChangeWallpaper;//old-----bool Locked;
+    bool ShowSplash;
+
+protected:
+
 private:
+    //config配置文件路径，文件名等信息
     wxString ConfigFile;//Full Path + FileName
     wxString ConfigFileName;
 };
+
+#endif // COMMON_CONFIG_H
