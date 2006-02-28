@@ -26,14 +26,11 @@
 #include "wx/frame.h"
 #include "wx/notebook.h"
 #include "wx/datectrl.h"
-#include "wx/statline.h"
 ////@end includes
 
 #include "ngpodwc_common_config.h"
 
 #include "wx/dateevt.h"
-
-#include "ngpodwcc.h"
 
 /*!
  * Forward declarations
@@ -49,10 +46,10 @@ class wxDatePickerCtrl;
 
 ////@begin control identifiers
 #define ID_FRAME_MAIN 10000
-#define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
+#define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX
 #define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("Dialog")
 #define SYMBOL_NGPODWCC_MAINFRAME_IDNAME ID_FRAME_MAIN
-#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(600, 480)
+#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(640, 460)
 #define SYMBOL_NGPODWCC_MAINFRAME_POSITION wxDefaultPosition
 #define ID_PANEL 10001
 #define ID_NOTEBOOK 10002
@@ -62,7 +59,10 @@ class wxDatePickerCtrl;
 #define ID_TEXTCTRL1 10012
 #define ID_TEXTCTRL2 10029
 #define ID_DATECTRL 10016
+#define ID_CHECKBOX 10013
+#define ID_CHECKBOX1 10014
 #define ID_PANEL2 10004
+#define ID_CHECKBOX2 10026
 #define ID_PANEL3 10005
 #define ID_CHOICE1 10027
 #define ID_BUTTON1 10028
@@ -71,6 +71,7 @@ class wxDatePickerCtrl;
 #define ID_TEXTCTRL6 10020
 #define ID_BUTTON 10021
 #define ID_TEXTCTRL3 10022
+#define ID_BUTTON2 10015
 #define ID_BUTTON_RELOAD_CONFIG 10006
 #define ID_BUTTON_RESTORE_DEFAULT 10007
 #define ID_BUTTON_SAVE_CONFIG 10017
@@ -116,6 +117,15 @@ public:
     /// wxEVT_DATE_CHANGED event handler for ID_DATECTRL
     void OnDatectrlDateChanged( wxDateEvent& event );
 
+    /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX
+    void OnCheckboxClick( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1
+    void OnCheckbox1Click( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2
+    void OnCheckbox2Click( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE1
     void OnChoice1Selected( wxCommandEvent& event );
 
@@ -147,9 +157,6 @@ public:
 
 ////@begin ngpodwcc_MainFrame member function declarations
 
-    //ngpodwcConfig GetConfig() const { return config ; }
-    //void SetConfig(ngpodwcConfig value) { config = value ; }
-
     /// Retrieves bitmap resources
     wxBitmap GetBitmapResource( const wxString& name );
 
@@ -165,13 +172,15 @@ public:
     wxTextCtrl* PodDatabaseName;
     wxTextCtrl* PodPicturePath;
     wxDatePickerCtrl* NextPODDay;
+    wxCheckBox* PauseChangeWallpaper;
+    wxCheckBox* ShowSplash;
+    wxCheckBox* ShowDisc;
     wxChoice* ScreenWidthHeight;
     wxTextCtrl* ScreenWidth;
     wxTextCtrl* ScreenHeight;
     wxTextCtrl* ScreenPicturePath;
     wxTextCtrl* ScreenPictureName;
     wxButton* ButtonSaveConfig;
-    //ngpodwcConfig config;
 ////@end ngpodwcc_MainFrame member variables
 
     void InitConfig(void);
@@ -183,6 +192,8 @@ public:
 
     void AutoDetectScreenWH(void);
     wxString AutoDetectSystemPath(void);
+
+    ngpodwcConfig config;
 };
 
 #endif

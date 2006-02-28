@@ -122,6 +122,7 @@ void ngpodwcc_aboutdialog::CreateControls()
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxStaticText* itemStaticText11 = new wxStaticText( itemPanel3, wxID_STATIC, _("Developey by:"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText11->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
     itemBoxSizer4->Add(itemStaticText11, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxStaticText* itemStaticText12 = new wxStaticText( itemPanel3, wxID_STATIC, _("Rex Zhang(rex.zhang@gmail.com)"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -130,15 +131,20 @@ void ngpodwcc_aboutdialog::CreateControls()
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxStaticText* itemStaticText14 = new wxStaticText( itemPanel3, wxID_STATIC, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer4->Add(itemStaticText14, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    itemStaticText14->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
+    itemBoxSizer4->Add(itemStaticText14, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
 
-    wxStaticText* itemStaticText15 = new wxStaticText( itemPanel3, wxID_STATIC, _("Http://www.flord.net"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer4->Add(itemStaticText15, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxStaticText* itemStaticText15 = new wxStaticText( itemPanel3, wxID_STATIC, _("http://ngpodwc.sf.net"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer4->Add(itemStaticText15, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
+
+    wxStaticText* itemStaticText16 = new wxStaticText( itemPanel3, wxID_STATIC, _("http://www.flord.net"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer4->Add(itemStaticText16, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxButton* itemButton17 = new wxButton( itemDialog1, ID_BUTTON8, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer2->Add(itemButton17, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxButton* itemButton18 = new wxButton( itemDialog1, ID_BUTTON8, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton18->SetDefault();
+    itemBoxSizer2->Add(itemButton18, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
 ////@end ngpodwcc_aboutdialog content construction
 }

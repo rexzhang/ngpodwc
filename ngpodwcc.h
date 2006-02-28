@@ -70,6 +70,7 @@ public:
 
 ////@begin NgpodwccApp member variables
 ////@end NgpodwccApp member variables
+    ngpodwcConfig config;
 };
 
 /*!
