@@ -129,7 +129,8 @@ bool NgpodwcApp::OnInit()
         {
             wxBell();
             wxBell();
-            return true;
+            //!return true;
+            return false;//Test can not auto close at pauseChange mode
         }//!程序结束
 
         //有参数，
