@@ -52,7 +52,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
 
     //调整图片尺寸
     if( (PodImage.GetWidth() != pConfig->ScreenWidth)
-            && (PodImage.GetHeight() != pConfig->ScreenHeight) )
+            || (PodImage.GetHeight() != pConfig->ScreenHeight) )
     {
         //如果原图片尺寸与屏幕尺寸不符〉〉调整大小
         /*
@@ -63,7 +63,9 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
         wxSafeShowMessage(wxT("change size"), msg);
         */
         //wxSize ScreenSize(pConfig->ScreenWidth, pConfig->ScreenHeight);
-        PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
+        ScreenImage = PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
+
+        wxSafeShowMessage(wxT("DEBUG INFO"), wxT("DEBUG INFO"));
     }
     else
     {
