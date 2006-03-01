@@ -62,6 +62,7 @@ wxString ngpodwcConfig::GetConfigFile()
 //---------------------------------------------------------------------------
 void ngpodwcConfig::SetDefault()
 {
+    ///////////////////
     PodBasePath = wxEmptyString;
     PodDatabaseName = wxT("pod.mdb");//wxEmptyString;
 
@@ -71,12 +72,17 @@ void ngpodwcConfig::SetDefault()
     //2001-1-14后有断档，所以直接从2001-4-21开始
     toWxDateTime(2001, 4, 21, &PodDate);
 
+    //////////////
+    LocalPicturePath = wxEmptyString;
+
+    ////////////////
     ScreenWidth = 1024;
     ScreenHeight = 768;
 
     ScreenPicturePath = wxEmptyString;
     ScreenPictureName = wxT("POD_Wallpaper.bmp");
 
+    ////////////////
     //Locked = false;
     PauseChangeWallpaper = false;//old-----bool Locked;
     ShowSplash = true;
@@ -123,11 +129,16 @@ bool ngpodwcConfig::ReadConfig()
     pFileConfig->Read(wxT("PodDays"), &(mday));
     toWxDateTime(year, month, mday, &PodDate);
 
+    ///////////////
+    LocalPicturePath = pFileConfig->Read(wxT("LocalPicturePath"));
+
+    /////////////
     ScreenPicturePath = pFileConfig->Read(wxT("ScreenPicturePath"));
     ScreenPictureName = pFileConfig->Read(wxT("ScreenPictureName"));
     pFileConfig->Read(wxT("ScreenWidth"), &(ScreenWidth));
     pFileConfig->Read(wxT("ScreenHeight"), &(ScreenHeight));
 
+    /////////////////
     pFileConfig->Read(wxT("ShowDisc"), &(ShowDisc));
 
     pFileConfig->Read(wxT("PauseChangeWallpaper"), &(PauseChangeWallpaper));
@@ -159,7 +170,7 @@ bool ngpodwcConfig::WriteConfig()
 
     //wxFileConfig *pFileConfig = new wxFileConfig(ConfigOutputStream, wxConvUTF8);
     wxFileConfig *pFileConfig = new wxFileConfig();
-
+    /////////////////
     pFileConfig->Write(wxT("PodBasePath"), PodBasePath);
 
     pFileConfig->Write(wxT("PodDatabaseName"), PodDatabaseName);
@@ -171,11 +182,16 @@ bool ngpodwcConfig::WriteConfig()
     pFileConfig->Write(wxT("PodMonth"), month);
     pFileConfig->Write(wxT("PodDays"), mday);
 
+    ////////////////////
+    pFileConfig->Write(wxT("LocalPicturePath"), LocalPicturePath);
+
+    /////////////////////
     pFileConfig->Write(wxT("ScreenPicturePath"), ScreenPicturePath);
     pFileConfig->Write(wxT("ScreenPictureName"), ScreenPictureName);
     pFileConfig->Write(wxT("ScreenWidth"), ScreenWidth);
     pFileConfig->Write(wxT("ScreenHeight"), ScreenHeight);
 
+    //////////////////////
     pFileConfig->Write(wxT("ShowDisc"), ShowDisc);
 
     pFileConfig->Write(wxT("PauseChangeWallpaper"), PauseChangeWallpaper);

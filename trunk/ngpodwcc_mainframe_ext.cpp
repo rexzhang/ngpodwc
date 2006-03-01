@@ -48,13 +48,17 @@ void ngpodwcc_MainFrame::SetDefault(void)
 void ngpodwcc_MainFrame::ShowConfig(void)
 //将config中的参数写到界面控件，以便显示出来
 {
+    //////////////////
     PodBasePath->SetValue(config.PodBasePath);
     PodDatabaseName->SetValue(config.PodDatabaseName);
     PodPicturePath->SetValue(config.PodPicturePath);
-
     //Next POD Day
     NextPODDay->SetValue(config.PodDate);
 
+    ///////////////////
+    LocalPicturePath->SetValue(config.LocalPicturePath);
+
+    ///////////////////////
     if((config.ScreenWidth == 640) && (config.ScreenHeight == 480))
     {
         ScreenWidthHeight->SetSelection(SCREENWH640x480);
@@ -84,10 +88,10 @@ void ngpodwcc_MainFrame::ShowConfig(void)
             }
         }
     }
-
     ScreenPicturePath->SetValue(config.ScreenPicturePath);
     ScreenPictureName->SetValue(config.ScreenPictureName);
 
+	////////////////////////////////
 	ShowDisc->SetValue(config.ShowDisc);
 
 	PauseChangeWallpaper->SetValue(config.PauseChangeWallpaper);

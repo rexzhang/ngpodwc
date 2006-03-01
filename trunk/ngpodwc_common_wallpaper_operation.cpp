@@ -65,7 +65,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
         //wxSize ScreenSize(pConfig->ScreenWidth, pConfig->ScreenHeight);
         ScreenImage = PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
 
-        wxSafeShowMessage(wxT("DEBUG INFO"), wxT("DEBUG INFO"));
+        //wxSafeShowMessage(wxT("DEBUG INFO"), wxT("DEBUG INFO"));
     }
     else
     {
@@ -83,7 +83,6 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
     {
         pictureOpretionDrawText(&ScreenImage, pPodPictureInfo);
     }
-    //ConvertToImage
 
     if(!ScreenImage.Ok())
     {
@@ -93,14 +92,16 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
 
     //将处理完毕的图片输出至指定目录
     //if(!outputScreenPicture(&config, &pictureInfo))
-    if(!outputScreenPicture(pConfig, &ScreenImage))
+    if(!ScreenImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
+                               wxBITMAP_TYPE_BMP))
     {
+        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+
         wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
         wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
         wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
-    }
-
+        return 0;
+    };
     //设定图片至桌布
     setWallpaperRegInfo(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName);
 
@@ -175,8 +176,8 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     int InfoBoxW = 600, InfoBoxH = 200;
     int InfoBoxXY = 20, infoBoxYSeek = 30;//当为右下时，为右下与屏幕右下角的相对坐标
 
-    wxRect podInfoRect(1024 - InfoBoxXY - InfoBoxW,
-                       768 - InfoBoxXY - InfoBoxH - infoBoxYSeek,
+    wxRect podInfoRect(pScreenImage->GetWidth() - InfoBoxXY - InfoBoxW,
+                       pScreenImage->GetHeight() - InfoBoxXY - InfoBoxH - infoBoxYSeek,
                        InfoBoxW, InfoBoxH);
     /*
         //--------------------------------
@@ -209,8 +210,8 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
 
     int InfoBoxW2 = 600, InfoBoxH2 = 200;
     int InfoBoxXY2 = 20, infoBoxYSeek2 = 30;//当为右下时，为右下与屏幕右下角的相对坐标
-    wxRect podInfoRect2(1024 - InfoBoxXY2 - InfoBoxW2 - 1,
-                        768 - InfoBoxXY2 - InfoBoxH2 - infoBoxYSeek2 - 1,
+    wxRect podInfoRect2(pScreenImage->GetWidth() - InfoBoxXY2 - InfoBoxW2 - 1,
+                        pScreenImage->GetHeight() - InfoBoxXY2 - InfoBoxH2 - infoBoxYSeek2 - 1,
                         InfoBoxW2, InfoBoxH2);
     ScreenImageDC.DrawLabel(podInfoString, podInfoRect2, wxALIGN_RIGHT | wxALIGN_BOTTOM, -1);
 
@@ -221,24 +222,6 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     *pScreenImage = ScreenBitmap.ConvertToImage();
 
     return;
-}
-
-// ----------------------------------------------------------------------------
-// FUNCTION USED FOR xxxxxxx wxImage<wxWidgets>
-// ----------------------------------------------------------------------------
-// return 1 = true/Finish
-bool outputScreenPicture(ngpodwcConfig *pConfig, wxImage *pScreenImage)
-//bool outputScreenPicture()
-{
-
-    if(!pScreenImage->SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
-                               wxBITMAP_TYPE_BMP))
-    {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
-        return 0;
-    };
-
-    return 1;
 }
 
 // ----------------------------------------------------------------------------

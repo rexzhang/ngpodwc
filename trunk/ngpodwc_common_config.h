@@ -38,6 +38,7 @@ public:
     bool WriteConfig();
 
     //类成员变量--------------
+
     //NGPOD相关
     wxString PodBasePath;
     wxString PodDatabaseName;
@@ -46,11 +47,10 @@ public:
     wxString PodPicturePath;
 
     wxDateTime PodDate;
-    /*
-    int PodYear;
-    int PodMonth;
-    int PodDays;
-    */
+
+    //本地图片资源信息
+    wxString LocalPicturePath;
+
     //本地显示器/桌面相关
     int ScreenWidth;
     int ScreenHeight;
