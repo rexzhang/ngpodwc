@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.2.2.0"
+!define PRODUCT_VERSION "0.3.0.0"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -71,7 +71,8 @@ SetCompress auto
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "${PRODUCT_NAME}_setup_v${PRODUCT_VERSION}.exe"
+;定义输出的安装文件名
+OutFile "${PRODUCT_NAME}_v${PRODUCT_VERSION}_setup.exe"
 InstallDir "$PROGRAMFILES\NGPODWC"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
