@@ -119,30 +119,16 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     ScreenImageDC.SelectObject(ScreenBitmap);
     //ScreenImageDC.SelectObject(*pScreenImage);
     wxColourDatabase ColourDB;
-    ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
-    ScreenImageDC.SetTextBackground(ColourDB.Find(wxT("LIGHT GREY")));
+    //ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
+    //ScreenImageDC.SetTextBackground(ColourDB.Find(wxT("LIGHT GREY")));
 
-    //
     wxString podInfoDisc(pPodPictureInfo->Disc);
-    podInfoDisc.Replace(wxT("<BR>"), wxT(""), true);
-    podInfoDisc.Replace(wxT("<P>"), wxT(""), true);
-    podInfoDisc.Replace(wxT("</P>"), wxT(""), true);
-    podInfoDisc.Replace(wxT("<I>"), wxT(""), true);
-    podInfoDisc.Replace(wxT("</I>"), wxT(""), true);
-
-    podInfoDisc.Replace(wxT("\n"), wxT(""), true);
-    podInfoDisc.Replace(wxT(".\n"), wxT("."), true);
-    podInfoDisc.Replace(wxT(". "), wxT(". \n "), true);
-
-    /*
-    podInfoDisc.Replace(wxT("\n"), wxT(" \n "), true);
-    podInfoDisc.Replace(wxT(".\n"), wxT(". \n "), true);
-    //podInfoDisc.Replace(wxT("."), wxT(".\n"), true);
-    */
-
-    //if(podInfoDisc.Find(wxT("#")))
+    if(podInfoDisc.Contains(wxT("#")))
     {
         podInfoDisc.Replace(wxT("#034"), wxT("\""), true);
+        podInfoDisc.Replace(wxT("#039"), wxT("\'"), true);
+
+        podInfoDisc.Replace(wxT("#133"), wxT("..."), true);//...
 
         podInfoDisc.Replace(wxT("#145"), wxT("\'"), true);//‘
         podInfoDisc.Replace(wxT("#146"), wxT("\'"), true);//’
@@ -152,7 +138,25 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
 
         podInfoDisc.Replace(wxT("#151"), wxT("\'"), true);//＇
     }
+    //
+    podInfoDisc.Replace(wxT("<BR>"), wxT(""), true);
+    podInfoDisc.Replace(wxT("<P>"), wxT(""), true);
+    podInfoDisc.Replace(wxT("</P>"), wxT(""), true);
+    podInfoDisc.Replace(wxT("<I>"), wxT(""), true);
+    podInfoDisc.Replace(wxT("</I>"), wxT(""), true);
 
+    podInfoDisc.Replace(wxT("\n"), wxT(""), true);
+    podInfoDisc.Replace(wxT(".\n"), wxT("."), true);
+    podInfoDisc.Replace(wxT(". "), wxT(". \n "), true);
+    podInfoDisc.Replace(wxT(" \n \n"), wxT(" \n"), true);
+
+    podInfoDisc.Replace(wxT(".\'\" "), wxT(".\'\" \n "), true);
+
+    /*
+    podInfoDisc.Replace(wxT("\n"), wxT(" \n "), true);
+    podInfoDisc.Replace(wxT(".\n"), wxT(". \n "), true);
+    //podInfoDisc.Replace(wxT("."), wxT(".\n"), true);
+    */
 
     //
     wxString podInfoString;//
@@ -166,8 +170,8 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     podInfoString.Replace(wxT("National Geographic Photo of the Day: "), wxT(""), true);
     podInfoString.Replace(wxT(" 00:00:00"), wxT(""), true);
     //
-    const int InfoBoxW = 600, InfoBoxH = 200;
-    const int InfoBoxXY = 20, infoBoxYSeek = 30;//当为右下时，为右下与屏幕右下角的相对坐标
+    int InfoBoxW = 600, InfoBoxH = 200;
+    int InfoBoxXY = 20, infoBoxYSeek = 30;//当为右下时，为右下与屏幕右下角的相对坐标
 
     wxRect podInfoRect(1024 - InfoBoxXY - InfoBoxW,
                        768 - InfoBoxXY - InfoBoxH - infoBoxYSeek,
@@ -194,8 +198,23 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     wxFont ScreenImageFont = ScreenImageDC.GetFont();
     ScreenImageFont.SetFamily(wxFONTFAMILY_ROMAN);
     ScreenImageDC.SetFont(ScreenImageFont);
-    ScreenImageDC.SetBackgroundMode(wxSOLID);
-    ScreenImageDC.DrawLabel(podInfoString, podInfoRect, wxALIGN_RIGHT | wxALIGN_BOTTOM);
+    //ScreenImageDC.SetBackgroundMode(wxSOLID);//强制指定显示字体背景色，默认为透明
+
+    ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
+    ScreenImageDC.DrawLabel(podInfoString, podInfoRect, wxALIGN_RIGHT | wxALIGN_BOTTOM, -1);
+    ///////-------------
+    ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("LIGHT GREY")));
+
+    int InfoBoxW2 = 600, InfoBoxH2 = 200;
+    int InfoBoxXY2 = 20, infoBoxYSeek2 = 30;//当为右下时，为右下与屏幕右下角的相对坐标
+    wxRect podInfoRect2(1024 - InfoBoxXY2 - InfoBoxW2 - 1,
+                        768 - InfoBoxXY2 - InfoBoxH2 - infoBoxYSeek2 - 1,
+                        InfoBoxW2, InfoBoxH2);
+    ScreenImageDC.DrawLabel(podInfoString, podInfoRect2, wxALIGN_RIGHT | wxALIGN_BOTTOM, -1);
+
+    ///////-------------
+
+    ScreenImageDC.SelectObject( wxNullBitmap );
 
     *pScreenImage = ScreenBitmap.ConvertToImage();
 
