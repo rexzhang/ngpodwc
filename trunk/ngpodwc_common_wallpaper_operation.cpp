@@ -166,7 +166,12 @@ void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo)
     podInfoString.Replace(wxT("National Geographic Photo of the Day: "), wxT(""), true);
     podInfoString.Replace(wxT(" 00:00:00"), wxT(""), true);
     //
-    wxRect podInfoRect(400,500,600,200);
+    const int InfoBoxW = 600, InfoBoxH = 200;
+    const int InfoBoxXY = 20, infoBoxYSeek = 30;//当为右下时，为右下与屏幕右下角的相对坐标
+
+    wxRect podInfoRect(1024 - InfoBoxXY - InfoBoxW,
+                       768 - InfoBoxXY - InfoBoxH - infoBoxYSeek,
+                       InfoBoxW, InfoBoxH);
     /*
         //--------------------------------
         wxBitmap InfoBoxBitmap(600,150, 16);
