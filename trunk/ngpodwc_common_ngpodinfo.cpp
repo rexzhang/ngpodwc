@@ -102,7 +102,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
     const UWORD numTableColumns = 8;       // Number table columns
     //定义表部分
     //table = new wxDbTable(PodDB, wxT("POD"), numTableColumns, wxT(""), wxDB_QUERY_ONLY, wxT(""));
-    table = new wxDbTable(PodDB, wxT("POD"), numTableColumns);//, wxT(""), wxDB_QUERY_ONLY, wxT(""));
+    table = new wxDbTable(PodDB, wxT("POD"), numTableColumns, wxT(""), wxDB_QUERY_ONLY, wxT(""));
 
     //清空数据
     wxStrcpy(Title, wxT(""));
