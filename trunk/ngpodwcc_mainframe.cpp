@@ -71,6 +71,10 @@ BEGIN_EVENT_TABLE( ngpodwcc_MainFrame, wxFrame )
 
     EVT_BUTTON( ID_BUTTON, ngpodwcc_MainFrame::OnButtonClick )
 
+    EVT_TEXT( ID_TEXTCTRL7, ngpodwcc_MainFrame::OnTextctrl7Updated )
+
+    EVT_BUTTON( ID_BUTTON_LocalPicturePath, ngpodwcc_MainFrame::OnButtonLocalpicturepathClick )
+
     EVT_BUTTON( ID_BUTTON_RELOAD_CONFIG, ngpodwcc_MainFrame::OnButtonReloadConfigClick )
 
     EVT_BUTTON( ID_BUTTON_RESTORE_DEFAULT, ngpodwcc_MainFrame::OnButtonRestoreDefaultClick )
@@ -119,6 +123,7 @@ bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString
     ScreenHeight = NULL;
     ScreenPicturePath = NULL;
     ScreenPictureName = NULL;
+    LocalPicturePath = NULL;
     ButtonSaveConfig = NULL;
     ////@end ngpodwcc_MainFrame member initialisation
 
@@ -312,32 +317,53 @@ void ngpodwcc_MainFrame::CreateControls()
 
     itemNotebook7->AddPage(itemPanel34, _("Screen Info Setting"));
 
+    wxPanel* itemPanel59 = new wxPanel( itemNotebook7, ID_PANEL5, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
+    wxFlexGridSizer* itemFlexGridSizer60 = new wxFlexGridSizer(2, 3, 0, 0);
+    itemPanel59->SetSizer(itemFlexGridSizer60);
+
+    itemFlexGridSizer60->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemFlexGridSizer60->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemFlexGridSizer60->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxStaticText* itemStaticText64 = new wxStaticText( itemPanel59, wxID_STATIC, _("LocalPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer60->Add(itemStaticText64, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    LocalPicturePath = new wxTextCtrl( itemPanel59, ID_TEXTCTRL7, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
+    itemFlexGridSizer60->Add(LocalPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxButton* itemButton66 = new wxButton( itemPanel59, ID_BUTTON_LocalPicturePath, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer60->Add(itemButton66, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemNotebook7->AddPage(itemPanel59, _("Local File Setting"));
+
     itemBoxSizer3->Add(itemNotebook7, 0, wxGROW|wxALL, 5);
 
-    wxGridSizer* itemGridSizer59 = new wxGridSizer(1, 2, 0, 0);
-    itemBoxSizer3->Add(itemGridSizer59, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxSHAPED, 5);
+    wxGridSizer* itemGridSizer67 = new wxGridSizer(1, 2, 0, 0);
+    itemBoxSizer3->Add(itemGridSizer67, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxSHAPED, 5);
 
-    wxBoxSizer* itemBoxSizer60 = new wxBoxSizer(wxHORIZONTAL);
-    itemGridSizer59->Add(itemBoxSizer60, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer68 = new wxBoxSizer(wxHORIZONTAL);
+    itemGridSizer67->Add(itemBoxSizer68, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton61 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer60->Add(itemButton61, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton69 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer68->Add(itemButton69, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton62 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer60->Add(itemButton62, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton70 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer68->Add(itemButton70, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ButtonSaveConfig = new wxButton( itemPanel2, ID_BUTTON_SAVE_CONFIG, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
     ButtonSaveConfig->Enable(false);
-    itemBoxSizer60->Add(ButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer68->Add(ButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBoxSizer* itemBoxSizer64 = new wxBoxSizer(wxHORIZONTAL);
-    itemGridSizer59->Add(itemBoxSizer64, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer72 = new wxBoxSizer(wxHORIZONTAL);
+    itemGridSizer67->Add(itemBoxSizer72, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton65 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer64->Add(itemButton65, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton73 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer72->Add(itemButton73, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton66 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer64->Add(itemButton66, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton74 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer72->Add(itemButton74, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ////@end ngpodwcc_MainFrame content construction
 }
@@ -421,14 +447,13 @@ void ngpodwcc_MainFrame::OnButtonQuitClick( wxCommandEvent& event )
 
 void ngpodwcc_MainFrame::OnButtonPodbasepathClick( wxCommandEvent& event )
 {
-    wxDirDialog dialog(NULL,wxT("Please choice NGPOD\'s path"),config.PodBasePath);
-    if (dialog.ShowModal() == wxID_OK)
+    const wxString& dir = wxDirSelector(wxT("Please choice NGPOD\'s path"), config.PodBasePath, 0, wxDefaultPosition, this);
+    if ( !dir.empty() )
     {
-        config.PodBasePath = dialog.GetPath();
+        config.PodBasePath = dir;
         PodBasePath->SetValue(config.PodBasePath);
-
-        wxMessageBox(config.PodBasePath);
     }
+    PodBasePath->SetValue(config.PodBasePath);
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
@@ -544,10 +569,10 @@ void ngpodwcc_MainFrame::OnButtonRestoreDefaultClick( wxCommandEvent& event )
 {
     SetDefault();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT in ngpodwcc_MainFrame.
 }
 
 /*!
@@ -558,10 +583,10 @@ void ngpodwcc_MainFrame::OnTextctrlUpdated( wxCommandEvent& event )
 {
     config.PodBasePath = PodBasePath->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL in ngpodwcc_MainFrame.
 }
 
 /*!
@@ -572,10 +597,10 @@ void ngpodwcc_MainFrame::OnTextctrl6Updated( wxCommandEvent& event )
 {
     config.ScreenPicturePath = ScreenPicturePath->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL6 in ngpodwcc_MainFrame.
 }
 /*!
  * wxEVT_DATE_CHANGED event handler for ID_DATECTRL
@@ -585,10 +610,10 @@ void ngpodwcc_MainFrame::OnDatectrlDateChanged( wxDateEvent& event )
 {
     config.PodDate = NextPODDay->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_DATE_CHANGED event handler for ID_DATECTRL in ngpodwcc_MainFrame.
+    ////@begin wxEVT_DATE_CHANGED event handler for ID_DATECTRL in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_DATE_CHANGED event handler for ID_DATECTRL in ngpodwcc_MainFrame.
+    ////@end wxEVT_DATE_CHANGED event handler for ID_DATECTRL in ngpodwcc_MainFrame.
 }
 
 
@@ -600,10 +625,10 @@ void ngpodwcc_MainFrame::OnCheckboxClick( wxCommandEvent& event )
 {
     config.PauseChangeWallpaper = PauseChangeWallpaper->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX in ngpodwcc_MainFrame.
 }
 
 
@@ -615,10 +640,10 @@ void ngpodwcc_MainFrame::OnCheckbox1Click( wxCommandEvent& event )
 {
     config.ShowSplash = ShowSplash->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1 in ngpodwcc_MainFrame.
 }
 
 
@@ -630,10 +655,45 @@ void ngpodwcc_MainFrame::OnCheckbox2Click( wxCommandEvent& event )
 {
     config.ShowDisc = ShowDisc->GetValue();
     ButtonSaveConfig->Enable();
-////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
+    ////@begin wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
+    ////@end wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2 in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath
+ */
+
+void ngpodwcc_MainFrame::OnButtonLocalpicturepathClick( wxCommandEvent& event )
+{
+    const wxString& dir = wxDirSelector(wxT("Please choice Local File\'s path"), config.LocalPicturePath, 0, wxDefaultPosition, this);
+    if ( !dir.empty() )
+    {
+        config.LocalPicturePath = dir;
+        PodBasePath->SetValue(config.LocalPicturePath);
+    }
+    LocalPicturePath->SetValue(config.LocalPicturePath);
+    ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+    ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL7
+ */
+
+void ngpodwcc_MainFrame::OnTextctrl7Updated( wxCommandEvent& event )
+{
+    config.LocalPicturePath = LocalPicturePath->GetValue();
+    ButtonSaveConfig->Enable();
+////@begin wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL7 in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL7 in ngpodwcc_MainFrame.
 }
 
 
