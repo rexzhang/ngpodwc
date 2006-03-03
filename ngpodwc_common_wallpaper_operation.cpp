@@ -11,12 +11,18 @@
 
 #include "ngpodwc_common_wallpaper_operation.h"
 
-bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
+//bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
+bool updateWallpaper(ngpodwcConfig config)
 //bool updateWallpaper()
 {
+    ngpodwcConfig *pConfig = &config;
+
+    //获取POD 图片
+    NGPOD ngpodImage(config);
+/*
     ngpodinfo podPictureInfo;
+
     //获取POD 图片描述信息以及图片文件名称
-    //PodPictrueInfo pictureInfo;
     if(!podPictureInfo.GetInfo(pConfig->PodBasePath + wxT("\\") + pConfig->PodDatabaseName, pConfig->PodDate))
     {
         wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
@@ -24,7 +30,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
         wxSafeShowMessage(msgTitle, msgContext);
         return 1;
     }
-
+*/
     /*
     //Debug Info
     wxSafeShowMessage(pConfig->PodBasePath + wxT("\\")
@@ -32,7 +38,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
                       + podPictureInfo.PhotoName,
                       pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName);
                       */
-
+/*
     //获取原始图片
     wxImage PodImage, ScreenImage;
 
@@ -42,9 +48,11 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
         wxSafeShowMessage(wxT("Can't load JPG image"), podPictureInfo.PhotoName);
         return 0;
     }
-
+*/
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
+    wxImage PodImage, ScreenImage;
+    PodImage = ngpodImage.Image;
     if(!PodImage.Ok())
     {
         wxSafeShowMessage(wxT("Pod Image Op Error"), wxT("Pod Image Op Error"));
@@ -63,7 +71,6 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
                    PodImage.GetWidth(), PodImage.GetHeight(), pConfig->ScreenWidth, pConfig->ScreenHeight);
         wxSafeShowMessage(wxT("change size"), msg);
         */
-        //wxSize ScreenSize(pConfig->ScreenWidth, pConfig->ScreenHeight);
         ScreenImage = PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
 
         //wxSafeShowMessage(wxT("DEBUG INFO"), wxT("DEBUG INFO"));
@@ -78,7 +85,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
         wxSafeShowMessage(wxT("Image Op Error#1"), wxT("Image Op Error#1"));
         return 1;
     }
-
+/*
     //加注文字
     if(pConfig->ShowDisc)
     {
@@ -90,9 +97,13 @@ bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
         wxSafeShowMessage(wxT("Image Op Error#2"), wxT("Image Op Error#2"));
         return 1;
     }
+*/
+    ngpodImage.Image = PodImage;
+    ngpodImage.DrawText();
+    ScreenImage = ngpodImage.Image;
+
 
     //将处理完毕的图片输出至指定目录
-    //if(!outputScreenPicture(&config, &pictureInfo))
     if(!ScreenImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
                                wxBITMAP_TYPE_BMP))
     {
