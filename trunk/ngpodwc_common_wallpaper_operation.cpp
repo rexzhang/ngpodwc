@@ -19,36 +19,7 @@ bool updateWallpaper(ngpodwcConfig config)
 
     //获取POD 图片
     NGPOD ngpodImage(config);
-/*
-    ngpodinfo podPictureInfo;
 
-    //获取POD 图片描述信息以及图片文件名称
-    if(!podPictureInfo.GetInfo(pConfig->PodBasePath + wxT("\\") + pConfig->PodDatabaseName, pConfig->PodDate))
-    {
-        wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
-        wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 1;
-    }
-*/
-    /*
-    //Debug Info
-    wxSafeShowMessage(pConfig->PodBasePath + wxT("\\")
-                      + pConfig->PodPicturePath + wxT("\\")
-                      + podPictureInfo.PhotoName,
-                      pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName);
-                      */
-/*
-    //获取原始图片
-    wxImage PodImage, ScreenImage;
-
-    if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
-                           + wxT("\\") + podPictureInfo.PhotoName, wxBITMAP_TYPE_JPEG))
-    {
-        wxSafeShowMessage(wxT("Can't load JPG image"), podPictureInfo.PhotoName);
-        return 0;
-    }
-*/
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
     wxImage PodImage, ScreenImage;
@@ -85,35 +56,21 @@ bool updateWallpaper(ngpodwcConfig config)
         wxSafeShowMessage(wxT("Image Op Error#1"), wxT("Image Op Error#1"));
         return 1;
     }
-/*
+
     //加注文字
-    if(pConfig->ShowDisc)
-    {
-        pictureOpretionDrawText(&ScreenImage, &podPictureInfo);
-    }
+    ngpodImage.Image = ScreenImage;
+    ngpodImage.DrawText();
+    ScreenImage = ngpodImage.Image;
 
     if(!ScreenImage.Ok())
     {
         wxSafeShowMessage(wxT("Image Op Error#2"), wxT("Image Op Error#2"));
         return 1;
     }
-*/
-    ngpodImage.Image = PodImage;
-    ngpodImage.DrawText();
-    ScreenImage = ngpodImage.Image;
-
 
     //将处理完毕的图片输出至指定目录
-    if(!ScreenImage.SaveFile(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName,
-                               wxBITMAP_TYPE_BMP))
-    {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+    ngpodImage.SaveWallpaper();
 
-        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
-        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
-        return 0;
-    };
     //设定图片至桌布
     setWallpaperRegInfo(pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName);
 

@@ -14,6 +14,7 @@ class NGPOD
 
         //成员函数
         bool DrawText();
+        bool NGPOD::SaveWallpaper();
 
         //成员变量
         wxImage Image;
