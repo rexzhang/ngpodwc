@@ -15,6 +15,11 @@
 
 #include <wx/string.h>
 
+//使用宏变量定义图片来源
+//按wxChoice的编号原则
+#define PICTURESOURCE_LOCALFILE 0
+#define PICTURESOURCE_NGPOD 1
+
 
 //---------------------------------------------------------------------------
 //!
@@ -38,6 +43,7 @@ public:
     bool WriteConfig();
 
     //类成员变量--------------
+    int PictureSource;
 
     //NGPOD相关
     wxString PodBasePath;

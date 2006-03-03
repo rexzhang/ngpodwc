@@ -14,7 +14,7 @@
 #include "ngpodwc_common_screen.h"
 
 //bool getPodInfo(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
-bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
+bool updateWallpaper(ngpodwcConfig *pConfig);//, ngpodinfo *pPodPictureInfo);
 void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo);
 
 bool setWallpaperRegInfo(wxString WallpaperPathAndName);

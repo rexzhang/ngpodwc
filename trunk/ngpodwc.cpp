@@ -147,7 +147,7 @@ bool NgpodwcApp::OnInit()
         //有参数，直接切换到下个日期
         //日期信息++
         seekDays(1, &(config.PodDate));
-        updateWallpaper(&config, &pictureInfo);
+        updateWallpaper(&config);//, &pictureInfo);
         wxBell();
         return true;
     }//!程序结束

@@ -62,6 +62,8 @@ wxString ngpodwcConfig::GetConfigFile()
 //---------------------------------------------------------------------------
 void ngpodwcConfig::SetDefault()
 {
+    PictureSource = PICTURESOURCE_LOCALFILE;
+
     ///////////////////
     PodBasePath = wxEmptyString;
     PodDatabaseName = wxT("pod.mdb");//wxEmptyString;
@@ -118,6 +120,9 @@ bool ngpodwcConfig::ReadConfig()
     wxFileConfig *pFileConfig = new wxFileConfig(ConfigInputStream, wxConvUTF8);
 
     //读取配置文件->内存
+    pFileConfig->Read(wxT("PictureSource"), &(PictureSource));
+
+    ///////////////////////
     PodBasePath = pFileConfig->Read(wxT("PodBasePath"));
 
     PodDatabaseName = pFileConfig->Read(wxT("PodDatabaseName"));
@@ -171,6 +176,9 @@ bool ngpodwcConfig::WriteConfig()
     //wxFileConfig *pFileConfig = new wxFileConfig(ConfigOutputStream, wxConvUTF8);
     wxFileConfig *pFileConfig = new wxFileConfig();
     /////////////////
+    pFileConfig->Write(wxT("PictureSource"), PictureSource);
+
+    /////////////////////
     pFileConfig->Write(wxT("PodBasePath"), PodBasePath);
 
     pFileConfig->Write(wxT("PodDatabaseName"), PodDatabaseName);

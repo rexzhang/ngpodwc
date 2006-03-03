@@ -75,6 +75,8 @@ BEGIN_EVENT_TABLE( ngpodwcc_MainFrame, wxFrame )
 
     EVT_BUTTON( ID_BUTTON_LocalPicturePath, ngpodwcc_MainFrame::OnButtonLocalpicturepathClick )
 
+    EVT_CHOICE( ID_CHOICE, ngpodwcc_MainFrame::OnChoiceSelected )
+
     EVT_BUTTON( ID_BUTTON_RELOAD_CONFIG, ngpodwcc_MainFrame::OnButtonReloadConfigClick )
 
     EVT_BUTTON( ID_BUTTON_RESTORE_DEFAULT, ngpodwcc_MainFrame::OnButtonRestoreDefaultClick )
@@ -124,6 +126,7 @@ bool ngpodwcc_MainFrame::Create( wxWindow* parent, wxWindowID id, const wxString
     ScreenPicturePath = NULL;
     ScreenPictureName = NULL;
     LocalPicturePath = NULL;
+    PictureSource = NULL;
     ButtonSaveConfig = NULL;
     ////@end ngpodwcc_MainFrame member initialisation
 
@@ -338,32 +341,52 @@ void ngpodwcc_MainFrame::CreateControls()
 
     itemNotebook7->AddPage(itemPanel59, _("Local File Setting"));
 
+    wxPanel* itemPanel67 = new wxPanel( itemNotebook7, ID_PANEL6, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
+    wxFlexGridSizer* itemFlexGridSizer68 = new wxFlexGridSizer(2, 2, 0, 0);
+    itemPanel67->SetSizer(itemFlexGridSizer68);
+
+    itemFlexGridSizer68->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemFlexGridSizer68->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxStaticText* itemStaticText71 = new wxStaticText( itemPanel67, wxID_STATIC, _("Input Source"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemFlexGridSizer68->Add(itemStaticText71, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxString PictureSourceStrings[] = {
+        _("Local Picture"),
+        _("NGPOD")
+    };
+    PictureSource = new wxChoice( itemPanel67, ID_CHOICE, wxDefaultPosition, wxDefaultSize, 2, PictureSourceStrings, 0 );
+    itemFlexGridSizer68->Add(PictureSource, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemNotebook7->AddPage(itemPanel67, _("Common Setting"));
+
     itemBoxSizer3->Add(itemNotebook7, 0, wxGROW|wxALL, 5);
 
-    wxGridSizer* itemGridSizer67 = new wxGridSizer(1, 2, 0, 0);
-    itemBoxSizer3->Add(itemGridSizer67, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxSHAPED, 5);
+    wxGridSizer* itemGridSizer73 = new wxGridSizer(1, 2, 0, 0);
+    itemBoxSizer3->Add(itemGridSizer73, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxSHAPED, 5);
 
-    wxBoxSizer* itemBoxSizer68 = new wxBoxSizer(wxHORIZONTAL);
-    itemGridSizer67->Add(itemBoxSizer68, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer74 = new wxBoxSizer(wxHORIZONTAL);
+    itemGridSizer73->Add(itemBoxSizer74, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton69 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer68->Add(itemButton69, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton75 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer74->Add(itemButton75, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton70 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer68->Add(itemButton70, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton76 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer74->Add(itemButton76, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ButtonSaveConfig = new wxButton( itemPanel2, ID_BUTTON_SAVE_CONFIG, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
     ButtonSaveConfig->Enable(false);
-    itemBoxSizer68->Add(ButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer74->Add(ButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBoxSizer* itemBoxSizer72 = new wxBoxSizer(wxHORIZONTAL);
-    itemGridSizer67->Add(itemBoxSizer72, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer78 = new wxBoxSizer(wxHORIZONTAL);
+    itemGridSizer73->Add(itemBoxSizer78, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton73 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer72->Add(itemButton73, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton79 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer78->Add(itemButton79, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton74 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer72->Add(itemButton74, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxButton* itemButton80 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer78->Add(itemButton80, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ////@end ngpodwcc_MainFrame content construction
 }
@@ -694,6 +717,21 @@ void ngpodwcc_MainFrame::OnTextctrl7Updated( wxCommandEvent& event )
     // Before editing this code, remove the block markers.
     event.Skip();
 ////@end wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL7 in ngpodwcc_MainFrame.
+}
+
+
+/*!
+ * wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE
+ */
+
+void ngpodwcc_MainFrame::OnChoiceSelected( wxCommandEvent& event )
+{
+    config.PictureSource = PictureSource->GetCurrentSelection();
+    ButtonSaveConfig->Enable();
+////@begin wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE in ngpodwcc_MainFrame.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE in ngpodwcc_MainFrame.
 }
 
 
