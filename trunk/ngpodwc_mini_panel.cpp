@@ -160,7 +160,8 @@ void ngpodwc_mini_panel::OnBitmapbuttonPreClick( wxCommandEvent& event )
 {
 
     seekDays(-1, &(config.PodDate));
-    updateWallpaper(&config);//, &pictureInfo);
+    //updateWallpaper(&config);//, &pictureInfo);
+    updateWallpaper(config);
     wxBell();
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_PRE in ngpodwc_mini_panel.
     // Before editing this code, remove the block markers.
@@ -176,7 +177,7 @@ void ngpodwc_mini_panel::OnBitmapbuttonNextClick( wxCommandEvent& event )
 {
 
     seekDays(1, &(config.PodDate));
-    updateWallpaper(&config);//, &pictureInfo);
+    updateWallpaper(config);//, &pictureInfo);
     wxBell();
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_NEXT in ngpodwc_mini_panel.
     // Before editing this code, remove the block markers.

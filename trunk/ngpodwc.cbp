@@ -94,6 +94,18 @@
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
+		<Unit filename="common_ngpod.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_ngpod.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
 		<Unit filename="docs\history.txt">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />
