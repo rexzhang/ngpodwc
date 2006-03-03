@@ -76,7 +76,7 @@ public:
 ////@begin NgpodwcApp member variables
 ////@end NgpodwcApp member variables
     ngpodwcConfig config;
-    ngpodinfo pictureInfo;
+    //ngpodinfo pictureInfo;
 };
 
 /*!

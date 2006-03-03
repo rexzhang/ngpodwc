@@ -11,12 +11,13 @@
 
 #include "ngpodwc_common_wallpaper_operation.h"
 
-bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
+bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
 //bool updateWallpaper()
 {
+    ngpodinfo podPictureInfo;
     //获取POD 图片描述信息以及图片文件名称
     //PodPictrueInfo pictureInfo;
-    if(!pPodPictureInfo->GetInfo(pConfig->PodBasePath + wxT("\\") + pConfig->PodDatabaseName, pConfig->PodDate))
+    if(!podPictureInfo.GetInfo(pConfig->PodBasePath + wxT("\\") + pConfig->PodDatabaseName, pConfig->PodDate))
     {
         wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
         wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
@@ -28,7 +29,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
     //Debug Info
     wxSafeShowMessage(pConfig->PodBasePath + wxT("\\")
                       + pConfig->PodPicturePath + wxT("\\")
-                      + pPodPictureInfo->PhotoName,
+                      + podPictureInfo.PhotoName,
                       pConfig->ScreenPicturePath + wxT("\\") + pConfig->ScreenPictureName);
                       */
 
@@ -36,9 +37,9 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
     wxImage PodImage, ScreenImage;
 
     if (!PodImage.LoadFile(pConfig->PodBasePath + wxT("\\") + pConfig->PodPicturePath
-                           + wxT("\\") + pPodPictureInfo->PhotoName, wxBITMAP_TYPE_JPEG))
+                           + wxT("\\") + podPictureInfo.PhotoName, wxBITMAP_TYPE_JPEG))
     {
-        wxSafeShowMessage(wxT("Can't load JPG image"), pPodPictureInfo->PhotoName);
+        wxSafeShowMessage(wxT("Can't load JPG image"), podPictureInfo.PhotoName);
         return 0;
     }
 
@@ -81,7 +82,7 @@ bool updateWallpaper(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo)
     //加注文字
     if(pConfig->ShowDisc)
     {
-        pictureOpretionDrawText(&ScreenImage, pPodPictureInfo);
+        pictureOpretionDrawText(&ScreenImage, &podPictureInfo);
     }
 
     if(!ScreenImage.Ok())

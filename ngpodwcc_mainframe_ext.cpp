@@ -49,6 +49,9 @@ void ngpodwcc_MainFrame::ShowConfig(void)
 //将config中的参数写到界面控件，以便显示出来
 {
     //////////////////
+    PictureSource->SetSelection(config.PictureSource);
+
+    //////////////////
     PodBasePath->SetValue(config.PodBasePath);
     PodDatabaseName->SetValue(config.PodDatabaseName);
     PodPicturePath->SetValue(config.PodPicturePath);

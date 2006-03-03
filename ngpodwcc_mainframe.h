@@ -75,6 +75,8 @@ class wxDatePickerCtrl;
 #define ID_PANEL5 10030
 #define ID_TEXTCTRL7 10031
 #define ID_BUTTON_LocalPicturePath 10032
+#define ID_PANEL6 10033
+#define ID_CHOICE 10034
 #define ID_BUTTON_RELOAD_CONFIG 10006
 #define ID_BUTTON_RESTORE_DEFAULT 10007
 #define ID_BUTTON_SAVE_CONFIG 10017
@@ -147,6 +149,9 @@ public:
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath
     void OnButtonLocalpicturepathClick( wxCommandEvent& event );
 
+    /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE
+    void OnChoiceSelected( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
     void OnButtonReloadConfigClick( wxCommandEvent& event );
 
@@ -190,6 +195,7 @@ public:
     wxTextCtrl* ScreenPicturePath;
     wxTextCtrl* ScreenPictureName;
     wxTextCtrl* LocalPicturePath;
+    wxChoice* PictureSource;
     wxButton* ButtonSaveConfig;
 ////@end ngpodwcc_MainFrame member variables
 
