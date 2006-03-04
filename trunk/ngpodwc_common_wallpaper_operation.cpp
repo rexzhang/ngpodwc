@@ -12,7 +12,6 @@
 #include "ngpodwc_common_wallpaper_operation.h"
 
 bool updateWallpaper(ngpodwcConfig config)
-//bool updateWallpaper()
 {
     //获取POD 图片
     WallpaperNGPOD ngpodImage(config);
@@ -27,7 +26,6 @@ bool updateWallpaper(ngpodwcConfig config)
 
     //加注文字
     ngpodImage.DrawText();
-    //ngpodImage.Image = ngpodImage.Image;
 
     if(!ngpodImage.ImageOk())
     {
