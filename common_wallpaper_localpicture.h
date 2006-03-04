@@ -8,6 +8,12 @@ class WallpaperLocalPicture : public WallpaperBase
     public:
         WallpaperLocalPicture(ngpodwcConfig programConfig);
         virtual ~WallpaperLocalPicture();
+
+        //³ÉÔ±º¯Êý
+        bool Init();
+        bool DrawText();
+        bool SaveWallpaper();
+
     protected:
     private:
 };
