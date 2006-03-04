@@ -1,7 +1,9 @@
 #ifndef COMMON_NGPOD_H
 #define COMMON_NGPOD_H
 
-#include "ngpodwc_common_config.h"
+//#include "ngpodwc_common_config.h"
+#include "common_wallpaper_base.h"
+
 #include "ngpodwc_common_ngpodinfo.h"
 
 class NGPOD

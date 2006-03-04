@@ -11,14 +11,13 @@
 
 #include "ngpodwc_common_wallpaper_operation.h"
 
-//bool updateWallpaper(ngpodwcConfig *pConfig)//, ngpodinfo *pPodPictureInfo)
 bool updateWallpaper(ngpodwcConfig config)
 //bool updateWallpaper()
 {
     ngpodwcConfig *pConfig = &config;
 
     //»ñÈ¡POD Í¼Æ¬
-    NGPOD ngpodImage(config);
+    WallpaperNGPOD ngpodImage(config);
 
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
     //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
@@ -43,8 +42,6 @@ bool updateWallpaper(ngpodwcConfig config)
         wxSafeShowMessage(wxT("change size"), msg);
         */
         ScreenImage = PodImage.Rescale(pConfig->ScreenWidth, pConfig->ScreenHeight);
-
-        //wxSafeShowMessage(wxT("DEBUG INFO"), wxT("DEBUG INFO"));
     }
     else
     {

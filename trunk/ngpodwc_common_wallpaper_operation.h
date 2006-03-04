@@ -13,7 +13,8 @@
 #include "ngpodwc_common_ngpodinfo.h"
 #include "ngpodwc_common_screen.h"
 
-#include "common_ngpod.h"
+//#include "common_ngpod.h"
+#include "common_wallpaper_ngpod.h"
 
 //bool getPodInfo(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
 //bool updateWallpaper(ngpodwcConfig *pConfig);//, ngpodinfo *pPodPictureInfo);
