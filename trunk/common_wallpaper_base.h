@@ -11,13 +11,18 @@ class WallpaperBase
         virtual ~WallpaperBase();
 
         //成员函数
+        wxImage GetImage();
+        bool SetImage(wxImage inImage);
+        bool ImageOk();
+        bool ImageReSize();
+
 
         //成员变量
-        wxImage Image;
-
     protected:
+        wxImage Image;
         ngpodwcConfig config;
     private:
+
 };
 
 #endif // COMMON_WALLPAPER_BASE_H
