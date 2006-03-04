@@ -16,6 +16,7 @@ class WallpaperBase
         bool ImageOk();
         bool ImageReSize();
 
+        bool SaveWallpaper();
 
         //成员变量
     protected:
