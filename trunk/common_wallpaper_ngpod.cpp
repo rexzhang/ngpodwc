@@ -40,3 +40,19 @@ bool WallpaperNGPOD::Init()
 
     return true;
 }
+
+bool WallpaperNGPOD::SaveWallpaper()
+{
+    //将处理完毕的图片输出至指定目录
+    if(!Image.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
+                               wxBITMAP_TYPE_BMP))
+    {
+        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+
+        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
+        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
+        wxSafeShowMessage(msgTitle, msgContext);
+        return false;
+    }
+    return true;
+}
