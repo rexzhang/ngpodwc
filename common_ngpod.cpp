@@ -3,7 +3,7 @@
 NGPOD::NGPOD(ngpodwcConfig programConfig)
 {
     //ctor
-    config = programConfig;
+    //config = programConfig;
     Init();
 }
 
