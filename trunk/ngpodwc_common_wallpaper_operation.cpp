@@ -19,8 +19,6 @@ bool updateWallpaper(ngpodwcConfig config)
     //ªÒ»°POD Õº∆¨
     WallpaperNGPOD ngpodImage(config);
 
-    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_8BPP_GREY);
-    //PodImage.SetOption(wxIMAGE_OPTION_BMP_FORMAT,wxBMP_24BPP);
     wxImage PodImage, ScreenImage;
     PodImage = ngpodImage.Image;
     if(!PodImage.Ok())
