@@ -7,7 +7,7 @@ class WallpaperBase
 {
     public:
         WallpaperBase(ngpodwcConfig programConfig);
-        bool Init();
+        virtual bool Init();
         virtual ~WallpaperBase();
 
         //³ÉÔ±º¯Êý
@@ -15,6 +15,8 @@ class WallpaperBase
         bool SetImage(wxImage inImage);
         bool ImageOk();
         bool ImageReSize();
+
+        virtual bool DrawText();
 
         bool SaveWallpaper();
 

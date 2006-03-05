@@ -13,28 +13,40 @@
 
 bool updateWallpaper(ngpodwcConfig config)
 {
+    WallpaperBase *pWallpaper;
+
     //获取POD 图片
-    WallpaperNGPOD ngpodImage(config);
-    if(!ngpodImage.ImageOk())
+    switch (config.PictureSource)
+    {
+        case PICTURESOURCE_LOCALFILE:
+        pWallpaper = new WallpaperLocalPicture(config);
+        break;
+        case PICTURESOURCE_NGPOD:
+        pWallpaper = new WallpaperNGPOD(config);
+        break;
+        //default:
+    }
+
+    if(!pWallpaper->ImageOk())
     {
         wxSafeShowMessage(wxT("Image Op Error#1"), wxT("Image Op Error#1"));
         return false;
     }
 
     //调整图片尺寸
-    ngpodImage.ImageReSize();
+    pWallpaper->ImageReSize();
 
     //加注文字
-    ngpodImage.DrawText();
+    pWallpaper->DrawText();
 
-    if(!ngpodImage.ImageOk())
+    if(!pWallpaper->ImageOk())
     {
         wxSafeShowMessage(wxT("Image Op Error#2"), wxT("Image Op Error#2"));
         return false;
     }
 
     //将处理完毕的图片输出至指定目录
-    ngpodImage.SaveWallpaper();
+    pWallpaper->SaveWallpaper();
 
     //设定图片至桌布
     setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
@@ -118,3 +130,4 @@ bool setWallpaperRegInfo(wxString WallpaperPathAndName)
 
     return 1;
 }
+

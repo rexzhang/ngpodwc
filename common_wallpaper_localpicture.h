@@ -12,7 +12,6 @@ class WallpaperLocalPicture : public WallpaperBase
         //³ÉÔ±º¯Êý
         bool Init();
         bool DrawText();
-        bool SaveWallpaper();
 
     protected:
     private:
