@@ -15,6 +15,8 @@
 
 //#include "common_ngpod.h"
 #include "common_wallpaper_ngpod.h"
+#include "common_wallpaper_localpicture.h"
+
 
 //bool getPodInfo(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
 //bool updateWallpaper(ngpodwcConfig *pConfig);//, ngpodinfo *pPodPictureInfo);

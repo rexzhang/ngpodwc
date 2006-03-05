@@ -33,6 +33,11 @@ bool WallpaperBase::ImageOk()
     return Image.Ok();
 }
 
+bool WallpaperBase::DrawText()
+{
+    return true;
+}
+
 bool WallpaperBase::ImageReSize()
 {
     //µ÷ÕûÍ¼Æ¬³ß´ç
