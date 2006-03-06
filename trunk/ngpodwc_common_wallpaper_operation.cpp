@@ -51,8 +51,11 @@ bool updateWallpaper(ngpodwcConfig config)
     //设定图片至桌布
     setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
 
+    /*
+    //移动到需要的派生类如WallpaperNGPOD
     //保存变化后（当前背景图片）的日期信息至配置文件
     config.WriteConfig();
+    */
 
     return true;
 }

@@ -15,6 +15,7 @@ class WallpaperNGPOD : public WallpaperBase
 
         //成员函数
         bool DrawText();
+        bool SaveWallpaper();
 
         //成员变量
 

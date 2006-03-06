@@ -16,12 +16,18 @@ WallpaperLocalPicture::~WallpaperLocalPicture()
 bool WallpaperLocalPicture::Init()
 {
     wxString pictureFileName;
-    wxDir pictureDir(config.LocalPicturePath);
 
-    pictureDir.GetFirst(&pictureFileName, wxT("*.jpg"), wxDIR_DEFAULT);
+    wxDir pictureDir(config.LocalPicturePath);
+    wxArrayString PictureArray;
+
+    srand((int)time(0));
+    pictureDir.GetAllFiles(config.LocalPicturePath, &PictureArray,
+                           wxT("*.jpg"), wxDIR_DEFAULT);
+
+    pictureFileName = PictureArray[(int)(PictureArray.GetCount()*rand()/(RAND_MAX +1))];
 
     //获取原始图片
-    if (!Image.LoadFile(config.LocalPicturePath + wxT("\\") + pictureFileName,
+    if (!Image.LoadFile(pictureFileName,
                         wxBITMAP_TYPE_JPEG))
     {
         wxSafeShowMessage(wxT("Local Picture Loading ERROR!"), pictureFileName);
