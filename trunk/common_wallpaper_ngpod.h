@@ -11,16 +11,18 @@ class WallpaperNGPOD : public WallpaperBase
         WallpaperNGPOD(ngpodwcConfig programConfig);
         //WallpaperNGPOD(ngpodwcConfig programConfig):WallpaperBase(ngpodwcConfig programConfig);
         virtual ~WallpaperNGPOD();
+        bool Init();
 
         //成员函数
-        bool Init();
         bool DrawText();
-        bool SaveWallpaper();
 
         //成员变量
 
     protected:
     private:
+        //成员函数
+        wxString GetDiscText();
+        //成员变量
         ngpodinfo podPictureInfo;
 };
 
