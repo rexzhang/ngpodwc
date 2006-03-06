@@ -18,7 +18,7 @@ class WallpaperBase
 
         virtual bool DrawText();
 
-        bool SaveWallpaper();
+        virtual bool SaveWallpaper();
 
         //成员变量
     protected:
