@@ -19,6 +19,7 @@
 //按wxChoice的编号原则
 #define PICTURESOURCE_LOCALFILE 0
 #define PICTURESOURCE_NGPOD 1
+#define PICTURESOURCE_NGPOD_ONLINE 2
 
 
 //---------------------------------------------------------------------------

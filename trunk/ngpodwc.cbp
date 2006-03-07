@@ -130,12 +130,12 @@
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
-		<Unit filename="common_wallpaper_ngpodonline.cpp">
+		<Unit filename="common_wallpaper_ngpod_online.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
-		<Unit filename="common_wallpaper_ngpodonline.h">
+		<Unit filename="common_wallpaper_ngpod_online.h">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />
 			<Option link="0" />
