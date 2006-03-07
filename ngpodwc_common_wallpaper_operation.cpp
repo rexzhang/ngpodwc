@@ -24,6 +24,9 @@ bool updateWallpaper(ngpodwcConfig config)
         case PICTURESOURCE_NGPOD:
         pWallpaper = new WallpaperNGPOD(config);
         break;
+        case PICTURESOURCE_NGPOD_ONLINE:
+        pWallpaper = new WallpaperNGPODOnline(config);
+        break;
         //default:
     }
 
