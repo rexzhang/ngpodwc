@@ -20,7 +20,6 @@ bool WallpaperNGPODOnline::Init()
 {
     //wxFileSystem::AddHandler(new wxInternetFSHandler );
     wxString NGPODOnineURLString = wxEmptyString;
-    int Year, Month, Mday;
 
     toDate(config.PodDate, &Year, &Month, &Mday);
 
@@ -29,13 +28,6 @@ bool WallpaperNGPODOnline::Init()
 
     wxURL NGPODOnlineURL(NGPODOnineURLString);
 
-    /*
-        if(NGPODOnlineHTTP.GetResponse() != 200)
-        {
-            //!report Error!!
-            return false;
-        }
-        */
     if (NGPODOnlineURL.GetError() != wxURL_NOERR)
     {
         //!report Error!!
@@ -53,10 +45,69 @@ bool WallpaperNGPODOnline::Init()
     while(PhotoOfTheDay_in_stream->Eof() == false)
     {
         HtmlLine = PhotoOfTheDayStream.ReadLine();
-        wxSafeShowMessage(wxT("DEBUG Info"), HtmlLine);
+        if(HtmlLine.Contains(wxT("/pod/pictures/sm_wallpaper/")))
+        {
+            // <a href="/pod/pictures/sm_wallpaper/06130_50036.jpg"><img src="/pod/pictures/normal/06130_50036.jpg" class="gray-border" width="470" border="0"></a></div>
+            HtmlLine.Replace(wxT("/pod/pictures/sm_wallpaper/"), wxT("\n"));
+            HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
+            PODPictureName = HtmlLine.BeforeFirst(wxChar('\"'));
+            //wxSafeShowMessage(wxT("DEBUG Info"), PODPictureName);
+            break;
+        }
     }
 
-    //wxImage(wxInputStream& stream, long type = wxBITMAP_TYPE_ANY, int index = -1)
+    GetPictureFromInternet();
 
     return true;
 }
+
+bool WallpaperNGPODOnline::GetPictureFromInternet()
+{
+    //get picture file---------------------------
+    wxString NGPODOnineURLString(wxT("http://lava.nationalgeographic.com/pod/pictures/lg_wallpaper/"));
+    NGPODOnineURLString << PODPictureName;
+
+    wxSafeShowMessage(wxT("DEBUG Info"), NGPODOnineURLString);
+
+    wxURL NGPODOnlineURL(NGPODOnineURLString);
+    if (NGPODOnlineURL.GetError() != wxURL_NOERR)
+    {
+        //!report Error!!
+        return false;
+    }
+    wxInputStream *PhotoOfTheDay_in_stream;
+    PhotoOfTheDay_in_stream = NGPODOnlineURL.GetInputStream();
+
+    //wxImage(wxInputStream& stream, long type = wxBITMAP_TYPE_ANY, int index = -1)
+    if(!Image.LoadFile(*PhotoOfTheDay_in_stream, wxBITMAP_TYPE_JPEG))
+    {
+        //report error
+        wxSafeShowMessage(wxT("Can't load JPG image"), wxT("from internet"));
+        return false;
+    }
+
+    return true;
+}
+
+bool WallpaperNGPODOnline::SaveWallpaper()
+{
+
+
+    //将处理完毕的图片输出至指定目录
+    if(!Image.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
+                       wxBITMAP_TYPE_BMP))
+    {
+        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+
+        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
+        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
+        wxSafeShowMessage(msgTitle, msgContext);
+        return false;
+    }
+    //保存变化后（当前背景图片）的日期信息至配置文件
+    config.WriteConfig();
+
+    return true;
+}
+
+
