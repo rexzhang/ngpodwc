@@ -10,14 +10,17 @@ class NGPODBase
         //成员函数
 
         //成员变量
-        wxString Title;
-        wxDateTime Date;
-        wxString Where;
-        wxString When;
-        wxString Who;
-        wxString Disc;
-        wxString Related;
-        wxString PictureName;
+        wxString NGPODTitle;
+        wxDateTime NGPODDate;//用于存储指定的日期
+        int Year, Month, Mday;//用于存储指定的日期的分割格式
+
+        wxString NGPODWhere;
+        wxString NGPODWhen;
+        wxString NGPODWho;
+        wxString NGPODDisc;
+        wxString NGPODRelated;
+
+        wxString NGPODPictureName;//用于存储获取的指定日期的图片文件名
     protected:
     private:
 };

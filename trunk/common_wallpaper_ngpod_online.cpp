@@ -42,17 +42,54 @@ bool WallpaperNGPODOnline::Init()
                                           wxT("\t"), wxConvISO8859_1);
 
     wxString HtmlLine;
-    while(PhotoOfTheDay_in_stream->Eof() == false)
+    int Finish = 0;
+    while(PhotoOfTheDay_in_stream->Eof() == false || Finish == 4)
     {
         HtmlLine = PhotoOfTheDayStream.ReadLine();
-        if(HtmlLine.Contains(wxT("/pod/pictures/sm_wallpaper/")))
+        if(HtmlLine.Contains(wxT("<title>")))
+            //<title>National Geographic Photo of the Day: Route 1</title>
         {
+            HtmlLine.Replace(wxT("<title>National Geographic Photo of the Day: "), wxT("\n"));
+            HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
+            NGPODTitle = HtmlLine.BeforeFirst(wxChar('<'));
+            //wxSafeShowMessage(wxT("DEBUG Info"), NGPODTitle);
+            //break;
+            finish++;
+            continue;
+        }
+        if(HtmlLine.Contains(wxT("/pod/pictures/sm_wallpaper/")))
             // <a href="/pod/pictures/sm_wallpaper/06130_50036.jpg"><img src="/pod/pictures/normal/06130_50036.jpg" class="gray-border" width="470" border="0"></a></div>
+        {
             HtmlLine.Replace(wxT("/pod/pictures/sm_wallpaper/"), wxT("\n"));
             HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
-            PODPictureName = HtmlLine.BeforeFirst(wxChar('\"'));
-            //wxSafeShowMessage(wxT("DEBUG Info"), PODPictureName);
-            break;
+            NGPODPictureName = HtmlLine.BeforeFirst(wxChar('\"'));
+            //wxSafeShowMessage(wxT("DEBUG Info"), NGPODPictureName);
+            //break;
+            finish++;
+            continue;
+        }
+        if(HtmlLine.Contains(wxT("Photograph by")))
+            //Photograph by  Bruce   Dale</div>
+        {
+            HtmlLine.Replace(wxT("Photograph by "), wxT("\n"));
+            HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
+            NGPODWho = HtmlLine.BeforeFirst(wxChar('<'));
+            //wxSafeShowMessage(wxT("DEBUG Info"), NGPODWho);
+            //break;
+            finish++;
+            continue;
+        }
+        if(HtmlLine.Contains(wxT("<div class=\"pod-caption\"")))//!?????
+            //<!--- start caption --->
+            //<div class="pod-caption" style="margin-top:10px;margin-left:10px;">
+        {
+            HtmlLine.Replace(wxT("Photograph by "), wxT("\n"));
+            HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
+            NGPODWho = HtmlLine.BeforeFirst(wxChar('<'));
+            //wxSafeShowMessage(wxT("DEBUG Info"), NGPODWho);
+            //break;
+            finish++;
+            continue;
         }
     }
 
@@ -65,7 +102,7 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
 {
     //get picture file---------------------------
     wxString NGPODOnineURLString(wxT("http://lava.nationalgeographic.com/pod/pictures/lg_wallpaper/"));
-    NGPODOnineURLString << PODPictureName;
+    NGPODOnineURLString << NGPODPictureName;
 
     wxSafeShowMessage(wxT("DEBUG Info"), NGPODOnineURLString);
 
@@ -91,8 +128,6 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
 
 bool WallpaperNGPODOnline::SaveWallpaper()
 {
-
-
     //将处理完毕的图片输出至指定目录
     if(!Image.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
                        wxBITMAP_TYPE_BMP))
