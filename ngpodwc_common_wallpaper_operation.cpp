@@ -10,6 +10,10 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "ngpodwc_common_wallpaper_operation.h"
+/////
+#include "common_wallpaper_ngpod.h"
+#include "common_wallpaper_localpicture.h"
+#include "common_wallpaper_ngpod_online.h"
 
 bool updateWallpaper(ngpodwcConfig config)
 {
