@@ -8,7 +8,8 @@ class NGPODBase
         virtual ~NGPODBase();
 
         //成员函数
-
+        wxString NGPODBase::RemoveSpace(wxString inString);
+        void NGPODBase::FixNGPODDisc();
         //成员变量
         wxString NGPODTitle;
         wxDateTime NGPODDate;//用于存储指定的日期
