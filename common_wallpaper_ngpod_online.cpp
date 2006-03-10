@@ -24,6 +24,7 @@ wxString WallpaperNGPODOnline::GetText()
         NGPODText << wxT("Title : ") << NGPODTitle << wxT("\n");
     }
     //!Date
+    NGPODText << wxT("POD Date : ") << Year << wxT("-") << Month << wxT("-") << Mday << wxT("\n");
 
     if(NGPODWhen != wxEmptyString)
     {
@@ -46,8 +47,9 @@ bool WallpaperNGPODOnline::Init()
 
     toDate(config.PodDate, &Year, &Month, &Mday);
 
-    NGPODOnineURLString.Printf(wxT("http://lava.nationalgeographic.com/cgi-bin/pod/PhotoOfTheDay.cgi?month=%u&day=%u&year=&%u"),
+    NGPODOnineURLString.Printf(wxT("http://lava.nationalgeographic.com/cgi-bin/pod/PhotoOfTheDay.cgi?month=%u&day=%u&year=%u"),
                                Month, Mday, (Year - 2000));
+    //wxSafeShowMessage(wxT("DEBUG Info"), NGPODOnineURLString);
 
     wxURL NGPODOnlineURL(NGPODOnineURLString);
 
@@ -154,13 +156,15 @@ bool WallpaperNGPODOnline::Init()
             NGPODDisc.Replace(wxT("<p>"), wxT("\n"));
             NGPODDisc.Replace(wxT("<P>"), wxT("\n"));
 
-            NGPODDisc.Replace(wxT("<BR>"), wxT(""));
-            NGPODDisc.Replace(wxT("<br>"), wxT(""));
+            NGPODDisc.Replace(wxT("<BR>"), wxT("\n"));
+            NGPODDisc.Replace(wxT("<br>"), wxT("\n"));
 
             NGPODDisc.Replace(wxT("<I>"), wxT(""));
             NGPODDisc.Replace(wxT("</I>"), wxT(""));
             NGPODDisc.Replace(wxT("<i>"), wxT(""));
             NGPODDisc.Replace(wxT("</i>"), wxT(""));
+
+            NGPODDisc.Replace(wxT("\n\n"), wxT("\n"));
             Finish++;
             continue;
         }
@@ -193,8 +197,7 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
     //get picture file---------------------------
     wxString NGPODOnineURLString(wxT("http://lava.nationalgeographic.com/pod/pictures/lg_wallpaper/"));
     NGPODOnineURLString << NGPODPictureName;
-
-    wxSafeShowMessage(wxT("DEBUG Info"), NGPODOnineURLString);
+    //wxSafeShowMessage(wxT("DEBUG Info"), NGPODOnineURLString);
 
     wxURL NGPODOnlineURL(NGPODOnineURLString);
     if (NGPODOnlineURL.GetError() != wxURL_NOERR)
