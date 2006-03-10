@@ -1,7 +1,7 @@
 #ifndef COMMON_WALLPAPER_NGPOD_H
 #define COMMON_WALLPAPER_NGPOD_H
 
-#include <common_wallpaper_base.h>
+#include "common_wallpaper_base.h"
 
 #include "ngpodwc_common_ngpodinfo.h"
 

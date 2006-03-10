@@ -25,7 +25,10 @@ wxString WallpaperNGPODOnline::GetText()
     }
     //!Date
 
-    NGPODText << wxT("When : ") << NGPODWhen << wxT("\n");
+    if(NGPODWhen != wxEmptyString)
+    {
+        NGPODText << wxT("When : ") << NGPODWhen << wxT("\n");
+    }
 
     NGPODText << wxT("Where : ") << NGPODWhere << wxT("\n");
     NGPODText << wxT("Who : ") << NGPODWho << wxT("\n");
@@ -150,8 +153,14 @@ bool WallpaperNGPODOnline::Init()
             //FixNGPODDisc();//在线版不需要多重处理.只有在<p>是是换行
             NGPODDisc.Replace(wxT("<p>"), wxT("\n"));
             NGPODDisc.Replace(wxT("<P>"), wxT("\n"));
+
+            NGPODDisc.Replace(wxT("<BR>"), wxT(""));
+            NGPODDisc.Replace(wxT("<br>"), wxT(""));
+
             NGPODDisc.Replace(wxT("<I>"), wxT(""));
             NGPODDisc.Replace(wxT("</I>"), wxT(""));
+            NGPODDisc.Replace(wxT("<i>"), wxT(""));
+            NGPODDisc.Replace(wxT("</i>"), wxT(""));
             Finish++;
             continue;
         }
@@ -166,13 +175,14 @@ bool WallpaperNGPODOnline::Init()
         }
     }
 
+/*
     wxString NGPOD = wxEmptyString;
     NGPOD << wxT("title : ") << NGPODTitle << wxT("\nwhere : ") << NGPODWhere;
     NGPOD << wxT("\nwhen : ") << NGPODWhen;
     NGPOD << wxT("\nwho : ") << NGPODWho << wxT("\ndisc : ") << NGPODDisc;
     NGPOD << wxT("\npicturename : ") << NGPODPictureName;
     wxSafeShowMessage(wxT("DEBUG Info"), NGPOD);
-
+*/
     GetPictureFromInternet();
 
     return true;
@@ -190,6 +200,7 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
     if (NGPODOnlineURL.GetError() != wxURL_NOERR)
     {
         //!report Error!!
+        wxSafeShowMessage(wxT("NGPODOnlineURL GetError"), wxT("from internet"));
         return false;
     }
     wxInputStream *PhotoOfTheDay_in_stream;
