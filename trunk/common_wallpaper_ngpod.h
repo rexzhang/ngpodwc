@@ -14,7 +14,7 @@ class WallpaperNGPOD : public WallpaperBase
         bool Init();
 
         //成员函数
-        bool DrawText();
+        //bool DrawText();
         bool SaveWallpaper();
 
         //成员变量
@@ -22,7 +22,7 @@ class WallpaperNGPOD : public WallpaperBase
     protected:
     private:
         //成员函数
-        wxString GetDiscText();
+        wxString GetText();
         //成员变量
         ngpodinfo podPictureInfo;
 };

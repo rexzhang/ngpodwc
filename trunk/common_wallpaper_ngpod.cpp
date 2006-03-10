@@ -64,7 +64,7 @@ bool WallpaperNGPOD::SaveWallpaper()
     return true;
 }
 
-wxString WallpaperNGPOD::GetDiscText()
+wxString WallpaperNGPOD::GetText()
 {
     wxString podInfoDisc(podPictureInfo.Disc);
     if(podInfoDisc.Contains(wxT("#")))
@@ -108,66 +108,4 @@ wxString WallpaperNGPOD::GetDiscText()
     podInfoString.Replace(wxT(" 00:00:00"), wxT(""), true);
 
     return podInfoString;
-}
-
-bool WallpaperNGPOD::DrawText()
-{
-    wxBitmap ScreenBitmap(Image);
-    // Create a memory DC
-    wxMemoryDC ScreenImageDC;
-    ScreenImageDC.SelectObject(ScreenBitmap);
-    wxColourDatabase ColourDB;
-    //ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
-    //ScreenImageDC.SetTextBackground(ColourDB.Find(wxT("LIGHT GREY")));
-
-    wxString podInfoString(GetDiscText());
-    //
-    int InfoBoxW = 600, InfoBoxH = 200;
-    int InfoBoxXY = 20, infoBoxYSeek = 30;//当为右下时，为右下与屏幕右下角的相对坐标
-
-    wxRect podInfoRect(Image.GetWidth() - InfoBoxXY - InfoBoxW,
-                       Image.GetHeight() - InfoBoxXY - InfoBoxH - infoBoxYSeek,
-                       InfoBoxW, InfoBoxH);
-    /*
-        //--------------------------------
-        wxBitmap InfoBoxBitmap(600,150, 16);
-        InfoBoxBitmap.LoadFile(wxT("art/logo.xpm"), wxBITMAP_TYPE_XPM);
-        wxMemoryDC InfoBoxDC;
-
-        InfoBoxDC.SelectObject(InfoBoxBitmap);
-        InfoBoxDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
-        InfoBoxDC.SetTextBackground(ColourDB.Find(wxT("LIGHT GREY")));
-
-        //InfoBoxDC.Clear();
-        //InfoBoxDC.DrawRoundedRectangle(0,0,600,150,20);
-        InfoBoxDC.DrawRectangle(1,1,550,140);
-
-        ScreenImageDC.DrawBitmap(InfoBoxBitmap, 400, 600, true);
-        //--------------------------------
-    */
-    //ScreenImageDC.DrawRectangle(400,600,600,150);
-
-    wxFont ScreenImageFont = ScreenImageDC.GetFont();
-    ScreenImageFont.SetFamily(wxFONTFAMILY_ROMAN);
-    ScreenImageDC.SetFont(ScreenImageFont);
-    //ScreenImageDC.SetBackgroundMode(wxSOLID);//强制指定显示字体背景色，默认为透明
-
-    ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("DARK GREY")));
-    ScreenImageDC.DrawLabel(podInfoString, podInfoRect, wxALIGN_RIGHT | wxALIGN_BOTTOM, -1);
-
-    //
-    ScreenImageDC.SetTextForeground(ColourDB.Find(wxT("LIGHT GREY")));
-
-    int InfoBoxW2 = 600, InfoBoxH2 = 200;
-    int InfoBoxXY2 = 20, infoBoxYSeek2 = 30;//当为右下时，为右下与屏幕右下角的相对坐标
-    wxRect podInfoRect2(Image.GetWidth() - InfoBoxXY2 - InfoBoxW2 - 1,
-                        Image.GetHeight() - InfoBoxXY2 - InfoBoxH2 - infoBoxYSeek2 - 1,
-                        InfoBoxW2, InfoBoxH2);
-    ScreenImageDC.DrawLabel(podInfoString, podInfoRect2, wxALIGN_RIGHT | wxALIGN_BOTTOM, -1);
-    //
-
-    ScreenImageDC.SelectObject( wxNullBitmap );
-    Image = ScreenBitmap.ConvertToImage();
-
-    return true;
 }

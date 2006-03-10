@@ -13,6 +13,7 @@ class WallpaperNGPODOnline : public WallpaperBase, private NGPODBase
         //成员函数
         bool Init();
         //bool DrawText();
+        wxString GetText();
         bool SaveWallpaper();
 
         //成员变量
