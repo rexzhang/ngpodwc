@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.4.0.0"
+!define PRODUCT_VERSION "0.5.0.0"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -10,7 +10,7 @@
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
 ;---------------------------------------------
-!define WXWIDGETS_DIR "D:\wxWidgets-2.6.2"
+!define WXWIDGETS_DIR "D:\wxWidgets\lib262\gcc_dll"
 !define MINGW_DIR "D:\MinGW"
 !define NGPOD_DIR "ngpod.exe"
 
@@ -126,7 +126,7 @@ SectionEnd
 Section "wxWidgets Lib" SEC02
   SectionIn 1 2
   SetOutPath "$INSTDIR"
-  File "${WXWIDGETS_DIR}\lib\gcc_dll\wxmsw26u_gcc_cb.dll"
+  File "${WXWIDGETS_DIR}\wxmsw26u_gcc_cb.dll"
 SectionEnd
 
 Section "MinGW Lib" SEC03

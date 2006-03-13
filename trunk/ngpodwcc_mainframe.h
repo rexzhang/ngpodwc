@@ -49,16 +49,12 @@ class wxDatePickerCtrl;
 #define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX
 #define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("Dialog")
 #define SYMBOL_NGPODWCC_MAINFRAME_IDNAME ID_FRAME_MAIN
-#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(640, 460)
+#define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(640, 470)
 #define SYMBOL_NGPODWCC_MAINFRAME_POSITION wxDefaultPosition
 #define ID_PANEL 10001
 #define ID_NOTEBOOK 10002
 #define ID_PANEL1 10003
-#define ID_TEXTCTRL 10010
-#define ID_BUTTON_PodBasePath 10011
-#define ID_TEXTCTRL1 10012
-#define ID_TEXTCTRL2 10029
-#define ID_DATECTRL 10016
+#define ID_CHOICE 10034
 #define ID_CHECKBOX 10013
 #define ID_CHECKBOX1 10014
 #define ID_PANEL2 10004
@@ -76,7 +72,11 @@ class wxDatePickerCtrl;
 #define ID_TEXTCTRL7 10031
 #define ID_BUTTON_LocalPicturePath 10032
 #define ID_PANEL6 10033
-#define ID_CHOICE 10034
+#define ID_TEXTCTRL 10010
+#define ID_BUTTON_PodBasePath 10011
+#define ID_TEXTCTRL1 10012
+#define ID_TEXTCTRL2 10029
+#define ID_DATECTRL 10016
 #define ID_BUTTON_RELOAD_CONFIG 10006
 #define ID_BUTTON_RESTORE_DEFAULT 10007
 #define ID_BUTTON_SAVE_CONFIG 10017
@@ -113,14 +113,8 @@ public:
 
 ////@begin ngpodwcc_MainFrame event handler declarations
 
-    /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL
-    void OnTextctrlUpdated( wxCommandEvent& event );
-
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
-    void OnButtonPodbasepathClick( wxCommandEvent& event );
-
-    /// wxEVT_DATE_CHANGED event handler for ID_DATECTRL
-    void OnDatectrlDateChanged( wxDateEvent& event );
+    /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE
+    void OnChoiceSelected( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX
     void OnCheckboxClick( wxCommandEvent& event );
@@ -149,8 +143,14 @@ public:
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath
     void OnButtonLocalpicturepathClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE
-    void OnChoiceSelected( wxCommandEvent& event );
+    /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL
+    void OnTextctrlUpdated( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
+    void OnButtonPodbasepathClick( wxCommandEvent& event );
+
+    /// wxEVT_DATE_CHANGED event handler for ID_DATECTRL
+    void OnDatectrlDateChanged( wxDateEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
     void OnButtonReloadConfigClick( wxCommandEvent& event );
@@ -182,10 +182,7 @@ public:
     static bool ShowToolTips();
 
 ////@begin ngpodwcc_MainFrame member variables
-    wxTextCtrl* PodBasePath;
-    wxTextCtrl* PodDatabaseName;
-    wxTextCtrl* PodPicturePath;
-    wxDatePickerCtrl* NextPODDay;
+    wxChoice* PictureSource;
     wxCheckBox* PauseChangeWallpaper;
     wxCheckBox* ShowSplash;
     wxCheckBox* ShowDisc;
@@ -195,7 +192,10 @@ public:
     wxTextCtrl* ScreenPicturePath;
     wxTextCtrl* ScreenPictureName;
     wxTextCtrl* LocalPicturePath;
-    wxChoice* PictureSource;
+    wxTextCtrl* PodBasePath;
+    wxTextCtrl* PodDatabaseName;
+    wxTextCtrl* PodPicturePath;
+    wxDatePickerCtrl* NextPODDay;
     wxButton* ButtonSaveConfig;
 ////@end ngpodwcc_MainFrame member variables
 
