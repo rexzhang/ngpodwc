@@ -109,9 +109,13 @@ public:
     void InitConfig();
     void ShowConfig();
     void SwapPauseChangeWallpaperStat();
+    void DisableUpdateButton();
+    void EnableUpdateButton();
 
 ////@begin ngpodwc_mini_panel member variables
     wxBitmapButton* PauseChangeWallpaper;
+    wxBitmapButton* ShowPrePicture;
+    wxBitmapButton* ShowNextPicture;
 ////@end ngpodwc_mini_panel member variables
 
     ngpodwcConfig config;

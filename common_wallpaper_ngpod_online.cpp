@@ -66,11 +66,10 @@ bool WallpaperNGPODOnline::Init()
     wxTextInputStream PhotoOfTheDayStream(*PhotoOfTheDay_in_stream,
                                           wxT("\t"), wxConvISO8859_1);
 
-    wxString HtmlLine;
-    int Finish = 0;
-    while(!PhotoOfTheDay_in_stream->Eof() && Finish <= 6)
+    wxString HtmlLine = wxEmptyString;
+    //int Finish = 0;
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!-- END ad and global header -->")))
     {
-        HtmlLine = PhotoOfTheDayStream.ReadLine();
         if(HtmlLine.Contains(wxT("<title>")))
             //<title>National Geographic Photo of the Day: Route 1</title>
         {
@@ -78,10 +77,14 @@ bool WallpaperNGPODOnline::Init()
             HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
             NGPODTitle = HtmlLine.BeforeFirst(wxChar('<'));
             //wxSafeShowMessage(wxT("DEBUG Info"), NGPODTitle);
-            //break;
-            Finish++;
-            continue;
+            break;
+            //Finish++;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
+    }
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!-- END main photo -->")))
+    {
         if(HtmlLine.Contains(wxT("/pod/pictures/sm_wallpaper/")))
             // <a href="/pod/pictures/sm_wallpaper/06130_50036.jpg"><img src="/pod/pictures/normal/06130_50036.jpg" class="gray-border" width="470" border="0"></a></div>
         {
@@ -89,10 +92,14 @@ bool WallpaperNGPODOnline::Init()
             HtmlLine = HtmlLine.AfterFirst(wxChar('\n'));
             NGPODPictureName = HtmlLine.BeforeFirst(wxChar('\"'));
             //wxSafeShowMessage(wxT("DEBUG Info"), NGPODPictureName);
-            //break;
-            Finish++;
-            continue;
+            break;
+            //Finish++;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
+    }
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!--- start caption --->")))
+    {
         //<div class="place-photographer" style="margin-top:10px;margin-left:10px;">
         if(HtmlLine.Contains(wxT("<div class=\"place-photographer\"")))
             //Photograph by  Bruce   Dale</div>
@@ -119,10 +126,15 @@ bool WallpaperNGPODOnline::Init()
             NGPODWhen =  WhereAndWhen.AfterLast(wxChar(','));
             NGPODWhen = RemoveSpace(NGPODWhen);
 
-            Finish++;
+            break;
+            //Finish++;
             //wxSafeShowMessage(wxT("DEBUG Info"), NGPODWho);
-            continue;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
+    }
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!--- start caption --->")))
+    {
         if(HtmlLine.Contains(wxT("Photograph by")))
             //Photograph by  Bruce   Dale</div>
         {
@@ -132,9 +144,15 @@ bool WallpaperNGPODOnline::Init()
             //wxSafeShowMessage(wxT("DEBUG Info"), NGPODWho);
             //break;
             NGPODWho = RemoveSpace(NGPODWho);
-            Finish++;
-            continue;
+
+            break;
+            //Finish++;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
+    }
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!-- related stories -->")))
+    {
         if(HtmlLine.Contains(wxT("<div class=\"pod-caption\"")))
             //<!--- start caption --->
             //<div class="pod-caption" style="margin-top:10px;margin-left:10px;">
@@ -149,7 +167,6 @@ bool WallpaperNGPODOnline::Init()
                 HtmlLine = PhotoOfTheDayStream.ReadLine();
             }
             //wxSafeShowMessage(wxT("DEBUG Info"), NGPODDisc);
-            //break;
             //!内容整理
             NGPODDisc = RemoveSpace(NGPODDisc);
             //FixNGPODDisc();//在线版不需要多重处理.只有在<p>是是换行
@@ -165,28 +182,36 @@ bool WallpaperNGPODOnline::Init()
             NGPODDisc.Replace(wxT("</i>"), wxT(""));
 
             NGPODDisc.Replace(wxT("\n\n"), wxT("\n"));
-            Finish++;
-            continue;
+
+            break;
+            //Finish++;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
+    }
+    while(!PhotoOfTheDay_in_stream->Eof() && !HtmlLine.Contains(wxT("<!-- END caption and related and navigation-->")))
+    {
         if(HtmlLine.Contains(wxT("<REPEAT_LINKS>")))
         {
             //<REPEAT_LINKS>
             //<li><a href="http://news.nationalgeographic.com/news/2002/12/1202_021202_AfricaPhotoGallery.html">News story & photo gallery: A Day in the Life of Africa</a></li>
             //</REPEAT_LINKS>
             NGPODRelated = PhotoOfTheDayStream.ReadLine();
-            Finish++;
-            continue;
+            break;
+            //Finish++;
+            //continue;
         }
+        HtmlLine = PhotoOfTheDayStream.ReadLine();
     }
 
-/*
-    wxString NGPOD = wxEmptyString;
-    NGPOD << wxT("title : ") << NGPODTitle << wxT("\nwhere : ") << NGPODWhere;
-    NGPOD << wxT("\nwhen : ") << NGPODWhen;
-    NGPOD << wxT("\nwho : ") << NGPODWho << wxT("\ndisc : ") << NGPODDisc;
-    NGPOD << wxT("\npicturename : ") << NGPODPictureName;
-    wxSafeShowMessage(wxT("DEBUG Info"), NGPOD);
-*/
+    /*
+        wxString NGPOD = wxEmptyString;
+        NGPOD << wxT("title : ") << NGPODTitle << wxT("\nwhere : ") << NGPODWhere;
+        NGPOD << wxT("\nwhen : ") << NGPODWhen;
+        NGPOD << wxT("\nwho : ") << NGPODWho << wxT("\ndisc : ") << NGPODDisc;
+        NGPOD << wxT("\npicturename : ") << NGPODPictureName;
+        wxSafeShowMessage(wxT("DEBUG Info"), NGPOD);
+    */
     GetPictureFromInternet();
 
     return true;

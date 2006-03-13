@@ -82,6 +82,8 @@ bool ngpodwc_mini_panel::Create( wxWindow* parent, wxWindowID id, const wxString
 {
 ////@begin ngpodwc_mini_panel member initialisation
     PauseChangeWallpaper = NULL;
+    ShowPrePicture = NULL;
+    ShowNextPicture = NULL;
 ////@end ngpodwc_mini_panel member initialisation
 
 ////@begin ngpodwc_mini_panel creation
@@ -131,13 +133,13 @@ void ngpodwc_mini_panel::CreateControls()
 
     itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBitmap itemBitmapButton11Bitmap(itemDialog1->GetBitmapResource(wxT("art/previous_pictrue.xpm")));
-    wxBitmapButton* itemBitmapButton11 = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_PRE, itemBitmapButton11Bitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
-    itemBoxSizer6->Add(itemBitmapButton11, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBitmap ShowPrePictureBitmap(itemDialog1->GetBitmapResource(wxT("art/previous_pictrue.xpm")));
+    ShowPrePicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_PRE, ShowPrePictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    itemBoxSizer6->Add(ShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBitmap itemBitmapButton12Bitmap(itemDialog1->GetBitmapResource(wxT("art/next_pictrue.xpm")));
-    wxBitmapButton* itemBitmapButton12 = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_NEXT, itemBitmapButton12Bitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
-    itemBoxSizer6->Add(itemBitmapButton12, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBitmap ShowNextPictureBitmap(itemDialog1->GetBitmapResource(wxT("art/next_pictrue.xpm")));
+    ShowNextPicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_NEXT, ShowNextPictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    itemBoxSizer6->Add(ShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -158,10 +160,11 @@ void ngpodwc_mini_panel::CreateControls()
 
 void ngpodwc_mini_panel::OnBitmapbuttonPreClick( wxCommandEvent& event )
 {
-
+    DisableUpdateButton();
     seekDays(-1, &(config.PodDate));
     //updateWallpaper(&config);//, &pictureInfo);
     updateWallpaper(config);
+    EnableUpdateButton();
     wxBell();
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_PRE in ngpodwc_mini_panel.
     // Before editing this code, remove the block markers.
@@ -175,9 +178,10 @@ void ngpodwc_mini_panel::OnBitmapbuttonPreClick( wxCommandEvent& event )
 
 void ngpodwc_mini_panel::OnBitmapbuttonNextClick( wxCommandEvent& event )
 {
-
+    DisableUpdateButton();
     seekDays(1, &(config.PodDate));
     updateWallpaper(config);//, &pictureInfo);
+    EnableUpdateButton();
     wxBell();
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_NEXT in ngpodwc_mini_panel.
     // Before editing this code, remove the block markers.

@@ -41,7 +41,6 @@ void ngpodwc_mini_panel::ShowConfig()
     return;
 }
 
-
 void ngpodwc_mini_panel::SwapPauseChangeWallpaperStat()
 {
     config.PauseChangeWallpaper = !config.PauseChangeWallpaper;
@@ -49,4 +48,18 @@ void ngpodwc_mini_panel::SwapPauseChangeWallpaperStat()
     ShowConfig();
 
     return;
+}
+
+void ngpodwc_mini_panel::DisableUpdateButton()
+{
+    PauseChangeWallpaper->Disable();
+    ShowPrePicture->Disable();
+    ShowNextPicture->Disable();
+}
+
+void ngpodwc_mini_panel::EnableUpdateButton()
+{
+    PauseChangeWallpaper->Enable();
+    ShowPrePicture->Enable();
+    ShowNextPicture->Enable();
 }
