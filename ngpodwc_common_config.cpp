@@ -64,6 +64,8 @@ void ngpodwcConfig::SetDefault()
 {
     PictureSource = PICTURESOURCE_LOCALFILE;
 
+    UILanguage = wxLANGUAGE_DEFAULT;
+
     ///////////////////
     PodBasePath = wxEmptyString;
     PodDatabaseName = wxT("pod.mdb");//wxEmptyString;
@@ -149,6 +151,15 @@ bool ngpodwcConfig::ReadConfig()
     pFileConfig->Read(wxT("PauseChangeWallpaper"), &(PauseChangeWallpaper));
     pFileConfig->Read(wxT("ShowSplash"), &(ShowSplash));
 
+    //将UICanonicalName(ISO名字xx_XX)转换为UILanguage(数字)
+    wxString UICanonicalName;
+    if(pFileConfig->Read(wxT("UILanguage"), &(UICanonicalName)))
+    {
+        wxLanguageInfo* UILanguageInfo;
+        UILanguageInfo = wxLocale::FindLanguageInfo(UICanonicalName);
+        UILanguage = UILanguageInfo->Language;
+    }
+
     //!ConfigInputStream.Close();
     //!ngpodwc.cpp:64: error: 'class wxFileInputStream' has no member named 'Close'
 
@@ -160,8 +171,6 @@ bool ngpodwcConfig::ReadConfig()
 //---------------------------------------------------------------------------
 bool ngpodwcConfig::WriteConfig()
 {
-
-
     //打开配置文件
     wxFileOutputStream ConfigOutputStream(ConfigFile);
     if(!ConfigOutputStream.Ok())//检查配置文件是否存在
@@ -204,6 +213,13 @@ bool ngpodwcConfig::WriteConfig()
 
     pFileConfig->Write(wxT("PauseChangeWallpaper"), PauseChangeWallpaper);
     pFileConfig->Write(wxT("ShowSplash"), ShowSplash);
+
+    //将UILanguage(数字)转换为UICanonicalName(ISO名字xx_XX)
+    wxString UICanonicalName;
+    wxLanguageInfo* UILanguageInfo;
+    UILanguageInfo = wxLocale::GetLanguageInfo(UILanguage);
+    UICanonicalName = UILanguageInfo->CanonicalName;
+    pFileConfig->Write(wxT("UILanguage"), UICanonicalName);
 
     //保存到文件
     pFileConfig->Save(ConfigOutputStream, wxConvUTF8);
