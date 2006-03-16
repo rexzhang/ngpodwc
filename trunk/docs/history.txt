@@ -1,3 +1,6 @@
+*0.5.0.1
+Fix 修复一个Bug
+
 *0.5.0.0
 Add 实现NGPOD Online源
 

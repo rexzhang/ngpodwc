@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.5.0.0"
+!define PRODUCT_VERSION "0.5.0.1"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"

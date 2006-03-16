@@ -36,7 +36,7 @@ wxString WallpaperNGPODOnline::GetText()
 
     NGPODText << wxT("\n") << NGPODDisc;
 
-    wxSafeShowMessage(wxT("DEBUG Info"), NGPODText);
+    //wxSafeShowMessage(wxT("DEBUG Info"), NGPODText);
 
     return NGPODText;
 }
