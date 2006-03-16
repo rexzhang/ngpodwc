@@ -58,7 +58,7 @@ SetCompress auto
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
 !define MUI_FINISHPAGE_RUN "$INSTDIR\ngpodwcc_u.exe"
-!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\readme.txt"
+!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\docs\readme.txt"
 !insertmacro MUI_PAGE_FINISH
 
 ; Uninstaller pages
@@ -72,7 +72,7 @@ SetCompress auto
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 ;定义输出的安装文件名
-OutFile "${PRODUCT_NAME}_v${PRODUCT_VERSION}_setup.exe"
+OutFile "${PRODUCT_NAME}_${PRODUCT_VERSION}_setup.exe"
 InstallDir "$PROGRAMFILES\NGPODWC"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show

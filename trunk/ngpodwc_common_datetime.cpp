@@ -34,7 +34,7 @@ bool tmSeekDays(int seek, tm *pTmIn)
     pTmIn->tm_mon = pTmTemp->tm_mon;
     pTmIn->tm_mday = pTmTemp->tm_mday;
 
-    return 1;
+    return true;
 }
 
 // ----------------------------------------------------------------------------
@@ -79,7 +79,7 @@ bool seekDays(int seek, int *year, int *month, int *day)
     *month = pTmTemp->tm_mon;
     *day = pTmTemp->tm_mday;
 
-    return 1;
+    return true;
 }
 
 // ----------------------------------------------------------------------------
@@ -96,7 +96,7 @@ bool seekDays(int seek, wxDateTime *inDate)
 
     toWxDateTime(year, month, mday, inDate);
 
-    return 1;
+    return true;
 }
 
 // ----------------------------------------------------------------------------
