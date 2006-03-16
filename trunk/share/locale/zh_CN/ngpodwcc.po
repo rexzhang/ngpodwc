@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NGPODWC\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-03-16 14:02+0800\n"
+"Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
+"Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ngpodwc.cpp:157
+#: ngpodwcc_mainframe.cpp:449
+#: ngpodwcc_aboutdialog.h:41
+#: ngpodwcc_mainframe.h:50
+#: ngpodwc_mini_panel.h:43
+msgid "Dialog"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:109
+msgid "NGPODWCC"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:113
+msgid "National Geographic Photo Of the Day Wallpaper Control Center"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:116
+msgid "Version : x.x.x.x(build xxxx)"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:124
+msgid "Developey by:"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:128
+msgid "Rex Zhang(rex.zhang@gmail.com)"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:133
+msgid "Homepage"
+msgstr "主页"
+
+#: ngpodwcc_aboutdialog.cpp:137
+msgid "http://ngpodwc.sf.net"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:140
+msgid "http://www.flord.net"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:145
+msgid "OK"
+msgstr "确定"
+
+#: ngpodwcc_mainframe.cpp:166
+msgid ""
+"National Geographic Photo Of the Day\n"
+"Wallpaper Control Center"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:180
+msgid "Input Source"
+msgstr "输入的源"
+
+#: ngpodwcc_mainframe.cpp:184
+msgid "Local Picture"
+msgstr "本地图片"
+
+#: ngpodwcc_mainframe.cpp:185
+msgid "NGPOD"
+msgstr "美国国家地理(NGPOD 1.x 数据库)"
+
+#: ngpodwcc_mainframe.cpp:186
+msgid "NGPOD Online"
+msgstr "美国国家地理(在线获取)"
+
+#: ngpodwcc_mainframe.cpp:193
+msgid "Pause Change Wallpaper"
+msgstr "暂停桌面切换"
+
+#: ngpodwcc_mainframe.cpp:199
+msgid "Show Splash"
+msgstr "显示Splash"
+
+#: ngpodwcc_mainframe.cpp:203
+msgid "Common Setting"
+msgstr "基本设置"
+
+#: ngpodwcc_mainframe.cpp:211
+msgid "Show Disc"
+msgstr "标注文字说明"
+
+#: ngpodwcc_mainframe.cpp:215
+msgid "Image Convert Setting"
+msgstr "图片转换设置"
+
+#: ngpodwcc_mainframe.cpp:227
+msgid "Screen Width x Height"
+msgstr "屏幕像素 宽 x 高"
+
+#: ngpodwcc_mainframe.cpp:231
+msgid "640x480"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:232
+msgid "800x600"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:233
+msgid "1024x768"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:234
+#: ngpodwcc_mainframe.cpp:239
+#: ngpodwcc_mainframe.cpp:266
+msgid "Auto Detect"
+msgstr "自动检测"
+
+#: ngpodwcc_mainframe.cpp:242
+msgid "Screen Width"
+msgstr "屏幕宽度"
+
+#: ngpodwcc_mainframe.cpp:251
+msgid "Screen Height"
+msgstr "屏幕高度"
+
+#: ngpodwcc_mainframe.cpp:260
+msgid "ScreenPicturePath"
+msgstr "桌面图片保存路径"
+
+#: ngpodwcc_mainframe.cpp:269
+msgid "ScreenPictureName"
+msgstr "桌面图片文件名"
+
+#: ngpodwcc_mainframe.cpp:280
+msgid "Install NGPOD to Startup"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:290
+msgid "Environment Setting"
+msgstr "环境设置"
+
+#: ngpodwcc_mainframe.cpp:302
+msgid "LocalPicturePath"
+msgstr "本地图片库路径"
+
+#: ngpodwcc_mainframe.cpp:308
+#: ngpodwcc_mainframe.cpp:329
+msgid "..."
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:311
+msgid "Local Picture Source"
+msgstr "本地图片源"
+
+#: ngpodwcc_mainframe.cpp:323
+msgid "PodBasePath"
+msgstr "本地NGPOD基路径"
+
+#: ngpodwcc_mainframe.cpp:332
+msgid "PodDatabaseName"
+msgstr "本地NGPOD数据库文件名"
+
+#: ngpodwcc_mainframe.cpp:341
+msgid "PodPicturePath"
+msgstr "本地NGPOD图片所在目录"
+
+#: ngpodwcc_mainframe.cpp:350
+msgid "Now POD Day"
+msgstr "当前POD日期"
+
+#: ngpodwcc_mainframe.cpp:367
+msgid "NGPOD Source"
+msgstr "NGPOD图片源"
+
+#: ngpodwcc_mainframe.cpp:377
+msgid "Reload Config"
+msgstr "重新载入配置"
+
+#: ngpodwcc_mainframe.cpp:380
+msgid "Restore Default"
+msgstr "重置配置回系统默认值"
+
+#: ngpodwcc_mainframe.cpp:383
+msgid "Save Config"
+msgstr "保存配置"
+
+#: ngpodwcc_mainframe.cpp:390
+msgid "About"
+msgstr "关于"
+
+#: ngpodwcc_mainframe.cpp:393
+#: ngpodwc_mini_panel.cpp:150
+msgid "Quit"
+msgstr "退出"
+
+#: ngpodwc_mini_panel.cpp:115
+msgid "NGPODWC"
+msgstr ""
+

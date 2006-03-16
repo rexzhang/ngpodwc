@@ -66,8 +66,8 @@ END_EVENT_TABLE()
 
 NgpodwccApp::NgpodwccApp()
 {
-////@begin NgpodwccApp member initialisation
-////@end NgpodwccApp member initialisation
+    ////@begin NgpodwccApp member initialisation
+    ////@end NgpodwccApp member initialisation
 }
 
 /*!
@@ -76,7 +76,7 @@ NgpodwccApp::NgpodwccApp()
 
 bool NgpodwccApp::OnInit()
 {
-////@begin NgpodwccApp initialisation
+    ////@begin NgpodwccApp initialisation
     // Remove the comment markers above and below this block
     // to make permanent changes to the code.
 
@@ -84,17 +84,39 @@ bool NgpodwccApp::OnInit()
     wxImage::AddHandler(new wxXPMHandler);
 #endif
 #if wxUSE_LIBPNG
+
     wxImage::AddHandler(new wxPNGHandler);
 #endif
 #if wxUSE_LIBJPEG
+
     wxImage::AddHandler(new wxJPEGHandler);
 #endif
 #if wxUSE_GIF
+
     wxImage::AddHandler(new wxGIFHandler);
 #endif
+    //本地化
+    m_locale.Init(wxLANGUAGE_CHINESE_SIMPLIFIED);
+    // normally this wouldn't be necessary as the catalog files would be found
+    // in the default locations, but under Windows then the program is not
+    // installed the catalogs are in the parent directory (because the binary
+    // is in a subdirectory of samples/internat) where we wouldn't find them by
+    // default
+    wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\."));
+    wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\.."));
+
+    // Initialize the catalogs we'll be using
+    m_locale.AddCatalog(wxT("ngpodwcc"));
+
+    //检查本地化
+    if(!m_locale.IsOk())
+    {
+        wxSafeShowMessage(wxT("DEBUG Info"), wxT("wxLocale ERROR!"));
+    }
+
     ngpodwcc_MainFrame* mainWindow = new ngpodwcc_MainFrame( NULL, ID_FRAME_MAIN );
     //mainWindow->Show(true);
-////@end NgpodwccApp initialisation
+    ////@end NgpodwccApp initialisation
 
     wxFileName *filename;
     wxString path = argv[0];
@@ -104,8 +126,10 @@ bool NgpodwccApp::OnInit()
     (mainWindow->config).SetConfigFilePath(path);
     //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
     (mainWindow->config).ReadConfig();
-    mainWindow->Show(true);
 
+
+
+    mainWindow->Show(true);
 
     return true;
 }
@@ -115,8 +139,8 @@ bool NgpodwccApp::OnInit()
  */
 int NgpodwccApp::OnExit()
 {
-////@begin NgpodwccApp cleanup
+    ////@begin NgpodwccApp cleanup
     return wxApp::OnExit();
-////@end NgpodwccApp cleanup
+    ////@end NgpodwccApp cleanup
 }
 
