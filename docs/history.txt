@@ -1,3 +1,7 @@
+*0.6.0.0
+Up  开始实现国际化支持
+Up  不再包含NGPOD安装
+
 *0.5.0.1
 Fix 修复一个Bug
 
@@ -7,7 +11,6 @@ Add 实现NGPOD Online源
 *0.4.0.0
 Add	实现LocalPicture源
 
-
 *0.3.0.0
 Up  版本控制,开始使用不支持wx_v2.4兼容编译的库文件
 Fix 一些小Bug
@@ -15,7 +18,6 @@ Fix 一些小Bug
 *0.2.2.0
 Add 开始试验POD文字信息加注
         wxDC::DrawBitmap有Bug当没有Apale通道时无效
-
 
 *0.2.1.0
 Add 在ngpodwc中实现小面板
@@ -47,4 +49,5 @@ Add 实现基本的桌布切换功能程序ngpodwc
 Add 实现中央控制台程序（用于修改管理配置文件）ngpodwcc
 
 Add 支持操作系统
+        Windows2000,Windows XP
         Windows2000,Windows XP

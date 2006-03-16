@@ -43,21 +43,19 @@ public:
     bool ReadConfig();
     bool WriteConfig();
 
-    //类成员变量--------------
+    //类成员变量
+    //!基本设置
     int PictureSource;
 
-    //NGPOD相关
-    wxString PodBasePath;
-    wxString PodDatabaseName;
+    //程序控制相关
+    bool PauseChangeWallpaper;
+    bool ShowSplash;
+    int UILanguage;
 
-    wxString PodPictureMode;
-    wxString PodPicturePath;
+    //!图片处理
+    bool ShowDisc;
 
-    wxDateTime PodDate;
-
-    //本地图片资源信息
-    wxString LocalPicturePath;
-
+    //!环境设置
     //本地显示器/桌面相关
     int ScreenWidth;
     int ScreenHeight;
@@ -65,18 +63,23 @@ public:
     wxString ScreenPicturePath;
     wxString ScreenPictureName;
 
-    //图片处理相关
-    bool ShowDisc;
+    //!源-本地图片资源信息
+    wxString LocalPicturePath;
 
-    //程序控制相关
-    bool PauseChangeWallpaper;//old-----bool Locked;
-    bool ShowSplash;
+    //!源-NGPOD-通用
+    wxDateTime PodDate;
 
+    //!源-NGPOD-1.x
+    wxString PodBasePath;
+    wxString PodDatabaseName;
+
+    wxString PodPictureMode;
+    wxString PodPicturePath;
 protected:
 
 private:
     //config配置文件路径，文件名等信息
-    wxString ConfigFile;//Full Path + FileName
+    wxString ConfigFile;// = Full Path + FileName
     wxString ConfigFileName;
 };
 

@@ -169,7 +169,7 @@ bool NgpodwcApp::OnInit()
     /*
     //!!!TEST END
     wxSafeShowMessage(wxT("TEST END"),wxT("TEST END"));
-    return 0;
+    return false;
     */
 
     return true;

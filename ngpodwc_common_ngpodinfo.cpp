@@ -31,7 +31,7 @@ int ngpodinfo::HandleError(wxString errmsg)
 
     wxSafeShowMessage(errmsg,allErrors);
 
-    return 1;
+    return true;
 }
 
 int ngpodinfo::HandleError(wxString errmsg, wxDb *pDb)
@@ -50,13 +50,12 @@ int ngpodinfo::HandleError(wxString errmsg, wxDb *pDb)
 
     wxSafeShowMessage(errmsg,allErrors);
 
-    return 1;
+    return true;
 }
 
 // ----------------------------------------------------------------------------
 // FUNCTION USED FOR xxxxxxx
 // ----------------------------------------------------------------------------
-// return 1 = true/Finish
 //bool ngpodinfo::getPodInfo(ngpodwcConfig *pConfig, PodPictrueInfo *pPodPictureInfo)
 bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
 {
@@ -85,7 +84,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
             // datatypes and parameter settings failed
             wxSafeShowMessage(PodDBName,
                               wxT("Connection is open, but the initialization of datatypes and parameter settings failed"));
-            return 0;
+            return false;
         }
         else
         {
@@ -93,7 +92,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
             HandleError(wxT("DB ENV ERROR: Cannot allocate ODBC env handle"), NULL);
             wxSafeShowMessage(PodDBName,
                               wxT("Error opening datasource"));
-            return 0;
+            return false;
         }
     }
 
@@ -154,7 +153,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
     if (!table->Query())
     {
         HandleError(wxT("QUERY ERROR: "), table->GetDb());
-        return 0;
+        return false;
     }
 
     while (table->GetNext())
@@ -192,7 +191,7 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
                       );
             // Code to display 'msg' here
             wxSafeShowMessage(wxT("table->GetNext Error!"),msg);
-            return 0;
+            return false;
         }
     */
     // -----------------------------------------------------------------------
@@ -221,6 +220,6 @@ bool ngpodinfo::GetInfo(wxString PodDBName, wxDateTime PodDateSelected)
     // for use with the ODBC datasource connections
     //wxDELETE(DbConnectInf);
 
-    return 1;//获取成功
+    return true;//获取成功
 }
 

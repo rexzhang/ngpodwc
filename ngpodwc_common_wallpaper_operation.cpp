@@ -138,6 +138,6 @@ bool setWallpaperRegInfo(wxString WallpaperPathAndName)
     SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
     */
 
-    return 1;
+    return true;
 }
 
