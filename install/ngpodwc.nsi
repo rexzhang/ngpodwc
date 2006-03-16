@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.5.0.1"
+!define PRODUCT_VERSION "0.6.0.0"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -120,6 +120,18 @@ Section "Core" SEC01
   File "..\art\lock_picture.xpm"
   File "..\art\unlock_picture.xpm"
 
+  ;
+  CreateDirectory "$INSTDIR\share"
+
+  ;国际化支持部分
+  CreateDirectory "$INSTDIR\share\locale"
+  ;简体中文本地化文件
+  CreateDirectory "$INSTDIR\share\locale\zh_CN"
+  SetOutPath "$INSTDIR\share\locale\zh_CN"
+  SetOverwrite ifnewer
+  File "..\share\locale\zh_CN\ngpodwcc.mo"
+
+
 
 SectionEnd
 
@@ -133,39 +145,6 @@ Section "MinGW Lib" SEC03
   SectionIn 1 2
   SetOutPath "$INSTDIR"
   File "${MINGW_DIR}\mingwm10.dll"
-SectionEnd
-
-Section "NGPOD" SEC04
-  SectionIn 1
-  SetOutPath "$INSTDIR\language"
-  SetOverwrite try
-  File "${NGPOD_DIR}\language\chs.ini"
-  File "${NGPOD_DIR}\language\cht.ini"
-  File "${NGPOD_DIR}\language\enu.ini"
-  SetOutPath "$INSTDIR"
-  File "${NGPOD_DIR}\ngpod.exe"
-  CreateShortCut "$SMPROGRAMS\NGPODWC\美国国家地理图片下载(NGPOD).lnk" "$INSTDIR\ngpod.exe"
-  SetOutPath "$INSTDIR\POD\icons"
-  File "${NGPOD_DIR}\POD\icons\logo.gif"
-  File "${NGPOD_DIR}\POD\icons\newnext.gif"
-  File "${NGPOD_DIR}\POD\icons\newprevious.gif"
-  File "${NGPOD_DIR}\POD\icons\pod_title.gif"
-  File "${NGPOD_DIR}\POD\icons\space.gif"
-  File "${NGPOD_DIR}\POD\icons\spacer.gif"
-  File "${NGPOD_DIR}\POD\icons\styles.css"
-  File "${NGPOD_DIR}\POD\icons\text_photographer.gif"
-  File "${NGPOD_DIR}\POD\icons\text_related.gif"
-  File "${NGPOD_DIR}\POD\icons\text_when.gif"
-  File "${NGPOD_DIR}\POD\icons\text_where.gif"
-  SetOutPath "$INSTDIR"
-  File "${NGPOD_DIR}\pod.htt"
-  File "${NGPOD_DIR}\pod.mdb"
-  SetOutPath "$INSTDIR\POD\pictures\lg_wallpaper"
-  SetOutPath "$INSTDIR\POD\pictures\normal"
-
-  ;//return program root path
-  SetOutPath "$INSTDIR"
-
 SectionEnd
 
 Section -AdditionalIcons
@@ -189,7 +168,7 @@ SectionEnd
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC01} "基本程序"
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC02} "wxWidget支持库"
-  !insertmacro MUI_DESCRIPTION_TEXT ${SEC03} "NGPOD国家地理图片获取程序"
+  !insertmacro MUI_DESCRIPTION_TEXT ${SEC03} "MinGW支持库"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 
@@ -223,40 +202,20 @@ Section Uninstall
   Delete "$INSTDIR\art\unlock_picture.xpm"
   RMDir "$INSTDIR\art"
 
+  ;国际化支持部分
+  Delete "$INSTDIR\share\locale\zh_CN\ngpodwcc.mo"
+  RMDir "$INSTDIR\share\locale\zh_CN"
+  RMDir "$INSTDIR\share\locale"
+  RMDir "$INSTDIR\share"
+
   Delete "$INSTDIR\wxmsw26u_gcc_cb.dll"
   Delete "$INSTDIR\mingwm10.dll"
-
-  Delete "$INSTDIR\pod.mdb"
-  Delete "$INSTDIR\pod.htt"
-  Delete "$INSTDIR\POD\icons\text_where.gif"
-  Delete "$INSTDIR\POD\icons\text_when.gif"
-  Delete "$INSTDIR\POD\icons\text_related.gif"
-  Delete "$INSTDIR\POD\icons\text_photographer.gif"
-  Delete "$INSTDIR\POD\icons\styles.css"
-  Delete "$INSTDIR\POD\icons\spacer.gif"
-  Delete "$INSTDIR\POD\icons\space.gif"
-  Delete "$INSTDIR\POD\icons\pod_title.gif"
-  Delete "$INSTDIR\POD\icons\newprevious.gif"
-  Delete "$INSTDIR\POD\icons\newnext.gif"
-  Delete "$INSTDIR\POD\icons\logo.gif"
-  Delete "$INSTDIR\ngpod.exe"
-  Delete "$INSTDIR\language\enu.ini"
-  Delete "$INSTDIR\language\cht.ini"
-  Delete "$INSTDIR\language\chs.ini"
-  RMDir "$INSTDIR\POD\pictures\lg_wallpaper"
-  RMDir "$INSTDIR\POD\pictures\normal"
-  RMDir "$INSTDIR\POD\pictures"
-  RMDir "$INSTDIR\POD\icons"
-  RMDir "$INSTDIR\POD"
-  RMDir "$INSTDIR\language"
 
   Delete "$DESKTOP\NG桌布切换.lnk"
   Delete "$SMPROGRAMS\NGPODWC\NG桌布切换.lnk"
   Delete "$SMSTARTUP\NG桌布切换.lnk"
 
   Delete "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk"
-
-  Delete "$SMPROGRAMS\NGPODWC\美国国家地理图片下载(NGPOD).lnk"
 
   Delete "$SMPROGRAMS\NGPODWC\访问 NGPODWC 主页.lnk"
   Delete "$SMPROGRAMS\NGPODWC\Uninstall.lnk"
