@@ -1,19 +1,19 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        ngpodwcc_aboutdialog.h
+// Name:        dialog_about.h
 // Purpose:     
-// Author:      Rex Zhang
+// Author:      Rex Zhang(rex.zhang@gmail.com)
 // Modified by: 
-// Created:     07/02/2006 18:03:07
+// Created:     07/02/2006 80:03:07
 // RCS-ID:      
-// Copyright:   cooooooooooooopy
+// Copyright:   (c) 2006, Rex Zhang
 // Licence:     
 /////////////////////////////////////////////////////////////////////////////
 
-#ifndef _NGPODWCC_ABOUTDIALOG_H_
-#define _NGPODWCC_ABOUTDIALOG_H_
+#ifndef _DIALOG_ABOUT_H_
+#define _DIALOG_ABOUT_H_
 
 #if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
-#pragma interface "ngpodwcc_aboutdialog.h"
+#pragma interface "dialog_about.h"
 #endif
 
 /*!
@@ -98,4 +98,4 @@ public:
 };
 
 #endif
-    // _NGPODWCC_ABOUTDIALOG_H_
+    // _DIALOG_ABOUT_H_

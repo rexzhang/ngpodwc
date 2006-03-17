@@ -94,6 +94,22 @@
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
+		<Unit filename="common_globals.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="common_globals.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
 		<Unit filename="common_ngpod_base.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwc_Debug" />
@@ -153,6 +169,18 @@
 			<Option link="0" />
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="dialog_about.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="dialog_about.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="docs\history.txt">
 			<Option compilerVar="CPP" />
@@ -323,18 +351,6 @@
 		<Unit filename="ngpodwcc.rc">
 			<Option compilerVar="WINDRES" />
 			<Option objectName="ngpodwcc.res" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc_aboutdialog.cpp">
-			<Option compilerVar="CPP" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc_aboutdialog.h">
-			<Option compilerVar="CPP" />
-			<Option compile="0" />
-			<Option link="0" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>

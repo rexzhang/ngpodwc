@@ -1,16 +1,16 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        ngpodwcc_aboutdialog.cpp
+// Name:        dialog_about.cpp
 // Purpose:     
-// Author:      Rex Zhang
+// Author:      Rex Zhang(rex.zhang@gmail.com)
 // Modified by: 
-// Created:     07/02/2006 18:03:07
+// Created:     07/02/2006 80:03:07
 // RCS-ID:      
-// Copyright:   cooooooooooooopy
+// Copyright:   (c) 2006, Rex Zhang
 // Licence:     
 /////////////////////////////////////////////////////////////////////////////
 
 #if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)
-#pragma implementation "ngpodwcc_aboutdialog.h"
+#pragma implementation "dialog_about.h"
 #endif
 
 // For compilers that support precompilation, includes "wx/wx.h".
@@ -27,7 +27,7 @@
 ////@begin includes
 ////@end includes
 
-#include "ngpodwcc_aboutdialog.h"
+#include "dialog_about.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -153,6 +153,18 @@ void ngpodwcc_aboutdialog::CreateControls()
 }
 
 /*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8
+ */
+
+void ngpodwcc_aboutdialog::OnButton8Click( wxCommandEvent& event )
+{
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8 in ngpodwcc_aboutdialog.
+    // Before editing this code, remove the block markers.
+    Destroy();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8 in ngpodwcc_aboutdialog. 
+}
+
+/*!
  * Should we show tooltips?
  */
 
@@ -186,16 +198,3 @@ wxIcon ngpodwcc_aboutdialog::GetIconResource( const wxString& name )
     return wxNullIcon;
 ////@end ngpodwcc_aboutdialog icon retrieval
 }
-/*!
- * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8
- */
-
-void ngpodwcc_aboutdialog::OnButton8Click( wxCommandEvent& event )
-{
-////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8 in ngpodwcc_aboutdialog.
-    // Before editing this code, remove the block markers.
-    Destroy();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8 in ngpodwcc_aboutdialog. 
-}
-
-
