@@ -50,7 +50,7 @@ public:
     //程序控制相关
     bool PauseChangeWallpaper;
     bool ShowSplash;
-    wxLanguage UILanguage;
+    int UILanguage;
 
     //!图片处理
     bool ShowDisc;

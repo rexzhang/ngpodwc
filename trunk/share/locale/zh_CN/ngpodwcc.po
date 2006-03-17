@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2006-03-16 14:02+0800\n"
+"PO-Revision-Date: 2006-03-17 14:42+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,10 +14,16 @@ msgstr ""
 "X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: common_globals.cpp:88
+msgid "English"
+msgstr "英文"
+
+#: common_globals.cpp:89
+msgid "Chinese (Simplified)"
+msgstr "简体中文"
+
 #: ngpodwc.cpp:157
-#: ngpodwcc_mainframe.cpp:449
-#: ngpodwcc_aboutdialog.h:41
-#: ngpodwcc_mainframe.h:50
+#: ngpodwcc_mainframe.cpp:459
 #: ngpodwc_mini_panel.h:43
 msgid "Dialog"
 msgstr ""
@@ -27,6 +33,7 @@ msgid "NGPODWCC"
 msgstr ""
 
 #: ngpodwcc_aboutdialog.cpp:113
+#: ngpodwcc_mainframe.h:50
 msgid "National Geographic Photo Of the Day Wallpaper Control Center"
 msgstr ""
 
@@ -47,155 +54,164 @@ msgid "Homepage"
 msgstr "主页"
 
 #: ngpodwcc_aboutdialog.cpp:137
-msgid "http://ngpodwc.sf.net"
+msgid "http://swik.net/ngpodwc"
 msgstr ""
 
 #: ngpodwcc_aboutdialog.cpp:140
+msgid "https://sourceforge.net/project/ngpodwc"
+msgstr ""
+
+#: ngpodwcc_aboutdialog.cpp:143
 msgid "http://www.flord.net"
 msgstr ""
 
-#: ngpodwcc_aboutdialog.cpp:145
+#: ngpodwcc_aboutdialog.cpp:148
 msgid "OK"
 msgstr "确定"
 
-#: ngpodwcc_mainframe.cpp:166
+#: ngpodwcc_mainframe.cpp:169
 msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Control Center"
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:180
+#: ngpodwcc_mainframe.cpp:183
 msgid "Input Source"
 msgstr "输入的源"
 
-#: ngpodwcc_mainframe.cpp:184
+#: ngpodwcc_mainframe.cpp:187
 msgid "Local Picture"
 msgstr "本地图片"
 
-#: ngpodwcc_mainframe.cpp:185
+#: ngpodwcc_mainframe.cpp:188
 msgid "NGPOD"
 msgstr "美国国家地理(NGPOD 1.x 数据库)"
 
-#: ngpodwcc_mainframe.cpp:186
+#: ngpodwcc_mainframe.cpp:189
 msgid "NGPOD Online"
 msgstr "美国国家地理(在线获取)"
 
-#: ngpodwcc_mainframe.cpp:193
+#: ngpodwcc_mainframe.cpp:196
 msgid "Pause Change Wallpaper"
 msgstr "暂停桌面切换"
 
-#: ngpodwcc_mainframe.cpp:199
+#: ngpodwcc_mainframe.cpp:202
 msgid "Show Splash"
 msgstr "显示Splash"
 
-#: ngpodwcc_mainframe.cpp:203
+#: ngpodwcc_mainframe.cpp:206
+msgid "UI Language"
+msgstr "界面语言"
+
+#: ngpodwcc_mainframe.cpp:213
 msgid "Common Setting"
 msgstr "基本设置"
 
-#: ngpodwcc_mainframe.cpp:211
+#: ngpodwcc_mainframe.cpp:221
 msgid "Show Disc"
 msgstr "标注文字说明"
 
-#: ngpodwcc_mainframe.cpp:215
+#: ngpodwcc_mainframe.cpp:225
 msgid "Image Convert Setting"
 msgstr "图片转换设置"
 
-#: ngpodwcc_mainframe.cpp:227
+#: ngpodwcc_mainframe.cpp:237
 msgid "Screen Width x Height"
 msgstr "屏幕像素 宽 x 高"
 
-#: ngpodwcc_mainframe.cpp:231
+#: ngpodwcc_mainframe.cpp:241
 msgid "640x480"
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:232
+#: ngpodwcc_mainframe.cpp:242
 msgid "800x600"
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:233
+#: ngpodwcc_mainframe.cpp:243
 msgid "1024x768"
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:234
-#: ngpodwcc_mainframe.cpp:239
-#: ngpodwcc_mainframe.cpp:266
+#: ngpodwcc_mainframe.cpp:244
+#: ngpodwcc_mainframe.cpp:249
+#: ngpodwcc_mainframe.cpp:276
 msgid "Auto Detect"
 msgstr "自动检测"
 
-#: ngpodwcc_mainframe.cpp:242
+#: ngpodwcc_mainframe.cpp:252
 msgid "Screen Width"
 msgstr "屏幕宽度"
 
-#: ngpodwcc_mainframe.cpp:251
+#: ngpodwcc_mainframe.cpp:261
 msgid "Screen Height"
 msgstr "屏幕高度"
 
-#: ngpodwcc_mainframe.cpp:260
+#: ngpodwcc_mainframe.cpp:270
 msgid "ScreenPicturePath"
 msgstr "桌面图片保存路径"
 
-#: ngpodwcc_mainframe.cpp:269
+#: ngpodwcc_mainframe.cpp:279
 msgid "ScreenPictureName"
 msgstr "桌面图片文件名"
 
-#: ngpodwcc_mainframe.cpp:280
+#: ngpodwcc_mainframe.cpp:290
 msgid "Install NGPOD to Startup"
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:290
+#: ngpodwcc_mainframe.cpp:300
 msgid "Environment Setting"
 msgstr "环境设置"
 
-#: ngpodwcc_mainframe.cpp:302
+#: ngpodwcc_mainframe.cpp:312
 msgid "LocalPicturePath"
 msgstr "本地图片库路径"
 
-#: ngpodwcc_mainframe.cpp:308
-#: ngpodwcc_mainframe.cpp:329
+#: ngpodwcc_mainframe.cpp:318
+#: ngpodwcc_mainframe.cpp:339
 msgid "..."
 msgstr ""
 
-#: ngpodwcc_mainframe.cpp:311
+#: ngpodwcc_mainframe.cpp:321
 msgid "Local Picture Source"
 msgstr "本地图片源"
 
-#: ngpodwcc_mainframe.cpp:323
+#: ngpodwcc_mainframe.cpp:333
 msgid "PodBasePath"
 msgstr "本地NGPOD基路径"
 
-#: ngpodwcc_mainframe.cpp:332
+#: ngpodwcc_mainframe.cpp:342
 msgid "PodDatabaseName"
 msgstr "本地NGPOD数据库文件名"
 
-#: ngpodwcc_mainframe.cpp:341
+#: ngpodwcc_mainframe.cpp:351
 msgid "PodPicturePath"
 msgstr "本地NGPOD图片所在目录"
 
-#: ngpodwcc_mainframe.cpp:350
+#: ngpodwcc_mainframe.cpp:360
 msgid "Now POD Day"
 msgstr "当前POD日期"
 
-#: ngpodwcc_mainframe.cpp:367
+#: ngpodwcc_mainframe.cpp:377
 msgid "NGPOD Source"
 msgstr "NGPOD图片源"
 
-#: ngpodwcc_mainframe.cpp:377
+#: ngpodwcc_mainframe.cpp:387
 msgid "Reload Config"
 msgstr "重新载入配置"
 
-#: ngpodwcc_mainframe.cpp:380
+#: ngpodwcc_mainframe.cpp:390
 msgid "Restore Default"
 msgstr "重置配置回系统默认值"
 
-#: ngpodwcc_mainframe.cpp:383
+#: ngpodwcc_mainframe.cpp:393
 msgid "Save Config"
 msgstr "保存配置"
 
-#: ngpodwcc_mainframe.cpp:390
+#: ngpodwcc_mainframe.cpp:400
+#: ngpodwcc_aboutdialog.h:41
 msgid "About"
 msgstr "关于"
 
-#: ngpodwcc_mainframe.cpp:393
+#: ngpodwcc_mainframe.cpp:403
 #: ngpodwc_mini_panel.cpp:150
 msgid "Quit"
 msgstr "退出"

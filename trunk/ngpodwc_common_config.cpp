@@ -155,8 +155,8 @@ bool ngpodwcConfig::ReadConfig()
     wxString UICanonicalName;
     if(pFileConfig->Read(wxT("UILanguage"), &(UICanonicalName)))
     {
-        wxLanguageInfo* UILanguageInfo;
-        UILanguageInfo = wxLocale::FindLanguageInfo(UICanonicalName);
+        //wxLocale UIwxLocale;
+        const wxLanguageInfo* UILanguageInfo = wxLocale::FindLanguageInfo(UICanonicalName);
         UILanguage = UILanguageInfo->Language;
     }
 
@@ -216,8 +216,7 @@ bool ngpodwcConfig::WriteConfig()
 
     //将UILanguage(数字)转换为UICanonicalName(ISO名字xx_XX)
     wxString UICanonicalName;
-    wxLanguageInfo* UILanguageInfo;
-    UILanguageInfo = wxLocale::GetLanguageInfo(UILanguage);
+    const wxLanguageInfo* UILanguageInfo = wxLocale::GetLanguageInfo(UILanguage);
     UICanonicalName = UILanguageInfo->CanonicalName;
     pFileConfig->Write(wxT("UILanguage"), UICanonicalName);
 

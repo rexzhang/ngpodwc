@@ -47,7 +47,7 @@ class wxDatePickerCtrl;
 ////@begin control identifiers
 #define ID_FRAME_MAIN 10000
 #define SYMBOL_NGPODWCC_MAINFRAME_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX
-#define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("Dialog")
+#define SYMBOL_NGPODWCC_MAINFRAME_TITLE _("National Geographic Photo Of the Day Wallpaper Control Center")
 #define SYMBOL_NGPODWCC_MAINFRAME_IDNAME ID_FRAME_MAIN
 #define SYMBOL_NGPODWCC_MAINFRAME_SIZE wxSize(640, 470)
 #define SYMBOL_NGPODWCC_MAINFRAME_POSITION wxDefaultPosition
@@ -57,6 +57,7 @@ class wxDatePickerCtrl;
 #define ID_CHOICE 10034
 #define ID_CHECKBOX 10013
 #define ID_CHECKBOX1 10014
+#define ID_CHOICE2 10035
 #define ID_PANEL2 10004
 #define ID_CHECKBOX2 10026
 #define ID_PANEL3 10005
@@ -122,6 +123,9 @@ public:
     /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX1
     void OnCheckbox1Click( wxCommandEvent& event );
 
+    /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE2
+    void OnChoice2Selected( wxCommandEvent& event );
+
     /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2
     void OnCheckbox2Click( wxCommandEvent& event );
 
@@ -185,6 +189,7 @@ public:
     wxChoice* PictureSource;
     wxCheckBox* PauseChangeWallpaper;
     wxCheckBox* ShowSplash;
+    wxChoice* UILanguage;
     wxCheckBox* ShowDisc;
     wxChoice* ScreenWidthHeight;
     wxTextCtrl* ScreenWidth;
