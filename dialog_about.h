@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        dialog_about.h
-// Purpose:     
+// Purpose:
 // Author:      Rex Zhang(rex.zhang@gmail.com)
-// Modified by: 
+// Modified by:
 // Created:     07/02/2006 80:03:07
-// RCS-ID:      
+// RCS-ID:
 // Copyright:   (c) 2006, Rex Zhang
-// Licence:     
+// Licence:
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef _DIALOG_ABOUT_H_
@@ -37,11 +37,11 @@
 
 ////@begin control identifiers
 #define ID_DIALOG_ABOUT 10023
-#define SYMBOL_NGPODWCC_ABOUTDIALOG_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
-#define SYMBOL_NGPODWCC_ABOUTDIALOG_TITLE _("About")
-#define SYMBOL_NGPODWCC_ABOUTDIALOG_IDNAME ID_DIALOG_ABOUT
-#define SYMBOL_NGPODWCC_ABOUTDIALOG_SIZE wxSize(400, 300)
-#define SYMBOL_NGPODWCC_ABOUTDIALOG_POSITION wxDefaultPosition
+#define SYMBOL_DIALOGABOUT_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
+#define SYMBOL_DIALOGABOUT_TITLE _("About")
+#define SYMBOL_DIALOGABOUT_IDNAME ID_DIALOG_ABOUT
+#define SYMBOL_DIALOGABOUT_SIZE wxSize(400, 300)
+#define SYMBOL_DIALOGABOUT_POSITION wxDefaultPosition
 #define ID_PANEL4 10024
 #define ID_BUTTON8 10025
 ////@end control identifiers
@@ -55,46 +55,47 @@
 #endif
 
 /*!
- * ngpodwcc_aboutdialog class declaration
+ * DialogAbout class declaration
  */
 
-class ngpodwcc_aboutdialog: public wxDialog
-{    
-    DECLARE_DYNAMIC_CLASS( ngpodwcc_aboutdialog )
+class DialogAbout: public wxDialog
+{
+    DECLARE_DYNAMIC_CLASS( DialogAbout )
     DECLARE_EVENT_TABLE()
 
 public:
     /// Constructors
-    ngpodwcc_aboutdialog( );
-    ngpodwcc_aboutdialog( wxWindow* parent, wxWindowID id = SYMBOL_NGPODWCC_ABOUTDIALOG_IDNAME, const wxString& caption = SYMBOL_NGPODWCC_ABOUTDIALOG_TITLE, const wxPoint& pos = SYMBOL_NGPODWCC_ABOUTDIALOG_POSITION, const wxSize& size = SYMBOL_NGPODWCC_ABOUTDIALOG_SIZE, long style = SYMBOL_NGPODWCC_ABOUTDIALOG_STYLE );
+    DialogAbout( );
+    DialogAbout( wxWindow* parent, wxWindowID id = SYMBOL_DIALOGABOUT_IDNAME, const wxString& caption = SYMBOL_DIALOGABOUT_TITLE, const wxPoint& pos = SYMBOL_DIALOGABOUT_POSITION, const wxSize& size = SYMBOL_DIALOGABOUT_SIZE, long style = SYMBOL_DIALOGABOUT_STYLE );
 
     /// Creation
-    bool Create( wxWindow* parent, wxWindowID id = SYMBOL_NGPODWCC_ABOUTDIALOG_IDNAME, const wxString& caption = SYMBOL_NGPODWCC_ABOUTDIALOG_TITLE, const wxPoint& pos = SYMBOL_NGPODWCC_ABOUTDIALOG_POSITION, const wxSize& size = SYMBOL_NGPODWCC_ABOUTDIALOG_SIZE, long style = SYMBOL_NGPODWCC_ABOUTDIALOG_STYLE );
+    bool Create( wxWindow* parent, wxWindowID id = SYMBOL_DIALOGABOUT_IDNAME, const wxString& caption = SYMBOL_DIALOGABOUT_TITLE, const wxPoint& pos = SYMBOL_DIALOGABOUT_POSITION, const wxSize& size = SYMBOL_DIALOGABOUT_SIZE, long style = SYMBOL_DIALOGABOUT_STYLE );
 
     /// Creates the controls and sizers
     void CreateControls();
 
-////@begin ngpodwcc_aboutdialog event handler declarations
+////@begin DialogAbout event handler declarations
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON8
     void OnButton8Click( wxCommandEvent& event );
 
-////@end ngpodwcc_aboutdialog event handler declarations
+////@end DialogAbout event handler declarations
 
-////@begin ngpodwcc_aboutdialog member function declarations
+////@begin DialogAbout member function declarations
 
     /// Retrieves bitmap resources
     wxBitmap GetBitmapResource( const wxString& name );
 
     /// Retrieves icon resources
     wxIcon GetIconResource( const wxString& name );
-////@end ngpodwcc_aboutdialog member function declarations
+////@end DialogAbout member function declarations
 
     /// Should we show tooltips?
     static bool ShowToolTips();
 
-////@begin ngpodwcc_aboutdialog member variables
-////@end ngpodwcc_aboutdialog member variables
+////@begin DialogAbout member variables
+////@end DialogAbout member variables
+    void UpdateAboutInfo();
 };
 
 #endif
