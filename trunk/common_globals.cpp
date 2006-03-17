@@ -15,14 +15,17 @@
 
 const wxString g_AppVendor              = wxT("Rex Zhang");
 const wxString g_AppName			    = wxT("NGPODWC");
-const wxString g_AppVersion				= wxT("0.6");
+const wxString g_AppVersion				= wxT("0.6.0.0");
 //const wxString g_AppActualVersionVerb	= wxT("1.0 revision " SVN_REVISION);
 //const wxString g_AppActualVersion		= wxT("1.0-r" SVN_REVISION);
 const wxString g_AppUrl 				= wxT("https://sourceforge.net/project/ngpodwc");
 const wxString g_AppUrl2				= wxT("http://swik.net/ngpodwc");
 const wxString g_AppUrl3				= wxT("http://www.flord.net");
 
-const wxString g_AppContactEmail		= wxT("rex.zhang@gmail.com");
+//const wxString g_AppContactEmail		= wxT("rex.zhang@gmail.com");
+
+const wxString g_AppProjectLeader		= wxT("Rex Zhang");
+const wxString g_AppProjectLeaderEmail	= wxT("rex.zhang@gmail.com");
 
 #if defined(__WXMSW__)
   const wxString g_AppPlatform = wxT("Windows");

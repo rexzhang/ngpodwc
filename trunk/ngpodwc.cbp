@@ -182,6 +182,11 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
+		<Unit filename="dialog_about_ext.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
 		<Unit filename="docs\history.txt">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />

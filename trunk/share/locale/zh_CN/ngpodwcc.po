@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2006-03-17 14:42+0800\n"
+"PO-Revision-Date: 2006-03-17 17:42+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,60 +14,39 @@ msgstr ""
 "X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: common_globals.cpp:88
+#: common_globals.cpp:94
 msgid "English"
 msgstr "英文"
 
-#: common_globals.cpp:89
+#: common_globals.cpp:95
 msgid "Chinese (Simplified)"
 msgstr "简体中文"
 
-#: ngpodwc.cpp:157
-#: ngpodwcc_mainframe.cpp:459
-#: ngpodwc_mini_panel.h:43
-msgid "Dialog"
+#: dialog_about.cpp:113
+#: ngpodwc_mini_panel.cpp:115
+msgid "NGPODWC"
 msgstr ""
 
-#: ngpodwcc_aboutdialog.cpp:109
-msgid "NGPODWCC"
+#: dialog_about.cpp:117
+msgid "National Geographic Photo Of the Day Wallpaper Changer"
 msgstr ""
 
-#: ngpodwcc_aboutdialog.cpp:113
-#: ngpodwcc_mainframe.h:50
-msgid "National Geographic Photo Of the Day Wallpaper Control Center"
+#: dialog_about.cpp:134
+msgid "Developey by"
 msgstr ""
 
-#: ngpodwcc_aboutdialog.cpp:116
-msgid "Version : x.x.x.x(build xxxx)"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:124
-msgid "Developey by:"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:128
-msgid "Rex Zhang(rex.zhang@gmail.com)"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:133
+#: dialog_about.cpp:143
 msgid "Homepage"
 msgstr "主页"
 
-#: ngpodwcc_aboutdialog.cpp:137
-msgid "http://swik.net/ngpodwc"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:140
-msgid "https://sourceforge.net/project/ngpodwc"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:143
-msgid "http://www.flord.net"
-msgstr ""
-
-#: ngpodwcc_aboutdialog.cpp:148
+#: dialog_about.cpp:158
 msgid "OK"
 msgstr "确定"
+
+#: ngpodwc.cpp:157
+#: ngpodwc_mini_panel.h:43
+msgid "Dialog"
+msgstr ""
 
 #: ngpodwcc_mainframe.cpp:169
 msgid ""
@@ -207,7 +186,8 @@ msgid "Save Config"
 msgstr "保存配置"
 
 #: ngpodwcc_mainframe.cpp:400
-#: ngpodwcc_aboutdialog.h:41
+#: ngpodwcc_mainframe.cpp:459
+#: dialog_about.h:41
 msgid "About"
 msgstr "关于"
 
@@ -216,7 +196,7 @@ msgstr "关于"
 msgid "Quit"
 msgstr "退出"
 
-#: ngpodwc_mini_panel.cpp:115
-msgid "NGPODWC"
+#: ngpodwcc_mainframe.h:50
+msgid "National Geographic Photo Of the Day Wallpaper Control Center"
 msgstr ""
 

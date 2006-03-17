@@ -27,7 +27,7 @@
 #endif
 
 ////@begin includes
-#include "ngpodwcc_aboutdialog.h"
+#include "dialog_about.h"
 ////@end includes
 
 #include "ngpodwcc_mainframe.h"
@@ -456,7 +456,7 @@ wxIcon ngpodwcc_MainFrame::GetIconResource( const wxString& name )
 
 void ngpodwcc_MainFrame::OnButtonAboutClick( wxCommandEvent& event )
 {
-    ngpodwcc_aboutdialog* window = new ngpodwcc_aboutdialog(NULL, ID_DIALOG_ABOUT, _("Dialog"));
+    DialogAbout* window = new DialogAbout(NULL, ID_DIALOG_ABOUT, _("About"));
     window->Show(true);
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON2 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
@@ -759,7 +759,7 @@ void ngpodwcc_MainFrame::OnChoice2Selected( wxCommandEvent& event )
 ////@begin wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE2 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
     event.Skip();
-////@end wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE2 in ngpodwcc_MainFrame. 
+////@end wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE2 in ngpodwcc_MainFrame.
 }
 
 
