@@ -95,8 +95,17 @@ bool NgpodwccApp::OnInit()
 
     wxImage::AddHandler(new wxGIFHandler);
 #endif
+    //读入配置
+    wxFileName *filename;
+    wxString path = argv[0];
+    filename = new wxFileName(path, wxPATH_WIN);
+    path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
+    config.SetConfigFilePath(path);
+    config.ReadConfig();
+
     //本地化
-    m_locale.Init(wxLANGUAGE_CHINESE_SIMPLIFIED);
+    //m_locale.Init(wxLANGUAGE_CHINESE_SIMPLIFIED);
+    m_locale.Init(config.UILanguage);
     // normally this wouldn't be necessary as the catalog files would be found
     // in the default locations, but under Windows then the program is not
     // installed the catalogs are in the parent directory (because the binary
@@ -118,16 +127,9 @@ bool NgpodwccApp::OnInit()
     //mainWindow->Show(true);
     ////@end NgpodwccApp initialisation
 
-    wxFileName *filename;
-    wxString path = argv[0];
-    filename = new wxFileName(path, wxPATH_WIN);
-    path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
-    //config.SetConfigFilePath(path);
     (mainWindow->config).SetConfigFilePath(path);
     //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
     (mainWindow->config).ReadConfig();
-
-
 
     mainWindow->Show(true);
 

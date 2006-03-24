@@ -28,23 +28,31 @@ const wxString g_AppProjectLeader		= wxT("Rex Zhang");
 const wxString g_AppProjectLeaderEmail	= wxT("rex.zhang@gmail.com");
 
 #if defined(__WXMSW__)
-  const wxString g_AppPlatform = wxT("Windows");
+
+const wxString g_AppPlatform = wxT("Windows");
 #elif defined(__WXOS2__)
-  const wxString g_AppPlatform = wxT("OS/2");
+
+const wxString g_AppPlatform = wxT("OS/2");
 #elif defined(__WXMAC__)
-  const wxString g_AppPlatform = wxT("Mac OS X");
+
+const wxString g_AppPlatform = wxT("Mac OS X");
 #elif defined(__FreeBSD__)
-  const wxString g_AppPlatform = wxT("FreeBSD");
+
+const wxString g_AppPlatform = wxT("FreeBSD");
 #elif defined(__UNIX__)
-  const wxString g_AppPlatform = wxT("Linux");
+
+const wxString g_AppPlatform = wxT("Linux");
 #else
-  const wxString g_AppPlatform = _T("Unknown");
+
+const wxString g_AppPlatform = _T("Unknown");
 #endif
 
 #if wxUSE_UNICODE
-  const wxString g_AppWXAnsiUnicode = _T("unicode");
+
+const wxString g_AppWXAnsiUnicode = _T("unicode");
 #else
-  const wxString g_AppWXAnsiUnicode = _T("ANSI");
+
+const wxString g_AppWXAnsiUnicode = _T("ANSI");
 #endif
 
 const wxString g_AppBuildTimestamp = (wxString(wxT(__DATE__)) + wxT(", ") + wxT(__TIME__) + wxT(" - wx") + wxString(wxT(wxVERSION_NUM_DOT_STRING)) + wxT(" (") + g_AppPlatform + wxT(", ") + g_AppWXAnsiUnicode + wxT(")") );
@@ -56,15 +64,19 @@ operating_system_t __cb_get_os()
 #if defined(__FreeBSD__)
     return osFreeBSD;
 #elif defined(__UNIX__)
+
     return osLinux;
 #elif defined(__WXMAC__)
+
     return osOSX;
 #elif defined(__WXOS2__)
+
     return osOS2;
 #elif defined(__WXMSW__)
-	int Major = 0;
-	int family = wxGetOsVersion(&Major, NULL);
-	if(family == wxWIN95)
+
+    int Major = 0;
+    int family = wxGetOsVersion(&Major, NULL);
+    if(family == wxWIN95)
         return osWindows9598ME;
     if(family == wxWINDOWS_NT)
     {
@@ -86,24 +98,23 @@ operating_system_t OS()
     return theOS;
 }
 
-
-const wxString langs[LANGUAGES_SIZE] =
-{
-	wxT("(System default)")   // Do *not* translate. If you do, people may be unable to switch back if they accidentially change the language
-//        ,wxT("English (U.S.)")
+const wxString g_AppLanguageNames[LANGUAGES_SIZE] =
+    {
+        wxT("(System default)")   // Do *not* translate. If you do, people may be unable to switch back if they accidentially change the language
+        ,_("Chinese (Simplified)")
+        //        ,wxT("English (U.S.)")
         ,_("English")
-	,_("Chinese (Simplified)")
-//        ,_("German")
-//        ,_("Russian")
-};
+        //        ,_("German")
+        //        ,_("Russian")
+    };
 
 // Must have the same order than the above
-const int locales[LANGUAGES_SIZE] =
-{
-	wxLANGUAGE_DEFAULT
-//        ,wxLANGUAGE_ENGLISH_US
+const int g_AppLanguageCodes[LANGUAGES_SIZE] =
+    {
+        wxLANGUAGE_DEFAULT
+        ,wxLANGUAGE_CHINESE_SIMPLIFIED
+        //        ,wxLANGUAGE_ENGLISH_US
         ,wxLANGUAGE_ENGLISH
-	,wxLANGUAGE_CHINESE_SIMPLIFIED
-//        ,wxLANGUAGE_GERMAN
-//        ,wxLANGUAGE_RUSSIAN
-};
+        //        ,wxLANGUAGE_GERMAN
+        //        ,wxLANGUAGE_RUSSIAN
+    };
