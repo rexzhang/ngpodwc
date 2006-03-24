@@ -32,6 +32,7 @@
 #include "common_globals.h"
 
 ////@begin XPM images
+#include "art/logo60x80.xpm"
 ////@end XPM images
 
 /*!
@@ -110,54 +111,58 @@ void DialogAbout::CreateControls()
 
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText6 = new wxStaticText( itemPanel3, wxID_STATIC, _("NGPODWC"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticText6->SetFont(wxFont(16, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer6 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer4->Add(itemBoxSizer6, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText7 = new wxStaticText( itemPanel3, wxID_STATIC, _("National Geographic Photo Of the Day Wallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemBoxSizer4->Add(itemStaticText7, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxBitmap itemStaticBitmap7Bitmap(itemDialog1->GetBitmapResource(wxT("art/logo60x80.xpm")));
+    wxStaticBitmap* itemStaticBitmap7 = new wxStaticBitmap( itemPanel3, wxID_STATIC, itemStaticBitmap7Bitmap, wxDefaultPosition, wxSize(60, 80), 0 );
+    itemBoxSizer6->Add(itemStaticBitmap7, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxStaticText* itemStaticText8 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Version: ") + g_AppVersion, wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticText8->SetForegroundColour(wxColour(128, 128, 128));
-    itemBoxSizer4->Add(itemStaticText8, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxStaticText* itemStaticText8 = new wxStaticText( itemPanel3, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText8->SetFont(wxFont(11, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
+    itemBoxSizer6->Add(itemStaticText8, 0, wxALIGN_BOTTOM|wxALL|wxADJUST_MINSIZE, 5);
 
-    wxStaticText* itemStaticText9 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Bulid: ") + g_AppBuildTimestamp, wxDefaultPosition, wxDefaultSize, 0
- );
+    wxStaticText* itemStaticText9 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Version: ") + g_AppVersion, wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText9->SetForegroundColour(wxColour(128, 128, 128));
-    itemBoxSizer4->Add(itemStaticText9, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    itemBoxSizer4->Add(itemStaticText9, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
 
     wxStaticLine* itemStaticLine10 = new wxStaticLine( itemPanel3, wxID_STATIC, wxDefaultPosition, wxSize(300, -1), wxLI_VERTICAL );
     itemBoxSizer4->Add(itemStaticLine10, 0, wxGROW|wxALL, 5);
 
+    wxStaticText* itemStaticText11 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Bulid: ") + g_AppBuildTimestamp, wxDefaultPosition, wxDefaultSize, 0
+ );
+    itemStaticText11->SetForegroundColour(wxColour(128, 128, 128));
+    itemBoxSizer4->Add(itemStaticText11, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
+
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText12 = new wxStaticText( itemPanel3, wxID_STATIC, _("Developey by"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticText12->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer4->Add(itemStaticText12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
-
-    wxStaticText* itemStaticText13 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppProjectLeader + wxT("(") + g_AppProjectLeaderEmail + wxT(")"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText13 = new wxStaticText( itemPanel3, wxID_STATIC, _("Developey by"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText13->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
     itemBoxSizer4->Add(itemStaticText13, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
+    wxStaticText* itemStaticText14 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppProjectLeader + wxT("(") + g_AppProjectLeaderEmail + wxT(")"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer4->Add(itemStaticText14, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText15 = new wxStaticText( itemPanel3, wxID_STATIC, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticText15->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer4->Add(itemStaticText15, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
-
-    wxStaticText* itemStaticText16 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl, wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText16 = new wxStaticText( itemPanel3, wxID_STATIC, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText16->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
     itemBoxSizer4->Add(itemStaticText16, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText17 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl2, wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText17 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl, wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer4->Add(itemStaticText17, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl3, wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText18 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl2, wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer4->Add(itemStaticText18, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxStaticText* itemStaticText19 = new wxStaticText( itemPanel3, wxID_STATIC, g_AppUrl3, wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer4->Add(itemStaticText19, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxButton* itemButton20 = new wxButton( itemDialog1, ID_BUTTON8, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemButton20->SetDefault();
-    itemBoxSizer2->Add(itemButton20, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxButton* itemButton21 = new wxButton( itemDialog1, ID_BUTTON8, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton21->SetDefault();
+    itemBoxSizer2->Add(itemButton21, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
 ////@end DialogAbout content construction
 }
@@ -192,6 +197,11 @@ wxBitmap DialogAbout::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
 ////@begin DialogAbout bitmap retrieval
     wxUnusedVar(name);
+    if (name == _T("art/logo60x80.xpm"))
+    {
+        wxBitmap bitmap( logo60x80_xpm);
+        return bitmap;
+    }
     return wxNullBitmap;
 ////@end DialogAbout bitmap retrieval
 }

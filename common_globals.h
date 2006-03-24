@@ -33,8 +33,8 @@ extern const wxString g_AppBuildTimestamp;
 #define LOCALIZE    true
 #define LANGUAGES_SIZE  3
 
-extern const wxString langs[LANGUAGES_SIZE];
-extern const int locales[LANGUAGES_SIZE];
+extern const wxString g_AppLanguageNames[LANGUAGES_SIZE];
+extern const int g_AppLanguageCodes[LANGUAGES_SIZE];
 
 typedef enum
 {

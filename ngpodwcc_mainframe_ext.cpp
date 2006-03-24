@@ -2,6 +2,8 @@
 #include "ngpodwc_common_screen.h"
 #include "ngpodwcc.h"
 
+#include "common_globals.h"
+
 #include <wx/stdpaths.h>
 #include <wx/filename.h>
 
@@ -99,6 +101,8 @@ void ngpodwcc_MainFrame::ShowConfig(void)
 
 	PauseChangeWallpaper->SetValue(config.PauseChangeWallpaper);
 	ShowSplash->SetValue(config.ShowSplash);
+
+    //UILanguage->SetSelection(g_AppLanguageIDs[
 
 	return;
 }

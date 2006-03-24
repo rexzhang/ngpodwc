@@ -58,6 +58,7 @@ class wxDatePickerCtrl;
 #define ID_CHECKBOX 10013
 #define ID_CHECKBOX1 10014
 #define ID_CHOICE2 10035
+#define ID_BUTTON3 10036
 #define ID_PANEL2 10004
 #define ID_CHECKBOX2 10026
 #define ID_PANEL3 10005
@@ -125,6 +126,9 @@ public:
 
     /// wxEVT_COMMAND_CHOICE_SELECTED event handler for ID_CHOICE2
     void OnChoice2Selected( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON3
+    void OnButton3Click( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_CHECKBOX_CLICKED event handler for ID_CHECKBOX2
     void OnCheckbox2Click( wxCommandEvent& event );
