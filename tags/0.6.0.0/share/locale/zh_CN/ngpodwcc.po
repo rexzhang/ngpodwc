@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NGPODWC\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-03-24 16:39+0800\n"
+"Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
+"Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: common_globals.cpp:105
+msgid "English"
+msgstr "英文"
+
+#: common_globals.cpp:106
+msgid "Chinese (Simplified)"
+msgstr "简体中文"
+
+#: dialog_about.cpp:121
+msgid ""
+"National Geographic Photo Of the Day\n"
+"Wallpaper Changer"
+msgstr ""
+
+#: dialog_about.cpp:139
+msgid "Developey by"
+msgstr ""
+
+#: dialog_about.cpp:148
+msgid "Homepage"
+msgstr "主页"
+
+#: dialog_about.cpp:163
+msgid "OK"
+msgstr "确定"
+
+#: ngpodwc.cpp:157
+#: ngpodwc_mini_panel.h:43
+msgid "Dialog"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:173
+msgid ""
+"National Geographic Photo Of the Day\n"
+"Wallpaper Control Center"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:187
+msgid "Input Source"
+msgstr "输入的源"
+
+#: ngpodwcc_mainframe.cpp:191
+msgid "Local Picture"
+msgstr "本地图片"
+
+#: ngpodwcc_mainframe.cpp:192
+msgid "NGPOD"
+msgstr "美国国家地理(NGPOD 1.x 数据库)"
+
+#: ngpodwcc_mainframe.cpp:193
+msgid "NGPOD Online"
+msgstr "美国国家地理(在线获取)"
+
+#: ngpodwcc_mainframe.cpp:200
+msgid "Pause Change Wallpaper"
+msgstr "暂停桌面切换"
+
+#: ngpodwcc_mainframe.cpp:206
+msgid "Show Splash"
+msgstr "显示Splash"
+
+#: ngpodwcc_mainframe.cpp:210
+msgid "UI Language"
+msgstr "界面语言"
+
+#: ngpodwcc_mainframe.cpp:214
+msgid "g_AppLanguageNames"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:221
+msgid "Change UI Language"
+msgstr "更改界面语言"
+
+#: ngpodwcc_mainframe.cpp:224
+msgid "Common Setting"
+msgstr "基本设置"
+
+#: ngpodwcc_mainframe.cpp:232
+msgid "Show Disc"
+msgstr "标注文字说明"
+
+#: ngpodwcc_mainframe.cpp:236
+msgid "Image Convert Setting"
+msgstr "图片转换设置"
+
+#: ngpodwcc_mainframe.cpp:248
+msgid "Screen Width x Height"
+msgstr "屏幕像素 宽 x 高"
+
+#: ngpodwcc_mainframe.cpp:252
+msgid "640x480"
+msgstr "640x480"
+
+#: ngpodwcc_mainframe.cpp:253
+msgid "800x600"
+msgstr "800x600"
+
+#: ngpodwcc_mainframe.cpp:254
+msgid "1024x768"
+msgstr "1024x768"
+
+#: ngpodwcc_mainframe.cpp:255
+#: ngpodwcc_mainframe.cpp:260
+#: ngpodwcc_mainframe.cpp:287
+msgid "Auto Detect"
+msgstr "自动检测"
+
+#: ngpodwcc_mainframe.cpp:263
+msgid "Screen Width"
+msgstr "屏幕宽度"
+
+#: ngpodwcc_mainframe.cpp:272
+msgid "Screen Height"
+msgstr "屏幕高度"
+
+#: ngpodwcc_mainframe.cpp:281
+msgid "ScreenPicturePath"
+msgstr "桌面图片保存路径"
+
+#: ngpodwcc_mainframe.cpp:290
+msgid "ScreenPictureName"
+msgstr "桌面图片文件名"
+
+#: ngpodwcc_mainframe.cpp:301
+msgid "Install NGPOD to Startup"
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:311
+msgid "Environment Setting"
+msgstr "环境设置"
+
+#: ngpodwcc_mainframe.cpp:323
+msgid "LocalPicturePath"
+msgstr "本地图片库路径"
+
+#: ngpodwcc_mainframe.cpp:329
+#: ngpodwcc_mainframe.cpp:350
+msgid "..."
+msgstr ""
+
+#: ngpodwcc_mainframe.cpp:332
+msgid "Local Picture Source"
+msgstr "本地图片源"
+
+#: ngpodwcc_mainframe.cpp:344
+msgid "PodBasePath"
+msgstr "本地NGPOD基路径"
+
+#: ngpodwcc_mainframe.cpp:353
+msgid "PodDatabaseName"
+msgstr "本地NGPOD数据库文件名"
+
+#: ngpodwcc_mainframe.cpp:362
+msgid "PodPicturePath"
+msgstr "本地NGPOD图片所在目录"
+
+#: ngpodwcc_mainframe.cpp:371
+msgid "Now POD Day"
+msgstr "当前POD日期"
+
+#: ngpodwcc_mainframe.cpp:388
+msgid "NGPOD Source"
+msgstr "NGPOD图片源"
+
+#: ngpodwcc_mainframe.cpp:398
+msgid "Reload Config"
+msgstr "重新载入配置"
+
+#: ngpodwcc_mainframe.cpp:401
+msgid "Restore Default"
+msgstr "重置配置回系统默认值"
+
+#: ngpodwcc_mainframe.cpp:404
+msgid "Save Config"
+msgstr "保存配置"
+
+#: ngpodwcc_mainframe.cpp:411
+#: ngpodwcc_mainframe.cpp:470
+#: dialog_about.h:41
+msgid "About"
+msgstr "关于"
+
+#: ngpodwcc_mainframe.cpp:414
+#: ngpodwc_mini_panel.cpp:150
+msgid "Quit"
+msgstr "退出"
+
+#: ngpodwcc_mainframe.cpp:793
+msgid "Select your prefered language"
+msgstr "选择你喜好的语言"
+
+#: ngpodwcc_mainframe.cpp:794
+msgid "Language selection"
+msgstr "语言选择"
+
+#: ngpodwcc_mainframe.cpp:807
+msgid "You must save config and restart NGPODWCC for this change to take effect."
+msgstr "您必须保存配置并重新启动 NGPODWCC 更改才会生效。"
+
+#: ngpodwc_mini_panel.cpp:115
+msgid "NGPODWC"
+msgstr ""
+
+#: ngpodwcc_mainframe.h:50
+msgid "National Geographic Photo Of the Day Wallpaper Control Center"
+msgstr ""
+
