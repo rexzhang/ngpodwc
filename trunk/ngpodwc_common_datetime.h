@@ -9,6 +9,7 @@
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
 
+#include <wx/datetime.h>
 
 bool tmSeekDays(int seek, tm *pTmIn);
 bool seekDays(int seek, int *year, int *month, int *day);

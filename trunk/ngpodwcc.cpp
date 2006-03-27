@@ -115,6 +115,7 @@ bool NgpodwccApp::OnInit()
     wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\.."));
 
     // Initialize the catalogs we'll be using
+    m_locale.AddCatalog(wxT("wxstd"));
     m_locale.AddCatalog(wxT("ngpodwcc"));
 
     //检查本地化

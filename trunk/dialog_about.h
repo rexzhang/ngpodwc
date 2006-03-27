@@ -95,7 +95,6 @@ public:
 
 ////@begin DialogAbout member variables
 ////@end DialogAbout member variables
-    void UpdateAboutInfo();
 };
 
 #endif

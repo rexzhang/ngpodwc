@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        %SOURCE-FILENAME%
+// Name:        common_wallpaper_operation.cpp
 // Purpose:
 // Author:      %AUTHOR%
 // Modified by:
@@ -8,8 +8,19 @@
 // Copyright:   %COPYRIGHT%
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
+#include <wx/wxprec.h>
 
-#include "ngpodwc_common_wallpaper_operation.h"
+#ifdef __BORLANDC__
+    #pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+#include <wx/msw/registry.h>
+
+#include "common_wallpaper_operation.h"
 /////
 #include "common_wallpaper_ngpod.h"
 #include "common_wallpaper_localpicture.h"
@@ -76,10 +87,11 @@ bool updateWallpaper(ngpodwcConfig config)
 bool setWallpaperRegInfo(wxString WallpaperPathAndName)
 {
     //打开相关注册表
-    wxRegKey *pRegKey = new wxRegKey(wxT("HKEY_CURRENT_USER\\Control Panel\\Desktop"));
+    wxString regKeyString = wxT("HKEY_CURRENT_USER\\Control Panel\\Desktop");
+    wxRegKey *pRegKey = new wxRegKey(regKeyString);
     if( !pRegKey->Exists() )
     {
-        wxSafeShowMessage(wxT("Reg ERROR!"), wxT("Reg ERROR!"));
+        wxLogError(_("_WIN32_Reg(%s)Error!"), regKeyString.c_str());
     }
 
     /*

@@ -154,7 +154,7 @@ bool NgpodwcApp::OnInit()
     }//!程序结束
 
     //无参数，表示需要显示小面板
-    mainWindow = new ngpodwc_mini_panel(NULL, ID_DIALOG, _("Dialog"));
+    mainWindow = new ngpodwc_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
     if(splashEnable)
     {
         //显示Splash图片

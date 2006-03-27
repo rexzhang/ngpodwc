@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        ngpodwcc_common_config.h
+// Name:        common_config.h
 // Purpose:
 // Author:      Rex Zhang
 // Modified by:
@@ -12,8 +12,8 @@
 #ifndef COMMON_CONFIG_H
 #define COMMON_CONFIG_H
 
-
 #include <wx/string.h>
+#include <wx/datetime.h>
 
 //使用宏变量定义图片来源
 //按wxChoice的编号原则
@@ -21,6 +21,12 @@
 #define PICTURESOURCE_NGPOD 1
 #define PICTURESOURCE_NGPOD_ONLINE 2
 
+//使用宏变量定义屏幕分辨率
+//按wxChoice的编号原则
+#define SCREENWH640x480 0
+#define SCREENWH800x600 1
+#define SCREENWH1024x768 2
+#define SCREENWHAutoDetect 3
 
 //---------------------------------------------------------------------------
 //!

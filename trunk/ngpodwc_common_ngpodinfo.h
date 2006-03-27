@@ -1,6 +1,8 @@
 #ifndef COMMON_NGPODINFO_H
 #define COMMON_NGPODINFO_H
 
+#include <wx/db.h>
+#include <wx/datetime.h>
 #include "ngpodwc_common_datetime.h"
 
 class ngpodinfo

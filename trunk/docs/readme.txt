@@ -1,9 +1,9 @@
-NGPODWC(National Geographic Photo of the Day Wallpaper Changer)是一个跨平台,多语种的将： 美国国家地理每日图片 、或本地指定目录下的图片(以后还会逐步增加对其他图片源的获取支持)自动保存为桌面,并在保存前将相关信息加注到图片上的休闲程序
+NGPODWC(National Geographic Photo of the Day Wallpaper Changer)是一个跨平台,多语种的将： 美国国家地理每日图片 、或本地指定目录下的图片(以后还会逐步增加对其他图片源的获取支持)自动保存为桌面,并在保存前将相关信息加注到图片上的休闲程序。
 
 写这个程序是因为喜欢户外、摄影；很欣赏美国国家地理杂志富有内涵的图文。并希望已此结交志同道合的朋友。
 谢谢你的安装、使用；如果有任何疑问、建议或帮助(在图标部分的美化等方面希望获得帮助)请不宁笔墨联系我。
 
-最后希望本程序能给你带来愉悦！
+最后，希望本程序能给你带来愉悦！
 -Rex Zhang(rex.zhang@gmail.com).
 
 -=安装=-
@@ -16,7 +16,7 @@ NGPODWC(National Geographic Photo of the Day Wallpaper Changer)是一个跨平台,多语
 环境设置部分一般使用自动检测即可
 
 注：
-如果有NGPOD(http://ngpod.shnic.net)1.x版，推荐使用“美国国家地理（NGPOD 1.x)
+如果有NGPOD(http://ngpod.shnic.net)1.x版，推荐使用“美国国家地理（NGPOD 1.x)”
 
 -=使用=-
 在小面板上的第一个锁定图标按钮。当显示开锁时程序将在开机登陆桌面时执行切换动作。如果你的电脑不是开机即在线，并且使用的在线源；请切换至闭锁状态。当然在你看到一个很喜欢的图片，并想保留一段时间的时候；也可用这个功能。

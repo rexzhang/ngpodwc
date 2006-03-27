@@ -1,7 +1,10 @@
 #ifndef COMMON_WALLPAPER_BASE_H
 #define COMMON_WALLPAPER_BASE_H
 
-#include "ngpodwc_common_config.h"
+#include <wx/string.h>
+#include <wx/image.h>
+
+#include "common_config.h"
 
 class WallpaperBase
 {
@@ -27,6 +30,11 @@ class WallpaperBase
         wxImage Image;
         ngpodwcConfig config;
     private:
+};
+
+enum WallpaperStyle
+{
+    Tiled=1, Centered=2, Stretched=3
 };
 
 #endif // COMMON_WALLPAPER_BASE_H

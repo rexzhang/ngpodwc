@@ -193,7 +193,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"19/7/2006"</string>
+          <string name="created">"19/8/2006"</string>
           <string name="proxy-type">"wbDialogProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -207,7 +207,7 @@
           <string name="proxy-Implementation filename">"ngpodwc_mini_panel.cpp"</string>
           <string name="proxy-Header filename">"ngpodwc_mini_panel.h"</string>
           <string name="proxy-XRC filename">""</string>
-          <string name="proxy-Title">"Dialog"</string>
+          <string name="proxy-Title">"National Geographic Photo Of the Day Wallpaper Changer"</string>
           <bool name="proxy-Centre">1</bool>
           <string name="proxy-Icon">""</string>
           <bool name="proxy-Dialog units">0</bool>
@@ -275,7 +275,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbSpacerProxy"</string>
               <long name="proxy-Width">5</long>
               <long name="proxy-Height">5</long>
@@ -301,7 +301,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbStaticTextProxy"</string>
               <string name="proxy-Id name">"wxID_STATIC"</string>
               <long name="proxy-Id value">5105</long>
@@ -357,7 +357,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbSpacerProxy"</string>
               <long name="proxy-Width">5</long>
               <long name="proxy-Height">5</long>
@@ -383,7 +383,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Horizontal"</string>
               <string name="proxy-Member variable name">""</string>
@@ -408,7 +408,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -434,7 +434,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -460,7 +460,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON"</string>
@@ -514,7 +514,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -540,7 +540,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonPreClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_PRE"</string>
@@ -594,7 +594,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonNextClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_NEXT"</string>
@@ -648,7 +648,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -674,7 +674,7 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/7/2006"</string>
+                <string name="created">"19/8/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -701,7 +701,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbSpacerProxy"</string>
               <long name="proxy-Width">5</long>
               <long name="proxy-Height">5</long>
@@ -727,7 +727,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/7/2006"</string>
+              <string name="created">"19/8/2006"</string>
               <string name="proxy-type">"wbButtonProxy"</string>
               <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonQuitClick"</string>
               <string name="proxy-Id name">"ID_BUTTON_QUIT"</string>
@@ -781,7 +781,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"23/5/2006"</string>
+          <string name="created">"23/6/2006"</string>
           <string name="proxy-type">"wbAppProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -813,7 +813,7 @@
           <long name="owns-file">0</long>
           <long name="title-mode">1</long>
           <long name="locked">0</long>
-          <string name="created">"19/7/2006"</string>
+          <string name="created">"19/8/2006"</string>
           <string name="language">""</string>
         </document>
       </document>

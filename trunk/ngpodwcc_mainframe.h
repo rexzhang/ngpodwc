@@ -28,7 +28,7 @@
 #include "wx/datectrl.h"
 ////@end includes
 
-#include "ngpodwc_common_config.h"
+#include "common_config.h"
 
 #include "wx/dateevt.h"
 

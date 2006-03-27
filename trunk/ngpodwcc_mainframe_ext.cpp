@@ -1,5 +1,5 @@
 #include "ngpodwcc_mainframe.h"
-#include "ngpodwc_common_screen.h"
+//#include "ngpodwc_common_screen.h"
 #include "ngpodwcc.h"
 
 #include "common_globals.h"
@@ -11,11 +11,11 @@ void ngpodwcc_MainFrame::InitConfig(void)
 //初始化配置相关
 {
     //Check config file
+    //检查配置文件是否存在
     if ( !wxFileExists(config.GetConfigFile()) )
     {
         //没有配置文件
-        wxSafeShowMessage(wxT("can not found .ini"),
-                          wxT("systen will restore config to defaule\nplease click SAVE_CONFIG save config"));
+        wxLogWarning(_("Can't found .INI(%s) file. Systen will restore config to defaule. Please click SAVE_CONFIG save config."), config.GetConfigFile().c_str());
         ButtonSaveConfig->Enable();
     }
     else

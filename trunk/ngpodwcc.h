@@ -25,7 +25,7 @@
 #include "ngpodwcc_mainframe.h"
 ////@end includes
 
-#include "ngpodwc_common_config.h"
+#include "common_config.h"
 
 /*!
  * Forward declarations

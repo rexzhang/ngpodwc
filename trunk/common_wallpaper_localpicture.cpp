@@ -1,6 +1,18 @@
-#include "common_wallpaper_localpicture.h"
+#include <wx/wxprec.h>
 
+#ifdef __BORLANDC__
+    #pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+#include <wx/string.h>
 #include <wx/dir.h>
+#include <wx/arrstr.h>
+
+#include "common_wallpaper_localpicture.h"
 
 WallpaperLocalPicture::WallpaperLocalPicture(ngpodwcConfig programConfig):WallpaperBase(programConfig)
 {
@@ -30,7 +42,8 @@ bool WallpaperLocalPicture::Init()
     if (!Image.LoadFile(pictureFileName,
                         wxBITMAP_TYPE_JPEG))
     {
-        wxSafeShowMessage(wxT("Local Picture Loading ERROR!"), pictureFileName);
+        //wxSafeShowMessage(wxT("Local Picture Loading ERROR!"), pictureFileName);
+        wxLogError(_("ERROR! Can't read Local Picture(%s)!"), pictureFileName.c_str());
         return false;
     }
 
