@@ -65,8 +65,6 @@ DialogAbout::DialogAbout( )
 DialogAbout::DialogAbout( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
 {
     Create(parent, id, caption, pos, size, style);
-
-    UpdateAboutInfo();
 }
 
 /*!
@@ -120,11 +118,11 @@ void DialogAbout::CreateControls()
 
     wxStaticText* itemStaticText8 = new wxStaticText( itemPanel3, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText8->SetFont(wxFont(11, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer6->Add(itemStaticText8, 0, wxALIGN_BOTTOM|wxALL|wxADJUST_MINSIZE, 5);
+    itemBoxSizer6->Add(itemStaticText8, 0, wxALIGN_BOTTOM|wxALL, 5);
 
     wxStaticText* itemStaticText9 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Version: ") + g_AppVersion, wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText9->SetForegroundColour(wxColour(128, 128, 128));
-    itemBoxSizer4->Add(itemStaticText9, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemBoxSizer4->Add(itemStaticText9, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxStaticLine* itemStaticLine10 = new wxStaticLine( itemPanel3, wxID_STATIC, wxDefaultPosition, wxSize(300, -1), wxLI_VERTICAL );
     itemBoxSizer4->Add(itemStaticLine10, 0, wxGROW|wxALL, 5);
@@ -132,11 +130,11 @@ void DialogAbout::CreateControls()
     wxStaticText* itemStaticText11 = new wxStaticText( itemPanel3, wxID_STATIC, wxT("Bulid: ") + g_AppBuildTimestamp, wxDefaultPosition, wxDefaultSize, 0
  );
     itemStaticText11->SetForegroundColour(wxColour(128, 128, 128));
-    itemBoxSizer4->Add(itemStaticText11, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
+    itemBoxSizer4->Add(itemStaticText11, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     itemBoxSizer4->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText13 = new wxStaticText( itemPanel3, wxID_STATIC, _("Developey by"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxStaticText* itemStaticText13 = new wxStaticText( itemPanel3, wxID_STATIC, _("Developer"), wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText13->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
     itemBoxSizer4->Add(itemStaticText13, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 

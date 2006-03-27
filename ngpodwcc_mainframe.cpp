@@ -33,7 +33,7 @@
 #include "common_globals.h"
 
 #include "ngpodwcc_mainframe.h"
-#include "ngpodwc_common_screen.h"
+//#include "ngpodwc_common_screen.h"
 
 ////@begin XPM images
 #include "art/logo32x32.xpm"
@@ -801,12 +801,11 @@ void ngpodwcc_MainFrame::OnButton3Click( wxCommandEvent& event )
     }
     else
     {
-        //return langs[choice].code;
         config.UILanguage = g_AppLanguageCodes[choice];
+        wxMessageBox(_("You must save config and restart NGPODWCC for this change to take effect."),
+                     wxT("NGPODWCC"),
+                     wxOK | wxCENTRE | wxICON_INFORMATION);
     }
-    wxMessageBox(_("You must save config and restart NGPODWCC for this change to take effect."),
-                 wxT("NGPODWCC"),
-                 wxOK | wxCENTRE | wxICON_INFORMATION);
     ButtonSaveConfig->Enable();
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON3 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.

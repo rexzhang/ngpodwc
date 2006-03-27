@@ -3,11 +3,6 @@
 
 
 
-0.6
-实现国际化（多语种支持）
-GetText，poEdit
-
-
 0.7
 使用MLS？实现win9x支持
 

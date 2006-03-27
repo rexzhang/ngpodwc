@@ -28,8 +28,8 @@
 
 #include "ngpodwc_mini_panel.h"
 
-#include "ngpodwc_common_wallpaper_operation.h"
-#include "ngpodwc_common_config.h"
+#include "common_wallpaper_operation.h"
+#include "common_config.h"
 #include "ngpodwc_common_ngpodinfo.h"
 
 /*!

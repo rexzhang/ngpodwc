@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2006-03-24 16:39+0800\n"
+"PO-Revision-Date: 2006-03-26 19:08+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,13 +14,53 @@ msgstr ""
 "X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: common_globals.cpp:105
+#: common_config.cpp:109
+#, c-format
+msgid "Can't found .INI(%s) file. Skip read config."
+msgstr "配置文件(%s)不存在，跳过配置文件读取操作。"
+
+#: common_config.cpp:117
+#, c-format
+msgid "Can't open .INI(%s) file with READ mode. Skip read config."
+msgstr "无法以读取方式打开配置文件(%s)，跳过配置文件读取操作。"
+
+#: common_config.cpp:178
+#, c-format
+msgid "Can't open .INI(%s) file with WRITE mode. Skip write config."
+msgstr "无法已写入模式打开配置文件(%s)，跳过配置文件写操作。"
+
+#: common_globals.cpp:104
+msgid "Chinese (Simplified)"
+msgstr "简体中文"
+
+#: common_globals.cpp:106
 msgid "English"
 msgstr "英文"
 
-#: common_globals.cpp:106
-msgid "Chinese (Simplified)"
-msgstr "简体中文"
+#: common_wallpaper_base.cpp:136
+#, c-format
+msgid "ERROR! Can't create(save) wallpaper file(%s)!"
+msgstr "严重错误！无法创建(保存)桌布文件(%s)！"
+
+#: common_wallpaper_localpicture.cpp:34
+#, c-format
+msgid "ERROR! Can't read Local Picture(%s)!"
+msgstr "严重错误！无法读取本地图片(%s)！"
+
+#: common_wallpaper_ngpod.cpp:40
+#, c-format
+msgid "ERROR! Can't read NGPOD 1.x Local Picture(%s)!"
+msgstr "严重错误！无法读取NGPOD 1.x本地图片(%s)！"
+
+#: common_wallpaper_ngpod_online.cpp:231
+#, c-format
+msgid "Can't get URL : %s. Please check your internet connection"
+msgstr "无法获取URL:%s。请检查你的Internet连接"
+
+#: common_wallpaper_ngpod_online.cpp:241
+#, c-format
+msgid "Can't get NGPOD Online picture file from %s."
+msgstr "无法由地址 %s 获取美国国家地理网站在线图片文件"
 
 #: dialog_about.cpp:121
 msgid ""
@@ -29,8 +69,8 @@ msgid ""
 msgstr ""
 
 #: dialog_about.cpp:139
-msgid "Developey by"
-msgstr ""
+msgid "Developer"
+msgstr "开发人"
 
 #: dialog_about.cpp:148
 msgid "Homepage"
@@ -42,7 +82,7 @@ msgstr "确定"
 
 #: ngpodwc.cpp:157
 #: ngpodwc_mini_panel.h:43
-msgid "Dialog"
+msgid "National Geographic Photo Of the Day Wallpaper Changer"
 msgstr ""
 
 #: ngpodwcc_mainframe.cpp:173
@@ -152,7 +192,7 @@ msgstr "本地图片库路径"
 #: ngpodwcc_mainframe.cpp:329
 #: ngpodwcc_mainframe.cpp:350
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: ngpodwcc_mainframe.cpp:332
 msgid "Local Picture Source"
@@ -209,9 +249,19 @@ msgstr "选择你喜好的语言"
 msgid "Language selection"
 msgstr "语言选择"
 
-#: ngpodwcc_mainframe.cpp:807
+#: ngpodwcc_mainframe.cpp:805
 msgid "You must save config and restart NGPODWCC for this change to take effect."
 msgstr "您必须保存配置并重新启动 NGPODWCC 更改才会生效。"
+
+#: ngpodwcc_mainframe_ext.cpp:18
+#, c-format
+msgid "Can't found .INI(%s) file. Systen will restore config to defaule. Please click SAVE_CONFIG save config."
+msgstr "配置文件(%s)不存在，系统将使用自动生成默认设置。请点击<保存配置>按钮保存。"
+
+#: ngpodwc_common_wallpaper_operation.cpp:83
+#, c-format
+msgid "_WIN32_Reg(%s)Error!"
+msgstr "_WIN32_注册表(%s)错误！"
 
 #: ngpodwc_mini_panel.cpp:115
 msgid "NGPODWC"

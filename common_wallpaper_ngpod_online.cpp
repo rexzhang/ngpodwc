@@ -1,9 +1,20 @@
-#include "common_wallpaper_ngpod_online.h"
+#include <wx/wxprec.h>
 
-#include "ngpodwc_common_datetime.h"
+#ifdef __BORLANDC__
+    #pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
 #include <wx/url.h>
 #include <wx/stream.h>
 #include <wx/txtstrm.h>
+
+#include "common_wallpaper_ngpod_online.h"
+#include "ngpodwc_common_datetime.h"
+
 
 WallpaperNGPODOnline::WallpaperNGPODOnline(ngpodwcConfig programConfig):WallpaperBase(programConfig)
 {
@@ -227,8 +238,8 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
     wxURL NGPODOnlineURL(NGPODOnineURLString);
     if (NGPODOnlineURL.GetError() != wxURL_NOERR)
     {
-        //!report Error!!
-        wxSafeShowMessage(wxT("NGPODOnlineURL GetError"), wxT("from internet"));
+        //report Error!!
+        wxLogWarning(_("Can't get URL : %s. Please check your internet connection"), NGPODOnineURLString.c_str());
         return false;
     }
     wxInputStream *PhotoOfTheDay_in_stream;
@@ -238,7 +249,7 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
     if(!Image.LoadFile(*PhotoOfTheDay_in_stream, wxBITMAP_TYPE_JPEG))
     {
         //report error
-        wxSafeShowMessage(wxT("Can't load JPG image"), wxT("from internet"));
+        wxLogWarning(_("Can't get NGPOD Online picture file from %s."), NGPODOnineURLString.c_str());
         return false;
     }
 
@@ -248,14 +259,8 @@ bool WallpaperNGPODOnline::GetPictureFromInternet()
 bool WallpaperNGPODOnline::SaveWallpaper()
 {
     //将处理完毕的图片输出至指定目录
-    if(!Image.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
-                       wxBITMAP_TYPE_BMP))
+    if(!WallpaperBase::SaveWallpaper())
     {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
-
-        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
-        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
         return false;
     }
     //保存变化后（当前背景图片）的日期信息至配置文件

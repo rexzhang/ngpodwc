@@ -1,3 +1,18 @@
+#include <wx/wxprec.h>
+
+#ifdef __BORLANDC__
+    #pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
+#include <wx/bitmap.h>
+#include <wx/dcmemory.h>
+#include <wx/gdicmn.h>
+#include <wx/font.h>
+
 #include "common_wallpaper_base.h"
 
 WallpaperBase::WallpaperBase(ngpodwcConfig programConfig)
@@ -129,14 +144,11 @@ bool WallpaperBase::ImageReSize()
 bool WallpaperBase::SaveWallpaper()
 {
     //将处理完毕的图片输出至指定目录
-    if(!Image.SaveFile(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName,
-                       wxBITMAP_TYPE_BMP))
+    wxString wallpaper = config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName;
+    if(!Image.SaveFile(wallpaper, wxBITMAP_TYPE_BMP))
     {
-        wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
-
-        wxString msgTitle("图片Create Error错误！",*wxConvCurrent);
-        wxString msgContext("图片Create Error错误！\n请....XXXX.......操作！",*wxConvCurrent);
-        wxSafeShowMessage(msgTitle, msgContext);
+        //wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));
+        wxLogError(_("ERROR! Can't create(save) wallpaper file(%s)!"), wallpaper.c_str());
         return false;
     }
     return true;

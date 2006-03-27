@@ -1,5 +1,8 @@
-#ifndef COMOON_NGPOD_BASE_H
-#define COMOON_NGPOD_BASE_H
+#ifndef COMMON_NGPOD_BASE_H
+#define COMMON_NGPOD_BASE_H
+
+#include <wx/string.h>
+#include <wx/datetime.h>
 
 class NGPODBase
 {
@@ -26,4 +29,4 @@ class NGPODBase
     private:
 };
 
-#endif // COMOON_NGPOD_BASE_H
+#endif // COMMON_NGPOD_BASE_H

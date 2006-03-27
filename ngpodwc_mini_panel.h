@@ -23,8 +23,8 @@
 ////@begin includes
 ////@end includes
 
-#include "ngpodwc_common_wallpaper_operation.h"
-#include "ngpodwc_common_config.h"
+#include "common_wallpaper_operation.h"
+#include "common_config.h"
 #include "ngpodwc_common_ngpodinfo.h"
 /*!
  * Forward declarations
@@ -40,7 +40,7 @@
 ////@begin control identifiers
 #define ID_DIALOG 10000
 #define SYMBOL_NGPODWC_MINI_PANEL_STYLE wxDEFAULT_DIALOG_STYLE
-#define SYMBOL_NGPODWC_MINI_PANEL_TITLE _("Dialog")
+#define SYMBOL_NGPODWC_MINI_PANEL_TITLE _("National Geographic Photo Of the Day Wallpaper Changer")
 #define SYMBOL_NGPODWC_MINI_PANEL_IDNAME ID_DIALOG
 #define SYMBOL_NGPODWC_MINI_PANEL_SIZE wxSize(400, 300)
 #define SYMBOL_NGPODWC_MINI_PANEL_POSITION wxDefaultPosition
@@ -119,7 +119,7 @@ public:
 ////@end ngpodwc_mini_panel member variables
 
     ngpodwcConfig config;
-    ngpodinfo pictureInfo;
+    //ngpodinfo pictureInfo;
 };
 
 #endif
