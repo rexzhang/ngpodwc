@@ -15,7 +15,7 @@
 
 const wxString g_AppVendor              = wxT("Rex Zhang");
 const wxString g_AppName			    = wxT("NGPODWC");
-const wxString g_AppVersion				= wxT("0.6.0.0");
+const wxString g_AppVersion				= wxT("0.6.0.1");
 //const wxString g_AppActualVersionVerb	= wxT("1.0 revision " SVN_REVISION);
 //const wxString g_AppActualVersion		= wxT("1.0-r" SVN_REVISION);
 const wxString g_AppUrl 				= wxT("https://sourceforge.net/project/ngpodwc");

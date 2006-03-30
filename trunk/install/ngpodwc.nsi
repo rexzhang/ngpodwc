@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.6.0.0"
+!define PRODUCT_VERSION "0.6.0.1"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -130,6 +130,7 @@ Section "Core" SEC01
   SetOutPath "$INSTDIR\share\locale\zh_CN"
   SetOverwrite ifnewer
   File "..\share\locale\zh_CN\ngpodwcc.mo"
+  File "..\share\locale\zh_CN\wxstd.mo"
 
 
 
@@ -204,6 +205,7 @@ Section Uninstall
 
   ;国际化支持部分
   Delete "$INSTDIR\share\locale\zh_CN\ngpodwcc.mo"
+  Delete "$INSTDIR\share\locale\zh_CN\wxstd.mo"
   RMDir "$INSTDIR\share\locale\zh_CN"
   RMDir "$INSTDIR\share\locale"
   RMDir "$INSTDIR\share"

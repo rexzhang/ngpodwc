@@ -1,3 +1,10 @@
+*0.6.0.1
+Up   变更ngpodwc_common_config.cpp/h为common_config.cpp/h(规范文件名，所有公用函数和类都将以common_开头).
+Up   变更ngpodwc_common_wallpaper_operation.cpp/h为common_wallpaper_operation.cpp/h
+Up   更新部分出错提示（提供国际化）.
+Up   分拆ngpodwc_common_screen.h到common_wallpaper_base.h和common_config.h
+Up   全面调整头文件和预编译头文件
+
 *0.6.0.0
 Add  实现国际化支持
 Up  不再包含NGPOD安装
