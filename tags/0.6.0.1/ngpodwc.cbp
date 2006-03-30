@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="4" />
+	<Project>
+		<Option title="ngpodwc" />
+		<Option default_target="3" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="ngpodwc_Debug">
+				<Option output="ngpodwc_ud.exe" />
+				<Option object_output=".objs\debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D__WXDEBUG__" />
+					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw26ud" />
+				</Linker>
+			</Target>
+			<Target title="ngpodwc_Release">
+				<Option output="ngpodwc_u.exe" />
+				<Option object_output=".objs\release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option includeInTargetAll="1" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+			</Target>
+			<Target title="ngpodwcc_Debug">
+				<Option output="ngpodwcc_ud.exe" />
+				<Option object_output=".objs\debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Option projectIncludeDirsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D__WXDEBUG__" />
+					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw26ud" />
+				</Linker>
+			</Target>
+			<Target title="ngpodwcc_Release">
+				<Option output="ngpodwcc_u.exe" />
+				<Option object_output=".objs\release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option includeInTargetAll="1" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+				</Compiler>
+			</Target>
+			<Environment>
+				<Variable name="WX_CFG" value="" />
+			</Environment>
+		</Build>
+		<Compiler>
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-Winvalid-pch" />
+			<Add option='-include &quot;wx_pch.h&quot;' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add option="-DUSE_PCH" />
+			<Add directory="$(#WX.include)" />
+			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswu" />
+			<Add directory="$(#WX)\contrib\include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#WX)\include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="wxmsw26u" />
+			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
+			<Add directory="$(#WX.lib)" />
+		</Linker>
+		<Unit filename="common_config.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="common_config.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="common_globals.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="common_globals.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="common_ngpod_base.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_ngpod_base.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_base.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_base.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_localpicture.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_localpicture.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_ngpod.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_ngpod.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_ngpod_online.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_ngpod_online.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_operation.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="common_wallpaper_operation.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="dialog_about.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="dialog_about.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="docs\history.txt">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="docs\licence.txt">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="docs\readme.txt">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="docs\todos.txt">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="image_convert_GraphicsMagick.cpp">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="image_convert_gd2.cpp">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="install\ngpodwc.nsi">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc.rc">
+			<Option compilerVar="WINDRES" />
+			<Option objectName="ngpodwc.res" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_common_datetime.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_common_datetime.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_common_ngpodinfo.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_common_ngpodinfo.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_mini_panel.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_mini_panel.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwc_mini_panel_ext.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc.rc">
+			<Option compilerVar="WINDRES" />
+			<Option objectName="ngpodwcc.res" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_mainframe.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_mainframe.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="ngpodwcc_mainframe_ext.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="wx_pch.h">
+			<Option compilerVar="CPP" />
+			<Option link="0" />
+			<Option weight="0" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
