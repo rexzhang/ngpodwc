@@ -26,7 +26,7 @@
 #include "wx/splash.h"
 
 
-#include "ngpodwc_mini_panel.h"
+#include "dialog_mini_panel.h"
 
 #include "common_wallpaper_operation.h"
 #include "common_config.h"

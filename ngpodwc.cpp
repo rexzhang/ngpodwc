@@ -103,7 +103,7 @@ bool NgpodwcApp::OnInit()
     wxSplashScreen *splash = NULL;
     bool splashEnable = true;//will read from config
 
-    ngpodwc_mini_panel *mainWindow = NULL;
+    dialog_mini_panel *mainWindow = NULL;
 
     //读取配置文件
     config.ReadConfig();
@@ -154,7 +154,7 @@ bool NgpodwcApp::OnInit()
     }//!程序结束
 
     //无参数，表示需要显示小面板
-    mainWindow = new ngpodwc_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
+    mainWindow = new dialog_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
     if(splashEnable)
     {
         //显示Splash图片
