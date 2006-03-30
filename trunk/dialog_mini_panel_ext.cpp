@@ -9,13 +9,13 @@
 // Licence:
 /////////////////////////////////////////////////////////////////////////////
 
-#include "ngpodwc_mini_panel.h"
+#include "dialog_mini_panel.h"
 
 
 #include "art/unlock_picture.xpm"
 #include "art/lock_picture.xpm"
 
-void ngpodwc_mini_panel::InitConfig()
+void dialog_mini_panel::InitConfig()
 {
     config.ReadConfig();
 
@@ -24,7 +24,7 @@ void ngpodwc_mini_panel::InitConfig()
     return;
 }
 
-void ngpodwc_mini_panel::ShowConfig()
+void dialog_mini_panel::ShowConfig()
 {
     if(config.PauseChangeWallpaper)
     {
@@ -41,7 +41,7 @@ void ngpodwc_mini_panel::ShowConfig()
     return;
 }
 
-void ngpodwc_mini_panel::SwapPauseChangeWallpaperStat()
+void dialog_mini_panel::SwapPauseChangeWallpaperStat()
 {
     config.PauseChangeWallpaper = !config.PauseChangeWallpaper;
     config.WriteConfig();
@@ -50,14 +50,14 @@ void ngpodwc_mini_panel::SwapPauseChangeWallpaperStat()
     return;
 }
 
-void ngpodwc_mini_panel::DisableUpdateButton()
+void dialog_mini_panel::DisableUpdateButton()
 {
     PauseChangeWallpaper->Disable();
     ShowPrePicture->Disable();
     ShowNextPicture->Disable();
 }
 
-void ngpodwc_mini_panel::EnableUpdateButton()
+void dialog_mini_panel::EnableUpdateButton()
 {
     PauseChangeWallpaper->Enable();
     ShowPrePicture->Enable();
