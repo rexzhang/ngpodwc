@@ -42,7 +42,9 @@ bool updateWallpaper(ngpodwcConfig config)
         case PICTURESOURCE_NGPOD_ONLINE:
         pWallpaper = new WallpaperNGPODOnline(config);
         break;
-        //default:
+        default:
+        wxLogError(_("Lost config info with PictureSource"));
+        return false;
     }
 
     if(!pWallpaper->ImageOk())
@@ -74,6 +76,8 @@ bool updateWallpaper(ngpodwcConfig config)
     //保存变化后（当前背景图片）的日期信息至配置文件
     config.WriteConfig();
     */
+    //释放内存
+    delete pWallpaper;
 
     return true;
 }
