@@ -98,7 +98,6 @@ bool NgpodwcApp::OnInit()
 #endif
     ////@end NgpodwcApp initialisation
 
-    //wxApp::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "program");
     wxBitmap splashBitmap;
     wxSplashScreen *splash = NULL;
     bool splashEnable = true;//will read from config
@@ -108,6 +107,18 @@ bool NgpodwcApp::OnInit()
     //读取配置文件
     config.ReadConfig();
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
+
+    //本地化
+    m_locale.Init(config.UILanguage);
+    // normally this wouldn't be necessary as the catalog files would be found
+    // in the default locations, but under Windows then the program is not
+    // installed the catalogs are in the parent directory (because the binary
+    // is in a subdirectory of samples/internat) where we wouldn't find them by
+    // default
+    wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\."));
+    // Initialize the catalogs we'll be using
+    m_locale.AddCatalog(wxT("wxstd"));
+    m_locale.AddCatalog(wxT("ngpodwcc"));
 
     //确定是否显示Splash
     if(config.ShowSplash)
