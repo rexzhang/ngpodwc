@@ -77,6 +77,8 @@ public:
 ////@end NgpodwcApp member variables
     ngpodwcConfig config;
     //ngpodinfo pictureInfo;
+protected:
+    wxLocale m_locale; // locale we'll be using
 };
 
 /*!

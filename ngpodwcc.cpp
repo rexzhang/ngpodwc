@@ -112,7 +112,7 @@ bool NgpodwccApp::OnInit()
     // is in a subdirectory of samples/internat) where we wouldn't find them by
     // default
     wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\."));
-    wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\.."));
+    //wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\.."));
 
     // Initialize the catalogs we'll be using
     m_locale.AddCatalog(wxT("wxstd"));

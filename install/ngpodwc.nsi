@@ -12,7 +12,6 @@
 ;---------------------------------------------
 !define WXWIDGETS_DIR "D:\wxWidgets\lib262\gcc_dll"
 !define MINGW_DIR "D:\MinGW"
-!define NGPOD_DIR "ngpod.exe"
 
 ; --------------------------------------------
 !define MUI_COMPONENTSPAGE_CHECKBITMAP "${NSISDIR}\Contrib\Graphics\Checks\modern.bmp"

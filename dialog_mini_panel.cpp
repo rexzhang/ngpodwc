@@ -30,6 +30,7 @@
 #include "dialog_mini_panel.h"
 
 ////@begin XPM images
+#include "art/logo32x32.xpm"
 #include "art/unlock_picture.xpm"
 #include "art/lock_picture.xpm"
 #include "art/previous_pictrue.xpm"
@@ -112,44 +113,39 @@ void dialog_mini_panel::CreateControls()
 
     itemBoxSizer2->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxStaticText* itemStaticText4 = new wxStaticText( itemDialog1, wxID_STATIC, _("NGPODWC"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemStaticText4->SetFont(wxFont(15, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer2->Add(itemStaticText4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL|wxADJUST_MINSIZE, 5);
+    wxBoxSizer* itemBoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    itemBoxSizer2->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxBitmap itemStaticBitmap5Bitmap(itemDialog1->GetBitmapResource(wxT("art/logo32x32.xpm")));
+    wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemDialog1, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(32, 32), 0 );
+    itemBoxSizer4->Add(itemStaticBitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBoxSizer* itemBoxSizer6 = new wxBoxSizer(wxHORIZONTAL);
-    itemBoxSizer2->Add(itemBoxSizer6, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxStaticText* itemStaticText6 = new wxStaticText( itemDialog1, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText6->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
+    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_BOTTOM|wxALL|wxADJUST_MINSIZE, 5);
 
-    itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
-
-    itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    wxBoxSizer* itemBoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer7, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
     wxBitmap PauseChangeWallpaperBitmap(itemDialog1->GetBitmapResource(wxT("art/unlock_picture.xpm")));
     PauseChangeWallpaper = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON, PauseChangeWallpaperBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
     wxBitmap PauseChangeWallpaperBitmapSel(itemDialog1->GetBitmapResource(wxT("art/lock_picture.xpm")));
     PauseChangeWallpaper->SetBitmapSelected(PauseChangeWallpaperBitmapSel);
-    itemBoxSizer6->Add(PauseChangeWallpaper, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer7->Add(PauseChangeWallpaper, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxBitmap ShowPrePictureBitmap(itemDialog1->GetBitmapResource(wxT("art/previous_pictrue.xpm")));
     ShowPrePicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_PRE, ShowPrePictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
-    itemBoxSizer6->Add(ShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer7->Add(ShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxBitmap ShowNextPictureBitmap(itemDialog1->GetBitmapResource(wxT("art/next_pictrue.xpm")));
     ShowNextPicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_NEXT, ShowNextPictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
-    itemBoxSizer6->Add(ShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    itemBoxSizer7->Add(ShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
-
-    itemBoxSizer6->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
-
-    itemBoxSizer2->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
-
-    wxButton* itemButton16 = new wxButton( itemDialog1, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemButton16->SetDefault();
-    itemBoxSizer2->Add(itemButton16, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    wxButton* itemButton12 = new wxButton( itemDialog1, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemButton12->SetDefault();
+    itemBoxSizer2->Add(itemButton12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
 ////@end dialog_mini_panel content construction
 }
@@ -220,7 +216,12 @@ wxBitmap dialog_mini_panel::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
 ////@begin dialog_mini_panel bitmap retrieval
     wxUnusedVar(name);
-    if (name == _T("art/unlock_picture.xpm"))
+    if (name == _T("art/logo32x32.xpm"))
+    {
+        wxBitmap bitmap( logo32x32_xpm);
+        return bitmap;
+    }
+    else if (name == _T("art/unlock_picture.xpm"))
     {
         wxBitmap bitmap( unlock_picture_xpm);
         return bitmap;
