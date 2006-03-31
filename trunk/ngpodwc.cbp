@@ -210,6 +210,23 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
+		<Unit filename="dialog_config_panel.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="dialog_config_panel.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
+		<Unit filename="dialog_config_panel_ext.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="ngpodwcc_Debug" />
+			<Option target="ngpodwcc_Release" />
+		</Unit>
 		<Unit filename="dialog_mini_panel.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwc_Debug" />
@@ -339,23 +356,6 @@
 		<Unit filename="ngpodwcc.rc">
 			<Option compilerVar="WINDRES" />
 			<Option objectName="ngpodwcc.res" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc_mainframe.cpp">
-			<Option compilerVar="CPP" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc_mainframe.h">
-			<Option compilerVar="CPP" />
-			<Option compile="0" />
-			<Option link="0" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc_mainframe_ext.cpp">
-			<Option compilerVar="CPP" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
