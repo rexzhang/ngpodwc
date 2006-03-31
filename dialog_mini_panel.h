@@ -5,8 +5,8 @@
 // Modified by:
 // Created:     23/02/2006 12:18:32
 // RCS-ID:
-// Copyright:   coooooooooopy
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef _DIALOG_MINI_PANEL_H_

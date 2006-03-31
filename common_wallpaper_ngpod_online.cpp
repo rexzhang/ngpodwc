@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        common_wallpaper_ngpod_online.cpp
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     2006-03-06
+// RCS-ID:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
+/////////////////////////////////////////////////////////////////////////////
 #include <wx/wxprec.h>
 
 #ifdef __BORLANDC__

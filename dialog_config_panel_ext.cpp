@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        dialog_config_panel_ext.cpp
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     07/02/2006 17:00:41
+// RCS-ID:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
+/////////////////////////////////////////////////////////////////////////////
 #include "dialog_config_panel.h"
 //#include "ngpodwc_common_screen.h"
 #include "ngpodwcc.h"
