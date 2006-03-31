@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        common_globals.h
 // Purpose:
-// Author:      %AUTHOR%
+// Author:      Rex Zhang
 // Modified by:
-// Created:     %DATE%
+// Created:     2006-03-17
 // RCS-ID:
-// Copyright:   %COPYRIGHT%
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 #ifndef COMMON_GLOBALS_H
 #define COMMON_GLOBALS_H

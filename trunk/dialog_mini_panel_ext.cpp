@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
-// Name:        %SOURCE-FILENAME%
+// Name:        dialog_mini_panel_ext.cpp
 // Purpose:
-// Author:      %AUTHOR%
+// Author:      rex zhang
 // Modified by:
-// Created:     %DATE%
+// Created:     23/02/2006 12:18:32
 // RCS-ID:
-// Copyright:   %COPYRIGHT%
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 
 #include "dialog_mini_panel.h"

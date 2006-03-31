@@ -5,8 +5,8 @@
 // Modified by:
 // Created:     09/02/2006
 // RCS-ID:
-// Copyright:   cooooooooooooopy
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 #include <wx/wxprec.h>
 

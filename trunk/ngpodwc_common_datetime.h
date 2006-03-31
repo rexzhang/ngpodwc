@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        ngpodwc_common_datetime.h
 // Purpose:
-// Author:      %AUTHOR%
+// Author:      Rex Zhang
 // Modified by:
 // Created:     2006-02-13
 // RCS-ID:
-// Copyright:   %COPYRIGHT%
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 
 #include <wx/datetime.h>

@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        ngpodwc_common_ngpodinfo.h
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     2006-02-18
+// RCS-ID:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
+/////////////////////////////////////////////////////////////////////////////
 #ifndef COMMON_NGPODINFO_H
 #define COMMON_NGPODINFO_H
 

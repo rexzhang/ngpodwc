@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        common_wallpaper_base.h
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     2006-03-04
+// RCS-ID:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
+/////////////////////////////////////////////////////////////////////////////
 #ifndef COMMON_WALLPAPER_BASE_H
 #define COMMON_WALLPAPER_BASE_H
 

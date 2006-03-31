@@ -5,8 +5,8 @@
 // Modified by:
 // Created:     07/02/2006 80:03:07
 // RCS-ID:
-// Copyright:   (c) 2006, Rex Zhang
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 
 #if defined(__GNUG__) && !defined(NO_GCC_PRAGMA)

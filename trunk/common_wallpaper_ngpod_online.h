@@ -1,3 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// Name:        common_wallpaper_ngpod_online.h
+// Purpose:
+// Author:      Rex Zhang
+// Modified by:
+// Created:     2006-03-06
+// RCS-ID:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
+/////////////////////////////////////////////////////////////////////////////
 #ifndef COMMON_WALLPAPER_NGPOD_ONLINE_H
 #define COMMON_WALLPAPER_NGPOD_ONLINE_H
 

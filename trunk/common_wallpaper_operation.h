@@ -1,12 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name:        common_wallpaper_operation.h
 // Purpose:
-// Author:      %AUTHOR%
+// Author:      Rex Zhang
 // Modified by:
-// Created:     %DATE%
+// Created:     2006-02-28
 // RCS-ID:
-// Copyright:   %COPYRIGHT%
-// Licence:
+// Copyright:   (c) 2006 Rex Zhang
+// Licence:     GNU General Public License (GPL) version 2
 /////////////////////////////////////////////////////////////////////////////
 #ifndef COMMON_WALLPAPER_OPERATION_H
 #define COMMON_WALLPAPER_OPERATION_H
