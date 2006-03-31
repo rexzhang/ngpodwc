@@ -193,7 +193,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"19/10/2006"</string>
+          <string name="created">"19/11/2006"</string>
           <string name="proxy-type">"wbDialogProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -275,7 +275,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/10/2006"</string>
+              <string name="created">"19/11/2006"</string>
               <string name="proxy-type">"wbSpacerProxy"</string>
               <long name="proxy-Width">5</long>
               <long name="proxy-Height">5</long>
@@ -301,7 +301,6 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"31/3/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Horizontal"</string>
               <string name="proxy-Member variable name">""</string>
@@ -326,13 +325,12 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"31/3/2006"</string>
                 <string name="proxy-type">"wbStaticBitmapProxy"</string>
                 <string name="proxy-Id name">"wxID_STATIC"</string>
                 <long name="proxy-Id value">5105</long>
                 <string name="proxy-Class">"wxStaticBitmap"</string>
                 <string name="proxy-Member variable name">""</string>
-                <string name="proxy-Bitmap">"art/logo32x32.xpm"</string>
+                <string name="proxy-Bitmap">"share/art/logo32x32.xpm"</string>
                 <string name="proxy-Help text">""</string>
                 <string name="proxy-Tooltip text">""</string>
                 <string name="proxy-Background colour">""</string>
@@ -376,7 +374,6 @@
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"31/3/2006"</string>
                 <string name="proxy-type">"wbStaticTextProxy"</string>
                 <string name="proxy-Id name">"wxID_STATIC"</string>
                 <long name="proxy-Id value">5105</long>
@@ -434,7 +431,7 @@ Wallpaper Changer"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/10/2006"</string>
+              <string name="created">"19/11/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Horizontal"</string>
               <string name="proxy-Member variable name">""</string>
@@ -459,15 +456,15 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/10/2006"</string>
+                <string name="created">"19/11/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON"</string>
                 <long name="proxy-Id value">10001</long>
                 <string name="proxy-Class">"wxBitmapButton"</string>
                 <string name="proxy-Member variable name">"PauseChangeWallpaper"</string>
-                <string name="proxy-Bitmap">"art/unlock_picture.xpm"</string>
-                <string name="proxy-Bitmap (selected)">"art/lock_picture.xpm"</string>
+                <string name="proxy-Bitmap">"share/art/unlock_picture.xpm"</string>
+                <string name="proxy-Bitmap (selected)">"share/art/lock_picture.xpm"</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
                 <string name="proxy-Help text">""</string>
@@ -513,7 +510,7 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/10/2006"</string>
+                <string name="created">"19/11/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -539,14 +536,14 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/10/2006"</string>
+                <string name="created">"19/11/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonPreClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_PRE"</string>
                 <long name="proxy-Id value">10002</long>
                 <string name="proxy-Class">"wxBitmapButton"</string>
                 <string name="proxy-Member variable name">"ShowPrePicture"</string>
-                <string name="proxy-Bitmap">"art/previous_pictrue.xpm"</string>
+                <string name="proxy-Bitmap">"share/art/previous_pictrue.xpm"</string>
                 <string name="proxy-Bitmap (selected)">""</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
@@ -593,14 +590,14 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/10/2006"</string>
+                <string name="created">"19/11/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonNextClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_NEXT"</string>
                 <long name="proxy-Id value">10004</long>
                 <string name="proxy-Class">"wxBitmapButton"</string>
                 <string name="proxy-Member variable name">"ShowNextPicture"</string>
-                <string name="proxy-Bitmap">"art/next_pictrue.xpm"</string>
+                <string name="proxy-Bitmap">"share/art/next_pictrue.xpm"</string>
                 <string name="proxy-Bitmap (selected)">""</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
@@ -648,7 +645,7 @@ Wallpaper Changer"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/10/2006"</string>
+              <string name="created">"19/11/2006"</string>
               <string name="proxy-type">"wbButtonProxy"</string>
               <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonQuitClick"</string>
               <string name="proxy-Id name">"ID_BUTTON_QUIT"</string>
@@ -702,7 +699,7 @@ Wallpaper Changer"</string>
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"23/8/2006"</string>
+          <string name="created">"23/9/2006"</string>
           <string name="proxy-type">"wbAppProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -734,7 +731,7 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">1</long>
           <long name="locked">0</long>
-          <string name="created">"19/10/2006"</string>
+          <string name="created">"19/11/2006"</string>
           <string name="language">""</string>
         </document>
       </document>
@@ -748,9 +745,9 @@ Wallpaper Changer"</string>
         <long name="title-mode">0</long>
         <long name="locked">1</long>
         <document>
-          <string name="title">"logo60x80.xpm"</string>
+          <string name="title">"lock_picture.xpm"</string>
           <string name="type">"image-document"</string>
-          <string name="filename">"art/logo60x80.xpm"</string>
+          <string name="filename">"share/art/lock_picture.xpm"</string>
           <string name="icon-name">"image"</string>
           <long name="is-transient">0</long>
           <long name="owns-file">0</long>
@@ -762,7 +759,19 @@ Wallpaper Changer"</string>
         <document>
           <string name="title">"logo32x32.xpm"</string>
           <string name="type">"image-document"</string>
-          <string name="filename">"art/logo32x32.xpm"</string>
+          <string name="filename">"share/art/logo32x32.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"31/3/2006"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"logo60x80.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"share/art/logo60x80.xpm"</string>
           <string name="icon-name">"image"</string>
           <long name="is-transient">0</long>
           <long name="owns-file">0</long>
@@ -774,7 +783,7 @@ Wallpaper Changer"</string>
         <document>
           <string name="title">"next_pictrue.xpm"</string>
           <string name="type">"image-document"</string>
-          <string name="filename">"art/next_pictrue.xpm"</string>
+          <string name="filename">"share/art/next_pictrue.xpm"</string>
           <string name="icon-name">"image"</string>
           <long name="is-transient">0</long>
           <long name="owns-file">0</long>
@@ -786,7 +795,7 @@ Wallpaper Changer"</string>
         <document>
           <string name="title">"previous_pictrue.xpm"</string>
           <string name="type">"image-document"</string>
-          <string name="filename">"art/previous_pictrue.xpm"</string>
+          <string name="filename">"share/art/previous_pictrue.xpm"</string>
           <string name="icon-name">"image"</string>
           <long name="is-transient">0</long>
           <long name="owns-file">0</long>
@@ -798,19 +807,7 @@ Wallpaper Changer"</string>
         <document>
           <string name="title">"unlock_picture.xpm"</string>
           <string name="type">"image-document"</string>
-          <string name="filename">"art/unlock_picture.xpm"</string>
-          <string name="icon-name">"image"</string>
-          <long name="is-transient">0</long>
-          <long name="owns-file">0</long>
-          <long name="title-mode">0</long>
-          <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
-          <long name="zoom-level">100</long>
-        </document>
-        <document>
-          <string name="title">"lock_picture.xpm"</string>
-          <string name="type">"image-document"</string>
-          <string name="filename">"art/lock_picture.xpm"</string>
+          <string name="filename">"share/art/unlock_picture.xpm"</string>
           <string name="icon-name">"image"</string>
           <long name="is-transient">0</long>
           <long name="owns-file">0</long>

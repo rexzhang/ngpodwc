@@ -30,11 +30,11 @@
 #include "dialog_mini_panel.h"
 
 ////@begin XPM images
-#include "art/logo32x32.xpm"
-#include "art/unlock_picture.xpm"
-#include "art/lock_picture.xpm"
-#include "art/previous_pictrue.xpm"
-#include "art/next_pictrue.xpm"
+#include "share/art/logo32x32.xpm"
+#include "share/art/unlock_picture.xpm"
+#include "share/art/lock_picture.xpm"
+#include "share/art/previous_pictrue.xpm"
+#include "share/art/next_pictrue.xpm"
 ////@end XPM images
 
 /*!
@@ -116,7 +116,7 @@ void dialog_mini_panel::CreateControls()
     wxBoxSizer* itemBoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer2->Add(itemBoxSizer4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxBitmap itemStaticBitmap5Bitmap(itemDialog1->GetBitmapResource(wxT("art/logo32x32.xpm")));
+    wxBitmap itemStaticBitmap5Bitmap(itemDialog1->GetBitmapResource(wxT("share/art/logo32x32.xpm")));
     wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemDialog1, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(32, 32), 0 );
     itemBoxSizer4->Add(itemStaticBitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -127,19 +127,19 @@ void dialog_mini_panel::CreateControls()
     wxBoxSizer* itemBoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer2->Add(itemBoxSizer7, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxBitmap PauseChangeWallpaperBitmap(itemDialog1->GetBitmapResource(wxT("art/unlock_picture.xpm")));
+    wxBitmap PauseChangeWallpaperBitmap(itemDialog1->GetBitmapResource(wxT("share/art/unlock_picture.xpm")));
     PauseChangeWallpaper = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON, PauseChangeWallpaperBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
-    wxBitmap PauseChangeWallpaperBitmapSel(itemDialog1->GetBitmapResource(wxT("art/lock_picture.xpm")));
+    wxBitmap PauseChangeWallpaperBitmapSel(itemDialog1->GetBitmapResource(wxT("share/art/lock_picture.xpm")));
     PauseChangeWallpaper->SetBitmapSelected(PauseChangeWallpaperBitmapSel);
     itemBoxSizer7->Add(PauseChangeWallpaper, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBitmap ShowPrePictureBitmap(itemDialog1->GetBitmapResource(wxT("art/previous_pictrue.xpm")));
+    wxBitmap ShowPrePictureBitmap(itemDialog1->GetBitmapResource(wxT("share/art/previous_pictrue.xpm")));
     ShowPrePicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_PRE, ShowPrePictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
     itemBoxSizer7->Add(ShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBitmap ShowNextPictureBitmap(itemDialog1->GetBitmapResource(wxT("art/next_pictrue.xpm")));
+    wxBitmap ShowNextPictureBitmap(itemDialog1->GetBitmapResource(wxT("share/art/next_pictrue.xpm")));
     ShowNextPicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_NEXT, ShowNextPictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
     itemBoxSizer7->Add(ShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -216,27 +216,27 @@ wxBitmap dialog_mini_panel::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
 ////@begin dialog_mini_panel bitmap retrieval
     wxUnusedVar(name);
-    if (name == _T("art/logo32x32.xpm"))
+    if (name == _T("share/art/logo32x32.xpm"))
     {
         wxBitmap bitmap( logo32x32_xpm);
         return bitmap;
     }
-    else if (name == _T("art/unlock_picture.xpm"))
+    else if (name == _T("share/art/unlock_picture.xpm"))
     {
         wxBitmap bitmap( unlock_picture_xpm);
         return bitmap;
     }
-    else if (name == _T("art/lock_picture.xpm"))
+    else if (name == _T("share/art/lock_picture.xpm"))
     {
         wxBitmap bitmap( lock_picture_xpm);
         return bitmap;
     }
-    else if (name == _T("art/previous_pictrue.xpm"))
+    else if (name == _T("share/art/previous_pictrue.xpm"))
     {
         wxBitmap bitmap( previous_pictrue_xpm);
         return bitmap;
     }
-    else if (name == _T("art/next_pictrue.xpm"))
+    else if (name == _T("share/art/next_pictrue.xpm"))
     {
         wxBitmap bitmap( next_pictrue_xpm);
         return bitmap;

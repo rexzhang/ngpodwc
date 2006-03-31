@@ -89,7 +89,7 @@ bool WallpaperBase::DrawText()
     /*
         //--------------------------------
         wxBitmap InfoBoxBitmap(600,150, 16);
-        InfoBoxBitmap.LoadFile(wxT("art/logo.xpm"), wxBITMAP_TYPE_XPM);
+        InfoBoxBitmap.LoadFile(wxT("share/art/logo.xpm"), wxBITMAP_TYPE_XPM);
         wxMemoryDC InfoBoxDC;
 
         InfoBoxDC.SelectObject(InfoBoxBitmap);

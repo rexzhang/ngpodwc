@@ -123,7 +123,7 @@ bool NgpodwcApp::OnInit()
     //确定是否显示Splash
     if(config.ShowSplash)
     {
-        if(splashBitmap.LoadFile(wxT("art/splash.png"), wxBITMAP_TYPE_PNG))
+        if(splashBitmap.LoadFile(wxT("share/art/splash.png"), wxBITMAP_TYPE_PNG))
         {
             splashEnable = true;
         }
