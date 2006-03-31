@@ -22,7 +22,7 @@
 
 ////@begin includes
 #include "wx/image.h"
-#include "ngpodwcc_mainframe.h"
+#include "dialog_config_panel.h"
 ////@end includes
 
 #include "common_config.h"

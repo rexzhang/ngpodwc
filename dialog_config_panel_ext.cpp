@@ -1,4 +1,4 @@
-#include "ngpodwcc_mainframe.h"
+#include "dialog_config_panel.h"
 //#include "ngpodwc_common_screen.h"
 #include "ngpodwcc.h"
 
@@ -7,7 +7,7 @@
 #include <wx/stdpaths.h>
 #include <wx/filename.h>
 
-void ngpodwcc_MainFrame::InitConfig(void)
+void dialog_config_panel::InitConfig(void)
 //初始化配置相关
 {
     //Check config file
@@ -28,26 +28,26 @@ void ngpodwcc_MainFrame::InitConfig(void)
     ShowConfig();
 }
 
-void ngpodwcc_MainFrame::ReadConfig(void)
+void dialog_config_panel::ReadConfig(void)
 //读取配置文件到界面控件
 {
     config.ReadConfig();
     ShowConfig();
 }
 
-void ngpodwcc_MainFrame::WriteConfig(void)
+void dialog_config_panel::WriteConfig(void)
 //保存界面控件的值到配置文件
 {
     config.WriteConfig();
 }
 
-void ngpodwcc_MainFrame::SetDefault(void)
+void dialog_config_panel::SetDefault(void)
 {
     config.SetDefault();
     ShowConfig();
 }
 
-void ngpodwcc_MainFrame::ShowConfig(void)
+void dialog_config_panel::ShowConfig(void)
 //将config中的参数写到界面控件，以便显示出来
 {
     //////////////////
@@ -107,7 +107,7 @@ void ngpodwcc_MainFrame::ShowConfig(void)
 	return;
 }
 
-void ngpodwcc_MainFrame::AutoDetectScreenWH(void)
+void dialog_config_panel::AutoDetectScreenWH(void)
 {
     wxString screenWH;
 
@@ -125,7 +125,7 @@ void ngpodwcc_MainFrame::AutoDetectScreenWH(void)
     ScreenWidthHeight->SetSelection(3);
 }
 
-wxString ngpodwcc_MainFrame::AutoDetectSystemPath(void)
+wxString dialog_config_panel::AutoDetectSystemPath(void)
 {
     wxString path;
     wxGetEnv(wxT("windir"), &path);

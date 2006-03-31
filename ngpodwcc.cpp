@@ -124,7 +124,7 @@ bool NgpodwccApp::OnInit()
         wxSafeShowMessage(wxT("DEBUG Info"), wxT("wxLocale ERROR!"));
     }
 
-    ngpodwcc_MainFrame* mainWindow = new ngpodwcc_MainFrame( NULL, ID_FRAME_MAIN );
+    dialog_config_panel* mainWindow = new dialog_config_panel( NULL, ID_FRAME_MAIN );
     //mainWindow->Show(true);
     ////@end NgpodwccApp initialisation
 
