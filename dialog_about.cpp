@@ -32,7 +32,7 @@
 #include "common_globals.h"
 
 ////@begin XPM images
-#include "art/logo60x80.xpm"
+#include "share/art/logo60x80.xpm"
 ////@end XPM images
 
 /*!
@@ -112,7 +112,7 @@ void DialogAbout::CreateControls()
     wxBoxSizer* itemBoxSizer6 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer4->Add(itemBoxSizer6, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxBitmap itemStaticBitmap7Bitmap(itemDialog1->GetBitmapResource(wxT("art/logo60x80.xpm")));
+    wxBitmap itemStaticBitmap7Bitmap(itemDialog1->GetBitmapResource(wxT("share/art/logo60x80.xpm")));
     wxStaticBitmap* itemStaticBitmap7 = new wxStaticBitmap( itemPanel3, wxID_STATIC, itemStaticBitmap7Bitmap, wxDefaultPosition, wxSize(60, 80), 0 );
     itemBoxSizer6->Add(itemStaticBitmap7, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -195,7 +195,7 @@ wxBitmap DialogAbout::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
 ////@begin DialogAbout bitmap retrieval
     wxUnusedVar(name);
-    if (name == _T("art/logo60x80.xpm"))
+    if (name == _T("share/art/logo60x80.xpm"))
     {
         wxBitmap bitmap( logo60x80_xpm);
         return bitmap;

@@ -113,11 +113,11 @@ Section "Core" SEC01
 
   SetOutPath "$INSTDIR\art"
   SetOverwrite ifnewer
-  File "..\art\splash.png"
-  File "..\art\next_pictrue.xpm"
-  File "..\art\previous_pictrue.xpm"
-  File "..\art\lock_picture.xpm"
-  File "..\art\unlock_picture.xpm"
+  File "..\share\art\splash.png"
+  File "..\share\art\next_pictrue.xpm"
+  File "..\share\art\previous_pictrue.xpm"
+  File "..\share\art\lock_picture.xpm"
+  File "..\share\art\unlock_picture.xpm"
 
   ;
   CreateDirectory "$INSTDIR\share"
@@ -195,12 +195,12 @@ Section Uninstall
   Delete "$INSTDIR\docs\todos.txt"
   Delete "$INSTDIR\docs\history.txt"
 
-  Delete "$INSTDIR\art\splash.png"
-  Delete "$INSTDIR\art\next_pictrue.xpm"
-  Delete "$INSTDIR\art\previous_pictrue.xpm"
-  Delete "$INSTDIR\art\lock_picture.xpm"
-  Delete "$INSTDIR\art\unlock_picture.xpm"
-  RMDir "$INSTDIR\art"
+  Delete "$INSTDIR\share\art\splash.png"
+  Delete "$INSTDIR\share\art\next_pictrue.xpm"
+  Delete "$INSTDIR\share\art\previous_pictrue.xpm"
+  Delete "$INSTDIR\share\art\lock_picture.xpm"
+  Delete "$INSTDIR\share\art\unlock_picture.xpm"
+  RMDir "$INSTDIR\share\art"
 
   ;国际化支持部分
   Delete "$INSTDIR\share\locale\zh_CN\ngpodwcc.mo"

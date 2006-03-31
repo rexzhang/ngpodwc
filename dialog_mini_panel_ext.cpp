@@ -12,8 +12,8 @@
 #include "dialog_mini_panel.h"
 
 
-#include "art/unlock_picture.xpm"
-#include "art/lock_picture.xpm"
+#include "share/art/unlock_picture.xpm"
+#include "share/art/lock_picture.xpm"
 
 void dialog_mini_panel::InitConfig()
 {

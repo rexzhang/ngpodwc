@@ -36,8 +36,8 @@
 //#include "ngpodwc_common_screen.h"
 
 ////@begin XPM images
-#include "art/logo32x32.xpm"
-#include "art/logo60x80.xpm"
+#include "share/art/logo32x32.xpm"
+#include "share/art/logo60x80.xpm"
 ////@end XPM images
 
 /*!
@@ -142,7 +142,7 @@ bool dialog_config_panel::Create( wxWindow* parent, wxWindowID id, const wxStrin
     wxFrame::Create( parent, id, caption, pos, size, style );
 
     CreateControls();
-    SetIcon(GetIconResource(wxT("art/logo32x32.xpm")));
+    SetIcon(GetIconResource(wxT("share/art/logo32x32.xpm")));
     Centre();
     ////@end dialog_config_panel creation
 
@@ -166,7 +166,7 @@ void dialog_config_panel::CreateControls()
     wxBoxSizer* itemBoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer3->Add(itemBoxSizer4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxBitmap itemStaticBitmap5Bitmap(itemFrame1->GetBitmapResource(wxT("art/logo60x80.xpm")));
+    wxBitmap itemStaticBitmap5Bitmap(itemFrame1->GetBitmapResource(wxT("share/art/logo60x80.xpm")));
     wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemPanel2, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(60, 80), 0 );
     itemBoxSizer4->Add(itemStaticBitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
@@ -435,7 +435,7 @@ wxBitmap dialog_config_panel::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
     ////@begin dialog_config_panel bitmap retrieval
     wxUnusedVar(name);
-    if (name == _T("art/logo60x80.xpm"))
+    if (name == _T("share/art/logo60x80.xpm"))
     {
         wxBitmap bitmap( logo60x80_xpm);
         return bitmap;
@@ -453,7 +453,7 @@ wxIcon dialog_config_panel::GetIconResource( const wxString& name )
     // Icon retrieval
     ////@begin dialog_config_panel icon retrieval
     wxUnusedVar(name);
-    if (name == _T("art/logo32x32.xpm"))
+    if (name == _T("share/art/logo32x32.xpm"))
     {
         wxIcon icon( logo32x32_xpm);
         return icon;
