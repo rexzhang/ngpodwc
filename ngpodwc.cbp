@@ -202,6 +202,8 @@
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="dialog_about.h">
 			<Option compilerVar="CPP" />
@@ -209,6 +211,8 @@
 			<Option link="0" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="dialog_config_panel.cpp">
 			<Option compilerVar="CPP" />

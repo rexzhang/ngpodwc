@@ -47,7 +47,9 @@
 #define ID_BITMAPBUTTON 10001
 #define ID_BITMAPBUTTON_PRE 10002
 #define ID_BITMAPBUTTON_NEXT 10004
-#define ID_BUTTON_QUIT 10003
+#define ID_BITMAPBUTTON_CC 10003
+#define ID_BITMAPBUTTON_ABOUT 10006
+#define ID_BITMAPBUTTON_QUIT 10005
 ////@end control identifiers
 
 /*!
@@ -81,7 +83,7 @@ public:
 ////@begin dialog_mini_panel event handler declarations
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON
-    void OnBitmapbuttonClick( wxCommandEvent& event );
+    void OnBitmapbuttonSwapPauseClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_PRE
     void OnBitmapbuttonPreClick( wxCommandEvent& event );
@@ -89,8 +91,14 @@ public:
     /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_NEXT
     void OnBitmapbuttonNextClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_QUIT
-    void OnButtonQuitClick( wxCommandEvent& event );
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_CC
+    void OnBitmapbuttonSettingsClick( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_ABOUT
+    void OnBitmapbuttonAboutClick( wxCommandEvent& event );
+
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_QUIT
+    void OnBitmapbuttonQuitClick( wxCommandEvent& event );
 
 ////@end dialog_mini_panel event handler declarations
 
@@ -116,6 +124,9 @@ public:
     wxBitmapButton* PauseChangeWallpaper;
     wxBitmapButton* ShowPrePicture;
     wxBitmapButton* ShowNextPicture;
+    wxBitmapButton* ControlCenter;
+    wxBitmapButton* About;
+    wxBitmapButton* Quit;
 ////@end dialog_mini_panel member variables
 
     ngpodwcConfig config;

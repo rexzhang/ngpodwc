@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "NGPODWC"
-!define PRODUCT_VERSION "0.6.0.1"
+!define PRODUCT_VERSION "0.6.1.0"
 !define PRODUCT_PUBLISHER "Rex Zhang(rex.zhang@gmail.com)"
 !define PRODUCT_WEB_SITE "http://ngpodwc.sourceforge.net"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\ngpodwc_u.exe"
@@ -118,6 +118,8 @@ Section "Core" SEC01
   File "..\share\art\previous_pictrue.xpm"
   File "..\share\art\lock_picture.xpm"
   File "..\share\art\unlock_picture.xpm"
+  File "..\share\art\icon_quit.xpm"
+  File "..\share\art\icon_settings.xpm"
 
   ;
   CreateDirectory "$INSTDIR\share"
@@ -138,7 +140,7 @@ SectionEnd
 Section "wxWidgets Lib" SEC02
   SectionIn 1 2
   SetOutPath "$INSTDIR"
-  File "${WXWIDGETS_DIR}\wxmsw26u_gcc_cb.dll"
+  File "${WXWIDGETS_DIR}\wxmsw26u_gcc_ngpodwc.dll"
 SectionEnd
 
 Section "MinGW Lib" SEC03
@@ -200,6 +202,8 @@ Section Uninstall
   Delete "$INSTDIR\share\art\previous_pictrue.xpm"
   Delete "$INSTDIR\share\art\lock_picture.xpm"
   Delete "$INSTDIR\share\art\unlock_picture.xpm"
+  Delete "$INSTDIR\share\art\icon_quit.xpm"
+  Delete "$INSTDIR\share\art\icon_settings.xpm"
   RMDir "$INSTDIR\share\art"
 
   ;国际化支持部分
@@ -209,7 +213,7 @@ Section Uninstall
   RMDir "$INSTDIR\share\locale"
   RMDir "$INSTDIR\share"
 
-  Delete "$INSTDIR\wxmsw26u_gcc_cb.dll"
+  Delete "$INSTDIR\wxmsw26u_gcc_ngpodwc.dll"
   Delete "$INSTDIR\mingwm10.dll"
 
   Delete "$DESKTOP\NG桌布切换.lnk"

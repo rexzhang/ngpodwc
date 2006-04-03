@@ -75,23 +75,23 @@ BEGIN_EVENT_TABLE( dialog_config_panel, wxFrame )
 
     EVT_TEXT( ID_TEXTCTRL7, dialog_config_panel::OnTextctrl7Updated )
 
-    EVT_BUTTON( ID_BUTTON_LocalPicturePath, dialog_config_panel::OnButtonLocalpicturepathClick )
+    EVT_BUTTON( ID_BUTTON4, dialog_config_panel::OnButtonLocalpicturepathClick )
 
     EVT_TEXT( ID_TEXTCTRL, dialog_config_panel::OnTextctrlUpdated )
 
-    EVT_BUTTON( ID_BUTTON_PodBasePath, dialog_config_panel::OnButtonPodbasepathClick )
+    EVT_BUTTON( ID_BUTTON5, dialog_config_panel::OnButtonPodbasepathClick )
 
-    EVT_DATE_CHANGED( ID_DATECTRL, dialog_config_panel::OnDatectrlDateChanged )
+    EVT_DATE_CHANGED( ID_DATEPICKERCTRL, dialog_config_panel::OnDatectrlDateChanged )
 
-    EVT_BUTTON( ID_BUTTON_RELOAD_CONFIG, dialog_config_panel::OnButtonReloadConfigClick )
+    EVT_BUTTON( ID_BUTTON6, dialog_config_panel::OnButtonReloadConfigClick )
 
-    EVT_BUTTON( ID_BUTTON_RESTORE_DEFAULT, dialog_config_panel::OnButtonRestoreDefaultClick )
+    EVT_BUTTON( ID_BUTTON7, dialog_config_panel::OnButtonRestoreDefaultClick )
 
-    EVT_BUTTON( ID_BUTTON_SAVE_CONFIG, dialog_config_panel::OnButtonSaveConfigClick )
+    EVT_BUTTON( ID_BUTTON9, dialog_config_panel::OnButtonSaveConfigClick )
 
-    EVT_BUTTON( ID_BUTTON_ABOUT, dialog_config_panel::OnButtonAboutClick )
+    EVT_BUTTON( ID_BUTTON10, dialog_config_panel::OnButtonAboutClick )
 
-    EVT_BUTTON( ID_BUTTON_QUIT, dialog_config_panel::OnButtonQuitClick )
+    EVT_BUTTON( ID_BUTTON11, dialog_config_panel::OnButtonQuitClick )
 
 ////@end dialog_config_panel event table entries
 
@@ -326,7 +326,7 @@ void dialog_config_panel::CreateControls()
     LocalPicturePath = new wxTextCtrl( itemPanel51, ID_TEXTCTRL7, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
     itemFlexGridSizer52->Add(LocalPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton58 = new wxButton( itemPanel51, ID_BUTTON_LocalPicturePath, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton58 = new wxButton( itemPanel51, ID_BUTTON4, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer52->Add(itemButton58, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemNotebook7->AddPage(itemPanel51, _("Local Picture Source"));
@@ -347,7 +347,7 @@ void dialog_config_panel::CreateControls()
     PodBasePath = new wxTextCtrl( itemPanel59, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize(200, -1), 0 );
     itemFlexGridSizer60->Add(PodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton66 = new wxButton( itemPanel59, ID_BUTTON_PodBasePath, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton66 = new wxButton( itemPanel59, ID_BUTTON5, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer60->Add(itemButton66, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText67 = new wxStaticText( itemPanel59, wxID_STATIC, _("PodDatabaseName"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -371,7 +371,7 @@ void dialog_config_panel::CreateControls()
     wxStaticText* itemStaticText73 = new wxStaticText( itemPanel59, wxID_STATIC, _("Now POD Day"), wxDefaultPosition, wxDefaultSize, 0 );
     itemFlexGridSizer60->Add(itemStaticText73, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    NextPODDay = new wxDatePickerCtrl( itemPanel59, ID_DATECTRL, wxDateTime(), wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT );
+    NextPODDay = new wxDatePickerCtrl( itemPanel59, ID_DATEPICKERCTRL, wxDateTime(), wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT );
     wxDateTime minDateNextPODDay(1, (wxDateTime::Month) 2, 2001);
     wxDateTime maxDateNextPODDay;
     NextPODDay->SetRange(minDateNextPODDay, maxDateNextPODDay);
@@ -395,23 +395,23 @@ void dialog_config_panel::CreateControls()
     wxBoxSizer* itemBoxSizer80 = new wxBoxSizer(wxHORIZONTAL);
     itemGridSizer79->Add(itemBoxSizer80, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton81 = new wxButton( itemPanel2, ID_BUTTON_RELOAD_CONFIG, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton81 = new wxButton( itemPanel2, ID_BUTTON6, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer80->Add(itemButton81, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton82 = new wxButton( itemPanel2, ID_BUTTON_RESTORE_DEFAULT, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton82 = new wxButton( itemPanel2, ID_BUTTON7, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer80->Add(itemButton82, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    ButtonSaveConfig = new wxButton( itemPanel2, ID_BUTTON_SAVE_CONFIG, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
+    ButtonSaveConfig = new wxButton( itemPanel2, ID_BUTTON9, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
     ButtonSaveConfig->Enable(false);
     itemBoxSizer80->Add(ButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxBoxSizer* itemBoxSizer84 = new wxBoxSizer(wxHORIZONTAL);
     itemGridSizer79->Add(itemBoxSizer84, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton85 = new wxButton( itemPanel2, ID_BUTTON_ABOUT, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton85 = new wxButton( itemPanel2, ID_BUTTON10, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer84->Add(itemButton85, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton86 = new wxButton( itemPanel2, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+    wxButton* itemButton86 = new wxButton( itemPanel2, ID_BUTTON11, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
     itemBoxSizer84->Add(itemButton86, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     ////@end dialog_config_panel content construction
@@ -467,7 +467,7 @@ wxIcon dialog_config_panel::GetIconResource( const wxString& name )
 
 void dialog_config_panel::OnButtonAboutClick( wxCommandEvent& event )
 {
-    DialogAbout* window = new DialogAbout(NULL, ID_DIALOG_ABOUT, _("About"));
+    DialogAbout* window = new DialogAbout(this, ID_DIALOG_ABOUT, _("About"));
     window->Show(true);
     ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON2 in ngpodwcc_MainFrame.
     // Before editing this code, remove the block markers.
