@@ -29,12 +29,16 @@
 
 #include "dialog_mini_panel.h"
 
+#include "dialog_about.h"
+
 ////@begin XPM images
-#include "share/art/logo32x32.xpm"
+#include "share/art/logo60x80.xpm"
 #include "share/art/unlock_picture.xpm"
 #include "share/art/lock_picture.xpm"
 #include "share/art/previous_pictrue.xpm"
 #include "share/art/next_pictrue.xpm"
+#include "share/art/icon_settings.xpm"
+#include "share/art/icon_quit.xpm"
 ////@end XPM images
 
 /*!
@@ -50,13 +54,17 @@ IMPLEMENT_DYNAMIC_CLASS( dialog_mini_panel, wxDialog )
 BEGIN_EVENT_TABLE( dialog_mini_panel, wxDialog )
 
 ////@begin dialog_mini_panel event table entries
-    EVT_BUTTON( ID_BITMAPBUTTON, dialog_mini_panel::OnBitmapbuttonClick )
+    EVT_BUTTON( ID_BITMAPBUTTON, dialog_mini_panel::OnBitmapbuttonSwapPauseClick )
 
     EVT_BUTTON( ID_BITMAPBUTTON_PRE, dialog_mini_panel::OnBitmapbuttonPreClick )
 
     EVT_BUTTON( ID_BITMAPBUTTON_NEXT, dialog_mini_panel::OnBitmapbuttonNextClick )
 
-    EVT_BUTTON( ID_BUTTON_QUIT, dialog_mini_panel::OnButtonQuitClick )
+    EVT_BUTTON( ID_BITMAPBUTTON_CC, dialog_mini_panel::OnBitmapbuttonSettingsClick )
+
+    EVT_BUTTON( ID_BITMAPBUTTON_ABOUT, dialog_mini_panel::OnBitmapbuttonAboutClick )
+
+    EVT_BUTTON( ID_BITMAPBUTTON_QUIT, dialog_mini_panel::OnBitmapbuttonQuitClick )
 
 ////@end dialog_mini_panel event table entries
 
@@ -85,6 +93,9 @@ bool dialog_mini_panel::Create( wxWindow* parent, wxWindowID id, const wxString&
     PauseChangeWallpaper = NULL;
     ShowPrePicture = NULL;
     ShowNextPicture = NULL;
+    ControlCenter = NULL;
+    About = NULL;
+    Quit = NULL;
 ////@end dialog_mini_panel member initialisation
 
 ////@begin dialog_mini_panel creation
@@ -116,13 +127,13 @@ void dialog_mini_panel::CreateControls()
     wxBoxSizer* itemBoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer2->Add(itemBoxSizer4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
-    wxBitmap itemStaticBitmap5Bitmap(itemDialog1->GetBitmapResource(wxT("share/art/logo32x32.xpm")));
-    wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemDialog1, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(32, 32), 0 );
+    wxBitmap itemStaticBitmap5Bitmap(itemDialog1->GetBitmapResource(wxT("share/art/logo60x80.xpm")));
+    wxStaticBitmap* itemStaticBitmap5 = new wxStaticBitmap( itemDialog1, wxID_STATIC, itemStaticBitmap5Bitmap, wxDefaultPosition, wxSize(60, 80), 0 );
     itemBoxSizer4->Add(itemStaticBitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxStaticText* itemStaticText6 = new wxStaticText( itemDialog1, wxID_STATIC, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
     itemStaticText6->SetFont(wxFont(9, wxSWISS, wxNORMAL, wxBOLD, false, _T("Tahoma")));
-    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_BOTTOM|wxALL|wxADJUST_MINSIZE, 5);
+    itemBoxSizer4->Add(itemStaticText6, 0, wxALIGN_CENTER_VERTICAL|wxALL|wxADJUST_MINSIZE, 5);
 
     wxBoxSizer* itemBoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
     itemBoxSizer2->Add(itemBoxSizer7, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
@@ -131,21 +142,49 @@ void dialog_mini_panel::CreateControls()
     PauseChangeWallpaper = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON, PauseChangeWallpaperBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
     wxBitmap PauseChangeWallpaperBitmapSel(itemDialog1->GetBitmapResource(wxT("share/art/lock_picture.xpm")));
     PauseChangeWallpaper->SetBitmapSelected(PauseChangeWallpaperBitmapSel);
+    if (ShowToolTips())
+        PauseChangeWallpaper->SetToolTip(_("Pause/Unpause change wallpaper"));
     itemBoxSizer7->Add(PauseChangeWallpaper, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxBitmap ShowPrePictureBitmap(itemDialog1->GetBitmapResource(wxT("share/art/previous_pictrue.xpm")));
     ShowPrePicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_PRE, ShowPrePictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    if (ShowToolTips())
+        ShowPrePicture->SetToolTip(_("Show previous pictrue"));
     itemBoxSizer7->Add(ShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
     wxBitmap ShowNextPictureBitmap(itemDialog1->GetBitmapResource(wxT("share/art/next_pictrue.xpm")));
     ShowNextPicture = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_NEXT, ShowNextPictureBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    if (ShowToolTips())
+        ShowNextPicture->SetToolTip(_("Show next pictrue"));
     itemBoxSizer7->Add(ShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxButton* itemButton12 = new wxButton( itemDialog1, ID_BUTTON_QUIT, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
-    itemButton12->SetDefault();
-    itemBoxSizer2->Add(itemButton12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+    itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxBitmap ControlCenterBitmap(itemDialog1->GetBitmapResource(wxT("share/art/icon_settings.xpm")));
+    ControlCenter = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_CC, ControlCenterBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    if (ShowToolTips())
+        ControlCenter->SetToolTip(_("Control Center"));
+    itemBoxSizer7->Add(ControlCenter, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxBitmap AboutBitmap(wxNullBitmap);
+    About = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_ABOUT, AboutBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    if (ShowToolTips())
+        About->SetToolTip(_("About"));
+    itemBoxSizer7->Add(About, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxBitmap QuitBitmap(itemDialog1->GetBitmapResource(wxT("share/art/icon_quit.xpm")));
+    Quit = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_QUIT, QuitBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
+    if (ShowToolTips())
+        Quit->SetToolTip(_("Quit"));
+    itemBoxSizer7->Add(Quit, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    itemBoxSizer2->Add(5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
 
 ////@end dialog_mini_panel content construction
 }
@@ -186,19 +225,6 @@ void dialog_mini_panel::OnBitmapbuttonNextClick( wxCommandEvent& event )
 }
 
 /*!
- * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_QUIT
- */
-
-void dialog_mini_panel::OnButtonQuitClick( wxCommandEvent& event )
-{
-    Destroy();
-////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_QUIT in ngpodwc_mini_panel.
-    // Before editing this code, remove the block markers.
-    event.Skip();
-////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_QUIT in ngpodwc_mini_panel.
-}
-
-/*!
  * Should we show tooltips?
  */
 
@@ -216,9 +242,9 @@ wxBitmap dialog_mini_panel::GetBitmapResource( const wxString& name )
     // Bitmap retrieval
 ////@begin dialog_mini_panel bitmap retrieval
     wxUnusedVar(name);
-    if (name == _T("share/art/logo32x32.xpm"))
+    if (name == _T("share/art/logo60x80.xpm"))
     {
-        wxBitmap bitmap( logo32x32_xpm);
+        wxBitmap bitmap( logo60x80_xpm);
         return bitmap;
     }
     else if (name == _T("share/art/unlock_picture.xpm"))
@@ -241,6 +267,16 @@ wxBitmap dialog_mini_panel::GetBitmapResource( const wxString& name )
         wxBitmap bitmap( next_pictrue_xpm);
         return bitmap;
     }
+    else if (name == _T("share/art/icon_settings.xpm"))
+    {
+        wxBitmap bitmap( icon_settings_xpm);
+        return bitmap;
+    }
+    else if (name == _T("share/art/icon_quit.xpm"))
+    {
+        wxBitmap bitmap( icon_quit_xpm);
+        return bitmap;
+    }
     return wxNullBitmap;
 ////@end dialog_mini_panel bitmap retrieval
 }
@@ -261,13 +297,56 @@ wxIcon dialog_mini_panel::GetIconResource( const wxString& name )
  * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON
  */
 
-void dialog_mini_panel::OnBitmapbuttonClick( wxCommandEvent& event )
+void dialog_mini_panel::OnBitmapbuttonSwapPauseClick( wxCommandEvent& event )
 {
     SwapPauseChangeWallpaperStat();
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON in ngpodwc_mini_panel.
     // Before editing this code, remove the block markers.
     event.Skip();
 ////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON in ngpodwc_mini_panel.
+}
+
+
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON1
+ */
+
+void dialog_mini_panel::OnBitmapbuttonQuitClick( wxCommandEvent& event )
+{
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON1 in dialog_mini_panel.
+    // Before editing this code, remove the block markers.
+    Destroy();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON1 in dialog_mini_panel.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON2
+ */
+
+void dialog_mini_panel::OnBitmapbuttonSettingsClick( wxCommandEvent& event )
+{
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON2 in dialog_mini_panel.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON2 in dialog_mini_panel.
+}
+
+
+/*!
+ * wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_ABOUT
+ */
+
+void dialog_mini_panel::OnBitmapbuttonAboutClick( wxCommandEvent& event )
+{
+    DialogAbout* window = new DialogAbout(this, ID_DIALOG_ABOUT, _("About"));
+    window->Show(true);
+////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_ABOUT in dialog_mini_panel.
+    // Before editing this code, remove the block markers.
+    event.Skip();
+////@end wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON_ABOUT in dialog_mini_panel.
 }
 
 

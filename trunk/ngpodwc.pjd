@@ -6,7 +6,7 @@
     <string name="title">""</string>
     <string name="author">""</string>
     <string name="description">""</string>
-    <long name="doc_count">26</long>
+    <long name="doc_count">34</long>
     <string name="xrc_filename">""</string>
     <bool name="convert_images_to_xpm">0</bool>
     <bool name="inline_images">0</bool>
@@ -185,7 +185,7 @@
         <long name="title-mode">0</long>
         <long name="locked">1</long>
         <document>
-          <string name="title">"NGPODWC"</string>
+          <string name="title">"wxDialog: ID_DIALOG"</string>
           <string name="type">"dialog-document"</string>
           <string name="filename">""</string>
           <string name="icon-name">"dialog"</string>
@@ -193,7 +193,7 @@
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"19/11/2006"</string>
+          <string name="created">"19/7/2006"</string>
           <string name="proxy-type">"wbDialogProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -275,7 +275,7 @@
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/11/2006"</string>
+              <string name="created">"19/7/2006"</string>
               <string name="proxy-type">"wbSpacerProxy"</string>
               <long name="proxy-Width">5</long>
               <long name="proxy-Height">5</long>
@@ -330,7 +330,7 @@
                 <long name="proxy-Id value">5105</long>
                 <string name="proxy-Class">"wxStaticBitmap"</string>
                 <string name="proxy-Member variable name">""</string>
-                <string name="proxy-Bitmap">"share/art/logo32x32.xpm"</string>
+                <string name="proxy-Bitmap">"share/art/logo60x80.xpm"</string>
                 <string name="proxy-Help text">""</string>
                 <string name="proxy-Tooltip text">""</string>
                 <string name="proxy-Background colour">""</string>
@@ -349,8 +349,8 @@
                 <string name="proxy-Custom styles">""</string>
                 <long name="proxy-X">-1</long>
                 <long name="proxy-Y">-1</long>
-                <long name="proxy-Width">32</long>
-                <long name="proxy-Height">32</long>
+                <long name="proxy-Width">60</long>
+                <long name="proxy-Height">80</long>
                 <string name="proxy-AlignH">"Centre"</string>
                 <string name="proxy-AlignV">"Centre"</string>
                 <long name="proxy-Stretch factor">0</long>
@@ -408,7 +408,7 @@ Wallpaper Changer"</string>
                 <long name="proxy-Width">-1</long>
                 <long name="proxy-Height">-1</long>
                 <string name="proxy-AlignH">"Centre"</string>
-                <string name="proxy-AlignV">"Bottom"</string>
+                <string name="proxy-AlignV">"Centre"</string>
                 <long name="proxy-Stretch factor">0</long>
                 <long name="proxy-Border">5</long>
                 <bool name="proxy-wxLEFT">1</bool>
@@ -431,7 +431,7 @@ Wallpaper Changer"</string>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/11/2006"</string>
+              <string name="created">"19/7/2006"</string>
               <string name="proxy-type">"wbBoxSizerProxy"</string>
               <string name="proxy-Orientation">"Horizontal"</string>
               <string name="proxy-Member variable name">""</string>
@@ -456,9 +456,9 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/11/2006"</string>
+                <string name="created">"3/5/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
-                <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonClick"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonSwapPauseClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON"</string>
                 <long name="proxy-Id value">10001</long>
                 <string name="proxy-Class">"wxBitmapButton"</string>
@@ -468,7 +468,7 @@ Wallpaper Changer"</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
                 <string name="proxy-Help text">""</string>
-                <string name="proxy-Tooltip text">""</string>
+                <string name="proxy-Tooltip text">"Pause/Unpause change wallpaper"</string>
                 <string name="proxy-Background colour">""</string>
                 <string name="proxy-Foreground colour">""</string>
                 <string name="proxy-Font">""</string>
@@ -510,7 +510,7 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/11/2006"</string>
+                <string name="created">"3/5/2006"</string>
                 <string name="proxy-type">"wbSpacerProxy"</string>
                 <long name="proxy-Width">5</long>
                 <long name="proxy-Height">5</long>
@@ -536,7 +536,7 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/11/2006"</string>
+                <string name="created">"3/5/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonPreClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_PRE"</string>
@@ -548,7 +548,7 @@ Wallpaper Changer"</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
                 <string name="proxy-Help text">""</string>
-                <string name="proxy-Tooltip text">""</string>
+                <string name="proxy-Tooltip text">"Show previous pictrue"</string>
                 <string name="proxy-Background colour">""</string>
                 <string name="proxy-Foreground colour">""</string>
                 <string name="proxy-Font">""</string>
@@ -590,7 +590,7 @@ Wallpaper Changer"</string>
                 <long name="owns-file">1</long>
                 <long name="title-mode">0</long>
                 <long name="locked">0</long>
-                <string name="created">"19/11/2006"</string>
+                <string name="created">"19/7/2006"</string>
                 <string name="proxy-type">"wbBitmapButtonProxy"</string>
                 <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonNextClick"</string>
                 <string name="proxy-Id name">"ID_BITMAPBUTTON_NEXT"</string>
@@ -602,7 +602,247 @@ Wallpaper Changer"</string>
                 <string name="proxy-Bitmap (focused)">""</string>
                 <string name="proxy-Bitmap (disabled)">""</string>
                 <string name="proxy-Help text">""</string>
-                <string name="proxy-Tooltip text">""</string>
+                <string name="proxy-Tooltip text">"Show next pictrue"</string>
+                <string name="proxy-Background colour">""</string>
+                <string name="proxy-Foreground colour">""</string>
+                <string name="proxy-Font">""</string>
+                <bool name="proxy-Hidden">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+                <bool name="proxy-wxBU_AUTODRAW">1</bool>
+                <bool name="proxy-wxBU_EXACTFIT">1</bool>
+                <bool name="proxy-wxBU_LEFT">0</bool>
+                <bool name="proxy-wxBU_RIGHT">0</bool>
+                <bool name="proxy-wxBU_TOP">0</bool>
+                <bool name="proxy-wxBU_BOTTOM">0</bool>
+                <bool name="proxy-wxWANTS_CHARS">0</bool>
+                <string name="proxy-Custom styles">""</string>
+                <long name="proxy-X">-1</long>
+                <long name="proxy-Y">-1</long>
+                <long name="proxy-Width">-1</long>
+                <long name="proxy-Height">-1</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Custom arguments">""</string>
+                <string name="proxy-Custom ctor arguments">""</string>
+              </document>
+              <document>
+                <string name="title">"Spacer"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"spacer"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/8/2006"</string>
+                <string name="proxy-type">"wbSpacerProxy"</string>
+                <long name="proxy-Width">5</long>
+                <long name="proxy-Height">5</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"wxBitmapButton: ID_BITMAPBUTTON_CC"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"bitmapbutton"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/8/2006"</string>
+                <string name="proxy-type">"wbBitmapButtonProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonSettingsClick"</string>
+                <string name="proxy-Id name">"ID_BITMAPBUTTON_CC"</string>
+                <long name="proxy-Id value">10003</long>
+                <string name="proxy-Class">"wxBitmapButton"</string>
+                <string name="proxy-Member variable name">"ControlCenter"</string>
+                <string name="proxy-Bitmap">"share/art/icon_settings.xpm"</string>
+                <string name="proxy-Bitmap (selected)">""</string>
+                <string name="proxy-Bitmap (focused)">""</string>
+                <string name="proxy-Bitmap (disabled)">""</string>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Tooltip text">"Control Center"</string>
+                <string name="proxy-Background colour">""</string>
+                <string name="proxy-Foreground colour">""</string>
+                <string name="proxy-Font">""</string>
+                <bool name="proxy-Hidden">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+                <bool name="proxy-wxBU_AUTODRAW">1</bool>
+                <bool name="proxy-wxBU_EXACTFIT">1</bool>
+                <bool name="proxy-wxBU_LEFT">0</bool>
+                <bool name="proxy-wxBU_RIGHT">0</bool>
+                <bool name="proxy-wxBU_TOP">0</bool>
+                <bool name="proxy-wxBU_BOTTOM">0</bool>
+                <bool name="proxy-wxWANTS_CHARS">0</bool>
+                <string name="proxy-Custom styles">""</string>
+                <long name="proxy-X">-1</long>
+                <long name="proxy-Y">-1</long>
+                <long name="proxy-Width">-1</long>
+                <long name="proxy-Height">-1</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Custom arguments">""</string>
+                <string name="proxy-Custom ctor arguments">""</string>
+              </document>
+              <document>
+                <string name="title">"Spacer"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"spacer"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/8/2006"</string>
+                <string name="proxy-type">"wbSpacerProxy"</string>
+                <long name="proxy-Width">5</long>
+                <long name="proxy-Height">5</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"wxBitmapButton: ID_BITMAPBUTTON_ABOUT"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"bitmapbutton"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/5/2006"</string>
+                <string name="proxy-type">"wbBitmapButtonProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonAboutClick"</string>
+                <string name="proxy-Id name">"ID_BITMAPBUTTON_ABOUT"</string>
+                <long name="proxy-Id value">10006</long>
+                <string name="proxy-Class">"wxBitmapButton"</string>
+                <string name="proxy-Member variable name">"About"</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap (selected)">""</string>
+                <string name="proxy-Bitmap (focused)">""</string>
+                <string name="proxy-Bitmap (disabled)">""</string>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Tooltip text">"About"</string>
+                <string name="proxy-Background colour">""</string>
+                <string name="proxy-Foreground colour">""</string>
+                <string name="proxy-Font">""</string>
+                <bool name="proxy-Hidden">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+                <bool name="proxy-wxBU_AUTODRAW">1</bool>
+                <bool name="proxy-wxBU_EXACTFIT">1</bool>
+                <bool name="proxy-wxBU_LEFT">0</bool>
+                <bool name="proxy-wxBU_RIGHT">0</bool>
+                <bool name="proxy-wxBU_TOP">0</bool>
+                <bool name="proxy-wxBU_BOTTOM">0</bool>
+                <bool name="proxy-wxWANTS_CHARS">0</bool>
+                <string name="proxy-Custom styles">""</string>
+                <long name="proxy-X">-1</long>
+                <long name="proxy-Y">-1</long>
+                <long name="proxy-Width">-1</long>
+                <long name="proxy-Height">-1</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Custom arguments">""</string>
+                <string name="proxy-Custom ctor arguments">""</string>
+              </document>
+              <document>
+                <string name="title">"Spacer"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"spacer"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/5/2006"</string>
+                <string name="proxy-type">"wbSpacerProxy"</string>
+                <long name="proxy-Width">5</long>
+                <long name="proxy-Height">5</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"wxBitmapButton: ID_BITMAPBUTTON_QUIT"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"bitmapbutton"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"3/8/2006"</string>
+                <string name="proxy-type">"wbBitmapButtonProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnBitmapbuttonQuitClick|DESTROYWINDOW|ID_DIALOG"</string>
+                <string name="proxy-Id name">"ID_BITMAPBUTTON_QUIT"</string>
+                <long name="proxy-Id value">10005</long>
+                <string name="proxy-Class">"wxBitmapButton"</string>
+                <string name="proxy-Member variable name">"Quit"</string>
+                <string name="proxy-Bitmap">"share/art/icon_quit.xpm"</string>
+                <string name="proxy-Bitmap (selected)">""</string>
+                <string name="proxy-Bitmap (focused)">""</string>
+                <string name="proxy-Bitmap (disabled)">""</string>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Tooltip text">"Quit"</string>
                 <string name="proxy-Background colour">""</string>
                 <string name="proxy-Foreground colour">""</string>
                 <string name="proxy-Font">""</string>
@@ -637,43 +877,18 @@ Wallpaper Changer"</string>
               </document>
             </document>
             <document>
-              <string name="title">"wxButton: ID_BUTTON_QUIT"</string>
+              <string name="title">"Spacer"</string>
               <string name="type">"dialog-control-document"</string>
               <string name="filename">""</string>
-              <string name="icon-name">"dialogcontrol"</string>
+              <string name="icon-name">"spacer"</string>
               <long name="is-transient">0</long>
               <long name="owns-file">1</long>
               <long name="title-mode">0</long>
               <long name="locked">0</long>
-              <string name="created">"19/11/2006"</string>
-              <string name="proxy-type">"wbButtonProxy"</string>
-              <string name="event-handler-0">"wxEVT_COMMAND_BUTTON_CLICKED|OnButtonQuitClick"</string>
-              <string name="proxy-Id name">"ID_BUTTON_QUIT"</string>
-              <long name="proxy-Id value">10003</long>
-              <string name="proxy-Class">"wxButton"</string>
-              <string name="proxy-Member variable name">""</string>
-              <string name="proxy-Label">"Quit"</string>
-              <bool name="proxy-Default">1</bool>
-              <string name="proxy-Help text">""</string>
-              <string name="proxy-Tooltip text">""</string>
-              <string name="proxy-Background colour">""</string>
-              <string name="proxy-Foreground colour">""</string>
-              <string name="proxy-Font">""</string>
-              <bool name="proxy-Hidden">0</bool>
-              <bool name="proxy-Enabled">1</bool>
-              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
-              <bool name="proxy-wxBU_LEFT">0</bool>
-              <bool name="proxy-wxBU_RIGHT">0</bool>
-              <bool name="proxy-wxBU_TOP">0</bool>
-              <bool name="proxy-wxBU_BOTTOM">0</bool>
-              <bool name="proxy-wxBU_EXACTFIT">0</bool>
-              <bool name="proxy-wxNO_BORDER">0</bool>
-              <bool name="proxy-wxWANTS_CHARS">0</bool>
-              <string name="proxy-Custom styles">""</string>
-              <long name="proxy-X">-1</long>
-              <long name="proxy-Y">-1</long>
-              <long name="proxy-Width">-1</long>
-              <long name="proxy-Height">-1</long>
+              <string name="created">"3/7/2006"</string>
+              <string name="proxy-type">"wbSpacerProxy"</string>
+              <long name="proxy-Width">5</long>
+              <long name="proxy-Height">5</long>
               <string name="proxy-AlignH">"Centre"</string>
               <string name="proxy-AlignV">"Centre"</string>
               <long name="proxy-Stretch factor">0</long>
@@ -685,8 +900,7 @@ Wallpaper Changer"</string>
               <bool name="proxy-wxSHAPED">0</bool>
               <bool name="proxy-wxADJUST_MINSIZE">0</bool>
               <bool name="proxy-wxFIXED_MINSIZE">0</bool>
-              <string name="proxy-Custom arguments">""</string>
-              <string name="proxy-Custom ctor arguments">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
             </document>
           </document>
         </document>
@@ -699,7 +913,7 @@ Wallpaper Changer"</string>
           <long name="owns-file">1</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"23/9/2006"</string>
+          <string name="created">"23/5/2006"</string>
           <string name="proxy-type">"wbAppProxy"</string>
           <long name="base-id">10000</long>
           <bool name="use-id-prefix">0</bool>
@@ -731,7 +945,7 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">1</long>
           <long name="locked">0</long>
-          <string name="created">"19/11/2006"</string>
+          <string name="created">"19/7/2006"</string>
           <string name="language">""</string>
         </document>
       </document>
@@ -753,7 +967,6 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -765,7 +978,6 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -777,7 +989,6 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -789,7 +1000,6 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -801,7 +1011,6 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
           <long name="zoom-level">100</long>
         </document>
         <document>
@@ -813,7 +1022,30 @@ Wallpaper Changer"</string>
           <long name="owns-file">0</long>
           <long name="title-mode">0</long>
           <long name="locked">0</long>
-          <string name="created">"31/3/2006"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"icon_quit.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"share/art/icon_quit.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"3/7/2006"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"icon_settings.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"share/art/icon_settings.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"3/7/2006"</string>
           <long name="zoom-level">100</long>
         </document>
       </document>

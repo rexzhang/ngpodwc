@@ -36,14 +36,14 @@
  */
 
 ////@begin control identifiers
-#define ID_DIALOG_ABOUT 10023
+#define ID_DIALOG_ABOUT 12000
 #define SYMBOL_DIALOGABOUT_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX
 #define SYMBOL_DIALOGABOUT_TITLE _("About")
 #define SYMBOL_DIALOGABOUT_IDNAME ID_DIALOG_ABOUT
 #define SYMBOL_DIALOGABOUT_SIZE wxSize(400, 300)
 #define SYMBOL_DIALOGABOUT_POSITION wxDefaultPosition
-#define ID_PANEL4 10024
-#define ID_BUTTON8 10025
+#define ID_PANEL4 12001
+#define ID_BUTTON8 12002
 ////@end control identifiers
 
 /*!

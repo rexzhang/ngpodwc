@@ -45,45 +45,45 @@ class wxDatePickerCtrl;
  */
 
 ////@begin control identifiers
-#define ID_FRAME_MAIN 10000
+#define ID_DIALOG_CONFIG_PANEL 11000
 #define SYMBOL_DIALOG_CONFIG_PANEL_STYLE wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX
 #define SYMBOL_DIALOG_CONFIG_PANEL_TITLE _("National Geographic Photo Of the Day Wallpaper Control Center")
-#define SYMBOL_DIALOG_CONFIG_PANEL_IDNAME ID_FRAME_MAIN
+#define SYMBOL_DIALOG_CONFIG_PANEL_IDNAME ID_DIALOG_CONFIG_PANEL
 #define SYMBOL_DIALOG_CONFIG_PANEL_SIZE wxSize(640, 470)
 #define SYMBOL_DIALOG_CONFIG_PANEL_POSITION wxDefaultPosition
-#define ID_PANEL 10001
-#define ID_NOTEBOOK 10002
-#define ID_PANEL1 10003
-#define ID_CHOICE 10034
-#define ID_CHECKBOX 10013
-#define ID_CHECKBOX1 10014
-#define ID_CHOICE2 10035
-#define ID_BUTTON3 10036
-#define ID_PANEL2 10004
-#define ID_CHECKBOX2 10026
-#define ID_PANEL3 10005
-#define ID_CHOICE1 10027
-#define ID_BUTTON1 10028
-#define ID_TEXTCTRL4 10018
-#define ID_TEXTCTRL5 10019
-#define ID_TEXTCTRL6 10020
-#define ID_BUTTON 10021
-#define ID_TEXTCTRL3 10022
-#define ID_BUTTON2 10015
-#define ID_PANEL5 10030
-#define ID_TEXTCTRL7 10031
-#define ID_BUTTON_LocalPicturePath 10032
-#define ID_PANEL6 10033
-#define ID_TEXTCTRL 10010
-#define ID_BUTTON_PodBasePath 10011
-#define ID_TEXTCTRL1 10012
-#define ID_TEXTCTRL2 10029
-#define ID_DATECTRL 10016
-#define ID_BUTTON_RELOAD_CONFIG 10006
-#define ID_BUTTON_RESTORE_DEFAULT 10007
-#define ID_BUTTON_SAVE_CONFIG 10017
-#define ID_BUTTON_ABOUT 10008
-#define ID_BUTTON_QUIT 10009
+#define ID_PANEL 11001
+#define ID_NOTEBOOK 11002
+#define ID_PANEL1 11003
+#define ID_CHOICE 11004
+#define ID_CHECKBOX 11005
+#define ID_CHECKBOX1 11006
+#define ID_CHOICE2 11007
+#define ID_BUTTON3 11008
+#define ID_PANEL2 11009
+#define ID_CHECKBOX2 11010
+#define ID_PANEL3 11011
+#define ID_CHOICE1 11012
+#define ID_BUTTON1 11013
+#define ID_TEXTCTRL4 11014
+#define ID_TEXTCTRL5 11015
+#define ID_TEXTCTRL6 11016
+#define ID_BUTTON 11017
+#define ID_TEXTCTRL3 11018
+#define ID_BUTTON2 11019
+#define ID_PANEL5 11020
+#define ID_TEXTCTRL7 11021
+#define ID_BUTTON4 11022
+#define ID_PANEL6 11023
+#define ID_TEXTCTRL 11024
+#define ID_BUTTON5 11025
+#define ID_TEXTCTRL1 11026
+#define ID_TEXTCTRL2 11027
+#define ID_DATEPICKERCTRL 11028
+#define ID_BUTTON6 11029
+#define ID_BUTTON7 11030
+#define ID_BUTTON9 11031
+#define ID_BUTTON10 11032
+#define ID_BUTTON11 11033
 ////@end control identifiers
 
 /*!
@@ -148,31 +148,31 @@ public:
     /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL7
     void OnTextctrl7Updated( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_LocalPicturePath
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON4
     void OnButtonLocalpicturepathClick( wxCommandEvent& event );
 
     /// wxEVT_COMMAND_TEXT_UPDATED event handler for ID_TEXTCTRL
     void OnTextctrlUpdated( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_PodBasePath
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON5
     void OnButtonPodbasepathClick( wxCommandEvent& event );
 
-    /// wxEVT_DATE_CHANGED event handler for ID_DATECTRL
+    /// wxEVT_DATE_CHANGED event handler for ID_DATEPICKERCTRL
     void OnDatectrlDateChanged( wxDateEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RELOAD_CONFIG
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON6
     void OnButtonReloadConfigClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_RESTORE_DEFAULT
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON7
     void OnButtonRestoreDefaultClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_SAVE_CONFIG
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON9
     void OnButtonSaveConfigClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_ABOUT
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON10
     void OnButtonAboutClick( wxCommandEvent& event );
 
-    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON_QUIT
+    /// wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BUTTON11
     void OnButtonQuitClick( wxCommandEvent& event );
 
 ////@end dialog_config_panel event handler declarations

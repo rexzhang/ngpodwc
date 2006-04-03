@@ -5,6 +5,9 @@ National Geographic Photo of the Day Wallpaper Changer
 
 Fix 修复遗忘的内存释放问题（在小面板上连续切换图片会造成内存使用激增）
 Up  全面完善文件头信息(版权，日期等信息)
+Up  使用wx2.6.3库文件
+Up  调整小面板，增加新的按钮
+Add 部分图片
 
 *0.6.0.1
 Up   变更ngpodwc_common_config.cpp/h为common_config.cpp/h(规范文件名，所有公用函数和类都将以common_开头).
