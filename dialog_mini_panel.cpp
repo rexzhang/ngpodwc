@@ -38,6 +38,7 @@
 #include "share/art/previous_pictrue.xpm"
 #include "share/art/next_pictrue.xpm"
 #include "share/art/icon_settings.xpm"
+#include "share/art/icon_info.xpm"
 #include "share/art/icon_quit.xpm"
 ////@end XPM images
 
@@ -170,7 +171,7 @@ void dialog_mini_panel::CreateControls()
 
     itemBoxSizer7->Add(5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
 
-    wxBitmap AboutBitmap(wxNullBitmap);
+    wxBitmap AboutBitmap(itemDialog1->GetBitmapResource(wxT("share/art/icon_info.xpm")));
     About = new wxBitmapButton( itemDialog1, ID_BITMAPBUTTON_ABOUT, AboutBitmap, wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBU_EXACTFIT );
     if (ShowToolTips())
         About->SetToolTip(_("About"));
@@ -270,6 +271,11 @@ wxBitmap dialog_mini_panel::GetBitmapResource( const wxString& name )
     else if (name == _T("share/art/icon_settings.xpm"))
     {
         wxBitmap bitmap( icon_settings_xpm);
+        return bitmap;
+    }
+    else if (name == _T("share/art/icon_info.xpm"))
+    {
+        wxBitmap bitmap( icon_info_xpm);
         return bitmap;
     }
     else if (name == _T("share/art/icon_quit.xpm"))
