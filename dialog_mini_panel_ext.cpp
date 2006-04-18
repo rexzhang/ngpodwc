@@ -55,6 +55,9 @@ void dialog_mini_panel::DisableUpdateButton()
     PauseChangeWallpaper->Disable();
     ShowPrePicture->Disable();
     ShowNextPicture->Disable();
+    ControlCenter->Disable();
+    About->Disable();
+    Quit->Disable();
 }
 
 void dialog_mini_panel::EnableUpdateButton()
@@ -62,4 +65,7 @@ void dialog_mini_panel::EnableUpdateButton()
     PauseChangeWallpaper->Enable();
     ShowPrePicture->Enable();
     ShowNextPicture->Enable();
+    ControlCenter->Enable();
+    About->Enable();
+    Quit->Enable();
 }

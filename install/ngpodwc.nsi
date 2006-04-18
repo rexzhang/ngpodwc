@@ -10,7 +10,7 @@
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
 ;---------------------------------------------
-!define WXWIDGETS_DIR "D:\wxWidgets\lib262\gcc_dll"
+!define WXWIDGETS_DIR "D:\wxWidgets-2.6.3\lib\gcc_dll"
 !define MINGW_DIR "D:\MinGW"
 
 ; --------------------------------------------
@@ -111,7 +111,10 @@ Section "Core" SEC01
   File "..\docs\todos.txt"
   CreateShortCut "$SMPROGRAMS\NGPODWC\docs\todos.lnk" "$INSTDIR\docs\todos.txt"
 
-  SetOutPath "$INSTDIR\art"
+  CreateDirectory "$INSTDIR\share"
+  
+  ;CreateDirectory "$INSTDIR\share\art"
+  SetOutPath "$INSTDIR\share\art"
   SetOverwrite ifnewer
   File "..\share\art\splash.png"
   File "..\share\art\next_pictrue.xpm"
@@ -122,7 +125,6 @@ Section "Core" SEC01
   File "..\share\art\icon_settings.xpm"
 
   ;
-  CreateDirectory "$INSTDIR\share"
 
   ;国际化支持部分
   CreateDirectory "$INSTDIR\share\locale"
@@ -196,6 +198,7 @@ Section Uninstall
   Delete "$INSTDIR\docs\readme.txt"
   Delete "$INSTDIR\docs\todos.txt"
   Delete "$INSTDIR\docs\history.txt"
+  RMDir "$INSTDIR\docs"
 
   Delete "$INSTDIR\share\art\splash.png"
   Delete "$INSTDIR\share\art\next_pictrue.xpm"
@@ -211,6 +214,7 @@ Section Uninstall
   Delete "$INSTDIR\share\locale\zh_CN\wxstd.mo"
   RMDir "$INSTDIR\share\locale\zh_CN"
   RMDir "$INSTDIR\share\locale"
+
   RMDir "$INSTDIR\share"
 
   Delete "$INSTDIR\wxmsw26u_gcc_ngpodwc.dll"

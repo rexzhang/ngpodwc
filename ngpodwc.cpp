@@ -28,6 +28,7 @@
 ////@end includes
 
 #include "ngpodwc.h"
+#include "wx/cmdline.h"
 
 ////@begin XPM images
 ////@end XPM images
@@ -133,7 +134,68 @@ bool NgpodwcApp::OnInit()
         }
     }
 
-    if (argc >= 2)
+    //解析命令行
+    static const wxCmdLineEntryDesc cmdLineDesc[] =
+        {
+            {
+                wxCMD_LINE_SWITCH, wxT("h"), wxT("help"), wxT("show this help message"),
+                wxCMD_LINE_VAL_NONE, wxCMD_LINE_OPTION_HELP
+            },
+            {
+                wxCMD_LINE_SWITCH, wxT("v"), wxT("verbose"), wxT("be verbose")
+            },
+            {
+                wxCMD_LINE_SWITCH, wxT("q"), wxT("quiet"),   wxT("be quiet")
+            },
+
+            {
+                wxCMD_LINE_SWITCH, wxT("s"), wxT("silent"),   wxT("just show next picture")
+            },
+            {
+                wxCMD_LINE_SWITCH, wxT("i"), wxT("install"),   wxT("auto create config file if it can't found")
+            },
+            {
+                wxCMD_LINE_SWITCH, wxT("c"), wxT("config"),   wxT("config")
+            },
+
+            //{ wxCMD_LINE_OPTION, wxT("o"), wxT("output"),  wxT("output file") },
+            //{ wxCMD_LINE_OPTION, wxT("i"), wxT("input"),   wxT("input dir") },
+            //{ wxCMD_LINE_OPTION, wxT("d"), wxT("date"),    wxT("output file date"),
+            //    wxCMD_LINE_VAL_DATE },
+
+            {
+                wxCMD_LINE_NONE
+            }
+        };
+
+    wxCmdLineParser parser(cmdLineDesc, argc, argv);
+
+    //统一使用 - 作为开关标示
+    parser.SetSwitchChars(wxT("-"));
+
+    switch ( parser.Parse() )
+    {
+        case -1:
+        //命令行中有 -h 或 --help
+        wxLogMessage(wxT("Help was given, terminating."));
+        return false;
+        break;
+
+        case 0:
+        //解析成功
+        //ShowCmdLine(parser);
+        break;
+
+        default:
+        //命令行输入有误
+        wxLogMessage(wxT("Syntax error detected, aborting."));
+        return false;
+        break;
+    }
+
+    //if (argc >= 2)
+    if (parser.Found(wxT("silent")))
+        //安静模式
     {
         //判断是否需要忽略墙纸切换动作
         if(config.PauseChangeWallpaper)
@@ -144,7 +206,6 @@ bool NgpodwcApp::OnInit()
             return false;//Test can not auto close at pauseChange mode
         }//!程序结束
 
-        //有参数，
         if(splashEnable)
         {
             //显示Splash图片
@@ -155,7 +216,7 @@ bool NgpodwcApp::OnInit()
             wxYield();
         }
         //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
-        //有参数，直接切换到下个日期
+        //直接切换到下个日期
         //日期信息++
         seekDays(1, &(config.PodDate));
         //updateWallpaper(&config);
