@@ -10,7 +10,7 @@
 				<Option object_output=".objs\debug" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option parameters="silent" />
+				<Option parameters="--install" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -218,6 +218,8 @@
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="dialog_config_panel.h">
 			<Option compilerVar="CPP" />
@@ -225,11 +227,15 @@
 			<Option link="0" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="dialog_config_panel_ext.cpp">
 			<Option compilerVar="CPP" />
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
+			<Option target="ngpodwc_Debug" />
+			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="dialog_mini_panel.cpp">
 			<Option compilerVar="CPP" />

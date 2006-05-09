@@ -29,6 +29,7 @@
 
 #include "ngpodwc.h"
 #include "wx/cmdline.h"
+#include <wx/filename.h>
 
 ////@begin XPM images
 ////@end XPM images
@@ -103,7 +104,7 @@ bool NgpodwcApp::OnInit()
     wxSplashScreen *splash = NULL;
     bool splashEnable = true;//will read from config
 
-    dialog_mini_panel *mainWindow = NULL;
+    //dialog_mini_panel *mainWindow = NULL;
 
     //读取配置文件
     config.ReadConfig();
@@ -175,27 +176,26 @@ bool NgpodwcApp::OnInit()
 
     switch ( parser.Parse() )
     {
-        case -1:
+    case -1:
         //命令行中有 -h 或 --help
         wxLogMessage(wxT("Help was given, terminating."));
         return false;
         break;
 
-        case 0:
+    case 0:
         //解析成功
         //ShowCmdLine(parser);
         break;
 
-        default:
+    default:
         //命令行输入有误
         wxLogMessage(wxT("Syntax error detected, aborting."));
         return false;
         break;
     }
 
-    //if (argc >= 2)
+    //!安静模式
     if (parser.Found(wxT("silent")))
-        //安静模式
     {
         //判断是否需要忽略墙纸切换动作
         if(config.PauseChangeWallpaper)
@@ -225,8 +225,48 @@ bool NgpodwcApp::OnInit()
         return true;
     }//!程序结束
 
-    //无参数，表示需要显示小面板
-    mainWindow = new dialog_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
+    //!安装调用
+    if (parser.Found(wxT("install")))
+    {
+        wxFileName *filename;
+        wxString path = argv[0];
+        filename = new wxFileName(path, wxPATH_WIN);
+        path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
+        config.SetConfigFilePath(path);
+
+        if(!config.ReadConfig())//尝试读取，如果读取不成功
+        {
+            config.WriteConfig();//创建一个配置文件
+        }
+
+        dialog_config_panel* mainWindow = new dialog_config_panel( NULL, ID_DIALOG_CONFIG_PANEL );
+
+        (mainWindow->config).SetConfigFilePath(path);
+        //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
+        (mainWindow->config).ReadConfig();
+
+        mainWindow->Show(true);
+
+        return true;
+    }
+
+    //!直接进入配置面板
+    if (parser.Found(wxT("config")))
+    {
+        dialog_config_panel* mainWindow = new dialog_config_panel( NULL, ID_DIALOG_CONFIG_PANEL );
+
+        //(mainWindow->config).SetConfigFilePath(path);
+        //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
+        (mainWindow->config).ReadConfig();
+
+        mainWindow->Show(true);
+
+        return true;
+    }
+
+    //!无参数，表示需要显示小面板
+    dialog_mini_panel* mainWindow = new dialog_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
+    //mainWindow = new dialog_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
     if(splashEnable)
     {
         //显示Splash图片
