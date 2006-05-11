@@ -56,7 +56,7 @@ SetCompress auto
 ; Instfiles page
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
-!define MUI_FINISHPAGE_RUN "$INSTDIR\ngpodwcc_u.exe"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\ngpodwc_u.exe --install" 
 !define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\docs\readme.txt"
 !insertmacro MUI_PAGE_FINISH
 
@@ -93,11 +93,14 @@ Section "Core" SEC01
 
   File "..\ngpodwc_u.exe"
   CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe"
-  CreateShortCut "$DESKTOP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe"
-  CreateShortCut "$SMSTARTUP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe" -silent
+  CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk" "$INSTDIR\ngpodwc_u.exe" --config
 
-  File "..\ngpodwcc_u.exe"
-  CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk" "$INSTDIR\ngpodwcc_u.exe"
+  CreateShortCut "$DESKTOP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe"
+
+  CreateShortCut "$SMSTARTUP\NG桌布切换.lnk" "$INSTDIR\ngpodwc_u.exe" --silent
+
+  ;File "..\ngpodwcc_u.exe"
+  ;CreateShortCut "$SMPROGRAMS\NGPODWC\NG桌布控制台.lnk" "$INSTDIR\ngpodwcc_u.exe"
 
   SetOutPath "$INSTDIR\docs"
   CreateDirectory "$SMPROGRAMS\NGPODWC\docs"
@@ -112,7 +115,7 @@ Section "Core" SEC01
   CreateShortCut "$SMPROGRAMS\NGPODWC\docs\todos.lnk" "$INSTDIR\docs\todos.txt"
 
   CreateDirectory "$INSTDIR\share"
-  
+
   ;CreateDirectory "$INSTDIR\share\art"
   SetOutPath "$INSTDIR\share\art"
   SetOverwrite ifnewer
