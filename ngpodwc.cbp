@@ -10,7 +10,7 @@
 				<Option object_output=".objs\debug" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option parameters="--install" />
+				<Option parameters="-config" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Option projectIncludeDirsRelation="2" />
 				<Option projectResourceIncludeDirsRelation="0" />
