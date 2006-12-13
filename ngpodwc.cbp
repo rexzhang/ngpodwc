@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-	<FileVersion major="1" minor="4" />
+	<FileVersion major="1" minor="5" />
 	<Project>
 		<Option title="ngpodwc" />
+		<Option default_target="" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="" />
 		<Build>
 			<Target title="ngpodwc_Debug">
-				<Option output="ngpodwc_ud.exe" />
+				<Option output="ngpodwc_ud.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output=".objs\debug" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -20,15 +22,14 @@
 					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswud" />
 				</Compiler>
 				<Linker>
-					<Add library="wxmsw26ud" />
+					<Add library="wxmsw28ud" />
 				</Linker>
 			</Target>
 			<Target title="ngpodwc_Release">
-				<Option output="ngpodwc_u.exe" />
+				<Option output="ngpodwc_u.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output=".objs\release" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
 					<Add option="-O3" />
@@ -38,7 +39,7 @@
 				</Compiler>
 			</Target>
 			<Target title="ngpodwcc_Debug">
-				<Option output="ngpodwcc_ud.exe" />
+				<Option output="ngpodwcc_ud.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output=".objs\debug" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -51,15 +52,14 @@
 					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswud" />
 				</Compiler>
 				<Linker>
-					<Add library="wxmsw26ud" />
+					<Add library="wxmsw28ud" />
 				</Linker>
 			</Target>
 			<Target title="ngpodwcc_Release">
-				<Option output="ngpodwcc_u.exe" />
+				<Option output="ngpodwcc_u.exe" prefix_auto="0" extension_auto="0" />
 				<Option object_output=".objs\release" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option includeInTargetAll="1" />
 				<Option projectResourceIncludeDirsRelation="0" />
 				<Compiler>
 					<Add option="-O3" />
@@ -72,6 +72,9 @@
 				<Variable name="WX_CFG" value="" />
 			</Environment>
 		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="ngpodwc_Release;ngpodwcc_Release;" />
+		</VirtualTargets>
 		<Compiler>
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
@@ -90,7 +93,7 @@
 			<Add directory="$(#WX)\include" />
 		</ResourceCompiler>
 		<Linker>
-			<Add library="wxmsw26u" />
+			<Add library="wxmsw28u" />
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
@@ -378,5 +381,6 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
