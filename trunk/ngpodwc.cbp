@@ -381,6 +381,8 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
-		<Extensions />
+		<Extensions>
+			<code_completion />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
