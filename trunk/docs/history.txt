@@ -3,6 +3,11 @@ National Geographic Photo of the Day Wallpaper Changer
                         History
 ----------------========================----------------
 
+*0.6.2.0
+Up	开发环境IDE升级到svn4084
+Up	使用wx2.8.4库文件
+
+*0.6.1.0
 Fix 修复遗忘的内存释放问题（在小面板上连续切换图片会造成内存使用激增）
 Up  全面完善文件头信息(版权，日期等信息)
 Up  使用wx2.6.3库文件
