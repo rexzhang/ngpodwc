@@ -3,6 +3,9 @@ National Geographic Photo of the Day Wallpaper Changer
                         History
 ----------------========================----------------
 
+
+
+
 *0.6.2.0
 Up	开发环境IDE升级到svn4084
 Up	使用wx2.8.4库文件
