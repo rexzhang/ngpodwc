@@ -26,6 +26,7 @@
 #include "common_wallpaper_operation.h"
 #include "common_config.h"
 #include "ngpodwc_common_ngpodinfo.h"
+#include "dialog_config_panel.h"
 /*!
  * Forward declarations
  */

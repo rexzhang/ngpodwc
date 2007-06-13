@@ -334,6 +334,12 @@ void dialog_mini_panel::OnBitmapbuttonQuitClick( wxCommandEvent& event )
 
 void dialog_mini_panel::OnBitmapbuttonSettingsClick( wxCommandEvent& event )
 {
+    dialog_config_panel* window = new dialog_config_panel(this, ID_DIALOG_CONFIG_PANEL);
+
+    //(window->config).SetConfigFilePath(path);
+    (window->config).ReadConfig();
+
+    window->Show(true);
 ////@begin wxEVT_COMMAND_BUTTON_CLICKED event handler for ID_BITMAPBUTTON2 in dialog_mini_panel.
     // Before editing this code, remove the block markers.
     event.Skip();
