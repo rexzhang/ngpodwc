@@ -12,7 +12,7 @@
 ;---------------------------------------------
 !define WXWIDGETS_DIR "D:\wxWidgets-2.8.4\lib\gcc_dll"
 !define WXWIDGETS_DLL "wxmsw28u_gcc_ng.dll"
-!define MINGW_DIR "D:\MinGW"
+!define MINGW_DIR "..\install\MinGW"
 
 ; --------------------------------------------
 !define MUI_COMPONENTSPAGE_CHECKBITMAP "${NSISDIR}\Contrib\Graphics\Checks\modern.bmp"
@@ -57,7 +57,7 @@ SetCompress auto
 ; Instfiles page
 !insertmacro MUI_PAGE_INSTFILES
 ; Finish page
-!define MUI_FINISHPAGE_RUN "$INSTDIR\ngpodwc_u.exe --install" 
+!define MUI_FINISHPAGE_RUN "$INSTDIR\ngpodwc_u.exe --install"
 !define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\docs\readme.txt"
 !insertmacro MUI_PAGE_FINISH
 
@@ -82,8 +82,8 @@ Function .onInit
   !insertmacro MUI_LANGDLL_DISPLAY
 FunctionEnd
 
-InstType "full"
-InstType "minimal"
+InstType "Full"
+InstType "Minimal"
 
 Section "Core" SEC01
   SectionIn 1 2
@@ -174,7 +174,7 @@ SectionEnd
 
 ; Section descriptions
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${SEC01} "基本程序"
+  !insertmacro MUI_DESCRIPTION_TEXT ${SEC01} "核心程序"
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC02} "wxWidget支持库"
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC03} "MinGW支持库"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END

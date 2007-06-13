@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2006-04-03 15:08+0800\n"
+"PO-Revision-Date: 2007-06-13 12:43+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -77,6 +77,8 @@ msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Changer"
 msgstr ""
+"《美国国家地理》每日精选\n"
+"桌布更换小工"
 
 #: dialog_about.cpp:137
 msgid "Developer"
@@ -95,6 +97,8 @@ msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Control Center"
 msgstr ""
+"《美国国家地理》每日精选\n"
+"桌布更换小工控制台"
 
 #: dialog_config_panel.cpp:187
 msgid "Input Source"
@@ -282,9 +286,9 @@ msgstr "首选项"
 #: ngpodwc.cpp:168
 #: dialog_mini_panel.h:43
 msgid "National Geographic Photo Of the Day Wallpaper Changer"
-msgstr ""
+msgstr "《美国国家地理》每日精选桌布更换小工"
 
 #: dialog_config_panel.h:50
 msgid "National Geographic Photo Of the Day Wallpaper Control Center"
-msgstr ""
+msgstr "《美国国家地理》每日精选桌布更换小工控制台"
 
