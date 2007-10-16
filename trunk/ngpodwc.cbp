@@ -71,7 +71,7 @@
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="ngpodwc_Release;ngpodwcc_Release;" />
+			<Add alias="All" targets="ngpodwc_Release;ngpodwcc_Release" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-pipe" />
@@ -205,6 +205,7 @@
 			<Option target="ngpodwcc_Debug" />
 			<Option target="ngpodwcc_Release" />
 		</Unit>
+		<Unit filename="version.h" />
 		<Unit filename="wx_pch.h">
 			<Option compile="1" />
 			<Option weight="0" />
@@ -212,6 +213,7 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
