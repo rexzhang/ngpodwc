@@ -149,6 +149,8 @@ bool WallpaperBase::ImageReSize()
     {
         //Image = Image;
     }
+
+    return true;
 }
 
 bool WallpaperBase::SaveWallpaper()
