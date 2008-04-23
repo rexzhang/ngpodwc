@@ -10,7 +10,7 @@
 				<Option object_output=".objs\debug" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option parameters="--config" />
+				<Option parameters="-c" />
 				<Option projectLinkerOptionsRelation="1" />
 				<Compiler>
 					<Add option="-g" />
@@ -100,6 +100,8 @@
 			<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)" />
 			<Add directory="$(#WX.lib)" />
 		</Linker>
+		<Unit filename="GUIFrame.cpp" />
+		<Unit filename="GUIFrame.h" />
 		<Unit filename="common_config.cpp" />
 		<Unit filename="common_config.h" />
 		<Unit filename="common_globals.cpp" />
@@ -152,41 +154,21 @@
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
-		<Unit filename="dialog_about.cpp" />
-		<Unit filename="dialog_about.h" />
-		<Unit filename="dialog_config_panel.cpp" />
-		<Unit filename="dialog_config_panel.h" />
-		<Unit filename="dialog_config_panel_ext.cpp" />
-		<Unit filename="dialog_mini_panel.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="dialog_mini_panel.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="dialog_mini_panel_ext.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
 		<Unit filename="docs\history.txt" />
 		<Unit filename="docs\licence.txt" />
 		<Unit filename="docs\readme.txt" />
 		<Unit filename="docs\todos.txt" />
 		<Unit filename="install\ngpodwc.nsi" />
-		<Unit filename="ngpodwc.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="ngpodwc.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
+		<Unit filename="ngpodwc.fbp" />
 		<Unit filename="ngpodwc.rc">
 			<Option compilerVar="WINDRES" />
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
+		<Unit filename="ngpodwcApp.cpp" />
+		<Unit filename="ngpodwcApp.h" />
+		<Unit filename="ngpodwcMain.cpp" />
+		<Unit filename="ngpodwcMain.h" />
 		<Unit filename="ngpodwc_common_datetime.cpp" />
 		<Unit filename="ngpodwc_common_datetime.h" />
 		<Unit filename="ngpodwc_common_ngpodinfo.cpp">
@@ -196,14 +178,6 @@
 		<Unit filename="ngpodwc_common_ngpodinfo.h">
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc.cpp">
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
-		</Unit>
-		<Unit filename="ngpodwcc.h">
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
 		</Unit>
 		<Unit filename="ngpodwcc.rc">
 			<Option compilerVar="WINDRES" />
@@ -215,22 +189,13 @@
 			<Option compile="1" />
 			<Option weight="0" />
 		</Unit>
-		<Unit filename="version.h">
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="version.h">
-			<Option target="ngpodwcc_Debug" />
-		</Unit>
-		<Unit filename="version.h">
-			<Option target="ngpodwcc_Release" />
-		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars set="default" />
 			<debugger />
 			<AutoVersioning>
 				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
-				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="1" svn_directory="https://ngpodwc.svn.sourceforge.net/svnroot/ngpodwc/trunk" header_path="version.h" />
+				<Settings autoincrement="1" date_declarations="1" do_auto_increment="0" ask_to_increment="0" language="C++" svn="1" svn_directory="D:\My Documents\Code Blocks Projects\ngpodwc\.svn" header_path="version.h" />
 				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
 			</AutoVersioning>
 		</Extensions>

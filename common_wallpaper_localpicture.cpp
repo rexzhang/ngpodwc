@@ -22,6 +22,7 @@
 #include <wx/dir.h>
 #include <wx/arrstr.h>
 
+#include "common_globals.h"
 #include "common_wallpaper_localpicture.h"
 
 WallpaperLocalPicture::WallpaperLocalPicture(ngpodwcConfig programConfig):WallpaperBase(programConfig)
@@ -39,11 +40,11 @@ bool WallpaperLocalPicture::Init()
 {
     wxString pictureFileName;
 
-    wxDir pictureDir(config.LocalPicturePath);
+    wxDir pictureDir(configRunning.LocalPicturePath);
     wxArrayString PictureArray;
 
     srand((int)time(0));
-    pictureDir.GetAllFiles(config.LocalPicturePath, &PictureArray,
+    pictureDir.GetAllFiles(configRunning.LocalPicturePath, &PictureArray,
                            wxT("*.jpg"), wxDIR_DEFAULT);
 
     pictureFileName = PictureArray[(int)(PictureArray.GetCount()*rand()/(RAND_MAX +1))];

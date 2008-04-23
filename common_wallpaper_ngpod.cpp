@@ -18,6 +18,7 @@
     #include <wx/wx.h>
 #endif
 
+#include "common_globals.h"
 #include "common_wallpaper_ngpod.h"
 
 WallpaperNGPOD::WallpaperNGPOD(ngpodwcConfig programConfig):WallpaperBase(programConfig)
@@ -34,7 +35,7 @@ WallpaperNGPOD::~WallpaperNGPOD()
 bool WallpaperNGPOD::Init()
 {
     //获取POD 图片描述信息以及图片文件名称
-    if(!podPictureInfo.GetInfo(config.PodBasePath + wxT("\\") + config.PodDatabaseName, config.PodDate))
+    if(!podPictureInfo.GetInfo(configRunning.PodBasePath + wxT("\\") + configRunning.PodDatabaseName, configRunning.PodDate))
     {
         wxString msgTitle("获取POD 图片描述信息以及图片文件名称错误！",*wxConvCurrent);
         wxString msgContext("获取POD 图片描述信息以及图片文件名称错误！\n请运行 ngpodcc.exe 进行初始化操作！",*wxConvCurrent);
@@ -52,7 +53,7 @@ bool WallpaperNGPOD::Init()
                       */
 
     //获取原始图片
-    wxString NGPODPictureName = config.PodBasePath + wxT("\\") + config.PodPicturePath
+    wxString NGPODPictureName = configRunning.PodBasePath + wxT("\\") + configRunning.PodPicturePath
                                 + wxT("\\") + podPictureInfo.PhotoName;
     if (!Image.LoadFile(NGPODPictureName, wxBITMAP_TYPE_JPEG))
     {
@@ -85,7 +86,7 @@ bool WallpaperNGPOD::SaveWallpaper()
     }
 
     //保存变化后（当前背景图片）的日期信息至配置文件
-    config.WriteConfig();
+    configRunning.WriteConfig();
     return true;
 }
 

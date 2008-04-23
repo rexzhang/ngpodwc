@@ -22,6 +22,7 @@
 #include <wx/stream.h>
 #include <wx/txtstrm.h>
 
+#include "common_globals.h"
 #include "common_wallpaper_ngpod_online.h"
 #include "ngpodwc_common_datetime.h"
 
@@ -66,7 +67,7 @@ bool WallpaperNGPODOnline::Init()
 {
     wxString NGPODOnineURLString = wxEmptyString;
 
-    toDate(config.PodDate, &Year, &Month, &Mday);
+    toDate(configRunning.PodDate, &Year, &Month, &Mday);
 
     NGPODOnineURLString.Printf(wxT("http://lava.nationalgeographic.com/cgi-bin/pod/PhotoOfTheDay.cgi?month=%u&day=%u&year=%u"),
                                Month, Mday, (Year - 2000));
@@ -274,7 +275,7 @@ bool WallpaperNGPODOnline::SaveWallpaper()
         return false;
     }
     //保存变化后（当前背景图片）的日期信息至配置文件
-    config.WriteConfig();
+    configRunning.WriteConfig();
 
     return true;
 }
