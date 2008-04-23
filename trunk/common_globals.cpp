@@ -13,6 +13,7 @@
 #include "common_globals.h"
 #include "version.h"
 
+
 const wxString g_AppVendor              = wxT("Rex Zhang");
 const wxString g_AppName			    = wxT("NGPODWC");
 const wxString g_AppVersion             = (wxString(AutoVersion::FULLVERSION_STRING ,wxConvUTF8)
@@ -120,3 +121,6 @@ const int g_AppLanguageCodes[LANGUAGES_SIZE] =
         //        ,wxLANGUAGE_GERMAN
         //        ,wxLANGUAGE_RUSSIAN
     };
+
+ngpodwcConfig configStarting;
+ngpodwcConfig configRunning;

@@ -89,4 +89,5 @@ private:
     wxString ConfigFileName;
 };
 
+
 #endif // COMMON_CONFIG_H

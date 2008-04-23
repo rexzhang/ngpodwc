@@ -23,6 +23,7 @@
 #include <wx/gdicmn.h>
 #include <wx/font.h>
 
+#include "common_globals.h"
 #include "common_wallpaper_base.h"
 
 WallpaperBase::WallpaperBase(ngpodwcConfig programConfig)
@@ -132,8 +133,8 @@ bool WallpaperBase::DrawText()
 bool WallpaperBase::ImageReSize()
 {
     //调整图片尺寸
-    if( (Image.GetWidth() != config.ScreenWidth)
-            || (Image.GetHeight() != config.ScreenHeight) )
+    if( (Image.GetWidth() != configRunning.ScreenWidth)
+            || (Image.GetHeight() != configRunning.ScreenHeight) )
     {
         //如果原图片尺寸与屏幕尺寸不符〉〉调整大小
         /*
@@ -143,7 +144,7 @@ bool WallpaperBase::ImageReSize()
                    PodImage.GetWidth(), PodImage.GetHeight(), pConfig->ScreenWidth, pConfig->ScreenHeight);
         wxSafeShowMessage(wxT("change size"), msg);
         */
-        Image = Image.Rescale(config.ScreenWidth, config.ScreenHeight);
+        Image = Image.Rescale(configRunning.ScreenWidth, configRunning.ScreenHeight);
     }
     else
     {
@@ -156,7 +157,7 @@ bool WallpaperBase::ImageReSize()
 bool WallpaperBase::SaveWallpaper()
 {
     //将处理完毕的图片输出至指定目录
-    wxString wallpaper = config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName;
+    wxString wallpaper = configRunning.ScreenPicturePath + wxT("\\") + configRunning.ScreenPictureName;
     if(!Image.SaveFile(wallpaper, wxBITMAP_TYPE_BMP))
     {
         //wxSafeShowMessage(wxT("Can't save BMP image"),wxT("Can't save BMP image"));

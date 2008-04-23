@@ -13,6 +13,8 @@
 
 #include <wx/string.h>
 
+#include "common_config.h"
+
 extern const wxString g_AppVendor;
 extern const wxString g_AppName;
 extern const wxString g_AppVersion;
@@ -49,5 +51,9 @@ osOSX
 }operating_system_t;
 
 operating_system_t OS();
+
+
+extern ngpodwcConfig configStarting;
+extern ngpodwcConfig configRunning;
 
 #endif // COMMON_GLOBALS_H

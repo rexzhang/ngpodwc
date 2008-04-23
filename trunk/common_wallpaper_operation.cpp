@@ -20,6 +20,8 @@
 
 #include <wx/msw/registry.h>
 
+#include "common_globals.h"
+
 #include "common_wallpaper_operation.h"
 /////
 #include "common_wallpaper_ngpod.h"
@@ -31,7 +33,7 @@ bool updateWallpaper(ngpodwcConfig config)
     WallpaperBase *pWallpaper;
 
     //获取POD 图片
-    switch (config.PictureSource)
+    switch (configRunning.PictureSource)
     {
         case PICTURESOURCE_LOCALFILE:
         pWallpaper = new WallpaperLocalPicture(config);
@@ -69,7 +71,7 @@ bool updateWallpaper(ngpodwcConfig config)
     pWallpaper->SaveWallpaper();
 
     //设定图片至桌布
-    setWallpaperRegInfo(config.ScreenPicturePath + wxT("\\") + config.ScreenPictureName);
+    setWallpaperRegInfo(configRunning.ScreenPicturePath + wxT("\\") + configRunning.ScreenPictureName);
 
     /*
     //移动到需要的派生类如WallpaperNGPOD

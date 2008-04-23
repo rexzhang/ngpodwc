@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-06-13 12:43+0800\n"
+"PO-Revision-Date: 2008-04-23 16:26+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
-"X-Poedit-Basepath: D:\\My Documents\\Code Blocks Studio Projects\\ngpodwc\n"
+"X-Poedit-Basepath: D:\\My Documents\\Code Blocks Projects\\ngpodwc\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: common_config.cpp:124
@@ -29,15 +29,15 @@ msgstr "无法以读取方式打开配置文件(%s)，跳过配置文件读取�
 msgid "Can't open .INI(%s) file with WRITE mode. Skip write config."
 msgstr "无法已写入模式打开配置文件(%s)，跳过配置文件写操作。"
 
-#: common_globals.cpp:104
+#: common_globals.cpp:106
 msgid "Chinese (Simplified)"
 msgstr "简体中文"
 
-#: common_globals.cpp:106
+#: common_globals.cpp:108
 msgid "English"
 msgstr "英文"
 
-#: common_wallpaper_base.cpp:161
+#: common_wallpaper_base.cpp:163
 #, c-format
 msgid "ERROR! Can't create(save) wallpaper file(%s)!"
 msgstr "严重错误！无法创建(保存)桌布文件(%s)！"
@@ -72,7 +72,7 @@ msgid "_WIN32_Reg(%s)Error!"
 msgstr "_WIN32_注册表(%s)错误！"
 
 #: dialog_about.cpp:119
-#: dialog_mini_panel.cpp:129
+#: dialog_mini_panel.cpp:135
 msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Changer"
@@ -241,12 +241,14 @@ msgstr "保存配置"
 
 #: dialog_config_panel.cpp:411
 #: dialog_config_panel.cpp:470
+#: dialog_mini_panel.cpp:177
+#: dialog_mini_panel.cpp:356
 #: dialog_about.h:41
 msgid "About"
 msgstr "关于"
 
 #: dialog_config_panel.cpp:414
-#: dialog_mini_panel.cpp:171
+#: dialog_mini_panel.cpp:185
 msgid "Quit"
 msgstr "退出"
 
@@ -267,24 +269,24 @@ msgstr "您必须保存配置并重新启动 NGPODWCC 更改才会生效。"
 msgid "Can't found .INI(%s) file. Systen will restore config to defaule. Please click SAVE_CONFIG save config."
 msgstr "配置文件(%s)不存在，系统将使用自动生成默认设置。请点击<保存配置>按钮保存。"
 
-#: dialog_mini_panel.cpp:139
-msgid "Show previous pictrue"
-msgstr "显示上一张图片"
-
-#: dialog_mini_panel.cpp:145
-msgid "Show next pictrue"
-msgstr "显示下一张图片"
-
-#: dialog_mini_panel.cpp:155
+#: dialog_mini_panel.cpp:147
 msgid "Pause/Unpause change wallpaper"
 msgstr "暂停/继续桌面切换"
 
-#: dialog_mini_panel.cpp:163
-msgid "Settings"
-msgstr "首选项"
+#: dialog_mini_panel.cpp:155
+msgid "Show previous pictrue"
+msgstr "显示上一张图片"
 
-#: ngpodwc.cpp:168
-#: dialog_mini_panel.h:43
+#: dialog_mini_panel.cpp:161
+msgid "Show next pictrue"
+msgstr "显示下一张图片"
+
+#: dialog_mini_panel.cpp:169
+msgid "Control Center"
+msgstr ""
+
+#: ngpodwc.cpp:268
+#: dialog_mini_panel.h:44
 msgid "National Geographic Photo Of the Day Wallpaper Changer"
 msgstr "《美国国家地理》每日精选桌布更换小工"
 

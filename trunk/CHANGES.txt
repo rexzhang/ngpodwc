@@ -1,0 +1,6 @@
+16 October 2007
+   released version 0.6.6 of ngpodwc
+
+     Change log:
+        -添加AutoVersioning支持
+
