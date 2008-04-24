@@ -80,36 +80,36 @@ class GUIdialog_configpanel : public wxFrame
 		
 		
 		wxStaticText* m_staticText26;
-		wxChoice* PictureSource;
+		wxChoice* mPictureSource;
 		
-		wxCheckBox* PauseChangeWallpaper;
+		wxCheckBox* mPauseChangeWallpaper;
 		
-		wxCheckBox* ShowSplash;
+		wxCheckBox* mShowSplash;
 		wxStaticText* m_staticText27;
-		wxChoice* UILanguage;
+		wxChoice* mUILanguage;
 		
-		wxButton* ID_BUTTON3;
+		wxButton* mChangeUILanguage;
 		wxPanel* ID_PANEL2;
 		
-		wxCheckBox* ShowDisc;
+		wxCheckBox* mShowDisc;
 		wxPanel* ID_PANEL3;
 		
 		
 		
 		wxStaticText* m_staticText28;
-		wxChoice* ScreenWidthHeight;
+		wxChoice* mScreenWidthHeight;
 		wxButton* ID_BUTTON1;
 		wxStaticText* m_staticText29;
-		wxTextCtrl* ScreenWidth;
+		wxTextCtrl* mScreenWidth;
 		
 		wxStaticText* m_staticText30;
-		wxTextCtrl* ScreenHeight;
+		wxTextCtrl* mScreenHeight;
 		
 		wxStaticText* m_staticText31;
-		wxTextCtrl* ScreenPicturePath;
+		wxTextCtrl* mScreenPicturePath;
 		wxButton* ID_BUTTON;
 		wxStaticText* m_staticText32;
-		wxTextCtrl* ScreenPictureName;
+		wxTextCtrl* mScreenPictureName;
 		
 		
 		wxButton* ID_BUTTON2;
@@ -121,34 +121,52 @@ class GUIdialog_configpanel : public wxFrame
 		
 		
 		wxStaticText* m_staticText33;
-		wxTextCtrl* LocalPicturePath;
+		wxTextCtrl* mLocalPicturePath;
 		wxButton* ID_BUTTON4;
 		wxPanel* ID_PANEL6;
 		
 		
 		
 		wxStaticText* m_staticText35;
-		wxTextCtrl* PodBasePath;
+		wxTextCtrl* mPodBasePath;
 		wxButton* ID_BUTTON5;
 		wxStaticText* m_staticText34;
-		wxTextCtrl* PodDatabaseName;
+		wxTextCtrl* mPodDatabaseName;
 		
 		wxStaticText* m_staticText36;
-		wxTextCtrl* PodPicturePath;
+		wxTextCtrl* mPodPicturePath;
 		
 		wxStaticText* m_staticText37;
-		wxDatePickerCtrl* NextPODDay;
+		wxDatePickerCtrl* mNextPODDay;
 		
 		
 		
 		
 		wxButton* ID_BUTTON6;
 		wxButton* ID_BUTTON7;
-		wxButton* ID_BUTTON9;
+		wxButton* mButtonSaveConfig;
 		wxButton* ID_BUTTON10;
 		wxButton* ID_BUTTON11;
 		
 		// Virtual event handlers, overide them in your derived class
+		virtual void OnChoicePictureSource( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnCheckBoxPauseChangeWallpaperClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnCheckBoxShowSplashClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnChioceUILanguage( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickChangeUILanguage( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnCheckBoxShowDiscClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnChoiceScreenWHSelected( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonAutoDetectScreenWHClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnTextScreenPicturePathEnter( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonAutoDetectSystemPathClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnTextLocalPicturePathEnter( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonLocalPicturePathClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnTextPodBasePathEnter( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonPodBasePathClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnDateNowPODDayChanged( wxDateEvent& event ){ event.Skip(); }
+		virtual void OnButtonReloadConfigClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonRestoreDefaultClick( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonSaveConfigClick( wxCommandEvent& event ){ event.Skip(); }
 		virtual void OnButtonAboutClick( wxCommandEvent& event ){ event.Skip(); }
 		virtual void OnButtonQuitClick( wxCommandEvent& event ){ event.Skip(); }
 		

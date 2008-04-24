@@ -71,14 +71,14 @@ bool ngpodwcApp::OnInit()
 
     //configRunning.ReadConfig();
     //configStarting = new ngpodwcConfig;
-    configStarting.ReadConfig();
+    configRunning.ReadConfig();
 
     //读取配置文件
     config.ReadConfig();
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
     //本地化
-    m_locale.Init(configStarting.UILanguage);
+    m_locale.Init(configRunning.UILanguage);
     // normally this wouldn't be necessary as the catalog files would be found
     // in the default locations, but under Windows then the program is not
     // installed the catalogs are in the parent directory (because the binary
