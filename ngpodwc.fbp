@@ -873,7 +873,7 @@
                                     <object class="notebookpage" expanded="1">
                                         <property name="bitmap"></property>
                                         <property name="label">Common Setting</property>
-                                        <property name="select">0</property>
+                                        <property name="select">1</property>
                                         <object class="wxPanel" expanded="1">
                                             <property name="bg"></property>
                                             <property name="context_help"></property>
@@ -1014,7 +1014,7 @@
                                                         <property name="id">wxID_ANY</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">PictureSource</property>
+                                                        <property name="name">mPictureSource</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="selection">0</property>
@@ -1025,7 +1025,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnChoice"></event>
+                                                        <event name="OnChoice">OnChoicePictureSource</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1076,7 +1076,7 @@
                                                         <property name="label">Pause Change Wallpaper</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">PauseChangeWallpaper</property>
+                                                        <property name="name">mPauseChangeWallpaper</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1087,7 +1087,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnCheckBox"></event>
+                                                        <event name="OnCheckBox">OnCheckBoxPauseChangeWallpaperClick</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1138,7 +1138,7 @@
                                                         <property name="label">Show Splash</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ShowSplash</property>
+                                                        <property name="name">mShowSplash</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1149,7 +1149,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnCheckBox"></event>
+                                                        <event name="OnCheckBox">OnCheckBoxShowSplashClick</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1240,7 +1240,7 @@
                                                         <property name="id">wxID_ANY</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">UILanguage</property>
+                                                        <property name="name">mUILanguage</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="selection">0</property>
@@ -1251,7 +1251,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnChoice"></event>
+                                                        <event name="OnChoice">OnChioceUILanguage</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1302,7 +1302,7 @@
                                                         <property name="label">Change UI Language</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ID_BUTTON3</property>
+                                                        <property name="name">mChangeUILanguage</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1312,7 +1312,7 @@
                                                         <property name="window_extra_style"></property>
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
-                                                        <event name="OnButtonClick"></event>
+                                                        <event name="OnButtonClick">OnButtonClickChangeUILanguage</event>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
@@ -1418,7 +1418,7 @@
                                                         <property name="label">Show Disc</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ShowDisc</property>
+                                                        <property name="name">mShowDisc</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1429,7 +1429,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnCheckBox"></event>
+                                                        <event name="OnCheckBox">OnCheckBoxShowDiscClick</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1602,7 +1602,7 @@
                                                     <property name="proportion">0</property>
                                                     <object class="wxChoice" expanded="1">
                                                         <property name="bg"></property>
-                                                        <property name="choices">&apos;640x480&apos; &apos;800x600&apos; &apos;1024x768&apos; &apos;Auto Detect&apos;</property>
+                                                        <property name="choices">&quot;640x480&quot; &quot;800x600&quot; &quot;1024x768&quot; &quot;Auto Detect&quot;</property>
                                                         <property name="context_help"></property>
                                                         <property name="enabled">1</property>
                                                         <property name="fg"></property>
@@ -1611,7 +1611,7 @@
                                                         <property name="id">wxID_ANY</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ScreenWidthHeight</property>
+                                                        <property name="name">mScreenWidthHeight</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="selection">0</property>
@@ -1622,7 +1622,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnChoice"></event>
+                                                        <event name="OnChoice">OnChoiceScreenWHSelected</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -1673,7 +1673,7 @@
                                                         <property name="window_extra_style"></property>
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
-                                                        <event name="OnButtonClick"></event>
+                                                        <event name="OnButtonClick">OnButtonAutoDetectScreenWHClick</event>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
@@ -1765,7 +1765,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ScreenWidth</property>
+                                                        <property name="name">mScreenWidth</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1881,7 +1881,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ScreenHeight</property>
+                                                        <property name="name">mScreenHeight</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -1997,7 +1997,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ScreenPicturePath</property>
+                                                        <property name="name">mScreenPicturePath</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size">200,-1</property>
@@ -2031,7 +2031,7 @@
                                                         <event name="OnSetFocus"></event>
                                                         <event name="OnSize"></event>
                                                         <event name="OnText"></event>
-                                                        <event name="OnTextEnter"></event>
+                                                        <event name="OnTextEnter">OnTextScreenPicturePathEnter</event>
                                                         <event name="OnTextMaxLen"></event>
                                                         <event name="OnTextURL"></event>
                                                         <event name="OnUpdateUI"></event>
@@ -2063,7 +2063,7 @@
                                                         <property name="window_extra_style"></property>
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
-                                                        <event name="OnButtonClick"></event>
+                                                        <event name="OnButtonClick">OnButtonAutoDetectSystemPathClick</event>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
@@ -2155,7 +2155,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">ScreenPictureName</property>
+                                                        <property name="name">mScreenPictureName</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size">200,-1</property>
@@ -2454,7 +2454,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">LocalPicturePath</property>
+                                                        <property name="name">mLocalPicturePath</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size">200,-1</property>
@@ -2488,7 +2488,7 @@
                                                         <event name="OnSetFocus"></event>
                                                         <event name="OnSize"></event>
                                                         <event name="OnText"></event>
-                                                        <event name="OnTextEnter"></event>
+                                                        <event name="OnTextEnter">OnTextLocalPicturePathEnter</event>
                                                         <event name="OnTextMaxLen"></event>
                                                         <event name="OnTextURL"></event>
                                                         <event name="OnUpdateUI"></event>
@@ -2520,7 +2520,7 @@
                                                         <property name="window_extra_style"></property>
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
-                                                        <event name="OnButtonClick"></event>
+                                                        <event name="OnButtonClick">OnButtonLocalPicturePathClick</event>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
@@ -2552,7 +2552,7 @@
                                     <object class="notebookpage" expanded="1">
                                         <property name="bitmap"></property>
                                         <property name="label">NGPOD Source</property>
-                                        <property name="select">1</property>
+                                        <property name="select">0</property>
                                         <object class="wxPanel" expanded="1">
                                             <property name="bg"></property>
                                             <property name="context_help"></property>
@@ -2703,7 +2703,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">PodBasePath</property>
+                                                        <property name="name">mPodBasePath</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size">200,-1</property>
@@ -2737,7 +2737,7 @@
                                                         <event name="OnSetFocus"></event>
                                                         <event name="OnSize"></event>
                                                         <event name="OnText"></event>
-                                                        <event name="OnTextEnter"></event>
+                                                        <event name="OnTextEnter">OnTextPodBasePathEnter</event>
                                                         <event name="OnTextMaxLen"></event>
                                                         <event name="OnTextURL"></event>
                                                         <event name="OnUpdateUI"></event>
@@ -2769,7 +2769,7 @@
                                                         <property name="window_extra_style"></property>
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
-                                                        <event name="OnButtonClick"></event>
+                                                        <event name="OnButtonClick">OnButtonPodBasePathClick</event>
                                                         <event name="OnChar"></event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
@@ -2861,7 +2861,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">PodDatabaseName</property>
+                                                        <property name="name">mPodDatabaseName</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -2977,7 +2977,7 @@
                                                         <property name="maximum_size"></property>
                                                         <property name="maxlength">0</property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">PodPicturePath</property>
+                                                        <property name="name">mPodPicturePath</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size">200,-1</property>
@@ -3092,7 +3092,7 @@
                                                         <property name="id">wxID_ANY</property>
                                                         <property name="maximum_size"></property>
                                                         <property name="minimum_size"></property>
-                                                        <property name="name">NextPODDay</property>
+                                                        <property name="name">mNextPODDay</property>
                                                         <property name="permission">protected</property>
                                                         <property name="pos"></property>
                                                         <property name="size"></property>
@@ -3103,7 +3103,7 @@
                                                         <property name="window_name"></property>
                                                         <property name="window_style"></property>
                                                         <event name="OnChar"></event>
-                                                        <event name="OnDateChanged"></event>
+                                                        <event name="OnDateChanged">OnDateNowPODDayChanged</event>
                                                         <event name="OnEnterWindow"></event>
                                                         <event name="OnEraseBackground"></event>
                                                         <event name="OnKeyDown"></event>
@@ -3220,7 +3220,7 @@
                                                     <property name="window_extra_style"></property>
                                                     <property name="window_name"></property>
                                                     <property name="window_style"></property>
-                                                    <event name="OnButtonClick"></event>
+                                                    <event name="OnButtonClick">OnButtonReloadConfigClick</event>
                                                     <event name="OnChar"></event>
                                                     <event name="OnEnterWindow"></event>
                                                     <event name="OnEraseBackground"></event>
@@ -3272,7 +3272,7 @@
                                                     <property name="window_extra_style"></property>
                                                     <property name="window_name"></property>
                                                     <property name="window_style"></property>
-                                                    <event name="OnButtonClick"></event>
+                                                    <event name="OnButtonClick">OnButtonRestoreDefaultClick</event>
                                                     <event name="OnChar"></event>
                                                     <event name="OnEnterWindow"></event>
                                                     <event name="OnEraseBackground"></event>
@@ -3314,7 +3314,7 @@
                                                     <property name="label">Save Config</property>
                                                     <property name="maximum_size"></property>
                                                     <property name="minimum_size"></property>
-                                                    <property name="name">ID_BUTTON9</property>
+                                                    <property name="name">mButtonSaveConfig</property>
                                                     <property name="permission">protected</property>
                                                     <property name="pos"></property>
                                                     <property name="size"></property>
@@ -3324,7 +3324,7 @@
                                                     <property name="window_extra_style"></property>
                                                     <property name="window_name"></property>
                                                     <property name="window_style"></property>
-                                                    <event name="OnButtonClick"></event>
+                                                    <event name="OnButtonClick">OnButtonSaveConfigClick</event>
                                                     <event name="OnChar"></event>
                                                     <event name="OnEnterWindow"></event>
                                                     <event name="OnEraseBackground"></event>

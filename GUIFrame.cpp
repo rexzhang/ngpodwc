@@ -164,46 +164,46 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText26->Wrap( -1 );
 	fgSizer1->Add( m_staticText26, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	wxString PictureSourceChoices[] = { wxT("Local Picture"), wxT("NGPOD"), wxT("NGPOD Online") };
-	int PictureSourceNChoices = sizeof( PictureSourceChoices ) / sizeof( wxString );
-	PictureSource = new wxChoice( ID_PANEL1, wxID_ANY, wxDefaultPosition, wxDefaultSize, PictureSourceNChoices, PictureSourceChoices, 0 );
-	PictureSource->SetSelection( 0 );
-	fgSizer1->Add( PictureSource, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
+	wxString mPictureSourceChoices[] = { wxT("Local Picture"), wxT("NGPOD"), wxT("NGPOD Online") };
+	int mPictureSourceNChoices = sizeof( mPictureSourceChoices ) / sizeof( wxString );
+	mPictureSource = new wxChoice( ID_PANEL1, wxID_ANY, wxDefaultPosition, wxDefaultSize, mPictureSourceNChoices, mPictureSourceChoices, 0 );
+	mPictureSource->SetSelection( 0 );
+	fgSizer1->Add( mPictureSource, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
 	
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	PauseChangeWallpaper = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Pause Change Wallpaper"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mPauseChangeWallpaper = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Pause Change Wallpaper"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
-	fgSizer1->Add( PauseChangeWallpaper, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer1->Add( mPauseChangeWallpaper, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ShowSplash = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Show Splash"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mShowSplash = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Show Splash"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
-	fgSizer1->Add( ShowSplash, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer1->Add( mShowSplash, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	m_staticText27 = new wxStaticText( ID_PANEL1, wxID_ANY, wxT("UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText27->Wrap( -1 );
 	fgSizer1->Add( m_staticText27, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	wxArrayString UILanguageChoices;
-	UILanguage = new wxChoice( ID_PANEL1, wxID_ANY, wxDefaultPosition, wxDefaultSize, UILanguageChoices, 0 );
-	UILanguage->SetSelection( 0 );
-	fgSizer1->Add( UILanguage, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
+	wxArrayString mUILanguageChoices;
+	mUILanguage = new wxChoice( ID_PANEL1, wxID_ANY, wxDefaultPosition, wxDefaultSize, mUILanguageChoices, 0 );
+	mUILanguage->SetSelection( 0 );
+	fgSizer1->Add( mUILanguage, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
 	
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON3 = new wxButton( ID_PANEL1, wxID_ANY, wxT("Change UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
-	ID_BUTTON3->SetDefault(); 
-	fgSizer1->Add( ID_BUTTON3, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mChangeUILanguage = new wxButton( ID_PANEL1, wxID_ANY, wxT("Change UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
+	mChangeUILanguage->SetDefault(); 
+	fgSizer1->Add( mChangeUILanguage, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_PANEL1->SetSizer( fgSizer1 );
 	ID_PANEL1->Layout();
 	fgSizer1->Fit( ID_PANEL1 );
-	m_notebook2->AddPage( ID_PANEL1, wxT("Common Setting"), false );
+	m_notebook2->AddPage( ID_PANEL1, wxT("Common Setting"), true );
 	ID_PANEL2 = new wxPanel( m_notebook2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
 	wxBoxSizer* bSizer7;
 	bSizer7 = new wxBoxSizer( wxVERTICAL );
@@ -211,9 +211,9 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	bSizer7->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	ShowDisc = new wxCheckBox( ID_PANEL2, wxID_ANY, wxT("Show Disc"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mShowDisc = new wxCheckBox( ID_PANEL2, wxID_ANY, wxT("Show Disc"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
-	bSizer7->Add( ShowDisc, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	bSizer7->Add( mShowDisc, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	ID_PANEL2->SetSizer( bSizer7 );
 	ID_PANEL2->Layout();
@@ -238,11 +238,11 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText28->Wrap( -1 );
 	fgSizer2->Add( m_staticText28, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	wxString ScreenWidthHeightChoices[] = {  };
-	int ScreenWidthHeightNChoices = sizeof( ScreenWidthHeightChoices ) / sizeof( wxString );
-	ScreenWidthHeight = new wxChoice( ID_PANEL3, wxID_ANY, wxDefaultPosition, wxDefaultSize, ScreenWidthHeightNChoices, ScreenWidthHeightChoices, 0 );
-	ScreenWidthHeight->SetSelection( 0 );
-	fgSizer2->Add( ScreenWidthHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
+	wxString mScreenWidthHeightChoices[] = { wxT("640x480"), wxT("800x600"), wxT("1024x768"), wxT("Auto Detect") };
+	int mScreenWidthHeightNChoices = sizeof( mScreenWidthHeightChoices ) / sizeof( wxString );
+	mScreenWidthHeight = new wxChoice( ID_PANEL3, wxID_ANY, wxDefaultPosition, wxDefaultSize, mScreenWidthHeightNChoices, mScreenWidthHeightChoices, 0 );
+	mScreenWidthHeight->SetSelection( 0 );
+	fgSizer2->Add( mScreenWidthHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
 	
 	ID_BUTTON1 = new wxButton( ID_PANEL3, wxID_ANY, wxT("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON1->SetDefault(); 
@@ -252,10 +252,10 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText29->Wrap( -1 );
 	fgSizer2->Add( m_staticText29, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ScreenWidth = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	ScreenWidth->Enable( false );
+	mScreenWidth = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	mScreenWidth->Enable( false );
 	
-	fgSizer2->Add( ScreenWidth, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer2->Add( mScreenWidth, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -264,10 +264,10 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText30->Wrap( -1 );
 	fgSizer2->Add( m_staticText30, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ScreenHeight = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	ScreenHeight->Enable( false );
+	mScreenHeight = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	mScreenHeight->Enable( false );
 	
-	fgSizer2->Add( ScreenHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer2->Add( mScreenHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -276,8 +276,8 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText31->Wrap( -1 );
 	fgSizer2->Add( m_staticText31, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ScreenPicturePath = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
-	fgSizer2->Add( ScreenPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mScreenPicturePath = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
+	fgSizer2->Add( mScreenPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_BUTTON = new wxButton( ID_PANEL3, wxID_ANY, wxT("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON->SetDefault(); 
@@ -287,10 +287,10 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText32->Wrap( -1 );
 	fgSizer2->Add( m_staticText32, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ScreenPictureName = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
-	ScreenPictureName->Enable( false );
+	mScreenPictureName = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
+	mScreenPictureName->Enable( false );
 	
-	fgSizer2->Add( ScreenPictureName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer2->Add( mScreenPictureName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -336,8 +336,8 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText33->Wrap( -1 );
 	fgSizer3->Add( m_staticText33, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	LocalPicturePath = new wxTextCtrl( ID_PANEL5, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
-	fgSizer3->Add( LocalPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mLocalPicturePath = new wxTextCtrl( ID_PANEL5, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
+	fgSizer3->Add( mLocalPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_BUTTON4 = new wxButton( ID_PANEL5, wxID_ANY, wxT("..."), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON4->SetDefault(); 
@@ -366,8 +366,8 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText35->Wrap( -1 );
 	fgSizer4->Add( m_staticText35, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	PodBasePath = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
-	fgSizer4->Add( PodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mPodBasePath = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
+	fgSizer4->Add( mPodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_BUTTON5 = new wxButton( ID_PANEL6, wxID_ANY, wxT("..."), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON5->SetDefault(); 
@@ -377,10 +377,10 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText34->Wrap( -1 );
 	fgSizer4->Add( m_staticText34, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	PodDatabaseName = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	PodDatabaseName->Enable( false );
+	mPodDatabaseName = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	mPodDatabaseName->Enable( false );
 	
-	fgSizer4->Add( PodDatabaseName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer4->Add( mPodDatabaseName, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -389,10 +389,10 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText36->Wrap( -1 );
 	fgSizer4->Add( m_staticText36, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	PodPicturePath = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
-	PodPicturePath->Enable( false );
+	mPodPicturePath = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
+	mPodPicturePath->Enable( false );
 	
-	fgSizer4->Add( PodPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	fgSizer4->Add( mPodPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -401,8 +401,8 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_staticText37->Wrap( -1 );
 	fgSizer4->Add( m_staticText37, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	NextPODDay = new wxDatePickerCtrl( ID_PANEL6, wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT );
-	fgSizer4->Add( NextPODDay, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mNextPODDay = new wxDatePickerCtrl( ID_PANEL6, wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DROPDOWN|wxDP_DEFAULT );
+	fgSizer4->Add( mNextPODDay, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
@@ -419,7 +419,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	ID_PANEL6->SetSizer( fgSizer4 );
 	ID_PANEL6->Layout();
 	fgSizer4->Fit( ID_PANEL6 );
-	m_notebook2->AddPage( ID_PANEL6, wxT("NGPOD Source"), true );
+	m_notebook2->AddPage( ID_PANEL6, wxT("NGPOD Source"), false );
 	
 	bSizer5->Add( m_notebook2, 0, wxEXPAND|wxALL, 5 );
 	
@@ -437,11 +437,11 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	ID_BUTTON7->SetDefault(); 
 	bSizer8->Add( ID_BUTTON7, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON9 = new wxButton( m_panel8, wxID_ANY, wxT("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
-	ID_BUTTON9->SetDefault(); 
-	ID_BUTTON9->Enable( false );
+	mButtonSaveConfig = new wxButton( m_panel8, wxID_ANY, wxT("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
+	mButtonSaveConfig->SetDefault(); 
+	mButtonSaveConfig->Enable( false );
 	
-	bSizer8->Add( ID_BUTTON9, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer8->Add( mButtonSaveConfig, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	gSizer1->Add( bSizer8, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -469,6 +469,24 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	this->Layout();
 	
 	// Connect Events
+	mPictureSource->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoicePictureSource ), NULL, this );
+	mPauseChangeWallpaper->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
+	mShowSplash->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowSplashClick ), NULL, this );
+	mUILanguage->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChioceUILanguage ), NULL, this );
+	mChangeUILanguage->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonClickChangeUILanguage ), NULL, this );
+	mShowDisc->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowDiscClick ), NULL, this );
+	mScreenWidthHeight->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoiceScreenWHSelected ), NULL, this );
+	ID_BUTTON1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
+	mScreenPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextScreenPicturePathEnter ), NULL, this );
+	ID_BUTTON->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
+	mLocalPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextLocalPicturePathEnter ), NULL, this );
+	ID_BUTTON4->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonLocalPicturePathClick ), NULL, this );
+	mPodBasePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextPodBasePathEnter ), NULL, this );
+	ID_BUTTON5->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonPodBasePathClick ), NULL, this );
+	mNextPODDay->Connect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUIdialog_configpanel::OnDateNowPODDayChanged ), NULL, this );
+	ID_BUTTON6->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonReloadConfigClick ), NULL, this );
+	ID_BUTTON7->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonRestoreDefaultClick ), NULL, this );
+	mButtonSaveConfig->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonSaveConfigClick ), NULL, this );
 	ID_BUTTON10->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAboutClick ), NULL, this );
 	ID_BUTTON11->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonQuitClick ), NULL, this );
 }
@@ -476,6 +494,24 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 GUIdialog_configpanel::~GUIdialog_configpanel()
 {
 	// Disconnect Events
+	mPictureSource->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoicePictureSource ), NULL, this );
+	mPauseChangeWallpaper->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
+	mShowSplash->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowSplashClick ), NULL, this );
+	mUILanguage->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChioceUILanguage ), NULL, this );
+	mChangeUILanguage->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonClickChangeUILanguage ), NULL, this );
+	mShowDisc->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowDiscClick ), NULL, this );
+	mScreenWidthHeight->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoiceScreenWHSelected ), NULL, this );
+	ID_BUTTON1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
+	mScreenPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextScreenPicturePathEnter ), NULL, this );
+	ID_BUTTON->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
+	mLocalPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextLocalPicturePathEnter ), NULL, this );
+	ID_BUTTON4->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonLocalPicturePathClick ), NULL, this );
+	mPodBasePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextPodBasePathEnter ), NULL, this );
+	ID_BUTTON5->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonPodBasePathClick ), NULL, this );
+	mNextPODDay->Disconnect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUIdialog_configpanel::OnDateNowPODDayChanged ), NULL, this );
+	ID_BUTTON6->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonReloadConfigClick ), NULL, this );
+	ID_BUTTON7->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonRestoreDefaultClick ), NULL, this );
+	mButtonSaveConfig->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonSaveConfigClick ), NULL, this );
 	ID_BUTTON10->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAboutClick ), NULL, this );
 	ID_BUTTON11->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonQuitClick ), NULL, this );
 }
