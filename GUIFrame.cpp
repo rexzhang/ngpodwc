@@ -34,7 +34,7 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	m_bitmap4 = new wxStaticBitmap( this, wxID_ANY, wxBitmap( logo60x80_xpm ), wxDefaultPosition, wxSize( 60,80 ), 0 );
 	bSizer5->Add( m_bitmap4, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText24 = new wxStaticText( this, wxID_ANY, wxT("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText24 = new wxStaticText( this, wxID_ANY, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText24->Wrap( -1 );
 	m_staticText24->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
 	
@@ -49,9 +49,9 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	
 	ID_BITMAPBUTTON->SetBitmapSelected( wxBitmap( lock_picture_xpm ) );
 	ID_BITMAPBUTTON->SetDefault(); 
-	ID_BITMAPBUTTON->SetToolTip( wxT("Pause/Unpause change wallpaper") );
+	ID_BITMAPBUTTON->SetToolTip( _("Pause/Unpause change wallpaper") );
 	
-	ID_BITMAPBUTTON->SetToolTip( wxT("Pause/Unpause change wallpaper") );
+	ID_BITMAPBUTTON->SetToolTip( _("Pause/Unpause change wallpaper") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -60,17 +60,17 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	
 	ID_BITMAPBUTTON_PRE = new wxBitmapButton( this, wxID_ANY, wxBitmap( previous_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	ID_BITMAPBUTTON_PRE->SetDefault(); 
-	ID_BITMAPBUTTON_PRE->SetToolTip( wxT("Show previous pictrue") );
+	ID_BITMAPBUTTON_PRE->SetToolTip( _("Show previous pictrue") );
 	
-	ID_BITMAPBUTTON_PRE->SetToolTip( wxT("Show previous pictrue") );
+	ID_BITMAPBUTTON_PRE->SetToolTip( _("Show previous pictrue") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON_PRE, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_BITMAPBUTTON_NEXT = new wxBitmapButton( this, wxID_ANY, wxBitmap( next_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	ID_BITMAPBUTTON_NEXT->SetDefault(); 
-	ID_BITMAPBUTTON_NEXT->SetToolTip( wxT("Show next pictrue") );
+	ID_BITMAPBUTTON_NEXT->SetToolTip( _("Show next pictrue") );
 	
-	ID_BITMAPBUTTON_NEXT->SetToolTip( wxT("Show next pictrue") );
+	ID_BITMAPBUTTON_NEXT->SetToolTip( _("Show next pictrue") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON_NEXT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -79,9 +79,9 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	
 	ID_BITMAPBUTTON_CC = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_settings_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	ID_BITMAPBUTTON_CC->SetDefault(); 
-	ID_BITMAPBUTTON_CC->SetToolTip( wxT("Control Center") );
+	ID_BITMAPBUTTON_CC->SetToolTip( _("Control Center") );
 	
-	ID_BITMAPBUTTON_CC->SetToolTip( wxT("Control Center") );
+	ID_BITMAPBUTTON_CC->SetToolTip( _("Control Center") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON_CC, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -90,9 +90,9 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	
 	ID_BITMAPBUTTON_ABOUT = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_info_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	ID_BITMAPBUTTON_ABOUT->SetDefault(); 
-	ID_BITMAPBUTTON_ABOUT->SetToolTip( wxT("About") );
+	ID_BITMAPBUTTON_ABOUT->SetToolTip( _("About") );
 	
-	ID_BITMAPBUTTON_ABOUT->SetToolTip( wxT("About") );
+	ID_BITMAPBUTTON_ABOUT->SetToolTip( _("About") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON_ABOUT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -101,9 +101,9 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	
 	ID_BITMAPBUTTON_QUIT = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_quit_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	ID_BITMAPBUTTON_QUIT->SetDefault(); 
-	ID_BITMAPBUTTON_QUIT->SetToolTip( wxT("Quit") );
+	ID_BITMAPBUTTON_QUIT->SetToolTip( _("Quit") );
 	
-	ID_BITMAPBUTTON_QUIT->SetToolTip( wxT("Quit") );
+	ID_BITMAPBUTTON_QUIT->SetToolTip( _("Quit") );
 	
 	bSizer6->Add( ID_BITMAPBUTTON_QUIT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -139,7 +139,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	m_bitmap5 = new wxStaticBitmap( m_panel8, wxID_ANY, wxBitmap( logo60x80_xpm ), wxDefaultPosition, wxSize( 60,80 ), 0 );
 	bSizer6->Add( m_bitmap5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText25 = new wxStaticText( m_panel8, wxID_ANY, wxT("National Geographic Photo Of the Day\nWallpaper Control Center"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText25 = new wxStaticText( m_panel8, wxID_ANY, _("National Geographic Photo Of the Day\nWallpaper Control Center"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText25->Wrap( -1 );
 	m_staticText25->SetFont( wxFont( 11, 74, 90, 92, false, wxT("Tahoma") ) );
 	
@@ -160,11 +160,11 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText26 = new wxStaticText( ID_PANEL1, wxID_ANY, wxT("Input Source"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText26 = new wxStaticText( ID_PANEL1, wxID_ANY, _("Input Source"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText26->Wrap( -1 );
 	fgSizer1->Add( m_staticText26, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	wxString mPictureSourceChoices[] = { wxT("Local Picture"), wxT("NGPOD"), wxT("NGPOD Online") };
+	wxString mPictureSourceChoices[] = { _("Local Picture"), _("NGPOD"), _("NGPOD Online") };
 	int mPictureSourceNChoices = sizeof( mPictureSourceChoices ) / sizeof( wxString );
 	mPictureSource = new wxChoice( ID_PANEL1, wxID_ANY, wxDefaultPosition, wxDefaultSize, mPictureSourceNChoices, mPictureSourceChoices, 0 );
 	mPictureSource->SetSelection( 0 );
@@ -173,18 +173,18 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	mPauseChangeWallpaper = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Pause Change Wallpaper"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mPauseChangeWallpaper = new wxCheckBox( ID_PANEL1, wxID_ANY, _("Pause Change Wallpaper"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
 	fgSizer1->Add( mPauseChangeWallpaper, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	mShowSplash = new wxCheckBox( ID_PANEL1, wxID_ANY, wxT("Show Splash"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mShowSplash = new wxCheckBox( ID_PANEL1, wxID_ANY, _("Show Splash"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
 	fgSizer1->Add( mShowSplash, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText27 = new wxStaticText( ID_PANEL1, wxID_ANY, wxT("UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText27 = new wxStaticText( ID_PANEL1, wxID_ANY, _("UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText27->Wrap( -1 );
 	fgSizer1->Add( m_staticText27, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -196,14 +196,14 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer1->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	mChangeUILanguage = new wxButton( ID_PANEL1, wxID_ANY, wxT("Change UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
+	mChangeUILanguage = new wxButton( ID_PANEL1, wxID_ANY, _("Change UI Language"), wxDefaultPosition, wxDefaultSize, 0 );
 	mChangeUILanguage->SetDefault(); 
 	fgSizer1->Add( mChangeUILanguage, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_PANEL1->SetSizer( fgSizer1 );
 	ID_PANEL1->Layout();
 	fgSizer1->Fit( ID_PANEL1 );
-	m_notebook2->AddPage( ID_PANEL1, wxT("Common Setting"), true );
+	m_notebook2->AddPage( ID_PANEL1, _("Common Setting"), true );
 	ID_PANEL2 = new wxPanel( m_notebook2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
 	wxBoxSizer* bSizer7;
 	bSizer7 = new wxBoxSizer( wxVERTICAL );
@@ -211,14 +211,14 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	bSizer7->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	mShowDisc = new wxCheckBox( ID_PANEL2, wxID_ANY, wxT("Show Disc"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	mShowDisc = new wxCheckBox( ID_PANEL2, wxID_ANY, _("Show Disc"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	
 	bSizer7->Add( mShowDisc, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	ID_PANEL2->SetSizer( bSizer7 );
 	ID_PANEL2->Layout();
 	bSizer7->Fit( ID_PANEL2 );
-	m_notebook2->AddPage( ID_PANEL2, wxT("Image Convert Setting"), false );
+	m_notebook2->AddPage( ID_PANEL2, _("Image Convert Setting"), false );
 	ID_PANEL3 = new wxPanel( m_notebook2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
 	wxFlexGridSizer* fgSizer2;
 	fgSizer2 = new wxFlexGridSizer( 2, 3, 0, 0 );
@@ -234,21 +234,21 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText28 = new wxStaticText( ID_PANEL3, wxID_ANY, wxT("Screen Width x Height"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText28 = new wxStaticText( ID_PANEL3, wxID_ANY, _("Screen Width x Height"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText28->Wrap( -1 );
 	fgSizer2->Add( m_staticText28, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	wxString mScreenWidthHeightChoices[] = { wxT("640x480"), wxT("800x600"), wxT("1024x768"), wxT("Auto Detect") };
+	wxString mScreenWidthHeightChoices[] = { _("640x480"), _("800x600"), _("1024x768"), _("Auto Detect") };
 	int mScreenWidthHeightNChoices = sizeof( mScreenWidthHeightChoices ) / sizeof( wxString );
 	mScreenWidthHeight = new wxChoice( ID_PANEL3, wxID_ANY, wxDefaultPosition, wxDefaultSize, mScreenWidthHeightNChoices, mScreenWidthHeightChoices, 0 );
 	mScreenWidthHeight->SetSelection( 0 );
 	fgSizer2->Add( mScreenWidthHeight, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL|wxSHAPED, 5 );
 	
-	ID_BUTTON1 = new wxButton( ID_PANEL3, wxID_ANY, wxT("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON1 = new wxButton( ID_PANEL3, wxID_ANY, _("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON1->SetDefault(); 
 	fgSizer2->Add( ID_BUTTON1, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText29 = new wxStaticText( ID_PANEL3, wxID_ANY, wxT("Screen Width"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText29 = new wxStaticText( ID_PANEL3, wxID_ANY, _("Screen Width"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText29->Wrap( -1 );
 	fgSizer2->Add( m_staticText29, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -260,7 +260,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText30 = new wxStaticText( ID_PANEL3, wxID_ANY, wxT("Screen Height"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText30 = new wxStaticText( ID_PANEL3, wxID_ANY, _("Screen Height"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText30->Wrap( -1 );
 	fgSizer2->Add( m_staticText30, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -272,18 +272,18 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText31 = new wxStaticText( ID_PANEL3, wxID_ANY, wxT("ScreenPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText31 = new wxStaticText( ID_PANEL3, wxID_ANY, _("ScreenPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText31->Wrap( -1 );
 	fgSizer2->Add( m_staticText31, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	mScreenPicturePath = new wxTextCtrl( ID_PANEL3, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
 	fgSizer2->Add( mScreenPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON = new wxButton( ID_PANEL3, wxID_ANY, wxT("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON = new wxButton( ID_PANEL3, wxID_ANY, _("Auto Detect"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON->SetDefault(); 
 	fgSizer2->Add( ID_BUTTON, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText32 = new wxStaticText( ID_PANEL3, wxID_ANY, wxT("ScreenPictureName"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText32 = new wxStaticText( ID_PANEL3, wxID_ANY, _("ScreenPictureName"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText32->Wrap( -1 );
 	fgSizer2->Add( m_staticText32, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -298,7 +298,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer2->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON2 = new wxButton( ID_PANEL3, wxID_ANY, wxT("Install NGPOD to Startup"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON2 = new wxButton( ID_PANEL3, wxID_ANY, _("Install NGPOD to Startup"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON2->SetDefault(); 
 	ID_BUTTON2->Enable( false );
 	
@@ -316,7 +316,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	ID_PANEL3->SetSizer( fgSizer2 );
 	ID_PANEL3->Layout();
 	fgSizer2->Fit( ID_PANEL3 );
-	m_notebook2->AddPage( ID_PANEL3, wxT("Environment Setting"), false );
+	m_notebook2->AddPage( ID_PANEL3, _("Environment Setting"), false );
 	ID_PANEL5 = new wxPanel( m_notebook2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
 	wxFlexGridSizer* fgSizer3;
 	fgSizer3 = new wxFlexGridSizer( 2, 3, 0, 0 );
@@ -332,21 +332,21 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer3->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText33 = new wxStaticText( ID_PANEL5, wxID_ANY, wxT("LocalPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText33 = new wxStaticText( ID_PANEL5, wxID_ANY, _("LocalPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText33->Wrap( -1 );
 	fgSizer3->Add( m_staticText33, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	mLocalPicturePath = new wxTextCtrl( ID_PANEL5, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
 	fgSizer3->Add( mLocalPicturePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON4 = new wxButton( ID_PANEL5, wxID_ANY, wxT("..."), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON4 = new wxButton( ID_PANEL5, wxID_ANY, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON4->SetDefault(); 
 	fgSizer3->Add( ID_BUTTON4, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	ID_PANEL5->SetSizer( fgSizer3 );
 	ID_PANEL5->Layout();
 	fgSizer3->Fit( ID_PANEL5 );
-	m_notebook2->AddPage( ID_PANEL5, wxT("Local Picture Source"), false );
+	m_notebook2->AddPage( ID_PANEL5, _("Local Picture Source"), false );
 	ID_PANEL6 = new wxPanel( m_notebook2, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
 	wxFlexGridSizer* fgSizer4;
 	fgSizer4 = new wxFlexGridSizer( 2, 3, 0, 0 );
@@ -362,18 +362,18 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText35 = new wxStaticText( ID_PANEL6, wxID_ANY, wxT("PodBasePath"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText35 = new wxStaticText( ID_PANEL6, wxID_ANY, _("PodBasePath"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText35->Wrap( -1 );
 	fgSizer4->Add( m_staticText35, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	mPodBasePath = new wxTextCtrl( ID_PANEL6, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 200,-1 ), 0 );
 	fgSizer4->Add( mPodBasePath, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON5 = new wxButton( ID_PANEL6, wxID_ANY, wxT("..."), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON5 = new wxButton( ID_PANEL6, wxID_ANY, _("..."), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON5->SetDefault(); 
 	fgSizer4->Add( ID_BUTTON5, 0, wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText34 = new wxStaticText( ID_PANEL6, wxID_ANY, wxT("PodDatabaseName"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText34 = new wxStaticText( ID_PANEL6, wxID_ANY, _("PodDatabaseName"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText34->Wrap( -1 );
 	fgSizer4->Add( m_staticText34, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -385,7 +385,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText36 = new wxStaticText( ID_PANEL6, wxID_ANY, wxT("PodPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText36 = new wxStaticText( ID_PANEL6, wxID_ANY, _("PodPicturePath"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText36->Wrap( -1 );
 	fgSizer4->Add( m_staticText36, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -397,7 +397,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	
 	fgSizer4->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText37 = new wxStaticText( ID_PANEL6, wxID_ANY, wxT("Now POD Day"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText37 = new wxStaticText( ID_PANEL6, wxID_ANY, _("Now POD Day"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText37->Wrap( -1 );
 	fgSizer4->Add( m_staticText37, 0, wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -419,7 +419,7 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	ID_PANEL6->SetSizer( fgSizer4 );
 	ID_PANEL6->Layout();
 	fgSizer4->Fit( ID_PANEL6 );
-	m_notebook2->AddPage( ID_PANEL6, wxT("NGPOD Source"), false );
+	m_notebook2->AddPage( ID_PANEL6, _("NGPOD Source"), false );
 	
 	bSizer5->Add( m_notebook2, 0, wxEXPAND|wxALL, 5 );
 	
@@ -429,15 +429,15 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	wxBoxSizer* bSizer8;
 	bSizer8 = new wxBoxSizer( wxHORIZONTAL );
 	
-	ID_BUTTON6 = new wxButton( m_panel8, wxID_ANY, wxT("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON6 = new wxButton( m_panel8, wxID_ANY, _("Reload Config"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON6->SetDefault(); 
 	bSizer8->Add( ID_BUTTON6, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON7 = new wxButton( m_panel8, wxID_ANY, wxT("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON7 = new wxButton( m_panel8, wxID_ANY, _("Restore Default"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON7->SetDefault(); 
 	bSizer8->Add( ID_BUTTON7, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	mButtonSaveConfig = new wxButton( m_panel8, wxID_ANY, wxT("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
+	mButtonSaveConfig = new wxButton( m_panel8, wxID_ANY, _("Save Config"), wxDefaultPosition, wxDefaultSize, 0 );
 	mButtonSaveConfig->SetDefault(); 
 	mButtonSaveConfig->Enable( false );
 	
@@ -448,11 +448,11 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	wxBoxSizer* bSizer9;
 	bSizer9 = new wxBoxSizer( wxHORIZONTAL );
 	
-	ID_BUTTON10 = new wxButton( m_panel8, wxID_ANY, wxT("About"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON10 = new wxButton( m_panel8, wxID_ANY, _("About"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON10->SetDefault(); 
 	bSizer9->Add( ID_BUTTON10, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BUTTON11 = new wxButton( m_panel8, wxID_ANY, wxT("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON11 = new wxButton( m_panel8, wxID_ANY, _("Quit"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON11->SetDefault(); 
 	bSizer9->Add( ID_BUTTON11, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
@@ -539,7 +539,7 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	wxID_STATIC = new wxStaticBitmap( ID_PANEL4, wxID_ANY, wxBitmap( logo60x80_xpm ), wxDefaultPosition, wxSize( 60,80 ), 0 );
 	bSizer12->Add( wxID_STATIC, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	m_staticText38 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText38 = new wxStaticText( ID_PANEL4, wxID_ANY, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText38->Wrap( -1 );
 	m_staticText38->SetFont( wxFont( 11, 74, 90, 92, false, wxT("Tahoma") ) );
 	
@@ -547,7 +547,7 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	bSizer11->Add( bSizer12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText39 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("wxT(\"Version: \") + g_AppVersion"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText39 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Version: \") + g_AppVersion"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText39->Wrap( -1 );
 	m_staticText39->SetForegroundColour( wxColour( 128, 128, 128 ) );
 	
@@ -556,7 +556,7 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	m_staticline2 = new wxStaticLine( ID_PANEL4, wxID_ANY, wxDefaultPosition, wxSize( 300,-1 ), wxLI_VERTICAL );
 	bSizer11->Add( m_staticline2, 0, wxEXPAND|wxALL, 5 );
 	
-	m_staticText40 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("wxT(\"Bulid: \") + g_AppBuildTimestamp"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText40 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Bulid: \") + g_AppBuildTimestamp"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText40->Wrap( -1 );
 	m_staticText40->SetForegroundColour( wxColour( 128, 128, 128 ) );
 	
@@ -565,34 +565,34 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	
 	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText41 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("Developer"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText41 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Developer"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText41->Wrap( -1 );
 	m_staticText41->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
 	
 	bSizer11->Add( m_staticText41, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText42 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("g_AppProjectLeader + wxT(\"(\") + g_AppProjectLeaderEmail + wxT(\")\")"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText42 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppProjectLeader + wxT(\"(\") + g_AppProjectLeaderEmail + wxT(\")\")"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText42->Wrap( -1 );
 	bSizer11->Add( m_staticText42, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
 	
 	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText43 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText43 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43->Wrap( -1 );
 	m_staticText43->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
 	
 	bSizer11->Add( m_staticText43, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText44 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("g_AppUrl"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText44 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText44->Wrap( -1 );
 	bSizer11->Add( m_staticText44, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText45 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("g_AppUrl2"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText45 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl2"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText45->Wrap( -1 );
 	bSizer11->Add( m_staticText45, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	m_staticText46 = new wxStaticText( ID_PANEL4, wxID_ANY, wxT("g_AppUrl3"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText46 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl3"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText46->Wrap( -1 );
 	bSizer11->Add( m_staticText46, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
@@ -604,7 +604,7 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	bSizer11->Fit( ID_PANEL4 );
 	bSizer10->Add( ID_PANEL4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
-	ID_BUTTON8 = new wxButton( this, wxID_ANY, wxT("OK"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON8 = new wxButton( this, wxID_ANY, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
 	ID_BUTTON8->SetDefault(); 
 	bSizer10->Add( ID_BUTTON8, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
