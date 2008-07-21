@@ -45,67 +45,67 @@ GUI_dialogMiniPanel::GUI_dialogMiniPanel( wxWindow* parent, wxWindowID id, const
 	wxBoxSizer* bSizer6;
 	bSizer6 = new wxBoxSizer( wxHORIZONTAL );
 	
-	ID_BITMAPBUTTON = new wxBitmapButton( this, wxID_ANY, wxBitmap( unlock_picture_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mPauseChangeWallpaper = new wxBitmapButton( this, wxID_ANY, wxBitmap( unlock_picture_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
 	
-	ID_BITMAPBUTTON->SetBitmapSelected( wxBitmap( lock_picture_xpm ) );
-	ID_BITMAPBUTTON->SetDefault(); 
-	ID_BITMAPBUTTON->SetToolTip( _("Pause/Unpause change wallpaper") );
+	mPauseChangeWallpaper->SetBitmapSelected( wxBitmap( lock_picture_xpm ) );
+	mPauseChangeWallpaper->SetDefault(); 
+	mPauseChangeWallpaper->SetToolTip( _("Pause/Unpause change wallpaper") );
 	
-	ID_BITMAPBUTTON->SetToolTip( _("Pause/Unpause change wallpaper") );
+	mPauseChangeWallpaper->SetToolTip( _("Pause/Unpause change wallpaper") );
 	
-	bSizer6->Add( ID_BITMAPBUTTON, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	
-	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	ID_BITMAPBUTTON_PRE = new wxBitmapButton( this, wxID_ANY, wxBitmap( previous_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-	ID_BITMAPBUTTON_PRE->SetDefault(); 
-	ID_BITMAPBUTTON_PRE->SetToolTip( _("Show previous pictrue") );
-	
-	ID_BITMAPBUTTON_PRE->SetToolTip( _("Show previous pictrue") );
-	
-	bSizer6->Add( ID_BITMAPBUTTON_PRE, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	ID_BITMAPBUTTON_NEXT = new wxBitmapButton( this, wxID_ANY, wxBitmap( next_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-	ID_BITMAPBUTTON_NEXT->SetDefault(); 
-	ID_BITMAPBUTTON_NEXT->SetToolTip( _("Show next pictrue") );
-	
-	ID_BITMAPBUTTON_NEXT->SetToolTip( _("Show next pictrue") );
-	
-	bSizer6->Add( ID_BITMAPBUTTON_NEXT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer6->Add( mPauseChangeWallpaper, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BITMAPBUTTON_CC = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_settings_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-	ID_BITMAPBUTTON_CC->SetDefault(); 
-	ID_BITMAPBUTTON_CC->SetToolTip( _("Control Center") );
+	mShowPrePicture = new wxBitmapButton( this, wxID_ANY, wxBitmap( previous_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mShowPrePicture->SetDefault(); 
+	mShowPrePicture->SetToolTip( _("Show previous pictrue") );
 	
-	ID_BITMAPBUTTON_CC->SetToolTip( _("Control Center") );
+	mShowPrePicture->SetToolTip( _("Show previous pictrue") );
 	
-	bSizer6->Add( ID_BITMAPBUTTON_CC, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer6->Add( mShowPrePicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
+	mShowNextPicture = new wxBitmapButton( this, wxID_ANY, wxBitmap( next_pictrue_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mShowNextPicture->SetDefault(); 
+	mShowNextPicture->SetToolTip( _("Show next pictrue") );
 	
-	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	mShowNextPicture->SetToolTip( _("Show next pictrue") );
 	
-	ID_BITMAPBUTTON_ABOUT = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_info_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-	ID_BITMAPBUTTON_ABOUT->SetDefault(); 
-	ID_BITMAPBUTTON_ABOUT->SetToolTip( _("About") );
-	
-	ID_BITMAPBUTTON_ABOUT->SetToolTip( _("About") );
-	
-	bSizer6->Add( ID_BITMAPBUTTON_ABOUT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer6->Add( mShowNextPicture, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	
 	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
-	ID_BITMAPBUTTON_QUIT = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_quit_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
-	ID_BITMAPBUTTON_QUIT->SetDefault(); 
-	ID_BITMAPBUTTON_QUIT->SetToolTip( _("Quit") );
+	mControlCenter = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_settings_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mControlCenter->SetDefault(); 
+	mControlCenter->SetToolTip( _("Control Center") );
 	
-	ID_BITMAPBUTTON_QUIT->SetToolTip( _("Quit") );
+	mControlCenter->SetToolTip( _("Control Center") );
 	
-	bSizer6->Add( ID_BITMAPBUTTON_QUIT, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	bSizer6->Add( mControlCenter, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	
+	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	mAbout = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_info_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mAbout->SetDefault(); 
+	mAbout->SetToolTip( _("About") );
+	
+	mAbout->SetToolTip( _("About") );
+	
+	bSizer6->Add( mAbout, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	
+	bSizer6->Add( 5, 5, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	mQuit = new wxBitmapButton( this, wxID_ANY, wxBitmap( icon_quit_xpm ), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW );
+	mQuit->SetDefault(); 
+	mQuit->SetToolTip( _("Quit") );
+	
+	mQuit->SetToolTip( _("Quit") );
+	
+	bSizer6->Add( mQuit, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 	
 	bSizer4->Add( bSizer6, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 	
@@ -116,10 +116,25 @@ GUI_dialogMiniPanel::GUI_dialogMiniPanel( wxWindow* parent, wxWindowID id, const
 	this->Layout();
 	
 	this->Centre( wxBOTH );
+	
+	// Connect Events
+	mPauseChangeWallpaper->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickPauseChangeWallpaper ), NULL, this );
+	mShowPrePicture->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickShowPrePicture ), NULL, this );
+	mShowNextPicture->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickShowNextPicture ), NULL, this );
+	mControlCenter->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickControlCenter ), NULL, this );
+	mAbout->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickAbout ), NULL, this );
+	mQuit->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickQuit ), NULL, this );
 }
 
 GUI_dialogMiniPanel::~GUI_dialogMiniPanel()
 {
+	// Disconnect Events
+	mPauseChangeWallpaper->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickPauseChangeWallpaper ), NULL, this );
+	mShowPrePicture->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickShowPrePicture ), NULL, this );
+	mShowNextPicture->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickShowNextPicture ), NULL, this );
+	mControlCenter->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickControlCenter ), NULL, this );
+	mAbout->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickAbout ), NULL, this );
+	mQuit->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickQuit ), NULL, this );
 }
 
 GUI_dialogConfigPanel::GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )

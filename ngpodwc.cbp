@@ -154,6 +154,12 @@
 			<Option target="ngpodwc_Debug" />
 			<Option target="ngpodwc_Release" />
 		</Unit>
+		<Unit filename="dialogAbout.cpp" />
+		<Unit filename="dialogAbout.h" />
+		<Unit filename="dialogConfigPanel.cpp" />
+		<Unit filename="dialogConfigPanel.h" />
+		<Unit filename="dialogMiniPanel.cpp" />
+		<Unit filename="dialogMiniPanel.h" />
 		<Unit filename="docs\history.txt" />
 		<Unit filename="docs\licence.txt" />
 		<Unit filename="docs\readme.txt" />
