@@ -48,16 +48,25 @@ class GUI_dialogMiniPanel : public wxDialog
 		
 		wxStaticBitmap* m_bitmap4;
 		wxStaticText* m_staticText24;
-		wxBitmapButton* ID_BITMAPBUTTON;
+		wxBitmapButton* mPauseChangeWallpaper;
 		
-		wxBitmapButton* ID_BITMAPBUTTON_PRE;
-		wxBitmapButton* ID_BITMAPBUTTON_NEXT;
+		wxBitmapButton* mShowPrePicture;
+		wxBitmapButton* mShowNextPicture;
 		
-		wxBitmapButton* ID_BITMAPBUTTON_CC;
+		wxBitmapButton* mControlCenter;
 		
-		wxBitmapButton* ID_BITMAPBUTTON_ABOUT;
+		wxBitmapButton* mAbout;
 		
-		wxBitmapButton* ID_BITMAPBUTTON_QUIT;
+		wxBitmapButton* mQuit;
+		
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void OnButtonClickPauseChangeWallpaper( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickShowPrePicture( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickShowNextPicture( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickControlCenter( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickAbout( wxCommandEvent& event ){ event.Skip(); }
+		virtual void OnButtonClickQuit( wxCommandEvent& event ){ event.Skip(); }
 		
 	
 	public:

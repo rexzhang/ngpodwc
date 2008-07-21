@@ -18,7 +18,7 @@
         <property name="relative_path">1</property>
         <property name="use_enum">0</property>
         <property name="use_microsoft_bom">0</property>
-        <object class="Dialog" expanded="0">
+        <object class="Dialog" expanded="1">
             <property name="bg"></property>
             <property name="center">wxBOTH</property>
             <property name="context_help"></property>
@@ -225,7 +225,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON</property>
+                                <property name="name">mPauseChangeWallpaper</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected">share/art/lock_picture.xpm; Load From File</property>
@@ -236,7 +236,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickPauseChangeWallpaper</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -292,7 +292,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON_PRE</property>
+                                <property name="name">mShowPrePicture</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected"></property>
@@ -303,7 +303,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickShowPrePicture</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -349,7 +349,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON_NEXT</property>
+                                <property name="name">mShowNextPicture</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected"></property>
@@ -360,7 +360,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickShowNextPicture</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -416,7 +416,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON_CC</property>
+                                <property name="name">mControlCenter</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected"></property>
@@ -427,7 +427,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickControlCenter</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -483,7 +483,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON_ABOUT</property>
+                                <property name="name">mAbout</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected"></property>
@@ -494,7 +494,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickAbout</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
@@ -550,7 +550,7 @@
                                 <property name="label">MyButton</property>
                                 <property name="maximum_size"></property>
                                 <property name="minimum_size"></property>
-                                <property name="name">ID_BITMAPBUTTON_QUIT</property>
+                                <property name="name">mQuit</property>
                                 <property name="permission">protected</property>
                                 <property name="pos"></property>
                                 <property name="selected"></property>
@@ -561,7 +561,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick"></event>
+                                <event name="OnButtonClick">OnButtonClickQuit</event>
                                 <event name="OnChar"></event>
                                 <event name="OnEnterWindow"></event>
                                 <event name="OnEraseBackground"></event>
