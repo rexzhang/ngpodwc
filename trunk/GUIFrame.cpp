@@ -18,7 +18,7 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+GUI_dialogMiniPanel::GUI_dialogMiniPanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	
@@ -118,11 +118,11 @@ GUIdialog_minipanel::GUIdialog_minipanel( wxWindow* parent, wxWindowID id, const
 	this->Centre( wxBOTH );
 }
 
-GUIdialog_minipanel::~GUIdialog_minipanel()
+GUI_dialogMiniPanel::~GUI_dialogMiniPanel()
 {
 }
 
-GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+GUI_dialogConfigPanel::GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	
@@ -469,54 +469,54 @@ GUIdialog_configpanel::GUIdialog_configpanel( wxWindow* parent, wxWindowID id, c
 	this->Layout();
 	
 	// Connect Events
-	mPictureSource->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoicePictureSource ), NULL, this );
-	mPauseChangeWallpaper->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
-	mShowSplash->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowSplashClick ), NULL, this );
-	mUILanguage->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChioceUILanguage ), NULL, this );
-	mChangeUILanguage->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonClickChangeUILanguage ), NULL, this );
-	mShowDisc->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowDiscClick ), NULL, this );
-	mScreenWidthHeight->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoiceScreenWHSelected ), NULL, this );
-	ID_BUTTON1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
-	mScreenPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextScreenPicturePathEnter ), NULL, this );
-	ID_BUTTON->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
-	mLocalPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextLocalPicturePathEnter ), NULL, this );
-	ID_BUTTON4->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonLocalPicturePathClick ), NULL, this );
-	mPodBasePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextPodBasePathEnter ), NULL, this );
-	ID_BUTTON5->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonPodBasePathClick ), NULL, this );
-	mNextPODDay->Connect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUIdialog_configpanel::OnDateNowPODDayChanged ), NULL, this );
-	ID_BUTTON6->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonReloadConfigClick ), NULL, this );
-	ID_BUTTON7->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonRestoreDefaultClick ), NULL, this );
-	mButtonSaveConfig->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonSaveConfigClick ), NULL, this );
-	ID_BUTTON10->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAboutClick ), NULL, this );
-	ID_BUTTON11->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonQuitClick ), NULL, this );
+	mPictureSource->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChoicePictureSource ), NULL, this );
+	mPauseChangeWallpaper->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
+	mShowSplash->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxShowSplashClick ), NULL, this );
+	mUILanguage->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChioceUILanguage ), NULL, this );
+	mChangeUILanguage->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonClickChangeUILanguage ), NULL, this );
+	mShowDisc->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxShowDiscClick ), NULL, this );
+	mScreenWidthHeight->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChoiceScreenWHSelected ), NULL, this );
+	ID_BUTTON1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
+	mScreenPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextScreenPicturePathEnter ), NULL, this );
+	ID_BUTTON->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
+	mLocalPicturePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextLocalPicturePathEnter ), NULL, this );
+	ID_BUTTON4->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonLocalPicturePathClick ), NULL, this );
+	mPodBasePath->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextPodBasePathEnter ), NULL, this );
+	ID_BUTTON5->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonPodBasePathClick ), NULL, this );
+	mNextPODDay->Connect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUI_dialogConfigPanel::OnDateNowPODDayChanged ), NULL, this );
+	ID_BUTTON6->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonReloadConfigClick ), NULL, this );
+	ID_BUTTON7->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonRestoreDefaultClick ), NULL, this );
+	mButtonSaveConfig->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonSaveConfigClick ), NULL, this );
+	ID_BUTTON10->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAboutClick ), NULL, this );
+	ID_BUTTON11->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonQuitClick ), NULL, this );
 }
 
-GUIdialog_configpanel::~GUIdialog_configpanel()
+GUI_dialogConfigPanel::~GUI_dialogConfigPanel()
 {
 	// Disconnect Events
-	mPictureSource->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoicePictureSource ), NULL, this );
-	mPauseChangeWallpaper->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
-	mShowSplash->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowSplashClick ), NULL, this );
-	mUILanguage->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChioceUILanguage ), NULL, this );
-	mChangeUILanguage->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonClickChangeUILanguage ), NULL, this );
-	mShowDisc->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnCheckBoxShowDiscClick ), NULL, this );
-	mScreenWidthHeight->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUIdialog_configpanel::OnChoiceScreenWHSelected ), NULL, this );
-	ID_BUTTON1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
-	mScreenPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextScreenPicturePathEnter ), NULL, this );
-	ID_BUTTON->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
-	mLocalPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextLocalPicturePathEnter ), NULL, this );
-	ID_BUTTON4->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonLocalPicturePathClick ), NULL, this );
-	mPodBasePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUIdialog_configpanel::OnTextPodBasePathEnter ), NULL, this );
-	ID_BUTTON5->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonPodBasePathClick ), NULL, this );
-	mNextPODDay->Disconnect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUIdialog_configpanel::OnDateNowPODDayChanged ), NULL, this );
-	ID_BUTTON6->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonReloadConfigClick ), NULL, this );
-	ID_BUTTON7->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonRestoreDefaultClick ), NULL, this );
-	mButtonSaveConfig->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonSaveConfigClick ), NULL, this );
-	ID_BUTTON10->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonAboutClick ), NULL, this );
-	ID_BUTTON11->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_configpanel::OnButtonQuitClick ), NULL, this );
+	mPictureSource->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChoicePictureSource ), NULL, this );
+	mPauseChangeWallpaper->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxPauseChangeWallpaperClick ), NULL, this );
+	mShowSplash->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxShowSplashClick ), NULL, this );
+	mUILanguage->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChioceUILanguage ), NULL, this );
+	mChangeUILanguage->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonClickChangeUILanguage ), NULL, this );
+	mShowDisc->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnCheckBoxShowDiscClick ), NULL, this );
+	mScreenWidthHeight->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( GUI_dialogConfigPanel::OnChoiceScreenWHSelected ), NULL, this );
+	ID_BUTTON1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAutoDetectScreenWHClick ), NULL, this );
+	mScreenPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextScreenPicturePathEnter ), NULL, this );
+	ID_BUTTON->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAutoDetectSystemPathClick ), NULL, this );
+	mLocalPicturePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextLocalPicturePathEnter ), NULL, this );
+	ID_BUTTON4->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonLocalPicturePathClick ), NULL, this );
+	mPodBasePath->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( GUI_dialogConfigPanel::OnTextPodBasePathEnter ), NULL, this );
+	ID_BUTTON5->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonPodBasePathClick ), NULL, this );
+	mNextPODDay->Disconnect( wxEVT_DATE_CHANGED, wxDateEventHandler( GUI_dialogConfigPanel::OnDateNowPODDayChanged ), NULL, this );
+	ID_BUTTON6->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonReloadConfigClick ), NULL, this );
+	ID_BUTTON7->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonRestoreDefaultClick ), NULL, this );
+	mButtonSaveConfig->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonSaveConfigClick ), NULL, this );
+	ID_BUTTON10->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAboutClick ), NULL, this );
+	ID_BUTTON11->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonQuitClick ), NULL, this );
 }
 
-GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+GUI_dialogAbout::GUI_dialogAbout( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetExtraStyle( wxWS_EX_BLOCK_EVENTS );
@@ -614,11 +614,11 @@ GUIdialog_about::GUIdialog_about( wxWindow* parent, wxWindowID id, const wxStrin
 	this->Centre( wxBOTH );
 	
 	// Connect Events
-	ID_BUTTON8->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_about::OnButtonOKClick ), NULL, this );
+	ID_BUTTON8->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
 }
 
-GUIdialog_about::~GUIdialog_about()
+GUI_dialogAbout::~GUI_dialogAbout()
 {
 	// Disconnect Events
-	ID_BUTTON8->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUIdialog_about::OnButtonOKClick ), NULL, this );
+	ID_BUTTON8->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
 }

@@ -33,6 +33,7 @@
 #include "common_globals.h"
 
 #include "GUIFrame.h"
+#include "dialogMiniPanel.h"
 
 IMPLEMENT_APP(ngpodwcApp);
 
@@ -206,7 +207,7 @@ bool ngpodwcApp::OnInit()
             config.WriteConfig();//创建一个配置文件
         }
 
-        ngpodwcConfigPanel* mainWindow = new ngpodwcConfigPanel( 0L );//, ID_DIALOG_CONFIG_PANEL );
+        dialogConfigPanel* mainWindow = new dialogConfigPanel( 0L );//, ID_DIALOG_CONFIG_PANEL );
 
         (mainWindow->config).SetConfigFilePath(path);
         //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
@@ -220,7 +221,7 @@ bool ngpodwcApp::OnInit()
     //!直接进入配置面板
     if (parser.Found(wxT("config")))
     {
-        ngpodwcConfigPanel* mainWindow = new ngpodwcConfigPanel( 0L );//, ID_DIALOG_CONFIG_PANEL );
+        dialogConfigPanel* mainWindow = new dialogConfigPanel( 0L );//, ID_DIALOG_CONFIG_PANEL );
 
         //(mainWindow->config).SetConfigFilePath(path);
         //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
@@ -233,7 +234,7 @@ bool ngpodwcApp::OnInit()
 
     //!无参数，表示需要显示小面板
     //ngpodwcMiniPanel* mainWindow = new ngpodwcMiniPanel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
-    ngpodwcMiniPanel* mainWindow = new ngpodwcMiniPanel(0L);//, _("National Geographic Photo Of the Day Wallpaper Changer"));
+    dialogMiniPanel* mainWindow = new dialogMiniPanel(0L);//, _("National Geographic Photo Of the Day Wallpaper Changer"));
     //mainWindow = new dialog_mini_panel(NULL, ID_DIALOG, _("National Geographic Photo Of the Day Wallpaper Changer"));
     if(splashEnable)
     {

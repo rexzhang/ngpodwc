@@ -38,9 +38,9 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class GUIdialog_minipanel
+/// Class GUI_dialogMiniPanel
 ///////////////////////////////////////////////////////////////////////////////
-class GUIdialog_minipanel : public wxDialog 
+class GUI_dialogMiniPanel : public wxDialog 
 {
 	private:
 	
@@ -61,15 +61,15 @@ class GUIdialog_minipanel : public wxDialog
 		
 	
 	public:
-		GUIdialog_minipanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Changer"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 581,268 ), long style = wxDEFAULT_DIALOG_STYLE );
-		~GUIdialog_minipanel();
+		GUI_dialogMiniPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Changer"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 581,268 ), long style = wxDEFAULT_DIALOG_STYLE );
+		~GUI_dialogMiniPanel();
 	
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class GUIdialog_configpanel
+/// Class GUI_dialogConfigPanel
 ///////////////////////////////////////////////////////////////////////////////
-class GUIdialog_configpanel : public wxFrame 
+class GUI_dialogConfigPanel : public wxFrame 
 {
 	private:
 	
@@ -174,15 +174,15 @@ class GUIdialog_configpanel : public wxFrame
 		
 	
 	public:
-		GUIdialog_configpanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Control Center"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 640,493 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX );
-		~GUIdialog_configpanel();
+		GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Control Center"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 640,493 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX );
+		~GUI_dialogConfigPanel();
 	
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class GUIdialog_about
+/// Class GUI_dialogAbout
 ///////////////////////////////////////////////////////////////////////////////
-class GUIdialog_about : public wxDialog 
+class GUI_dialogAbout : public wxDialog 
 {
 	private:
 	
@@ -210,8 +210,8 @@ class GUIdialog_about : public wxDialog
 		
 	
 	public:
-		GUIdialog_about( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("About"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 484,491 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX );
-		~GUIdialog_about();
+		GUI_dialogAbout( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("About"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 484,491 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX );
+		~GUI_dialogAbout();
 	
 };
 
