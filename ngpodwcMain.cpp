@@ -61,15 +61,10 @@ wxString wxbuildinfo(wxbuildinfoformat format)
     return wxbuild;
 }
 
+/*
 ngpodwcMiniPanel::ngpodwcMiniPanel(wxDialog *frame)
         : GUIdialog_minipanel(frame)
 {
-    /*
-    #if wxUSE_STATUSBAR
-        statusBar->SetStatusText(_("Hello Code::Blocks user!"), 0);
-        statusBar->SetStatusText(wxbuildinfo(short_f), 1);
-    #endif
-    */
     ;
 
 }
@@ -78,16 +73,12 @@ ngpodwcMiniPanel::~ngpodwcMiniPanel()
 {
 
 }
+*/
 
+/*
 ngpodwcConfigPanel::ngpodwcConfigPanel(wxFrame *frame)
         : GUIdialog_configpanel(frame)
 {
-    /*
-    #if wxUSE_STATUSBAR
-        statusBar->SetStatusText(_("Hello Code::Blocks user!"), 0);
-        statusBar->SetStatusText(wxbuildinfo(short_f), 1);
-    #endif
-    */
     ReadConfig();
     ShowConfig();
 
@@ -98,17 +89,12 @@ ngpodwcConfigPanel::~ngpodwcConfigPanel()
 
 
 }
+*/
 
-
+/*
 ngpodwcAbout::ngpodwcAbout(wxFrame *frame)
         : GUIdialog_about(frame)
 {
-    /*
-    #if wxUSE_STATUSBAR
-        statusBar->SetStatusText(_("Hello Code::Blocks user!"), 0);
-        statusBar->SetStatusText(wxbuildinfo(short_f), 1);
-    #endif
-    */
     ;
 
 }
@@ -117,7 +103,9 @@ ngpodwcAbout::~ngpodwcAbout()
 {
 
 }
+*/
 
+/*
 /////////////////////////
 void ngpodwcConfigPanel::OnButtonAboutClick( wxCommandEvent& event )
 {
@@ -223,3 +211,5 @@ wxString ngpodwcConfigPanel::AutoDetectSystemPath(void)
     mScreenPicturePath->SetValue(path);
     return path;
 }
+
+*/

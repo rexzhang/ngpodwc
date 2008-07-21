@@ -30,7 +30,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">GUIdialog_minipanel</property>
+            <property name="name">GUI_dialogMiniPanel</property>
             <property name="pos"></property>
             <property name="size">581,268</property>
             <property name="style">wxDEFAULT_DIALOG_STYLE</property>
@@ -613,7 +613,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">GUIdialog_configpanel</property>
+            <property name="name">GUI_dialogConfigPanel</property>
             <property name="pos"></property>
             <property name="size">640,493</property>
             <property name="style">wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX</property>
@@ -3486,7 +3486,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">GUIdialog_about</property>
+            <property name="name">GUI_dialogAbout</property>
             <property name="pos"></property>
             <property name="size">484,491</property>
             <property name="style">wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX</property>

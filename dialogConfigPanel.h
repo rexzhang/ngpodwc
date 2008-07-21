@@ -1,49 +1,20 @@
-/////////////////////////////////////////////////////////////////////////////
-// Name:        ngpodwcMain.h
-// Purpose:
-// Author:      Rex Zhang
-// Modified by:
-// Created:     2008-4-21
-// RCS-ID:
-// Copyright:   (c) 2008 Rex Zhang
-// Licence:     GNU General Public License (GPL) version 2
-/////////////////////////////////////////////////////////////////////////////
+#ifndef DIALOGCONFIGPANEL_H
+#define DIALOGCONFIGPANEL_H
 
-
-#ifndef NGPODWCMAIN_H_INCLUDED
-#define NGPODWCMAIN_H_INCLUDED
-
-#include "GUIFrame.h"
+#include <GUIFrame.h>
 
 #include "common_globals.h"
 #include "common_config.h"
 
-#include "dialogConfigPanel.h"
-
-/*
-class ngpodwcMiniPanel: public GUIdialog_minipanel
+class dialogConfigPanel : public GUI_dialogConfigPanel
 {
-
 public:
-    ngpodwcMiniPanel(wxDialog *frame);
-    ~ngpodwcMiniPanel();
+    dialogConfigPanel(wxFrame *frame);
+    virtual ~dialogConfigPanel();
 
     ngpodwcConfig config;
 
-private:
-    ;
-
-};
-*/
-/*
-class ngpodwcConfigPanel: public GUIdialog_configpanel
-{
-
-public:
-    ngpodwcConfigPanel(wxFrame *frame);
-    ~ngpodwcConfigPanel();
-
-    ngpodwcConfig config;
+protected:
 
 private:
     //ÊÂ¼þÏìÓ¦
@@ -224,23 +195,7 @@ private:
     void ShowConfig();
     void AutoDetectScreenWH(void);
     wxString AutoDetectSystemPath(void);
-};
-*/
-
-/*
-class ngpodwcAbout: public GUIdialog_about
-{
-
-public:
-    ngpodwcAbout(wxFrame *frame);
-    ~ngpodwcAbout();
-
-private:
-    void OnButtonOKClick( wxCommandEvent& event )
-    {
-        Destroy();
-    }
 
 };
-*/
-#endif // NGPODWCMAIN_H_INCLUDED
+
+#endif // DIALOGCONFIGPANEL_H
