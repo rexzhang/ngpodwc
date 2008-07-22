@@ -9,6 +9,9 @@
 #include "ngpodwc_common_datetime.h"
 #include "common_wallpaper_operation.h"
 
+#include "share/art/unlock_picture.xpm"
+#include "share/art/lock_picture.xpm"
+
 dialogMiniPanel::dialogMiniPanel(wxDialog *frame)
         :GUI_dialogMiniPanel(frame)
 {
@@ -23,8 +26,7 @@ dialogMiniPanel::~dialogMiniPanel()
     //dtor
 }
 
-#include "share/art/unlock_picture.xpm"
-#include "share/art/lock_picture.xpm"
+
 /*
 void dialogMiniPanel::InitConfig()
 {

@@ -7,7 +7,7 @@
 class dialogAbout : public GUI_dialogAbout
 {
 public:
-    dialogAbout(wxFrame *frame);//    ngpodwcAbout(wxFrame *frame);
+    dialogAbout(wxDialog *frame);//    ngpodwcAbout(wxFrame *frame);
     virtual ~dialogAbout();
 protected:
 private:
