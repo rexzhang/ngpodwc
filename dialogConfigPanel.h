@@ -9,7 +9,7 @@
 class dialogConfigPanel : public GUI_dialogConfigPanel
 {
 public:
-    dialogConfigPanel(wxFrame *frame);
+    dialogConfigPanel(wxDialog *frame);
     virtual ~dialogConfigPanel();
 
     ngpodwcConfig config;

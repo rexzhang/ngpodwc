@@ -24,15 +24,14 @@
 #include <wx/bmpbuttn.h>
 #include <wx/button.h>
 #include <wx/dialog.h>
+#include <wx/statline.h>
+#include <wx/panel.h>
 #include <wx/choice.h>
 #include <wx/checkbox.h>
-#include <wx/panel.h>
 #include <wx/textctrl.h>
 #include <wx/datectrl.h>
 #include <wx/dateevt.h>
 #include <wx/notebook.h>
-#include <wx/frame.h>
-#include <wx/statline.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -76,9 +75,45 @@ class GUI_dialogMiniPanel : public wxDialog
 };
 
 ///////////////////////////////////////////////////////////////////////////////
+/// Class GUI_dialogAbout
+///////////////////////////////////////////////////////////////////////////////
+class GUI_dialogAbout : public wxDialog 
+{
+	private:
+	
+	protected:
+		wxPanel* ID_PANEL4;
+		
+		wxStaticBitmap* wxID_STATIC;
+		wxStaticText* m_staticText38;
+		wxStaticText* m_staticText39;
+		wxStaticLine* m_staticline2;
+		wxStaticText* m_staticText40;
+		
+		wxStaticText* m_staticText41;
+		wxStaticText* m_staticText42;
+		
+		wxStaticText* m_staticText43;
+		wxStaticText* m_staticText44;
+		wxStaticText* m_staticText45;
+		wxStaticText* m_staticText46;
+		
+		wxButton* ID_BUTTON8;
+		
+		// Virtual event handlers, overide them in your derived class
+		virtual void OnButtonOKClick( wxCommandEvent& event ){ event.Skip(); }
+		
+	
+	public:
+		GUI_dialogAbout( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("About"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 484,491 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX );
+		~GUI_dialogAbout();
+	
+};
+
+///////////////////////////////////////////////////////////////////////////////
 /// Class GUI_dialogConfigPanel
 ///////////////////////////////////////////////////////////////////////////////
-class GUI_dialogConfigPanel : public wxFrame 
+class GUI_dialogConfigPanel : public wxDialog 
 {
 	private:
 	
@@ -183,44 +218,8 @@ class GUI_dialogConfigPanel : public wxFrame
 		
 	
 	public:
-		GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Control Center"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 640,493 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX );
+		GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("National Geographic Photo Of the Day Wallpaper Control Center"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 652,489 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~GUI_dialogConfigPanel();
-	
-};
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class GUI_dialogAbout
-///////////////////////////////////////////////////////////////////////////////
-class GUI_dialogAbout : public wxDialog 
-{
-	private:
-	
-	protected:
-		wxPanel* ID_PANEL4;
-		
-		wxStaticBitmap* wxID_STATIC;
-		wxStaticText* m_staticText38;
-		wxStaticText* m_staticText39;
-		wxStaticLine* m_staticline2;
-		wxStaticText* m_staticText40;
-		
-		wxStaticText* m_staticText41;
-		wxStaticText* m_staticText42;
-		
-		wxStaticText* m_staticText43;
-		wxStaticText* m_staticText44;
-		wxStaticText* m_staticText45;
-		wxStaticText* m_staticText46;
-		
-		wxButton* ID_BUTTON8;
-		
-		// Virtual event handlers, overide them in your derived class
-		virtual void OnButtonOKClick( wxCommandEvent& event ){ event.Skip(); }
-		
-	
-	public:
-		GUI_dialogAbout( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("About"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 484,491 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSYSTEM_MENU|wxCLOSE_BOX );
-		~GUI_dialogAbout();
 	
 };
 

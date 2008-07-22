@@ -2,7 +2,7 @@
 
 #include "dialogAbout.h"
 
-dialogConfigPanel::dialogConfigPanel(wxFrame *frame)
+dialogConfigPanel::dialogConfigPanel(wxDialog *frame)
         :GUI_dialogConfigPanel(frame)
 {
     //ctor

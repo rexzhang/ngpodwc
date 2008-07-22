@@ -10,8 +10,8 @@
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
 ;---------------------------------------------
-!define WXWIDGETS_DIR "D:\wxWidgets-2.8.4\lib\gcc_dll"
-!define WXWIDGETS_DLL "wxmsw28u_gcc_ng.dll"
+!define WXWIDGETS_DIR "D:\wxWidgets-2.8.7\lib\gcc_dll"
+!define WXWIDGETS_DLL "wxmsw28u_gcc_odbc.dll"
 !define MINGW_DIR "..\install\MinGW"
 
 ; --------------------------------------------

@@ -137,7 +137,114 @@ GUI_dialogMiniPanel::~GUI_dialogMiniPanel()
 	mQuit->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogMiniPanel::OnButtonClickQuit ), NULL, this );
 }
 
-GUI_dialogConfigPanel::GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+GUI_dialogAbout::GUI_dialogAbout( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+	this->SetExtraStyle( wxWS_EX_BLOCK_EVENTS );
+	
+	wxBoxSizer* bSizer10;
+	bSizer10 = new wxBoxSizer( wxVERTICAL );
+	
+	ID_PANEL4 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxDOUBLE_BORDER|wxTAB_TRAVERSAL );
+	ID_PANEL4->SetBackgroundColour( wxColour( 255, 255, 255 ) );
+	
+	wxBoxSizer* bSizer11;
+	bSizer11 = new wxBoxSizer( wxVERTICAL );
+	
+	
+	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	wxBoxSizer* bSizer12;
+	bSizer12 = new wxBoxSizer( wxHORIZONTAL );
+	
+	wxID_STATIC = new wxStaticBitmap( ID_PANEL4, wxID_ANY, wxBitmap( logo60x80_xpm ), wxDefaultPosition, wxSize( 60,80 ), 0 );
+	bSizer12->Add( wxID_STATIC, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	
+	m_staticText38 = new wxStaticText( ID_PANEL4, wxID_ANY, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText38->Wrap( -1 );
+	m_staticText38->SetFont( wxFont( 11, 74, 90, 92, false, wxT("Tahoma") ) );
+	
+	bSizer12->Add( m_staticText38, 0, wxALIGN_BOTTOM|wxALL, 5 );
+	
+	bSizer11->Add( bSizer12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText39 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Version: \") + g_AppVersion"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText39->Wrap( -1 );
+	m_staticText39->SetForegroundColour( wxColour( 128, 128, 128 ) );
+	
+	bSizer11->Add( m_staticText39, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticline2 = new wxStaticLine( ID_PANEL4, wxID_ANY, wxDefaultPosition, wxSize( 300,-1 ), wxLI_VERTICAL );
+	bSizer11->Add( m_staticline2, 0, wxEXPAND|wxALL, 5 );
+	
+	m_staticText40 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Bulid: \") + g_AppBuildTimestamp"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText40->Wrap( -1 );
+	m_staticText40->SetForegroundColour( wxColour( 128, 128, 128 ) );
+	
+	bSizer11->Add( m_staticText40, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	
+	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText41 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Developer"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText41->Wrap( -1 );
+	m_staticText41->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
+	
+	bSizer11->Add( m_staticText41, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText42 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppProjectLeader + wxT(\"(\") + g_AppProjectLeaderEmail + wxT(\")\")"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText42->Wrap( -1 );
+	bSizer11->Add( m_staticText42, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	
+	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText43 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText43->Wrap( -1 );
+	m_staticText43->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
+	
+	bSizer11->Add( m_staticText43, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText44 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText44->Wrap( -1 );
+	bSizer11->Add( m_staticText44, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText45 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl2"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText45->Wrap( -1 );
+	bSizer11->Add( m_staticText45, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	m_staticText46 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl3"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText46->Wrap( -1 );
+	bSizer11->Add( m_staticText46, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	
+	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	ID_PANEL4->SetSizer( bSizer11 );
+	ID_PANEL4->Layout();
+	bSizer11->Fit( ID_PANEL4 );
+	bSizer10->Add( ID_PANEL4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	ID_BUTTON8 = new wxButton( this, wxID_ANY, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
+	ID_BUTTON8->SetDefault(); 
+	bSizer10->Add( ID_BUTTON8, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
+	
+	this->SetSizer( bSizer10 );
+	this->Layout();
+	
+	this->Centre( wxBOTH );
+	
+	// Connect Events
+	ID_BUTTON8->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
+}
+
+GUI_dialogAbout::~GUI_dialogAbout()
+{
+	// Disconnect Events
+	ID_BUTTON8->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
+}
+
+GUI_dialogConfigPanel::GUI_dialogConfigPanel( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	
@@ -529,111 +636,4 @@ GUI_dialogConfigPanel::~GUI_dialogConfigPanel()
 	mButtonSaveConfig->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonSaveConfigClick ), NULL, this );
 	ID_BUTTON10->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonAboutClick ), NULL, this );
 	ID_BUTTON11->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogConfigPanel::OnButtonQuitClick ), NULL, this );
-}
-
-GUI_dialogAbout::GUI_dialogAbout( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
-{
-	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
-	this->SetExtraStyle( wxWS_EX_BLOCK_EVENTS );
-	
-	wxBoxSizer* bSizer10;
-	bSizer10 = new wxBoxSizer( wxVERTICAL );
-	
-	ID_PANEL4 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxDOUBLE_BORDER|wxTAB_TRAVERSAL );
-	ID_PANEL4->SetBackgroundColour( wxColour( 255, 255, 255 ) );
-	
-	wxBoxSizer* bSizer11;
-	bSizer11 = new wxBoxSizer( wxVERTICAL );
-	
-	
-	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	wxBoxSizer* bSizer12;
-	bSizer12 = new wxBoxSizer( wxHORIZONTAL );
-	
-	wxID_STATIC = new wxStaticBitmap( ID_PANEL4, wxID_ANY, wxBitmap( logo60x80_xpm ), wxDefaultPosition, wxSize( 60,80 ), 0 );
-	bSizer12->Add( wxID_STATIC, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
-	
-	m_staticText38 = new wxStaticText( ID_PANEL4, wxID_ANY, _("National Geographic Photo Of the Day\nWallpaper Changer"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText38->Wrap( -1 );
-	m_staticText38->SetFont( wxFont( 11, 74, 90, 92, false, wxT("Tahoma") ) );
-	
-	bSizer12->Add( m_staticText38, 0, wxALIGN_BOTTOM|wxALL, 5 );
-	
-	bSizer11->Add( bSizer12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText39 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Version: \") + g_AppVersion"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText39->Wrap( -1 );
-	m_staticText39->SetForegroundColour( wxColour( 128, 128, 128 ) );
-	
-	bSizer11->Add( m_staticText39, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticline2 = new wxStaticLine( ID_PANEL4, wxID_ANY, wxDefaultPosition, wxSize( 300,-1 ), wxLI_VERTICAL );
-	bSizer11->Add( m_staticline2, 0, wxEXPAND|wxALL, 5 );
-	
-	m_staticText40 = new wxStaticText( ID_PANEL4, wxID_ANY, _("wxT(\"Bulid: \") + g_AppBuildTimestamp"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText40->Wrap( -1 );
-	m_staticText40->SetForegroundColour( wxColour( 128, 128, 128 ) );
-	
-	bSizer11->Add( m_staticText40, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	
-	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText41 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Developer"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText41->Wrap( -1 );
-	m_staticText41->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
-	
-	bSizer11->Add( m_staticText41, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText42 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppProjectLeader + wxT(\"(\") + g_AppProjectLeaderEmail + wxT(\")\")"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText42->Wrap( -1 );
-	bSizer11->Add( m_staticText42, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	
-	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText43 = new wxStaticText( ID_PANEL4, wxID_ANY, _("Homepage"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText43->Wrap( -1 );
-	m_staticText43->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Tahoma") ) );
-	
-	bSizer11->Add( m_staticText43, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText44 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText44->Wrap( -1 );
-	bSizer11->Add( m_staticText44, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText45 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl2"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText45->Wrap( -1 );
-	bSizer11->Add( m_staticText45, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	m_staticText46 = new wxStaticText( ID_PANEL4, wxID_ANY, _("g_AppUrl3"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText46->Wrap( -1 );
-	bSizer11->Add( m_staticText46, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	
-	bSizer11->Add( 5, 5, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	ID_PANEL4->SetSizer( bSizer11 );
-	ID_PANEL4->Layout();
-	bSizer11->Fit( ID_PANEL4 );
-	bSizer10->Add( ID_PANEL4, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	ID_BUTTON8 = new wxButton( this, wxID_ANY, _("OK"), wxDefaultPosition, wxDefaultSize, 0 );
-	ID_BUTTON8->SetDefault(); 
-	bSizer10->Add( ID_BUTTON8, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
-	
-	this->SetSizer( bSizer10 );
-	this->Layout();
-	
-	this->Centre( wxBOTH );
-	
-	// Connect Events
-	ID_BUTTON8->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
-}
-
-GUI_dialogAbout::~GUI_dialogAbout()
-{
-	// Disconnect Events
-	ID_BUTTON8->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( GUI_dialogAbout::OnButtonOKClick ), NULL, this );
 }

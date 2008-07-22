@@ -1,6 +1,6 @@
 #include "dialogAbout.h"
 
-dialogAbout::dialogAbout(wxFrame *frame)
+dialogAbout::dialogAbout(wxDialog *frame)
         :GUI_dialogAbout(frame)
 {
     //ctor
