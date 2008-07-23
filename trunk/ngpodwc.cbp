@@ -40,42 +40,12 @@
 					<Add directory="$(#wx)\lib\gcc_dll\mswu" />
 				</ResourceCompiler>
 			</Target>
-			<Target title="ngpodwcc_Debug">
-				<Option output="ngpodwcc_ud.exe" prefix_auto="0" extension_auto="0" />
-				<Option object_output=".objs\debug" />
-				<Option type="0" />
-				<Option compiler="gcc" />
-				<Option projectLinkerOptionsRelation="1" />
-				<Option projectIncludeDirsRelation="2" />
-				<Option projectResourceIncludeDirsRelation="0" />
-				<Compiler>
-					<Add option="-g" />
-					<Add option="-D__WXDEBUG__" />
-					<Add directory="$(#WX.lib)\gcc_dll$(WX_CFG)\mswud" />
-				</Compiler>
-				<Linker>
-					<Add library="wxmsw28ud" />
-				</Linker>
-			</Target>
-			<Target title="ngpodwcc_Release">
-				<Option output="ngpodwcc_u.exe" prefix_auto="0" extension_auto="0" />
-				<Option object_output=".objs\release" />
-				<Option type="0" />
-				<Option compiler="gcc" />
-				<Option projectResourceIncludeDirsRelation="0" />
-				<Compiler>
-					<Add option="-O3" />
-					<Add option="-O2" />
-					<Add option="-O1" />
-					<Add option="-O" />
-				</Compiler>
-			</Target>
 			<Environment>
 				<Variable name="WX_CFG" value="" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All" targets="ngpodwc_Release;ngpodwcc_Release;" />
+			<Add alias="All" targets="ngpodwc_Release;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
@@ -106,54 +76,18 @@
 		<Unit filename="common_config.h" />
 		<Unit filename="common_globals.cpp" />
 		<Unit filename="common_globals.h" />
-		<Unit filename="common_ngpod_base.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_ngpod_base.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_base.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_base.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_localpicture.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_localpicture.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_ngpod.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_ngpod.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_ngpod_online.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_ngpod_online.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_operation.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="common_wallpaper_operation.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
+		<Unit filename="common_ngpod_base.cpp" />
+		<Unit filename="common_ngpod_base.h" />
+		<Unit filename="common_wallpaper_base.cpp" />
+		<Unit filename="common_wallpaper_base.h" />
+		<Unit filename="common_wallpaper_localpicture.cpp" />
+		<Unit filename="common_wallpaper_localpicture.h" />
+		<Unit filename="common_wallpaper_ngpod.cpp" />
+		<Unit filename="common_wallpaper_ngpod.h" />
+		<Unit filename="common_wallpaper_ngpod_online.cpp" />
+		<Unit filename="common_wallpaper_ngpod_online.h" />
+		<Unit filename="common_wallpaper_operation.cpp" />
+		<Unit filename="common_wallpaper_operation.h" />
 		<Unit filename="dialogAbout.cpp" />
 		<Unit filename="dialogAbout.h" />
 		<Unit filename="dialogConfigPanel.cpp" />
@@ -168,8 +102,6 @@
 		<Unit filename="ngpodwc.fbp" />
 		<Unit filename="ngpodwc.rc">
 			<Option compilerVar="WINDRES" />
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
 		</Unit>
 		<Unit filename="ngpodwcApp.cpp" />
 		<Unit filename="ngpodwcApp.h" />
@@ -177,18 +109,11 @@
 		<Unit filename="ngpodwcMain.h" />
 		<Unit filename="ngpodwc_common_datetime.cpp" />
 		<Unit filename="ngpodwc_common_datetime.h" />
-		<Unit filename="ngpodwc_common_ngpodinfo.cpp">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
-		<Unit filename="ngpodwc_common_ngpodinfo.h">
-			<Option target="ngpodwc_Debug" />
-			<Option target="ngpodwc_Release" />
-		</Unit>
+		<Unit filename="ngpodwc_common_ngpodinfo.cpp" />
+		<Unit filename="ngpodwc_common_ngpodinfo.h" />
 		<Unit filename="ngpodwcc.rc">
 			<Option compilerVar="WINDRES" />
-			<Option target="ngpodwcc_Debug" />
-			<Option target="ngpodwcc_Release" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="version.h" />
 		<Unit filename="wx_pch.h">
