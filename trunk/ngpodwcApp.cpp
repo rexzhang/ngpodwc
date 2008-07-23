@@ -87,7 +87,7 @@ bool ngpodwcApp::OnInit()
     wxLocale::AddCatalogLookupPathPrefix(wxT("share\\locale\\."));
     // Initialize the catalogs we'll be using
     m_locale.AddCatalog(wxT("wxstd"));
-    m_locale.AddCatalog(wxT("ngpodwcc"));
+    m_locale.AddCatalog(wxT("ngpodwc"));
 
     //确定是否显示Splash
     if(configRunning.ShowSplash)
