@@ -27,7 +27,8 @@
 #include "ngpodwc_common_datetime.h"
 
 
-WallpaperNGPODOnline::WallpaperNGPODOnline(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+//WallpaperNGPODOnline::WallpaperNGPODOnline(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+WallpaperNGPODOnline::WallpaperNGPODOnline():WallpaperBase()
 {
     Init();
     //ctor

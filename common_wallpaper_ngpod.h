@@ -18,8 +18,8 @@
 class WallpaperNGPOD : public WallpaperBase
 {
     public:
-        WallpaperNGPOD(ngpodwcConfig programConfig);
-        //WallpaperNGPOD(ngpodwcConfig programConfig):WallpaperBase(ngpodwcConfig programConfig);
+        //WallpaperNGPOD(ngpodwcConfig programConfig);
+        WallpaperNGPOD(void);
         virtual ~WallpaperNGPOD();
         bool Init();
 

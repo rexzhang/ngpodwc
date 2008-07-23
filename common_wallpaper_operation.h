@@ -19,7 +19,8 @@
 
 //bool getPodInfo(ngpodwcConfig *pConfig, ngpodinfo *pPodPictureInfo);
 //bool updateWallpaper(ngpodwcConfig *pConfig);//, ngpodinfo *pPodPictureInfo);
-bool updateWallpaper(ngpodwcConfig config);
+//bool updateWallpaper(ngpodwcConfig config);
+bool updateWallpaper(void);
 //void pictureOpretionDrawText(wxImage *pScreenImage, ngpodinfo *pPodPictureInfo);
 
 bool setWallpaperRegInfo(wxString WallpaperPathAndName);

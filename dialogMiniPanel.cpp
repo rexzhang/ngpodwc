@@ -95,7 +95,7 @@ void dialogMiniPanel::OnButtonClickShowPrePicture( wxCommandEvent& event )
     DisableUpdateButton();
     seekDays(-1, &(configRunning.PodDate));
     //updateWallpaper(&config);//, &pictureInfo);
-    updateWallpaper(configRunning);
+    updateWallpaper();
     EnableUpdateButton();
     wxBell();
     event.Skip();
@@ -104,7 +104,7 @@ void dialogMiniPanel::OnButtonClickShowNextPicture( wxCommandEvent& event )
 {
     DisableUpdateButton();
     seekDays(1, &(configRunning.PodDate));
-    updateWallpaper(configRunning);//, &pictureInfo);
+    updateWallpaper();//, &pictureInfo);
     EnableUpdateButton();
     wxBell();
     event.Skip();

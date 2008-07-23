@@ -187,7 +187,7 @@ bool ngpodwcApp::OnInit()
         //日期信息++
         seekDays(1, &(configRunning.PodDate));
         //updateWallpaper(&config);
-        updateWallpaper(configRunning);
+        updateWallpaper();
         wxBell();
         return true;
     }//!程序结束
