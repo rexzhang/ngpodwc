@@ -21,7 +21,7 @@ class ngpodwcApp : public wxApp
 public:
     virtual bool OnInit();
 
-    ngpodwcConfig config;
+    //ngpodwcConfig config;
 
     //ngpodwcConfig configRunning;//保存运行中的配置
     //ngpodwcConfig configStarting;//保持配置文件中的配置

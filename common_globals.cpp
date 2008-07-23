@@ -122,5 +122,5 @@ const int g_AppLanguageCodes[LANGUAGES_SIZE] =
         //        ,wxLANGUAGE_RUSSIAN
     };
 
-ngpodwcConfig configStarting;
-ngpodwcConfig configRunning;
+ngpodwcConfig configStarting; //保持配置文件中的配置
+ngpodwcConfig configRunning; //保存运行中的配置

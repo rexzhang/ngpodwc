@@ -70,12 +70,11 @@ bool ngpodwcApp::OnInit()
 
     //dialog_mini_panel *mainWindow = NULL;
 
+    //读取配置文件
     //configRunning.ReadConfig();
     //configStarting = new ngpodwcConfig;
     configRunning.ReadConfig();
-
-    //读取配置文件
-    config.ReadConfig();
+    //config.ReadConfig();
     //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
 
     //本地化
@@ -166,7 +165,7 @@ bool ngpodwcApp::OnInit()
     if (parser.Found(wxT("silent")))
     {
         //判断是否需要忽略墙纸切换动作
-        if(config.PauseChangeWallpaper)
+        if(configRunning.PauseChangeWallpaper)
         {
             wxBell();
             wxBell();
@@ -186,9 +185,9 @@ bool ngpodwcApp::OnInit()
         //wxSafeShowMessage(config.PodBasePath,config.PodDatabaseName);
         //直接切换到下个日期
         //日期信息++
-        seekDays(1, &(config.PodDate));
+        seekDays(1, &(configRunning.PodDate));
         //updateWallpaper(&config);
-        updateWallpaper(config);
+        updateWallpaper(configRunning);
         wxBell();
         return true;
     }//!程序结束
@@ -200,18 +199,18 @@ bool ngpodwcApp::OnInit()
         wxString path = argv[0];
         filename = new wxFileName(path, wxPATH_WIN);
         path = filename->GetPath(wxPATH_GET_VOLUME, wxPATH_WIN);
-        config.SetConfigFilePath(path);
+        configRunning.SetConfigFilePath(path);
 
-        if(!config.ReadConfig())//尝试读取，如果读取不成功
+        if(!configRunning.ReadConfig())//尝试读取，如果读取不成功
         {
-            config.WriteConfig();//创建一个配置文件
+            configRunning.WriteConfig();//创建一个配置文件
         }
 
         dialogConfigPanel* mainWindow = new dialogConfigPanel( 0L );//, ID_DIALOG_CONFIG_PANEL );
 
-        (mainWindow->config).SetConfigFilePath(path);
+        configRunning.SetConfigFilePath(path);
         //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
-        (mainWindow->config).ReadConfig();
+        configRunning.ReadConfig();
 
         mainWindow->Show(true);
 
@@ -225,7 +224,7 @@ bool ngpodwcApp::OnInit()
 
         //(mainWindow->config).SetConfigFilePath(path);
         //wxSafeShowMessage(wxT(""), (mainWindow->config).ConfigFile);
-        (mainWindow->config).ReadConfig();
+        configRunning.ReadConfig();
 
         mainWindow->Show(true);
 
