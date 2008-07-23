@@ -12,7 +12,7 @@ public:
     dialogConfigPanel(wxDialog *frame);
     virtual ~dialogConfigPanel();
 
-    ngpodwcConfig config;
+    //ngpodwcConfig config;
 
 protected:
 
@@ -132,7 +132,7 @@ private:
     }
     void OnButtonLocalPicturePathClick( wxCommandEvent& event )
     {
-        const wxString& dir = wxDirSelector(wxT("Please choice Local File\'s path"), config.LocalPicturePath, 0, wxDefaultPosition, this);
+        const wxString& dir = wxDirSelector(wxT("Please choice Local File\'s path"), configRunning.LocalPicturePath, 0, wxDefaultPosition, this);
         if ( !dir.empty() )
         {
             configRunning.LocalPicturePath = dir;
