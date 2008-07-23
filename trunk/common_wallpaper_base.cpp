@@ -26,10 +26,11 @@
 #include "common_globals.h"
 #include "common_wallpaper_base.h"
 
-WallpaperBase::WallpaperBase(ngpodwcConfig programConfig)
+//WallpaperBase::WallpaperBase(ngpodwcConfig programConfig)
+WallpaperBase::WallpaperBase(void)
 {
     //ctor
-    config = programConfig;
+    //config = programConfig;
     Init();
 }
 

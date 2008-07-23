@@ -19,7 +19,8 @@
 class WallpaperBase
 {
     public:
-        WallpaperBase(ngpodwcConfig programConfig);
+        //WallpaperBase(ngpodwcConfig programConfig);
+        WallpaperBase(void);
         virtual bool Init();
         virtual ~WallpaperBase();
 
@@ -38,7 +39,7 @@ class WallpaperBase
         //!成员变量
     protected:
         wxImage Image;
-        ngpodwcConfig config;
+        //ngpodwcConfig config;
     private:
 };
 

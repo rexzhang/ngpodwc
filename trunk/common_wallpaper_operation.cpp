@@ -28,7 +28,7 @@
 #include "common_wallpaper_localpicture.h"
 #include "common_wallpaper_ngpod_online.h"
 
-bool updateWallpaper(ngpodwcConfig config)
+bool updateWallpaper()
 {
     WallpaperBase *pWallpaper;
 
@@ -36,13 +36,16 @@ bool updateWallpaper(ngpodwcConfig config)
     switch (configRunning.PictureSource)
     {
         case PICTURESOURCE_LOCALFILE:
-        pWallpaper = new WallpaperLocalPicture(config);
+        //pWallpaper = new WallpaperLocalPicture(config);
+        pWallpaper = new WallpaperLocalPicture();
         break;
         case PICTURESOURCE_NGPOD:
-        pWallpaper = new WallpaperNGPOD(config);
+        //pWallpaper = new WallpaperNGPOD(config);
+        pWallpaper = new WallpaperNGPOD();
         break;
         case PICTURESOURCE_NGPOD_ONLINE:
-        pWallpaper = new WallpaperNGPODOnline(config);
+        //pWallpaper = new WallpaperNGPODOnline(config);
+        pWallpaper = new WallpaperNGPODOnline();
         break;
         default:
         wxLogError(_("Lost config info with PictureSource"));

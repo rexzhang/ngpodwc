@@ -25,7 +25,8 @@
 #include "common_globals.h"
 #include "common_wallpaper_localpicture.h"
 
-WallpaperLocalPicture::WallpaperLocalPicture(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+//WallpaperLocalPicture::WallpaperLocalPicture(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+WallpaperLocalPicture::WallpaperLocalPicture():WallpaperBase()
 {
     Init();
     //ctor

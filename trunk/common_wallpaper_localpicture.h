@@ -16,7 +16,8 @@
 class WallpaperLocalPicture : public WallpaperBase
 {
     public:
-        WallpaperLocalPicture(ngpodwcConfig programConfig);
+        //WallpaperLocalPicture(ngpodwcConfig programConfig);
+        WallpaperLocalPicture(void);
         virtual ~WallpaperLocalPicture();
 
         //³ÉÔ±º¯Êý

@@ -17,7 +17,8 @@
 class WallpaperNGPODOnline : public WallpaperBase, private NGPODBase
 {
     public:
-        WallpaperNGPODOnline(ngpodwcConfig programConfig);
+        //WallpaperNGPODOnline(ngpodwcConfig programConfig);
+        WallpaperNGPODOnline(void);
         virtual ~WallpaperNGPODOnline();
 
         //³ÉÔ±º¯Êý

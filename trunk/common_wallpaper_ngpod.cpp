@@ -21,7 +21,8 @@
 #include "common_globals.h"
 #include "common_wallpaper_ngpod.h"
 
-WallpaperNGPOD::WallpaperNGPOD(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+//WallpaperNGPOD::WallpaperNGPOD(ngpodwcConfig programConfig):WallpaperBase(programConfig)
+WallpaperNGPOD::WallpaperNGPOD():WallpaperBase()
 {
     Init();
     //ctor
