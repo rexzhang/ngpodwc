@@ -136,7 +136,7 @@ Section "Core" SEC01
   CreateDirectory "$INSTDIR\share\locale\zh_CN"
   SetOutPath "$INSTDIR\share\locale\zh_CN"
   SetOverwrite ifnewer
-  File "..\share\locale\zh_CN\ngpodwcc.mo"
+  File "..\share\locale\zh_CN\ngpodwc.mo"
   File "..\share\locale\zh_CN\wxstd.mo"
 
 
@@ -214,7 +214,7 @@ Section Uninstall
   RMDir "$INSTDIR\share\art"
 
   ;国际化支持部分
-  Delete "$INSTDIR\share\locale\zh_CN\ngpodwcc.mo"
+  Delete "$INSTDIR\share\locale\zh_CN\ngpodwc.mo"
   Delete "$INSTDIR\share\locale\zh_CN\wxstd.mo"
   RMDir "$INSTDIR\share\locale\zh_CN"
   RMDir "$INSTDIR\share\locale"
