@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NGPODWC\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-04-23 16:26+0800\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-24 21:05+0800\n"
+"PO-Revision-Date: 2008-07-24 21:05+0800\n"
 "Last-Translator: Rex Zhang <rex.zhang@gmail.com>\n"
 "Language-Team: Rex Zhang <rex.zhang@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: CHINA\n"
@@ -29,50 +30,50 @@ msgstr "无法以读取方式打开配置文件(%s)，跳过配置文件读取�
 msgid "Can't open .INI(%s) file with WRITE mode. Skip write config."
 msgstr "无法已写入模式打开配置文件(%s)，跳过配置文件写操作。"
 
-#: common_globals.cpp:106
+#: common_globals.cpp:107
 msgid "Chinese (Simplified)"
 msgstr "简体中文"
 
-#: common_globals.cpp:108
+#: common_globals.cpp:109
 msgid "English"
 msgstr "英文"
 
-#: common_wallpaper_base.cpp:163
+#: common_wallpaper_base.cpp:165
 #, c-format
 msgid "ERROR! Can't create(save) wallpaper file(%s)!"
 msgstr "严重错误！无法创建(保存)桌布文件(%s)！"
 
-#: common_wallpaper_localpicture.cpp:56
+#: common_wallpaper_localpicture.cpp:58
 #, c-format
 msgid "ERROR! Can't read Local Picture(%s)!"
 msgstr "严重错误！无法读取本地图片(%s)！"
 
-#: common_wallpaper_ngpod.cpp:60
+#: common_wallpaper_ngpod.cpp:62
 #, c-format
 msgid "ERROR! Can't read NGPOD 1.x Local Picture(%s)!"
 msgstr "严重错误！无法读取NGPOD 1.x本地图片(%s)！"
 
-#: common_wallpaper_ngpod_online.cpp:252
+#: common_wallpaper_ngpod_online.cpp:254
 #, c-format
 msgid "Can't get URL : %s. Please check your internet connection"
 msgstr "无法获取URL:%s。请检查你的Internet连接"
 
-#: common_wallpaper_ngpod_online.cpp:262
+#: common_wallpaper_ngpod_online.cpp:264
 #, c-format
 msgid "Can't get NGPOD Online picture file from %s."
 msgstr "无法由地址 %s 获取美国国家地理网站在线图片文件"
 
-#: common_wallpaper_operation.cpp:46
+#: common_wallpaper_operation.cpp:51
 msgid "Lost config info with PictureSource"
 msgstr "图片源设置信息丢失/有误"
 
-#: common_wallpaper_operation.cpp:98
+#: common_wallpaper_operation.cpp:103
 #, c-format
 msgid "_WIN32_Reg(%s)Error!"
 msgstr "_WIN32_注册表(%s)错误！"
 
-#: dialog_about.cpp:119
-#: dialog_mini_panel.cpp:135
+#: GUIFrame.cpp:37
+#: GUIFrame.cpp:163
 msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Changer"
@@ -80,19 +81,75 @@ msgstr ""
 "《美国国家地理》每日精选\n"
 "桌布更换小工"
 
-#: dialog_about.cpp:137
+#: GUIFrame.cpp:52
+#: GUIFrame.cpp:54
+msgid "Pause/Unpause change wallpaper"
+msgstr "暂停/继续桌面切换"
+
+#: GUIFrame.cpp:63
+#: GUIFrame.cpp:65
+msgid "Show previous pictrue"
+msgstr "显示上一张图片"
+
+#: GUIFrame.cpp:71
+#: GUIFrame.cpp:73
+msgid "Show next pictrue"
+msgstr "显示下一张图片"
+
+#: GUIFrame.cpp:82
+#: GUIFrame.cpp:84
+msgid "Control Center"
+msgstr ""
+
+#: GUIFrame.cpp:93
+#: GUIFrame.cpp:95
+#: GUIFrame.cpp:573
+msgid "About"
+msgstr "关于"
+
+#: GUIFrame.cpp:104
+#: GUIFrame.cpp:106
+#: GUIFrame.cpp:577
+msgid "Quit"
+msgstr "退出"
+
+#: GUIFrame.cpp:171
+msgid "wxT(\"Version: \") + g_AppVersion"
+msgstr ""
+
+#: GUIFrame.cpp:180
+msgid "wxT(\"Bulid: \") + g_AppBuildTimestamp"
+msgstr ""
+
+#: GUIFrame.cpp:189
 msgid "Developer"
 msgstr "开发人"
 
-#: dialog_about.cpp:146
+#: GUIFrame.cpp:195
+msgid "g_AppProjectLeader + wxT(\"(\") + g_AppProjectLeaderEmail + wxT(\")\")"
+msgstr ""
+
+#: GUIFrame.cpp:202
 msgid "Homepage"
 msgstr "主页"
 
-#: dialog_about.cpp:161
+#: GUIFrame.cpp:208
+msgid "g_AppUrl"
+msgstr ""
+
+#: GUIFrame.cpp:212
+msgid "g_AppUrl2"
+msgstr ""
+
+#: GUIFrame.cpp:216
+msgid "g_AppUrl3"
+msgstr ""
+
+#: GUIFrame.cpp:228
 msgid "OK"
 msgstr "确定"
 
-#: dialog_config_panel.cpp:173
+#: GUIFrame.cpp:264
 msgid ""
 "National Geographic Photo Of the Day\n"
 "Wallpaper Control Center"
@@ -100,197 +157,164 @@ msgstr ""
 "《美国国家地理》每日精选\n"
 "桌布更换小工控制台"
 
-#: dialog_config_panel.cpp:187
+#: GUIFrame.cpp:285
 msgid "Input Source"
 msgstr "输入的源"
 
-#: dialog_config_panel.cpp:191
+#: GUIFrame.cpp:289
 msgid "Local Picture"
 msgstr "本地图片"
 
-#: dialog_config_panel.cpp:192
+#: GUIFrame.cpp:289
 msgid "NGPOD"
 msgstr "美国国家地理(NGPOD 1.x 数据库)"
 
-#: dialog_config_panel.cpp:193
+#: GUIFrame.cpp:289
 msgid "NGPOD Online"
 msgstr "美国国家地理(在线获取)"
 
-#: dialog_config_panel.cpp:200
+#: GUIFrame.cpp:298
 msgid "Pause Change Wallpaper"
 msgstr "暂停桌面切换"
 
-#: dialog_config_panel.cpp:206
+#: GUIFrame.cpp:305
 msgid "Show Splash"
 msgstr "显示Splash"
 
-#: dialog_config_panel.cpp:210
+#: GUIFrame.cpp:309
 msgid "UI Language"
 msgstr "界面语言"
 
-#: dialog_config_panel.cpp:214
-msgid "g_AppLanguageNames"
-msgstr ""
-
-#: dialog_config_panel.cpp:221
+#: GUIFrame.cpp:321
 msgid "Change UI Language"
 msgstr "更改界面语言"
 
-#: dialog_config_panel.cpp:224
+#: GUIFrame.cpp:328
 msgid "Common Setting"
 msgstr "基本设置"
 
-#: dialog_config_panel.cpp:232
+#: GUIFrame.cpp:336
 msgid "Show Disc"
 msgstr "标注文字说明"
 
-#: dialog_config_panel.cpp:236
+#: GUIFrame.cpp:343
 msgid "Image Convert Setting"
 msgstr "图片转换设置"
 
-#: dialog_config_panel.cpp:248
+#: GUIFrame.cpp:359
 msgid "Screen Width x Height"
 msgstr "屏幕像素 宽 x 高"
 
-#: dialog_config_panel.cpp:252
+#: GUIFrame.cpp:363
 msgid "640x480"
 msgstr "640x480"
 
-#: dialog_config_panel.cpp:253
+#: GUIFrame.cpp:363
 msgid "800x600"
 msgstr "800x600"
 
-#: dialog_config_panel.cpp:254
+#: GUIFrame.cpp:363
 msgid "1024x768"
 msgstr "1024x768"
 
-#: dialog_config_panel.cpp:255
-#: dialog_config_panel.cpp:260
-#: dialog_config_panel.cpp:287
+#: GUIFrame.cpp:363
+#: GUIFrame.cpp:369
+#: GUIFrame.cpp:404
 msgid "Auto Detect"
 msgstr "自动检测"
 
-#: dialog_config_panel.cpp:263
+#: GUIFrame.cpp:373
 msgid "Screen Width"
 msgstr "屏幕宽度"
 
-#: dialog_config_panel.cpp:272
+#: GUIFrame.cpp:385
 msgid "Screen Height"
 msgstr "屏幕高度"
 
-#: dialog_config_panel.cpp:281
+#: GUIFrame.cpp:397
 msgid "ScreenPicturePath"
 msgstr "桌面图片保存路径"
 
-#: dialog_config_panel.cpp:290
+#: GUIFrame.cpp:408
 msgid "ScreenPictureName"
 msgstr "桌面图片文件名"
 
-#: dialog_config_panel.cpp:301
+#: GUIFrame.cpp:423
 msgid "Install NGPOD to Startup"
 msgstr ""
 
-#: dialog_config_panel.cpp:311
+#: GUIFrame.cpp:441
 msgid "Environment Setting"
 msgstr "环境设置"
 
-#: dialog_config_panel.cpp:323
+#: GUIFrame.cpp:457
 msgid "LocalPicturePath"
 msgstr "本地图片库路径"
 
-#: dialog_config_panel.cpp:329
-#: dialog_config_panel.cpp:350
+#: GUIFrame.cpp:464
+#: GUIFrame.cpp:494
 msgid "..."
 msgstr "..."
 
-#: dialog_config_panel.cpp:332
+#: GUIFrame.cpp:471
 msgid "Local Picture Source"
 msgstr "本地图片源"
 
-#: dialog_config_panel.cpp:344
+#: GUIFrame.cpp:487
 msgid "PodBasePath"
 msgstr "本地NGPOD基路径"
 
-#: dialog_config_panel.cpp:353
+#: GUIFrame.cpp:498
 msgid "PodDatabaseName"
 msgstr "本地NGPOD数据库文件名"
 
-#: dialog_config_panel.cpp:362
+#: GUIFrame.cpp:510
 msgid "PodPicturePath"
 msgstr "本地NGPOD图片所在目录"
 
-#: dialog_config_panel.cpp:371
+#: GUIFrame.cpp:522
 msgid "Now POD Day"
 msgstr "当前POD日期"
 
-#: dialog_config_panel.cpp:388
+#: GUIFrame.cpp:544
 msgid "NGPOD Source"
 msgstr "NGPOD图片源"
 
-#: dialog_config_panel.cpp:398
+#: GUIFrame.cpp:554
 msgid "Reload Config"
 msgstr "重新载入配置"
 
-#: dialog_config_panel.cpp:401
+#: GUIFrame.cpp:558
 msgid "Restore Default"
 msgstr "重置配置回系统默认值"
 
-#: dialog_config_panel.cpp:404
+#: GUIFrame.cpp:562
 msgid "Save Config"
 msgstr "保存配置"
 
-#: dialog_config_panel.cpp:411
-#: dialog_config_panel.cpp:470
-#: dialog_mini_panel.cpp:177
-#: dialog_mini_panel.cpp:356
-#: dialog_about.h:41
-msgid "About"
-msgstr "关于"
-
-#: dialog_config_panel.cpp:414
-#: dialog_mini_panel.cpp:185
-msgid "Quit"
-msgstr "退出"
-
-#: dialog_config_panel.cpp:793
-msgid "Select your prefered language"
-msgstr "选择你喜好的语言"
-
-#: dialog_config_panel.cpp:794
-msgid "Language selection"
-msgstr "语言选择"
-
-#: dialog_config_panel.cpp:805
-msgid "You must save config and restart NGPODWCC for this change to take effect."
-msgstr "您必须保存配置并重新启动 NGPODWCC 更改才会生效。"
-
-#: dialog_config_panel_ext.cpp:28
-#, c-format
-msgid "Can't found .INI(%s) file. Systen will restore config to defaule. Please click SAVE_CONFIG save config."
-msgstr "配置文件(%s)不存在，系统将使用自动生成默认设置。请点击<保存配置>按钮保存。"
-
-#: dialog_mini_panel.cpp:147
-msgid "Pause/Unpause change wallpaper"
-msgstr "暂停/继续桌面切换"
-
-#: dialog_mini_panel.cpp:155
-msgid "Show previous pictrue"
-msgstr "显示上一张图片"
-
-#: dialog_mini_panel.cpp:161
-msgid "Show next pictrue"
-msgstr "显示下一张图片"
-
-#: dialog_mini_panel.cpp:169
-msgid "Control Center"
-msgstr ""
-
 #: ngpodwc.cpp:268
-#: dialog_mini_panel.h:44
 msgid "National Geographic Photo Of the Day Wallpaper Changer"
 msgstr "《美国国家地理》每日精选桌布更换小工"
 
-#: dialog_config_panel.h:50
+#: dialogConfigPanel.h:172
+msgid "Select your prefered language"
+msgstr "选择你喜好的语言"
+
+#: dialogConfigPanel.h:173
+msgid "Language selection"
+msgstr "语言选择"
+
+#: dialogConfigPanel.h:184
+msgid "You must save config and restart NGPODWCC for this change to take effect."
+msgstr "您必须保存配置并重新启动 NGPODWCC 更改才会生效。"
+
+#: GUIFrame.h:221
 msgid "National Geographic Photo Of the Day Wallpaper Control Center"
 msgstr "《美国国家地理》每日精选桌布更换小工控制台"
+
+#~ msgid ""
+#~ "Can't found .INI(%s) file. Systen will restore config to defaule. Please "
+#~ "click SAVE_CONFIG save config."
+#~ msgstr ""
+#~ "配置文件(%s)不存在，系统将使用自动生成默认设置。请点击<保存配置>按钮保存。"
 
